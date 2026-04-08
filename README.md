@@ -1,4 +1,3 @@
-```markdown
 # AI-DSS — AI Tool Recommendation System for Small Businesses
 
 A decision support system that matches a company's operational processes 
@@ -19,5 +18,4 @@ python data/synthetic/generate_synthetic_companies.py
 Python 3.9+
 ```
 pip install -r requirements.txt
-```
 ```
