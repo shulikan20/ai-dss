@@ -1,0 +1,127 @@
+{
+  "company_id": "SC1",
+  "label": "Synthetic B1-type — B2C e-commerce, product retail",
+  "meta": {
+    "type": "B2C",
+    "industry": "Children's Toys / Educational Products",
+    "country": "Austria",
+    "city": "Vienna",
+    "description": "Online store specialising in premium handcrafted and Montessori-inspired wooden toys and educational games for children aged 0–8. Sells primarily through own website with growing Instagram presence. Products sourced from local Austrian and German workshops."
+  },
+  "profile": {
+    "company_name": "TinyWonders GmbH",
+    "total_headcount": 6,
+    "sales_team_size": 2,
+    "crm_system": "Shopify (built-in)",
+    "crm_years_in_use": 3,
+    "other_tools": [
+      "Klaviyo",
+      "Instagram",
+      "Canva"
+    ],
+    "crm_managed_by": "Founder",
+    "technical_capability": "Low — founder manages all tools",
+    "ai_openness": "Open",
+    "management_aligned": true,
+    "previous_ai_attempts": [
+      "Klaviyo automated email sequences for abandoned cart",
+      "Instagram auto-reply for common DM questions (basic keyword trigger)"
+    ]
+  },
+  "data_availability": {
+    "crm_export_available": true,
+    "crm_export_file": "synthetic_sc1_orders.json",
+    "total_orders": 640,
+    "order_date_range": {
+      "from": "2023-09-06",
+      "to": "2026-03-29"
+    },
+    "channels": {
+      "website": 476,
+      "instagram": 164
+    },
+    "currency": "EUR",
+    "price_range": {
+      "min": 10.0,
+      "max": 369.0,
+      "avg": 52.13
+    },
+    "data_quality_overall": "MEDIUM — order history reliable, no customer lifetime value tracking, no return log"
+  },
+  "processes": [
+    {
+      "process_id": "SC1_P1",
+      "name": "Instagram DM to Purchase",
+      "type": "B2C Sales via Social DM",
+      "steps": [
+        "Parent sends DM asking about age suitability or gifting advice",
+        "Founder responds manually with product suggestions",
+        "Customer selects product",
+        "Redirected to website checkout or PayPal link",
+        "Confirmation email sent automatically via Shopify",
+        "Order shipped via Österreichische Post or DPD"
+      ],
+      "who_executes": "Founder + 1 part-time assistant",
+      "avg_duration_days": 3,
+      "conversion_rate": 0.45,
+      "drop_off_reason": "Price sensitivity, comparison shopping",
+      "kpis_tracked": [
+        "Monthly revenue",
+        "Order count"
+      ],
+      "bottlenecks": [
+        {
+          "description": "All gifting advice and age-suitability questions answered manually, one by one",
+          "severity": "HIGH",
+          "time_impact": "1.5–2 hours per day of founder time during peak season"
+        },
+        {
+          "description": "No structured follow-up for customers who ask but do not buy",
+          "severity": "MEDIUM",
+          "time_impact": "Estimated 20–30% of interested leads lost with no follow-up"
+        }
+      ],
+      "top_repeated_questions": [
+        "Is this suitable for a 2-year-old?",
+        "Do you do gift wrapping?",
+        "How long is shipping?"
+      ],
+      "manual_tasks_wanting_automation": [
+        "Age suitability FAQ responses",
+        "Gift recommendation guidance",
+        "Abandoned cart follow-up"
+      ],
+      "data_available_for_process": "Shopify order history (640 orders). No DM conversation logs."
+    },
+    {
+      "process_id": "SC1_P2",
+      "name": "Seasonal Campaign Management",
+      "type": "Marketing Operations",
+      "steps": [
+        "Plan seasonal content calendar (Christmas, Easter, Back to School)",
+        "Write product descriptions and social captions",
+        "Design promotional graphics in Canva",
+        "Schedule posts and email campaign in Klaviyo",
+        "Monitor performance and respond to comments"
+      ],
+      "who_executes": "Founder",
+      "peak_months": [
+        "November",
+        "December"
+      ],
+      "bottlenecks": [
+        {
+          "description": "Entire content pipeline handled by one person — writing, design, scheduling",
+          "severity": "HIGH",
+          "time_impact": "Approximately 3 days per major campaign"
+        }
+      ],
+      "manual_tasks_wanting_automation": [
+        "Product description generation",
+        "Social media caption variants",
+        "Campaign brief templates"
+      ],
+      "data_available_for_process": "Klaviyo email metrics available but not exported."
+    }
+  ]
+}

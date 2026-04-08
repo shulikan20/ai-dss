@@ -1,0 +1,122 @@
+{
+  "company_id": "SC2",
+  "label": "Synthetic B1-type — B2C e-commerce, health/supplement niche",
+  "meta": {
+    "type": "B2C",
+    "industry": "Fitness Supplements / Sports Nutrition",
+    "country": "Poland",
+    "city": "Warsaw",
+    "description": "E-commerce store selling fitness supplements — protein powders, creatine, vitamins, and gym accessories. Sells across own website, Instagram, and Facebook Shop. Targets gym-goers and recreational athletes aged 18–35."
+  },
+  "profile": {
+    "company_name": "FitPol Sp. z o.o.",
+    "total_headcount": 9,
+    "sales_team_size": 3,
+    "crm_system": "WooCommerce + HubSpot Free",
+    "crm_years_in_use": 2,
+    "other_tools": [
+      "Meta Ads Manager",
+      "Mailchimp",
+      "Instagram",
+      "Facebook Shop"
+    ],
+    "crm_managed_by": "Marketing manager",
+    "technical_capability": "Medium — marketing manager handles tools, external developer for website",
+    "ai_openness": "Very open — actively looking for tools",
+    "management_aligned": true,
+    "previous_ai_attempts": [
+      "ChatGPT for writing product descriptions (occasional)",
+      "Meta Advantage+ for ad targeting automation"
+    ]
+  },
+  "data_availability": {
+    "crm_export_available": true,
+    "crm_export_file": "synthetic_sc2_orders.json",
+    "total_orders": 950,
+    "order_date_range": {
+      "from": "2023-04-04",
+      "to": "2026-03-30"
+    },
+    "channels": {
+      "website": 527,
+      "instagram": 296,
+      "facebook_shop": 127
+    },
+    "currency": "PLN",
+    "price_range": {
+      "min": 14.5,
+      "max": 385.5,
+      "avg": 81.83
+    },
+    "data_quality_overall": "MEDIUM-HIGH — order history and channel data reliable. HubSpot has contact records but no deal stages used."
+  },
+  "processes": [
+    {
+      "process_id": "SC2_P1",
+      "name": "Multi-channel Order Fulfillment",
+      "type": "B2C E-commerce Operations",
+      "steps": [
+        "Order placed on website, Instagram, or Facebook Shop",
+        "Orders pulled manually into WooCommerce dashboard each morning",
+        "Picked and packed by warehouse staff",
+        "Shipped via InPost Paczkomat (primary) or DPD",
+        "Tracking sent automatically via WooCommerce email"
+      ],
+      "who_executes": "Warehouse team (2 people) + marketing manager for issues",
+      "avg_duration_days": 2,
+      "volume": {
+        "monthly_avg": 80,
+        "peak_monthly": 150
+      },
+      "bottlenecks": [
+        {
+          "description": "Orders from Instagram and Facebook must be manually checked and entered — no native sync",
+          "severity": "HIGH",
+          "time_impact": "30–45 minutes per day of manual data entry"
+        },
+        {
+          "description": "Post-purchase customer questions (dosage advice, compatibility) handled via Instagram DM by marketing manager",
+          "severity": "MEDIUM",
+          "time_impact": "1 hour per day average"
+        }
+      ],
+      "top_repeated_questions": [
+        "How do I take this with other supplements?",
+        "Is this product suitable for beginners?",
+        "When will my order arrive?"
+      ],
+      "manual_tasks_wanting_automation": [
+        "Order sync from social channels to WooCommerce",
+        "Supplement dosage FAQ responses",
+        "Order status updates"
+      ],
+      "data_available_for_process": "WooCommerce export (950 orders). No support ticket log."
+    },
+    {
+      "process_id": "SC2_P2",
+      "name": "Performance Marketing Management",
+      "type": "Marketing Operations",
+      "steps": [
+        "Set up and monitor Meta ad campaigns",
+        "Analyze weekly performance data (CPA, ROAS, CTR)",
+        "Adjust audiences and creatives based on results",
+        "Write new ad copy and product content",
+        "Send monthly newsletter via Mailchimp"
+      ],
+      "who_executes": "Marketing manager",
+      "bottlenecks": [
+        {
+          "description": "Campaign performance diagnosis is manual — pulling numbers from Meta, WooCommerce, Mailchimp separately",
+          "severity": "HIGH",
+          "time_impact": "Half a day per week spent on reporting across platforms"
+        }
+      ],
+      "manual_tasks_wanting_automation": [
+        "Cross-platform performance reporting",
+        "Ad copy variants generation",
+        "Email newsletter drafts"
+      ],
+      "data_available_for_process": "Meta Ads data available via dashboard. Mailchimp metrics available. No unified dashboard."
+    }
+  ]
+}

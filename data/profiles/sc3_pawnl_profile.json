@@ -1,0 +1,122 @@
+{
+  "company_id": "SC3",
+  "label": "Synthetic B1-type — B2C e-commerce, lifestyle/pet niche",
+  "meta": {
+    "type": "B2C",
+    "industry": "Pet Accessories / Lifestyle",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "description": "Online store selling premium pet accessories — beds, collars, feeders, toys, carriers. Focuses on design-conscious pet owners. Sells via own website, Instagram, and Marktplaats. Ships across the Netherlands and Belgium."
+  },
+  "profile": {
+    "company_name": "PawNL B.V.",
+    "total_headcount": 5,
+    "sales_team_size": 2,
+    "crm_system": "Shopify",
+    "crm_years_in_use": 4,
+    "other_tools": [
+      "Instagram",
+      "Marktplaats",
+      "Mailchimp",
+      "Notion"
+    ],
+    "crm_managed_by": "Co-founder",
+    "technical_capability": "Low-medium — comfortable with SaaS tools, no developer",
+    "ai_openness": "Open but cautious",
+    "management_aligned": true,
+    "previous_ai_attempts": [
+      "Shopify built-in email automations (welcome, abandoned cart)",
+      "ChatGPT occasionally for product descriptions"
+    ]
+  },
+  "data_availability": {
+    "crm_export_available": true,
+    "crm_export_file": "synthetic_sc3_orders.json",
+    "total_orders": 720,
+    "order_date_range": {
+      "from": "2023-07-01",
+      "to": "2026-03-29"
+    },
+    "channels": {
+      "website": 499,
+      "instagram": 153,
+      "marktplaats": 68
+    },
+    "currency": "EUR",
+    "price_range": {
+      "min": 8.5,
+      "max": 273.0,
+      "avg": 40.89
+    },
+    "data_quality_overall": "MEDIUM — Shopify data reliable. Marktplaats orders tracked manually in spreadsheet. Return rate estimated verbally, not logged."
+  },
+  "processes": [
+    {
+      "process_id": "SC3_P1",
+      "name": "Instagram to Purchase",
+      "type": "B2C Sales via Social DM",
+      "steps": [
+        "Customer sees product post or story on Instagram",
+        "DM asking for size confirmation or shipping costs",
+        "Answered manually by co-founder",
+        "Customer directed to website",
+        "Order placed and fulfilled via Shopify"
+      ],
+      "who_executes": "Co-founder",
+      "avg_duration_days": 2,
+      "conversion_rate": 0.35,
+      "drop_off_reason": "Shipping cost, size/fit uncertainty",
+      "bottlenecks": [
+        {
+          "description": "Sizing questions for collars and carriers answered manually for every customer",
+          "severity": "HIGH",
+          "time_impact": "Daily task, estimated 45 minutes per day"
+        },
+        {
+          "description": "Marktplaats orders entered manually into Shopify — no integration",
+          "severity": "MEDIUM",
+          "time_impact": "15–20 minutes daily"
+        }
+      ],
+      "top_repeated_questions": [
+        "What size collar for a Labrador?",
+        "Do you ship to Belgium?",
+        "Is the bed machine washable?"
+      ],
+      "manual_tasks_wanting_automation": [
+        "Sizing guide FAQ responses",
+        "Shipping information auto-replies",
+        "Marktplaats order sync"
+      ],
+      "data_available_for_process": "Shopify order history (720 orders). Instagram DMs not exported."
+    },
+    {
+      "process_id": "SC3_P2",
+      "name": "Returns and Complaints Handling",
+      "type": "Customer Support",
+      "steps": [
+        "Customer contacts via email or Instagram about return",
+        "Co-founder assesses reason manually",
+        "Return label sent manually",
+        "Refund processed in Shopify",
+        "Item inspected on return — resell or discard"
+      ],
+      "who_executes": "Co-founder",
+      "return_rate_estimate": 0.08,
+      "return_handling_time_days": 4,
+      "bottlenecks": [
+        {
+          "description": "Every return handled manually end-to-end with no self-service option",
+          "severity": "MEDIUM",
+          "time_impact": "Each return takes ~30 minutes of active handling time"
+        }
+      ],
+      "manual_tasks_wanting_automation": [
+        "Return request intake form",
+        "Automated return label generation",
+        "Refund status communication"
+      ],
+      "data_available_for_process": "No structured return log. Verbal estimate only."
+    }
+  ]
+}
