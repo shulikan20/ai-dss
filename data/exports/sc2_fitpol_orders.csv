@@ -1,0 +1,951 @@
+order_id,product_name,quantity,price_pln,channel,order_date,status,manager,city,country,delivery_service,delivery_date
+SC2-00001,Gym Bag Medium,1,58.5,Website,2023-04-04 16:00:00,New,Manager_B,Krakow,Poland,InPost Paczkomat,
+SC2-00002,Gym Bag Medium,1,65.0,Website,2023-04-09 10:00:00,Completed,Manager_A,Gdansk,Poland,InPost Paczkomat,2023-04-12
+SC2-00003,Creatine Monohydrate 500g,1,60.0,Website,2023-04-09 15:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2023-04-12
+SC2-00004,Resistance Band Set 5pcs,1,49.0,Website,2023-04-13 14:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2023-04-14
+SC2-00005,Shaker Bottle 700ml,2,33.0,Facebook Shop,2023-04-16 05:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2023-04-21
+SC2-00006,Omega-3 Fish Oil 90 capsules,1,38.5,Instagram,2023-04-16 11:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2023-04-18
+SC2-00007,BCAA 2:1:1 Powder 400g,1,57.5,Instagram,2023-04-17 09:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2023-04-23
+SC2-00008,Shaker Bottle 700ml,1,19.5,Website,2023-04-18 16:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2023-04-24
+SC2-00009,Magnesium Complex 60 caps,1,34.5,Website,2023-04-19 14:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2023-04-24
+SC2-00010,Whey Protein Concentrate 1kg Chocolate,1,92.5,Website,2023-04-19 19:00:00,Awaiting Payment,Manager_B,Katowice,Poland,InPost Paczkomat,
+SC2-00011,Whey Protein Concentrate 1kg Chocolate,1,123.0,Website,2023-04-20 07:00:00,Completed,Manager_C,Szczecin,Poland,Poczta Polska,2023-04-25
+SC2-00012,Pre-Workout Energy Powder 300g,1,83.0,Website,2023-04-24 10:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2023-04-29
+SC2-00013,Whey Protein Concentrate 1kg Chocolate,1,110.5,Instagram,2023-04-29 08:00:00,Completed,Manager_A,Katowice,Poland,DPD Poland,2023-04-30
+SC2-00014,Shaker Bottle 700ml,1,15.0,Website,2023-04-29 19:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2023-05-05
+SC2-00015,Magnesium Complex 60 caps,1,29.0,Website,2023-05-04 04:00:00,Completed,Manager_C,Warsaw,Poland,DPD Poland,2023-05-08
+SC2-00016,Collagen Peptides 300g,1,70.5,Instagram,2023-05-04 22:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2023-05-08
+SC2-00017,Magnesium Complex 60 caps,1,26.5,Website,2023-05-05 03:00:00,Completed,Manager_C,Wroclaw,Poland,DPD Poland,2023-05-06
+SC2-00018,Collagen Peptides 300g,1,75.5,Instagram,2023-05-05 22:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2023-05-09
+SC2-00019,Creatine Monohydrate 500g,1,46.0,Instagram,2023-05-07 21:00:00,Completed,Manager_C,Lublin,Poland,DPD Poland,2023-05-13
+SC2-00020,Whey Protein Concentrate 1kg Vanilla,1,101.5,Facebook Shop,2023-05-08 07:00:00,Completed,Manager_A,Warsaw,Poland,DPD Poland,2023-05-09
+SC2-00021,Vitamin D3+K2 60 caps,3,72.0,Instagram,2023-05-09 10:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2023-05-12
+SC2-00022,Resistance Band Set 5pcs,3,123.0,Website,2023-05-09 19:00:00,Completed,Manager_A,Katowice,Poland,Poczta Polska,2023-05-11
+SC2-00023,Pre-Workout Energy Powder 300g,1,78.0,Facebook Shop,2023-05-12 04:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2023-05-17
+SC2-00024,Resistance Band Set 5pcs,1,48.0,Website,2023-05-13 09:00:00,Completed,Manager_B,Lodz,Poland,DPD Poland,2023-05-16
+SC2-00025,Pre-Workout Energy Powder 300g,1,82.5,Website,2023-05-13 21:00:00,Completed,Manager_C,Katowice,Poland,DPD Poland,2023-05-17
+SC2-00026,Resistance Band Set 5pcs,1,47.5,Website,2023-05-17 17:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2023-05-20
+SC2-00027,Creatine Monohydrate 500g,1,61.5,Instagram,2023-05-19 01:00:00,Completed,Manager_C,Katowice,Poland,DPD Poland,2023-05-25
+SC2-00028,Collagen Peptides 300g,1,54.5,Website,2023-05-20 01:00:00,Completed,Manager_C,Warsaw,Poland,DPD Poland,2023-05-22
+SC2-00029,Magnesium Complex 60 caps,1,37.5,Instagram,2023-05-20 05:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2023-05-26
+SC2-00030,Shaker Bottle 700ml,3,60.0,Facebook Shop,2023-05-21 17:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2023-05-23
+SC2-00031,Omega-3 Fish Oil 90 capsules,1,30.0,Website,2023-05-21 22:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2023-05-22
+SC2-00032,Vitamin D3+K2 60 caps,2,50.0,Website,2023-05-22 05:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2023-05-25
+SC2-00033,Creatine Monohydrate 500g,1,63.5,Website,2023-05-22 21:00:00,Completed,Manager_A,Katowice,Poland,Poczta Polska,2023-05-28
+SC2-00034,Collagen Peptides 300g,1,71.5,Instagram,2023-05-23 02:00:00,Completed,Manager_A,Gdansk,Poland,DPD Poland,2023-05-28
+SC2-00035,Omega-3 Fish Oil 90 capsules,1,34.0,Website,2023-05-24 18:00:00,Completed,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,2023-05-30
+SC2-00036,Shaker Bottle 700ml,1,15.0,Instagram,2023-05-26 04:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2023-05-30
+SC2-00037,Creatine Monohydrate 500g,1,61.5,Instagram,2023-05-27 05:00:00,Completed,Manager_C,Gdansk,Poland,DPD Poland,2023-05-28
+SC2-00038,Shaker Bottle 700ml,2,36.0,Instagram,2023-06-01 05:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2023-06-07
+SC2-00039,Shaker Bottle 700ml,1,18.5,Instagram,2023-06-02 05:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2023-06-03
+SC2-00040,Omega-3 Fish Oil 90 capsules,1,43.5,Website,2023-06-02 18:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2023-06-05
+SC2-00041,Magnesium Complex 60 caps,2,65.0,Website,2023-06-05 06:00:00,Completed,Manager_A,Szczecin,Poland,InPost Paczkomat,2023-06-07
+SC2-00042,BCAA 2:1:1 Powder 400g,2,121.0,Website,2023-06-05 14:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2023-06-07
+SC2-00043,Creatine Monohydrate 500g,2,102.0,Website,2023-06-06 02:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2023-06-08
+SC2-00044,Resistance Band Set 5pcs,2,80.0,Website,2023-06-07 06:00:00,Completed,Manager_C,Katowice,Poland,DPD Poland,2023-06-12
+SC2-00045,Creatine Monohydrate 500g,1,64.0,Instagram,2023-06-08 00:00:00,New,Manager_B,Krakow,Poland,InPost Paczkomat,
+SC2-00046,Whey Protein Concentrate 1kg Vanilla,3,271.5,Website,2023-06-08 11:00:00,Completed,Manager_B,Szczecin,Poland,DPD Poland,2023-06-12
+SC2-00047,Resistance Band Set 5pcs,1,49.0,Website,2023-06-09 20:00:00,Completed,Manager_C,Lublin,Poland,DPD Poland,2023-06-15
+SC2-00048,Magnesium Complex 60 caps,1,30.5,Instagram,2023-06-11 22:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2023-06-17
+SC2-00049,Pre-Workout Energy Powder 300g,2,176.0,Facebook Shop,2023-06-15 06:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2023-06-16
+SC2-00050,Vitamin D3+K2 60 caps,1,23.5,Facebook Shop,2023-06-16 02:00:00,Completed,Manager_A,Lodz,Poland,Poczta Polska,2023-06-20
+SC2-00051,Shaker Bottle 700ml,1,18.0,Website,2023-06-16 12:00:00,Completed,Manager_B,Warsaw,Poland,DPD Poland,2023-06-19
+SC2-00052,Shaker Bottle 700ml,1,20.0,Website,2023-06-17 16:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2023-06-20
+SC2-00053,Shaker Bottle 700ml,1,21.0,Website,2023-06-18 04:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2023-06-23
+SC2-00054,Omega-3 Fish Oil 90 capsules,2,81.0,Facebook Shop,2023-06-18 05:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2023-06-19
+SC2-00055,Whey Protein Concentrate 1kg Vanilla,3,291.0,Website,2023-06-20 11:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2023-06-26
+SC2-00056,Omega-3 Fish Oil 90 capsules,1,29.5,Website,2023-06-22 23:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2023-06-28
+SC2-00057,BCAA 2:1:1 Powder 400g,1,66.5,Website,2023-06-25 15:00:00,Completed,Manager_A,Katowice,Poland,InPost Paczkomat,2023-06-26
+SC2-00058,Pre-Workout Energy Powder 300g,2,163.0,Website,2023-06-26 22:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2023-06-29
+SC2-00059,Pre-Workout Energy Powder 300g,1,60.5,Website,2023-06-29 06:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2023-07-03
+SC2-00060,Gym Bag Medium,1,66.0,Website,2023-06-30 17:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2023-07-02
+SC2-00061,BCAA 2:1:1 Powder 400g,1,72.5,Instagram,2023-07-11 05:00:00,Completed,Manager_B,Katowice,Poland,InPost Paczkomat,2023-07-14
+SC2-00062,Resistance Band Set 5pcs,2,96.0,Website,2023-07-11 12:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2023-07-12
+SC2-00063,Magnesium Complex 60 caps,1,34.0,Website,2023-07-18 05:00:00,Completed,Manager_B,Katowice,Poland,DPD Poland,2023-07-23
+SC2-00064,Vitamin D3+K2 60 caps,3,88.5,Website,2023-07-22 14:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2023-07-26
+SC2-00065,Omega-3 Fish Oil 90 capsules,2,67.0,Website,2023-07-24 15:00:00,Completed,Manager_A,Lodz,Poland,Poczta Polska,2023-07-27
+SC2-00066,Pre-Workout Energy Powder 300g,1,62.0,Facebook Shop,2023-07-25 14:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2023-07-26
+SC2-00067,Vitamin D3+K2 60 caps,1,31.0,Website,2023-07-27 08:00:00,Cancelled,Manager_B,Bydgoszcz,Poland,Poczta Polska,
+SC2-00068,Whey Protein Concentrate 1kg Chocolate,1,97.5,Website,2023-07-28 20:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2023-07-29
+SC2-00069,Creatine Monohydrate 500g,2,91.0,Website,2023-07-30 12:00:00,Completed,Manager_A,Krakow,Poland,DPD Poland,2023-08-01
+SC2-00070,Shaker Bottle 700ml,1,19.5,Instagram,2023-07-31 12:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2023-08-06
+SC2-00071,Shaker Bottle 700ml,1,17.0,Website,2023-08-03 05:00:00,Completed,Manager_C,Wroclaw,Poland,DPD Poland,2023-08-09
+SC2-00072,Whey Protein Concentrate 1kg Chocolate,1,94.0,Instagram,2023-08-03 14:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2023-08-09
+SC2-00073,Vitamin D3+K2 60 caps,1,29.5,Website,2023-08-04 03:00:00,Completed,Manager_A,Bydgoszcz,Poland,Poczta Polska,2023-08-09
+SC2-00074,Creatine Monohydrate 500g,1,67.5,Instagram,2023-08-04 05:00:00,Completed,Manager_B,Wroclaw,Poland,Poczta Polska,2023-08-10
+SC2-00075,Creatine Monohydrate 500g,3,196.5,Website,2023-08-04 16:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2023-08-07
+SC2-00076,Collagen Peptides 300g,2,134.0,Instagram,2023-08-05 11:00:00,Completed,Manager_C,Katowice,Poland,DPD Poland,2023-08-10
+SC2-00077,Creatine Monohydrate 500g,3,168.0,Website,2023-08-06 14:00:00,Completed,Manager_B,Krakow,Poland,DPD Poland,2023-08-09
+SC2-00078,Creatine Monohydrate 500g,1,61.5,Facebook Shop,2023-08-10 00:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2023-08-15
+SC2-00079,Whey Protein Concentrate 1kg Vanilla,2,205.0,Website,2023-08-11 14:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2023-08-12
+SC2-00080,Creatine Monohydrate 500g,2,127.0,Instagram,2023-08-12 13:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2023-08-15
+SC2-00081,Magnesium Complex 60 caps,3,82.5,Website,2023-08-14 07:00:00,Completed,Manager_A,Gdansk,Poland,InPost Paczkomat,2023-08-18
+SC2-00082,Gym Bag Medium,1,56.5,Website,2023-08-15 00:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2023-08-17
+SC2-00083,Shaker Bottle 700ml,1,18.5,Facebook Shop,2023-08-15 21:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2023-08-21
+SC2-00084,Creatine Monohydrate 500g,1,67.0,Website,2023-08-16 04:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2023-08-19
+SC2-00085,BCAA 2:1:1 Powder 400g,1,58.5,Website,2023-08-16 07:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2023-08-19
+SC2-00086,Omega-3 Fish Oil 90 capsules,2,60.0,Website,2023-08-17 01:00:00,New,Manager_C,Lodz,Poland,InPost Paczkomat,
+SC2-00087,Shaker Bottle 700ml,1,17.5,Website,2023-08-17 06:00:00,Completed,Manager_B,Bydgoszcz,Poland,DPD Poland,2023-08-20
+SC2-00088,Whey Protein Concentrate 1kg Chocolate,1,115.5,Website,2023-08-19 09:00:00,Awaiting Payment,Manager_C,Lublin,Poland,DPD Poland,
+SC2-00089,Creatine Monohydrate 500g,1,46.0,Website,2023-08-19 14:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2023-08-22
+SC2-00090,Shaker Bottle 700ml,2,36.0,Website,2023-08-19 20:00:00,Completed,Manager_A,Lodz,Poland,Poczta Polska,2023-08-20
+SC2-00091,Creatine Monohydrate 500g,2,130.0,Facebook Shop,2023-08-20 05:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2023-08-23
+SC2-00092,Magnesium Complex 60 caps,1,25.0,Instagram,2023-08-20 09:00:00,Completed,Manager_C,Lublin,Poland,InPost Paczkomat,2023-08-25
+SC2-00093,Resistance Band Set 5pcs,1,56.5,Website,2023-08-20 17:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2023-08-26
+SC2-00094,Creatine Monohydrate 500g,1,48.5,Instagram,2023-08-21 09:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2023-08-27
+SC2-00095,Whey Protein Concentrate 1kg Vanilla,1,114.0,Instagram,2023-08-22 04:00:00,New,Manager_A,Szczecin,Poland,InPost Paczkomat,
+SC2-00096,Magnesium Complex 60 caps,1,30.5,Facebook Shop,2023-08-23 04:00:00,Cancelled,Manager_A,Poznan,Poland,InPost Paczkomat,
+SC2-00097,Whey Protein Concentrate 1kg Chocolate,1,103.0,Website,2023-08-23 13:00:00,Cancelled,Manager_C,Szczecin,Poland,InPost Paczkomat,
+SC2-00098,Whey Protein Concentrate 1kg Vanilla,1,99.5,Instagram,2023-08-23 15:00:00,Awaiting Payment,Manager_C,Bydgoszcz,Poland,Poczta Polska,
+SC2-00099,Whey Protein Concentrate 1kg Chocolate,1,100.0,Website,2023-08-25 16:00:00,Cancelled,Manager_C,Gdansk,Poland,Poczta Polska,
+SC2-00100,Gym Bag Medium,1,49.5,Instagram,2023-08-25 19:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2023-08-26
+SC2-00101,Magnesium Complex 60 caps,3,90.0,Website,2023-08-25 22:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2023-08-26
+SC2-00102,Whey Protein Concentrate 1kg Chocolate,1,117.5,Website,2023-08-27 18:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2023-08-28
+SC2-00103,Whey Protein Concentrate 1kg Vanilla,1,90.5,Website,2023-08-28 00:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2023-09-03
+SC2-00104,Whey Protein Concentrate 1kg Vanilla,2,256.0,Instagram,2023-08-29 08:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2023-08-30
+SC2-00105,Collagen Peptides 300g,3,195.0,Website,2023-08-29 14:00:00,Completed,Manager_C,Lublin,Poland,InPost Paczkomat,2023-09-02
+SC2-00106,Collagen Peptides 300g,2,145.0,Instagram,2023-08-29 23:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2023-08-30
+SC2-00107,Vitamin D3+K2 60 caps,1,22.5,Facebook Shop,2023-09-01 05:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2023-09-03
+SC2-00108,Vitamin D3+K2 60 caps,1,23.0,Instagram,2023-09-01 08:00:00,Completed,Manager_A,Gdansk,Poland,DPD Poland,2023-09-03
+SC2-00109,Creatine Monohydrate 500g,2,91.0,Website,2023-09-02 04:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2023-09-04
+SC2-00110,Shaker Bottle 700ml,1,18.0,Website,2023-09-03 03:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2023-09-08
+SC2-00111,Collagen Peptides 300g,1,62.0,Facebook Shop,2023-09-03 04:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2023-09-09
+SC2-00112,Magnesium Complex 60 caps,3,97.5,Website,2023-09-05 13:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2023-09-06
+SC2-00113,Magnesium Complex 60 caps,1,25.0,Instagram,2023-09-06 07:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2023-09-11
+SC2-00114,Resistance Band Set 5pcs,1,56.5,Website,2023-09-06 15:00:00,New,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,
+SC2-00115,Vitamin D3+K2 60 caps,1,23.5,Instagram,2023-09-06 18:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2023-09-08
+SC2-00116,Vitamin D3+K2 60 caps,2,41.0,Website,2023-09-06 21:00:00,Awaiting Payment,Manager_A,Katowice,Poland,InPost Paczkomat,
+SC2-00117,Shaker Bottle 700ml,2,41.0,Website,2023-09-07 08:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2023-09-12
+SC2-00118,Collagen Peptides 300g,1,60.0,Website,2023-09-08 02:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2023-09-10
+SC2-00119,BCAA 2:1:1 Powder 400g,1,74.0,Website,2023-09-08 10:00:00,Completed,Manager_B,Szczecin,Poland,DPD Poland,2023-09-14
+SC2-00120,BCAA 2:1:1 Powder 400g,1,58.0,Website,2023-09-09 05:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2023-09-12
+SC2-00121,BCAA 2:1:1 Powder 400g,1,62.5,Website,2023-09-09 11:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2023-09-12
+SC2-00122,Gym Bag Medium,1,49.5,Website,2023-09-09 19:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2023-09-15
+SC2-00123,Collagen Peptides 300g,1,54.5,Facebook Shop,2023-09-10 03:00:00,Completed,Manager_B,Bydgoszcz,Poland,DPD Poland,2023-09-14
+SC2-00124,Whey Protein Concentrate 1kg Vanilla,3,351.0,Website,2023-09-10 22:00:00,Completed,Manager_B,Gdansk,Poland,DPD Poland,2023-09-16
+SC2-00125,Pre-Workout Energy Powder 300g,1,73.5,Instagram,2023-09-11 10:00:00,Completed,Manager_C,Krakow,Poland,DPD Poland,2023-09-16
+SC2-00126,Omega-3 Fish Oil 90 capsules,1,37.5,Website,2023-09-11 15:00:00,Awaiting Payment,Manager_A,Wroclaw,Poland,InPost Paczkomat,
+SC2-00127,Gym Bag Medium,2,123.0,Instagram,2023-09-13 07:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2023-09-19
+SC2-00128,Omega-3 Fish Oil 90 capsules,1,41.5,Website,2023-09-13 15:00:00,Completed,Manager_C,Szczecin,Poland,DPD Poland,2023-09-18
+SC2-00129,Whey Protein Concentrate 1kg Vanilla,1,92.5,Website,2023-09-14 10:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2023-09-16
+SC2-00130,Gym Bag Medium,1,52.0,Instagram,2023-09-14 21:00:00,Completed,Manager_A,Katowice,Poland,DPD Poland,2023-09-19
+SC2-00131,Whey Protein Concentrate 1kg Chocolate,2,199.0,Website,2023-09-15 14:00:00,Completed,Manager_A,Katowice,Poland,Poczta Polska,2023-09-17
+SC2-00132,Gym Bag Medium,1,56.0,Website,2023-09-15 22:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2023-09-21
+SC2-00133,Creatine Monohydrate 500g,1,52.0,Website,2023-09-16 12:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2023-09-19
+SC2-00134,Vitamin D3+K2 60 caps,2,59.0,Facebook Shop,2023-09-16 23:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2023-09-21
+SC2-00135,BCAA 2:1:1 Powder 400g,3,165.0,Website,2023-09-18 14:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2023-09-22
+SC2-00136,Resistance Band Set 5pcs,1,51.5,Website,2023-09-18 23:00:00,Completed,Manager_B,Krakow,Poland,DPD Poland,2023-09-23
+SC2-00137,Gym Bag Medium,1,72.5,Instagram,2023-09-23 11:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2023-09-25
+SC2-00138,Vitamin D3+K2 60 caps,3,67.5,Facebook Shop,2023-09-23 13:00:00,Completed,Manager_A,Lodz,Poland,DPD Poland,2023-09-29
+SC2-00139,Whey Protein Concentrate 1kg Chocolate,1,113.5,Website,2023-09-23 17:00:00,Completed,Manager_C,Wroclaw,Poland,DPD Poland,2023-09-24
+SC2-00140,Shaker Bottle 700ml,1,15.0,Facebook Shop,2023-09-23 20:00:00,Completed,Manager_B,Poznan,Poland,DPD Poland,2023-09-27
+SC2-00141,Gym Bag Medium,3,172.5,Instagram,2023-09-23 23:00:00,Completed,Manager_B,Krakow,Poland,DPD Poland,2023-09-26
+SC2-00142,Magnesium Complex 60 caps,1,33.5,Instagram,2023-09-24 03:00:00,Completed,Manager_C,Warsaw,Poland,DPD Poland,2023-09-29
+SC2-00143,Omega-3 Fish Oil 90 capsules,1,30.5,Instagram,2023-09-24 14:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2023-09-25
+SC2-00144,Whey Protein Concentrate 1kg Vanilla,1,114.0,Instagram,2023-09-25 17:00:00,Completed,Manager_A,Bydgoszcz,Poland,DPD Poland,2023-10-01
+SC2-00145,Magnesium Complex 60 caps,1,33.0,Facebook Shop,2023-09-25 23:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2023-09-29
+SC2-00146,Gym Bag Medium,3,198.0,Instagram,2023-09-27 02:00:00,Completed,Manager_A,Katowice,Poland,InPost Paczkomat,2023-09-28
+SC2-00147,Collagen Peptides 300g,1,62.5,Facebook Shop,2023-09-27 17:00:00,Completed,Manager_C,Warsaw,Poland,DPD Poland,2023-09-30
+SC2-00148,Creatine Monohydrate 500g,1,48.5,Website,2023-09-28 04:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2023-09-30
+SC2-00149,Whey Protein Concentrate 1kg Vanilla,1,95.0,Facebook Shop,2023-09-29 05:00:00,Cancelled,Manager_B,Poznan,Poland,InPost Paczkomat,
+SC2-00150,BCAA 2:1:1 Powder 400g,1,68.0,Instagram,2023-09-30 04:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2023-10-05
+SC2-00151,Pre-Workout Energy Powder 300g,1,87.5,Website,2023-10-01 06:00:00,Completed,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,2023-10-02
+SC2-00152,Omega-3 Fish Oil 90 capsules,1,38.5,Website,2023-10-02 14:00:00,Completed,Manager_C,Krakow,Poland,DPD Poland,2023-10-05
+SC2-00153,Pre-Workout Energy Powder 300g,1,76.5,Website,2023-10-04 05:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2023-10-09
+SC2-00154,Omega-3 Fish Oil 90 capsules,1,37.5,Facebook Shop,2023-10-04 14:00:00,Completed,Manager_C,Szczecin,Poland,DPD Poland,2023-10-10
+SC2-00155,Whey Protein Concentrate 1kg Chocolate,2,254.0,Facebook Shop,2023-10-05 09:00:00,New,Manager_B,Warsaw,Poland,InPost Paczkomat,
+SC2-00156,Collagen Peptides 300g,1,55.5,Website,2023-10-05 19:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2023-10-10
+SC2-00157,Creatine Monohydrate 500g,1,52.5,Instagram,2023-10-06 18:00:00,Cancelled,Manager_C,Lodz,Poland,InPost Paczkomat,
+SC2-00158,Collagen Peptides 300g,1,57.5,Facebook Shop,2023-10-07 12:00:00,New,Manager_C,Krakow,Poland,InPost Paczkomat,
+SC2-00159,Whey Protein Concentrate 1kg Vanilla,3,324.0,Website,2023-10-07 22:00:00,Completed,Manager_A,Warsaw,Poland,DPD Poland,2023-10-11
+SC2-00160,BCAA 2:1:1 Powder 400g,2,130.0,Instagram,2023-10-08 01:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2023-10-11
+SC2-00161,Gym Bag Medium,1,70.5,Instagram,2023-10-09 05:00:00,Completed,Manager_C,Krakow,Poland,DPD Poland,2023-10-12
+SC2-00162,Whey Protein Concentrate 1kg Vanilla,1,124.0,Website,2023-10-09 10:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2023-10-12
+SC2-00163,Whey Protein Concentrate 1kg Chocolate,1,94.5,Website,2023-10-09 18:00:00,Completed,Manager_B,Bydgoszcz,Poland,DPD Poland,2023-10-12
+SC2-00164,Resistance Band Set 5pcs,1,56.0,Instagram,2023-10-10 19:00:00,Completed,Manager_A,Szczecin,Poland,InPost Paczkomat,2023-10-16
+SC2-00165,Magnesium Complex 60 caps,1,32.5,Website,2023-10-11 07:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2023-10-14
+SC2-00166,Gym Bag Medium,1,55.5,Website,2023-10-11 17:00:00,Completed,Manager_A,Szczecin,Poland,InPost Paczkomat,2023-10-15
+SC2-00167,Magnesium Complex 60 caps,1,25.5,Instagram,2023-10-15 07:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2023-10-16
+SC2-00168,Resistance Band Set 5pcs,1,54.5,Facebook Shop,2023-10-15 15:00:00,Completed,Manager_B,Lublin,Poland,DPD Poland,2023-10-19
+SC2-00169,Creatine Monohydrate 500g,3,150.0,Website,2023-10-16 17:00:00,New,Manager_A,Wroclaw,Poland,InPost Paczkomat,
+SC2-00170,Pre-Workout Energy Powder 300g,3,259.5,Instagram,2023-10-17 00:00:00,Awaiting Payment,Manager_A,Katowice,Poland,InPost Paczkomat,
+SC2-00171,Magnesium Complex 60 caps,1,33.0,Website,2023-10-17 15:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2023-10-19
+SC2-00172,Creatine Monohydrate 500g,1,49.5,Facebook Shop,2023-10-18 22:00:00,Completed,Manager_A,Warsaw,Poland,DPD Poland,2023-10-22
+SC2-00173,Shaker Bottle 700ml,1,21.0,Instagram,2023-10-19 19:00:00,New,Manager_B,Lublin,Poland,InPost Paczkomat,
+SC2-00174,BCAA 2:1:1 Powder 400g,3,222.0,Website,2023-10-20 06:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2023-10-26
+SC2-00175,Collagen Peptides 300g,2,149.0,Website,2023-10-20 16:00:00,Completed,Manager_A,Gdansk,Poland,DPD Poland,2023-10-22
+SC2-00176,Whey Protein Concentrate 1kg Vanilla,1,104.0,Website,2023-10-21 10:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2023-10-22
+SC2-00177,BCAA 2:1:1 Powder 400g,2,129.0,Website,2023-10-21 18:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2023-10-24
+SC2-00178,Omega-3 Fish Oil 90 capsules,1,38.0,Instagram,2023-10-22 09:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2023-10-28
+SC2-00179,Magnesium Complex 60 caps,1,26.0,Website,2023-10-22 17:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2023-10-28
+SC2-00180,Vitamin D3+K2 60 caps,2,56.0,Instagram,2023-10-23 11:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2023-10-28
+SC2-00181,Vitamin D3+K2 60 caps,3,73.5,Instagram,2023-10-24 00:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2023-10-29
+SC2-00182,Vitamin D3+K2 60 caps,2,57.0,Website,2023-10-24 05:00:00,Completed,Manager_A,Gdansk,Poland,DPD Poland,2023-10-26
+SC2-00183,Resistance Band Set 5pcs,3,138.0,Instagram,2023-10-24 22:00:00,Completed,Manager_B,Warsaw,Poland,DPD Poland,2023-10-28
+SC2-00184,Pre-Workout Energy Powder 300g,1,67.5,Instagram,2023-10-25 17:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2023-10-29
+SC2-00185,Shaker Bottle 700ml,3,66.0,Website,2023-10-26 00:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2023-11-01
+SC2-00186,Shaker Bottle 700ml,3,45.0,Instagram,2023-10-26 23:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2023-10-27
+SC2-00187,Collagen Peptides 300g,1,77.5,Instagram,2023-10-27 04:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2023-11-02
+SC2-00188,Vitamin D3+K2 60 caps,1,30.0,Instagram,2023-10-27 06:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2023-10-29
+SC2-00189,Gym Bag Medium,1,66.5,Instagram,2023-10-27 11:00:00,Completed,Manager_C,Krakow,Poland,Poczta Polska,2023-10-30
+SC2-00190,Shaker Bottle 700ml,2,35.0,Website,2023-10-28 03:00:00,Completed,Manager_C,Bydgoszcz,Poland,DPD Poland,2023-10-31
+SC2-00191,Collagen Peptides 300g,1,66.5,Facebook Shop,2023-10-28 12:00:00,Completed,Manager_A,Katowice,Poland,InPost Paczkomat,2023-11-01
+SC2-00192,Magnesium Complex 60 caps,3,99.0,Website,2023-10-28 17:00:00,Awaiting Payment,Manager_A,Lodz,Poland,InPost Paczkomat,
+SC2-00193,Omega-3 Fish Oil 90 capsules,3,102.0,Website,2023-10-31 01:00:00,Completed,Manager_C,Katowice,Poland,DPD Poland,2023-11-02
+SC2-00194,Creatine Monohydrate 500g,1,60.0,Website,2023-11-04 14:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2023-11-05
+SC2-00195,Omega-3 Fish Oil 90 capsules,1,43.5,Website,2023-11-05 12:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2023-11-06
+SC2-00196,Gym Bag Medium,2,137.0,Instagram,2023-11-06 23:00:00,Completed,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,2023-11-12
+SC2-00197,Whey Protein Concentrate 1kg Vanilla,1,127.5,Website,2023-11-09 17:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2023-11-14
+SC2-00198,Pre-Workout Energy Powder 300g,1,67.0,Website,2023-11-11 20:00:00,Cancelled,Manager_C,Katowice,Poland,DPD Poland,
+SC2-00199,Magnesium Complex 60 caps,1,26.0,Facebook Shop,2023-11-16 19:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2023-11-19
+SC2-00200,Creatine Monohydrate 500g,1,68.5,Facebook Shop,2023-11-19 08:00:00,New,Manager_A,Gdansk,Poland,InPost Paczkomat,
+SC2-00201,Whey Protein Concentrate 1kg Chocolate,1,102.5,Website,2023-11-19 16:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2023-11-25
+SC2-00202,Magnesium Complex 60 caps,2,53.0,Website,2023-11-20 18:00:00,Completed,Manager_A,Gdansk,Poland,DPD Poland,2023-11-21
+SC2-00203,Creatine Monohydrate 500g,1,60.0,Website,2023-11-24 14:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2023-11-27
+SC2-00204,Gym Bag Medium,3,204.0,Website,2023-11-28 06:00:00,Completed,Manager_B,Gdansk,Poland,DPD Poland,2023-11-30
+SC2-00205,Magnesium Complex 60 caps,1,33.0,Website,2023-12-01 05:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2023-12-06
+SC2-00206,Whey Protein Concentrate 1kg Vanilla,3,376.5,Facebook Shop,2023-12-02 01:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2023-12-04
+SC2-00207,Resistance Band Set 5pcs,1,44.0,Website,2023-12-04 03:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2023-12-05
+SC2-00208,Vitamin D3+K2 60 caps,1,22.0,Website,2023-12-09 13:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2023-12-13
+SC2-00209,Shaker Bottle 700ml,2,35.0,Website,2023-12-12 23:00:00,Completed,Manager_B,Szczecin,Poland,DPD Poland,2023-12-15
+SC2-00210,BCAA 2:1:1 Powder 400g,1,69.5,Website,2023-12-14 13:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2023-12-16
+SC2-00211,Whey Protein Concentrate 1kg Chocolate,1,112.5,Website,2023-12-16 08:00:00,Completed,Manager_A,Szczecin,Poland,DPD Poland,2023-12-17
+SC2-00212,Magnesium Complex 60 caps,1,28.0,Website,2023-12-17 18:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2023-12-19
+SC2-00213,Shaker Bottle 700ml,2,43.0,Instagram,2023-12-20 10:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2023-12-23
+SC2-00214,BCAA 2:1:1 Powder 400g,2,134.0,Website,2023-12-22 03:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2023-12-23
+SC2-00215,Magnesium Complex 60 caps,3,94.5,Facebook Shop,2023-12-22 09:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2023-12-23
+SC2-00216,BCAA 2:1:1 Powder 400g,1,53.0,Website,2023-12-24 04:00:00,Completed,Manager_C,Warsaw,Poland,DPD Poland,2023-12-30
+SC2-00217,BCAA 2:1:1 Powder 400g,2,105.0,Facebook Shop,2023-12-26 20:00:00,Completed,Manager_A,Katowice,Poland,InPost Paczkomat,2023-12-27
+SC2-00218,Omega-3 Fish Oil 90 capsules,1,35.0,Website,2023-12-27 03:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2023-12-31
+SC2-00219,Whey Protein Concentrate 1kg Vanilla,1,90.5,Website,2023-12-28 06:00:00,Completed,Manager_C,Lublin,Poland,InPost Paczkomat,2023-12-31
+SC2-00220,Omega-3 Fish Oil 90 capsules,1,29.5,Website,2023-12-28 13:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2023-12-29
+SC2-00221,Magnesium Complex 60 caps,2,68.0,Instagram,2023-12-28 15:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2024-01-03
+SC2-00222,Vitamin D3+K2 60 caps,3,78.0,Instagram,2023-12-28 16:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2024-01-03
+SC2-00223,Omega-3 Fish Oil 90 capsules,3,112.5,Instagram,2023-12-29 01:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2024-01-01
+SC2-00224,Vitamin D3+K2 60 caps,1,20.0,Instagram,2023-12-31 05:00:00,Completed,Manager_A,Bydgoszcz,Poland,Poczta Polska,2024-01-01
+SC2-00225,Collagen Peptides 300g,1,55.0,Instagram,2023-12-31 14:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2024-01-01
+SC2-00226,Omega-3 Fish Oil 90 capsules,2,70.0,Website,2024-01-01 10:00:00,Completed,Manager_A,Szczecin,Poland,Poczta Polska,2024-01-03
+SC2-00227,Magnesium Complex 60 caps,1,25.5,Website,2024-01-02 04:00:00,Completed,Manager_B,Wroclaw,Poland,DPD Poland,2024-01-05
+SC2-00228,Resistance Band Set 5pcs,2,99.0,Website,2024-01-02 23:00:00,Completed,Manager_B,Bydgoszcz,Poland,DPD Poland,2024-01-07
+SC2-00229,Vitamin D3+K2 60 caps,1,21.5,Website,2024-01-03 22:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2024-01-06
+SC2-00230,Gym Bag Medium,3,196.5,Website,2024-01-04 01:00:00,Completed,Manager_C,Bydgoszcz,Poland,Poczta Polska,2024-01-07
+SC2-00231,Vitamin D3+K2 60 caps,1,28.0,Instagram,2024-01-04 11:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2024-01-07
+SC2-00232,Shaker Bottle 700ml,1,16.5,Instagram,2024-01-06 01:00:00,Completed,Manager_A,Lublin,Poland,Poczta Polska,2024-01-10
+SC2-00233,Gym Bag Medium,1,67.5,Instagram,2024-01-06 05:00:00,Completed,Manager_A,Wroclaw,Poland,Poczta Polska,2024-01-09
+SC2-00234,Whey Protein Concentrate 1kg Chocolate,1,116.0,Instagram,2024-01-07 04:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2024-01-08
+SC2-00235,Whey Protein Concentrate 1kg Chocolate,2,237.0,Website,2024-01-08 12:00:00,Completed,Manager_A,Szczecin,Poland,Poczta Polska,2024-01-09
+SC2-00236,Creatine Monohydrate 500g,1,66.0,Facebook Shop,2024-01-09 19:00:00,New,Manager_C,Warsaw,Poland,InPost Paczkomat,
+SC2-00237,Collagen Peptides 300g,1,70.5,Website,2024-01-10 05:00:00,Completed,Manager_B,Bydgoszcz,Poland,DPD Poland,2024-01-13
+SC2-00238,Omega-3 Fish Oil 90 capsules,3,94.5,Instagram,2024-01-11 11:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2024-01-15
+SC2-00239,Collagen Peptides 300g,1,76.5,Website,2024-01-11 21:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2024-01-16
+SC2-00240,BCAA 2:1:1 Powder 400g,1,54.5,Facebook Shop,2024-01-12 12:00:00,New,Manager_A,Lublin,Poland,InPost Paczkomat,
+SC2-00241,Shaker Bottle 700ml,1,20.0,Facebook Shop,2024-01-12 21:00:00,New,Manager_B,Warsaw,Poland,InPost Paczkomat,
+SC2-00242,Whey Protein Concentrate 1kg Vanilla,3,346.5,Website,2024-01-14 03:00:00,Completed,Manager_A,Wroclaw,Poland,DPD Poland,2024-01-16
+SC2-00243,Creatine Monohydrate 500g,1,53.5,Website,2024-01-14 13:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2024-01-20
+SC2-00244,Whey Protein Concentrate 1kg Vanilla,1,104.0,Website,2024-01-14 17:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2024-01-15
+SC2-00245,Whey Protein Concentrate 1kg Chocolate,1,122.5,Website,2024-01-14 23:00:00,Completed,Manager_B,Lodz,Poland,DPD Poland,2024-01-16
+SC2-00246,Resistance Band Set 5pcs,1,58.0,Website,2024-01-16 13:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2024-01-18
+SC2-00247,Creatine Monohydrate 500g,3,145.5,Website,2024-01-16 19:00:00,Completed,Manager_B,Bydgoszcz,Poland,Poczta Polska,2024-01-22
+SC2-00248,Pre-Workout Energy Powder 300g,1,80.0,Website,2024-01-17 02:00:00,New,Manager_B,Krakow,Poland,InPost Paczkomat,
+SC2-00249,Shaker Bottle 700ml,2,33.0,Website,2024-01-17 18:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2024-01-23
+SC2-00250,Vitamin D3+K2 60 caps,2,54.0,Website,2024-01-18 01:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2024-01-20
+SC2-00251,Collagen Peptides 300g,1,66.0,Instagram,2024-01-18 17:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2024-01-24
+SC2-00252,Magnesium Complex 60 caps,1,28.0,Instagram,2024-01-19 11:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2024-01-20
+SC2-00253,Vitamin D3+K2 60 caps,1,22.0,Website,2024-01-19 12:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2024-01-23
+SC2-00254,Omega-3 Fish Oil 90 capsules,1,37.5,Facebook Shop,2024-01-20 18:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2024-01-23
+SC2-00255,Whey Protein Concentrate 1kg Vanilla,1,94.0,Website,2024-01-21 03:00:00,Completed,Manager_C,Warsaw,Poland,Poczta Polska,2024-01-25
+SC2-00256,Gym Bag Medium,3,160.5,Website,2024-01-21 11:00:00,Completed,Manager_C,Lublin,Poland,Poczta Polska,2024-01-24
+SC2-00257,Shaker Bottle 700ml,1,16.5,Instagram,2024-01-21 13:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2024-01-23
+SC2-00258,Omega-3 Fish Oil 90 capsules,2,75.0,Instagram,2024-01-22 03:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2024-01-28
+SC2-00259,Gym Bag Medium,2,113.0,Website,2024-01-23 23:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2024-01-28
+SC2-00260,Whey Protein Concentrate 1kg Chocolate,2,184.0,Instagram,2024-01-24 07:00:00,Completed,Manager_B,Katowice,Poland,InPost Paczkomat,2024-01-26
+SC2-00261,Magnesium Complex 60 caps,1,36.0,Website,2024-01-24 22:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2024-01-28
+SC2-00262,Omega-3 Fish Oil 90 capsules,1,34.0,Instagram,2024-01-25 07:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2024-01-29
+SC2-00263,Vitamin D3+K2 60 caps,1,23.5,Website,2024-01-26 03:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2024-01-31
+SC2-00264,Creatine Monohydrate 500g,1,65.0,Facebook Shop,2024-01-26 04:00:00,Completed,Manager_B,Wroclaw,Poland,Poczta Polska,2024-01-27
+SC2-00265,Magnesium Complex 60 caps,3,105.0,Website,2024-01-27 03:00:00,Completed,Manager_C,Gdansk,Poland,DPD Poland,2024-02-01
+SC2-00266,Pre-Workout Energy Powder 300g,1,60.0,Website,2024-01-27 10:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2024-01-28
+SC2-00267,Omega-3 Fish Oil 90 capsules,1,33.0,Website,2024-01-28 06:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2024-01-31
+SC2-00268,Creatine Monohydrate 500g,2,96.0,Website,2024-01-28 11:00:00,Completed,Manager_C,Bydgoszcz,Poland,DPD Poland,2024-02-03
+SC2-00269,Whey Protein Concentrate 1kg Chocolate,1,96.5,Website,2024-01-30 03:00:00,New,Manager_A,Gdansk,Poland,DPD Poland,
+SC2-00270,Gym Bag Medium,1,53.5,Website,2024-01-30 09:00:00,New,Manager_B,Poznan,Poland,InPost Paczkomat,
+SC2-00271,Resistance Band Set 5pcs,1,52.5,Instagram,2024-01-30 20:00:00,Cancelled,Manager_C,Poznan,Poland,DPD Poland,
+SC2-00272,Whey Protein Concentrate 1kg Vanilla,1,89.5,Website,2024-02-01 09:00:00,Completed,Manager_C,Bydgoszcz,Poland,DPD Poland,2024-02-07
+SC2-00273,Vitamin D3+K2 60 caps,1,26.5,Website,2024-02-02 01:00:00,New,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,
+SC2-00274,Pre-Workout Energy Powder 300g,1,75.0,Website,2024-02-02 03:00:00,Completed,Manager_C,Gdansk,Poland,DPD Poland,2024-02-05
+SC2-00275,Whey Protein Concentrate 1kg Vanilla,3,370.5,Website,2024-02-03 23:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2024-02-05
+SC2-00276,Magnesium Complex 60 caps,1,29.0,Instagram,2024-02-04 03:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2024-02-07
+SC2-00277,Gym Bag Medium,1,69.5,Facebook Shop,2024-02-05 22:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2024-02-11
+SC2-00278,Omega-3 Fish Oil 90 capsules,3,120.0,Website,2024-02-07 03:00:00,New,Manager_B,Poznan,Poland,InPost Paczkomat,
+SC2-00279,Gym Bag Medium,1,64.5,Website,2024-02-07 15:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2024-02-11
+SC2-00280,Vitamin D3+K2 60 caps,1,21.0,Website,2024-02-08 12:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2024-02-13
+SC2-00281,Whey Protein Concentrate 1kg Chocolate,2,198.0,Website,2024-02-08 14:00:00,Completed,Manager_A,Krakow,Poland,DPD Poland,2024-02-09
+SC2-00282,Resistance Band Set 5pcs,1,49.0,Website,2024-02-11 17:00:00,Completed,Manager_A,Katowice,Poland,DPD Poland,2024-02-15
+SC2-00283,Whey Protein Concentrate 1kg Chocolate,1,92.5,Website,2024-02-13 00:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2024-02-18
+SC2-00284,Vitamin D3+K2 60 caps,1,25.0,Website,2024-02-14 00:00:00,Completed,Manager_C,Szczecin,Poland,DPD Poland,2024-02-16
+SC2-00285,Omega-3 Fish Oil 90 capsules,1,35.5,Instagram,2024-02-15 09:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2024-02-17
+SC2-00286,BCAA 2:1:1 Powder 400g,1,65.5,Instagram,2024-02-17 05:00:00,Completed,Manager_B,Warsaw,Poland,DPD Poland,2024-02-22
+SC2-00287,Vitamin D3+K2 60 caps,1,24.0,Facebook Shop,2024-02-19 02:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2024-02-20
+SC2-00288,Whey Protein Concentrate 1kg Chocolate,1,96.5,Website,2024-02-19 08:00:00,Completed,Manager_A,Wroclaw,Poland,DPD Poland,2024-02-21
+SC2-00289,Whey Protein Concentrate 1kg Vanilla,1,105.0,Website,2024-02-19 21:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2024-02-25
+SC2-00290,Shaker Bottle 700ml,1,18.5,Instagram,2024-02-20 09:00:00,Completed,Manager_C,Krakow,Poland,Poczta Polska,2024-02-26
+SC2-00291,Whey Protein Concentrate 1kg Chocolate,3,313.5,Website,2024-02-21 05:00:00,Completed,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,2024-02-26
+SC2-00292,Resistance Band Set 5pcs,3,130.5,Website,2024-02-21 22:00:00,Completed,Manager_A,Lodz,Poland,DPD Poland,2024-02-27
+SC2-00293,Pre-Workout Energy Powder 300g,1,81.0,Instagram,2024-02-23 09:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2024-02-27
+SC2-00294,Vitamin D3+K2 60 caps,2,52.0,Facebook Shop,2024-02-23 21:00:00,Completed,Manager_C,Gdansk,Poland,DPD Poland,2024-02-29
+SC2-00295,Collagen Peptides 300g,2,139.0,Instagram,2024-02-24 17:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2024-02-25
+SC2-00296,Resistance Band Set 5pcs,3,162.0,Instagram,2024-02-26 03:00:00,Completed,Manager_B,Warsaw,Poland,Poczta Polska,2024-03-01
+SC2-00297,Resistance Band Set 5pcs,2,80.0,Website,2024-02-27 06:00:00,New,Manager_B,Szczecin,Poland,InPost Paczkomat,
+SC2-00298,Collagen Peptides 300g,1,56.5,Website,2024-02-27 14:00:00,Completed,Manager_A,Szczecin,Poland,Poczta Polska,2024-03-02
+SC2-00299,Gym Bag Medium,1,61.0,Website,2024-03-01 01:00:00,New,Manager_C,Gdansk,Poland,InPost Paczkomat,
+SC2-00300,Resistance Band Set 5pcs,1,57.0,Website,2024-03-02 16:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2024-03-03
+SC2-00301,Magnesium Complex 60 caps,1,31.0,Website,2024-03-05 22:00:00,Completed,Manager_C,Wroclaw,Poland,DPD Poland,2024-03-08
+SC2-00302,Gym Bag Medium,1,58.0,Website,2024-03-07 13:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2024-03-12
+SC2-00303,Resistance Band Set 5pcs,3,166.5,Website,2024-03-10 14:00:00,Completed,Manager_B,Lodz,Poland,DPD Poland,2024-03-16
+SC2-00304,Whey Protein Concentrate 1kg Chocolate,2,226.0,Facebook Shop,2024-03-11 05:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2024-03-15
+SC2-00305,Resistance Band Set 5pcs,1,48.0,Website,2024-03-13 05:00:00,New,Manager_C,Katowice,Poland,InPost Paczkomat,
+SC2-00306,Omega-3 Fish Oil 90 capsules,1,32.5,Website,2024-03-15 12:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2024-03-19
+SC2-00307,Resistance Band Set 5pcs,1,42.0,Website,2024-03-17 21:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2024-03-19
+SC2-00308,Vitamin D3+K2 60 caps,1,28.0,Facebook Shop,2024-03-18 22:00:00,Completed,Manager_A,Szczecin,Poland,InPost Paczkomat,2024-03-24
+SC2-00309,BCAA 2:1:1 Powder 400g,1,70.0,Instagram,2024-03-19 06:00:00,Completed,Manager_A,Wroclaw,Poland,DPD Poland,2024-03-23
+SC2-00310,Omega-3 Fish Oil 90 capsules,3,117.0,Instagram,2024-03-19 18:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2024-03-21
+SC2-00311,Omega-3 Fish Oil 90 capsules,1,36.5,Instagram,2024-03-20 05:00:00,Completed,Manager_A,Lodz,Poland,Poczta Polska,2024-03-26
+SC2-00312,Collagen Peptides 300g,3,232.5,Website,2024-03-21 15:00:00,Cancelled,Manager_B,Gdansk,Poland,DPD Poland,
+SC2-00313,Gym Bag Medium,1,61.0,Website,2024-03-21 21:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2024-03-26
+SC2-00314,Omega-3 Fish Oil 90 capsules,1,34.0,Website,2024-03-22 13:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2024-03-27
+SC2-00315,Resistance Band Set 5pcs,1,54.5,Website,2024-03-22 15:00:00,Completed,Manager_B,Lublin,Poland,DPD Poland,2024-03-27
+SC2-00316,Gym Bag Medium,3,163.5,Website,2024-03-23 18:00:00,Completed,Manager_C,Lodz,Poland,DPD Poland,2024-03-25
+SC2-00317,Gym Bag Medium,1,52.5,Instagram,2024-03-24 02:00:00,Cancelled,Manager_A,Warsaw,Poland,InPost Paczkomat,
+SC2-00318,Shaker Bottle 700ml,1,16.0,Website,2024-03-25 17:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2024-03-30
+SC2-00319,Collagen Peptides 300g,3,195.0,Website,2024-03-26 05:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2024-03-31
+SC2-00320,Whey Protein Concentrate 1kg Chocolate,1,113.5,Instagram,2024-03-29 03:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2024-04-01
+SC2-00321,Vitamin D3+K2 60 caps,1,20.5,Instagram,2024-03-31 16:00:00,Completed,Manager_B,Lublin,Poland,DPD Poland,2024-04-02
+SC2-00322,Vitamin D3+K2 60 caps,1,28.0,Facebook Shop,2024-04-01 07:00:00,Awaiting Payment,Manager_A,Poznan,Poland,InPost Paczkomat,
+SC2-00323,Whey Protein Concentrate 1kg Vanilla,1,94.0,Instagram,2024-04-02 16:00:00,Completed,Manager_A,Gdansk,Poland,InPost Paczkomat,2024-04-04
+SC2-00324,Whey Protein Concentrate 1kg Vanilla,3,369.0,Instagram,2024-04-04 20:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2024-04-08
+SC2-00325,Gym Bag Medium,1,55.0,Instagram,2024-04-09 03:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2024-04-10
+SC2-00326,Magnesium Complex 60 caps,2,49.0,Website,2024-04-10 08:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2024-04-15
+SC2-00327,BCAA 2:1:1 Powder 400g,1,70.0,Instagram,2024-04-11 03:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2024-04-17
+SC2-00328,Vitamin D3+K2 60 caps,1,30.0,Facebook Shop,2024-04-11 04:00:00,Completed,Manager_C,Warsaw,Poland,DPD Poland,2024-04-12
+SC2-00329,Resistance Band Set 5pcs,1,41.5,Instagram,2024-04-11 13:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2024-04-13
+SC2-00330,Resistance Band Set 5pcs,1,44.0,Facebook Shop,2024-04-12 05:00:00,Completed,Manager_B,Katowice,Poland,InPost Paczkomat,2024-04-18
+SC2-00331,Creatine Monohydrate 500g,1,68.0,Website,2024-04-15 12:00:00,Awaiting Payment,Manager_A,Gdansk,Poland,InPost Paczkomat,
+SC2-00332,Shaker Bottle 700ml,1,19.5,Website,2024-04-18 02:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2024-04-23
+SC2-00333,Resistance Band Set 5pcs,1,45.0,Instagram,2024-04-18 17:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2024-04-20
+SC2-00334,Shaker Bottle 700ml,3,43.5,Facebook Shop,2024-04-20 10:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2024-04-24
+SC2-00335,Whey Protein Concentrate 1kg Vanilla,1,121.0,Website,2024-04-22 16:00:00,Completed,Manager_A,Gdansk,Poland,Poczta Polska,2024-04-23
+SC2-00336,Creatine Monohydrate 500g,1,49.5,Website,2024-04-24 00:00:00,New,Manager_B,Warsaw,Poland,InPost Paczkomat,
+SC2-00337,BCAA 2:1:1 Powder 400g,1,69.0,Instagram,2024-04-24 04:00:00,New,Manager_B,Gdansk,Poland,InPost Paczkomat,
+SC2-00338,Gym Bag Medium,3,184.5,Website,2024-04-24 21:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2024-04-28
+SC2-00339,Pre-Workout Energy Powder 300g,1,66.0,Website,2024-04-25 02:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2024-04-28
+SC2-00340,Magnesium Complex 60 caps,1,26.5,Website,2024-04-30 23:00:00,Completed,Manager_B,Wroclaw,Poland,DPD Poland,2024-05-04
+SC2-00341,Omega-3 Fish Oil 90 capsules,1,36.0,Instagram,2024-05-06 03:00:00,Completed,Manager_C,Lublin,Poland,DPD Poland,2024-05-12
+SC2-00342,Vitamin D3+K2 60 caps,2,39.0,Website,2024-05-06 06:00:00,Completed,Manager_C,Lublin,Poland,InPost Paczkomat,2024-05-09
+SC2-00343,BCAA 2:1:1 Powder 400g,1,73.0,Instagram,2024-05-09 17:00:00,Completed,Manager_A,Warsaw,Poland,DPD Poland,2024-05-13
+SC2-00344,Gym Bag Medium,3,178.5,Website,2024-05-11 17:00:00,New,Manager_A,Katowice,Poland,DPD Poland,
+SC2-00345,Pre-Workout Energy Powder 300g,2,133.0,Website,2024-05-13 01:00:00,Completed,Manager_C,Szczecin,Poland,DPD Poland,2024-05-17
+SC2-00346,Shaker Bottle 700ml,1,20.0,Website,2024-05-15 06:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2024-05-19
+SC2-00347,Pre-Workout Energy Powder 300g,1,82.5,Website,2024-05-16 06:00:00,Completed,Manager_A,Wroclaw,Poland,DPD Poland,2024-05-18
+SC2-00348,Omega-3 Fish Oil 90 capsules,1,33.0,Website,2024-05-16 09:00:00,Completed,Manager_A,Szczecin,Poland,InPost Paczkomat,2024-05-18
+SC2-00349,Vitamin D3+K2 60 caps,1,20.5,Instagram,2024-05-23 01:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2024-05-27
+SC2-00350,Gym Bag Medium,1,69.5,Website,2024-05-25 07:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2024-05-26
+SC2-00351,Whey Protein Concentrate 1kg Vanilla,2,242.0,Website,2024-05-26 19:00:00,Completed,Manager_A,Katowice,Poland,InPost Paczkomat,2024-06-01
+SC2-00352,Shaker Bottle 700ml,1,21.0,Website,2024-05-31 02:00:00,Completed,Manager_A,Krakow,Poland,DPD Poland,2024-06-05
+SC2-00353,Shaker Bottle 700ml,1,15.0,Instagram,2024-06-02 04:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2024-06-03
+SC2-00354,Whey Protein Concentrate 1kg Chocolate,1,102.0,Instagram,2024-06-02 14:00:00,Cancelled,Manager_A,Poznan,Poland,InPost Paczkomat,
+SC2-00355,Magnesium Complex 60 caps,1,33.0,Facebook Shop,2024-06-04 22:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2024-06-06
+SC2-00356,Gym Bag Medium,1,63.0,Instagram,2024-06-05 07:00:00,Completed,Manager_C,Warsaw,Poland,DPD Poland,2024-06-06
+SC2-00357,Vitamin D3+K2 60 caps,2,63.0,Website,2024-06-09 14:00:00,Completed,Manager_A,Warsaw,Poland,DPD Poland,2024-06-13
+SC2-00358,Pre-Workout Energy Powder 300g,1,87.5,Website,2024-06-10 23:00:00,Completed,Manager_B,Warsaw,Poland,Poczta Polska,2024-06-15
+SC2-00359,Shaker Bottle 700ml,3,58.5,Instagram,2024-06-12 12:00:00,Awaiting Payment,Manager_C,Lublin,Poland,Poczta Polska,
+SC2-00360,Collagen Peptides 300g,1,62.0,Website,2024-06-15 03:00:00,Completed,Manager_B,Lublin,Poland,DPD Poland,2024-06-19
+SC2-00361,Omega-3 Fish Oil 90 capsules,1,44.0,Website,2024-06-16 07:00:00,Completed,Manager_B,Bydgoszcz,Poland,Poczta Polska,2024-06-17
+SC2-00362,Creatine Monohydrate 500g,3,160.5,Website,2024-06-16 08:00:00,New,Manager_A,Wroclaw,Poland,DPD Poland,
+SC2-00363,Collagen Peptides 300g,1,56.5,Website,2024-06-20 16:00:00,Completed,Manager_B,Wroclaw,Poland,DPD Poland,2024-06-22
+SC2-00364,Gym Bag Medium,3,196.5,Website,2024-06-21 23:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2024-06-22
+SC2-00365,Omega-3 Fish Oil 90 capsules,1,35.0,Website,2024-06-23 00:00:00,New,Manager_A,Poznan,Poland,InPost Paczkomat,
+SC2-00366,Collagen Peptides 300g,3,169.5,Website,2024-06-23 09:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2024-06-29
+SC2-00367,Shaker Bottle 700ml,3,61.5,Facebook Shop,2024-06-25 03:00:00,Completed,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,2024-07-01
+SC2-00368,Collagen Peptides 300g,1,63.0,Instagram,2024-06-27 07:00:00,Completed,Manager_C,Bydgoszcz,Poland,DPD Poland,2024-07-02
+SC2-00369,Shaker Bottle 700ml,1,17.0,Website,2024-06-27 15:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2024-06-30
+SC2-00370,Magnesium Complex 60 caps,3,96.0,Website,2024-07-01 18:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2024-07-02
+SC2-00371,Vitamin D3+K2 60 caps,1,32.0,Instagram,2024-07-02 06:00:00,Completed,Manager_B,Poznan,Poland,Poczta Polska,2024-07-08
+SC2-00372,BCAA 2:1:1 Powder 400g,1,72.0,Website,2024-07-02 17:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2024-07-05
+SC2-00373,Collagen Peptides 300g,1,77.0,Website,2024-07-03 16:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2024-07-04
+SC2-00374,Whey Protein Concentrate 1kg Vanilla,1,110.5,Website,2024-07-04 03:00:00,New,Manager_C,Szczecin,Poland,InPost Paczkomat,
+SC2-00375,Shaker Bottle 700ml,3,46.5,Website,2024-07-08 06:00:00,Completed,Manager_A,Krakow,Poland,Poczta Polska,2024-07-14
+SC2-00376,Shaker Bottle 700ml,1,22.0,Instagram,2024-07-11 12:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2024-07-15
+SC2-00377,BCAA 2:1:1 Powder 400g,1,70.0,Website,2024-07-14 04:00:00,New,Manager_C,Lodz,Poland,InPost Paczkomat,
+SC2-00378,Resistance Band Set 5pcs,1,41.0,Instagram,2024-07-14 10:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2024-07-18
+SC2-00379,Shaker Bottle 700ml,1,18.5,Website,2024-07-16 00:00:00,Cancelled,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,
+SC2-00380,Collagen Peptides 300g,1,68.5,Website,2024-07-17 22:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2024-07-23
+SC2-00381,Creatine Monohydrate 500g,1,57.0,Website,2024-07-20 04:00:00,Completed,Manager_B,Gdansk,Poland,Poczta Polska,2024-07-23
+SC2-00382,Shaker Bottle 700ml,1,22.0,Website,2024-07-21 04:00:00,New,Manager_B,Poznan,Poland,InPost Paczkomat,
+SC2-00383,Resistance Band Set 5pcs,2,107.0,Facebook Shop,2024-07-23 06:00:00,Completed,Manager_B,Poznan,Poland,Poczta Polska,2024-07-29
+SC2-00384,Vitamin D3+K2 60 caps,1,31.0,Website,2024-07-23 18:00:00,Completed,Manager_B,Poznan,Poland,Poczta Polska,2024-07-24
+SC2-00385,BCAA 2:1:1 Powder 400g,1,69.5,Instagram,2024-07-24 12:00:00,Completed,Manager_B,Lodz,Poland,DPD Poland,2024-07-25
+SC2-00386,BCAA 2:1:1 Powder 400g,3,174.0,Website,2024-07-26 04:00:00,Completed,Manager_A,Lodz,Poland,DPD Poland,2024-07-29
+SC2-00387,Resistance Band Set 5pcs,1,52.0,Instagram,2024-07-26 13:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2024-07-31
+SC2-00388,Resistance Band Set 5pcs,1,41.5,Facebook Shop,2024-07-30 17:00:00,Completed,Manager_C,Gdansk,Poland,Poczta Polska,2024-08-05
+SC2-00389,Vitamin D3+K2 60 caps,1,26.5,Facebook Shop,2024-07-31 03:00:00,New,Manager_C,Szczecin,Poland,DPD Poland,
+SC2-00390,Shaker Bottle 700ml,1,16.0,Instagram,2024-08-01 19:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2024-08-06
+SC2-00391,Omega-3 Fish Oil 90 capsules,3,114.0,Instagram,2024-08-02 02:00:00,Completed,Manager_A,Gdansk,Poland,DPD Poland,2024-08-06
+SC2-00392,Creatine Monohydrate 500g,1,54.0,Website,2024-08-03 05:00:00,Completed,Manager_C,Warsaw,Poland,DPD Poland,2024-08-04
+SC2-00393,Resistance Band Set 5pcs,1,39.0,Instagram,2024-08-03 09:00:00,Completed,Manager_C,Gdansk,Poland,DPD Poland,2024-08-08
+SC2-00394,Gym Bag Medium,1,51.5,Instagram,2024-08-04 15:00:00,New,Manager_B,Szczecin,Poland,InPost Paczkomat,
+SC2-00395,Creatine Monohydrate 500g,3,159.0,Website,2024-08-05 04:00:00,Completed,Manager_B,Katowice,Poland,InPost Paczkomat,2024-08-09
+SC2-00396,BCAA 2:1:1 Powder 400g,1,68.5,Instagram,2024-08-07 01:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2024-08-11
+SC2-00397,Whey Protein Concentrate 1kg Vanilla,1,101.5,Instagram,2024-08-07 23:00:00,Completed,Manager_A,Szczecin,Poland,InPost Paczkomat,2024-08-09
+SC2-00398,Shaker Bottle 700ml,1,18.0,Instagram,2024-08-08 11:00:00,Completed,Manager_A,Katowice,Poland,DPD Poland,2024-08-13
+SC2-00399,BCAA 2:1:1 Powder 400g,3,220.5,Website,2024-08-12 02:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2024-08-13
+SC2-00400,BCAA 2:1:1 Powder 400g,1,64.5,Website,2024-08-12 11:00:00,Completed,Manager_A,Lodz,Poland,Poczta Polska,2024-08-15
+SC2-00401,Magnesium Complex 60 caps,1,35.5,Instagram,2024-08-13 12:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2024-08-19
+SC2-00402,Whey Protein Concentrate 1kg Chocolate,1,123.5,Facebook Shop,2024-08-14 18:00:00,Completed,Manager_C,Lublin,Poland,InPost Paczkomat,2024-08-19
+SC2-00403,Pre-Workout Energy Powder 300g,3,187.5,Facebook Shop,2024-08-16 06:00:00,Completed,Manager_B,Katowice,Poland,DPD Poland,2024-08-18
+SC2-00404,Magnesium Complex 60 caps,1,35.0,Website,2024-08-17 01:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2024-08-23
+SC2-00405,Pre-Workout Energy Powder 300g,3,226.5,Website,2024-08-17 20:00:00,New,Manager_A,Lodz,Poland,InPost Paczkomat,
+SC2-00406,BCAA 2:1:1 Powder 400g,3,208.5,Facebook Shop,2024-08-18 18:00:00,Completed,Manager_A,Lodz,Poland,DPD Poland,2024-08-19
+SC2-00407,Omega-3 Fish Oil 90 capsules,3,115.5,Instagram,2024-08-18 21:00:00,New,Manager_A,Gdansk,Poland,InPost Paczkomat,
+SC2-00408,Collagen Peptides 300g,1,59.5,Website,2024-08-19 17:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2024-08-24
+SC2-00409,Magnesium Complex 60 caps,2,72.0,Instagram,2024-08-19 23:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2024-08-24
+SC2-00410,Gym Bag Medium,1,67.5,Website,2024-08-20 21:00:00,Completed,Manager_A,Warsaw,Poland,DPD Poland,2024-08-25
+SC2-00411,Omega-3 Fish Oil 90 capsules,1,32.5,Instagram,2024-08-23 00:00:00,Completed,Manager_B,Bydgoszcz,Poland,Poczta Polska,2024-08-28
+SC2-00412,Whey Protein Concentrate 1kg Vanilla,1,118.5,Facebook Shop,2024-08-23 07:00:00,Completed,Manager_C,Katowice,Poland,DPD Poland,2024-08-29
+SC2-00413,Resistance Band Set 5pcs,3,157.5,Facebook Shop,2024-08-25 22:00:00,New,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,
+SC2-00414,Vitamin D3+K2 60 caps,3,66.0,Website,2024-08-26 03:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2024-08-29
+SC2-00415,Vitamin D3+K2 60 caps,1,31.5,Facebook Shop,2024-08-28 13:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2024-09-01
+SC2-00416,Whey Protein Concentrate 1kg Vanilla,2,216.0,Website,2024-08-29 00:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2024-09-04
+SC2-00417,Shaker Bottle 700ml,2,41.0,Instagram,2024-08-30 14:00:00,New,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,
+SC2-00418,Whey Protein Concentrate 1kg Chocolate,3,276.0,Website,2024-08-30 23:00:00,Completed,Manager_A,Szczecin,Poland,InPost Paczkomat,2024-09-03
+SC2-00419,Collagen Peptides 300g,1,65.0,Website,2024-08-31 08:00:00,Cancelled,Manager_A,Szczecin,Poland,InPost Paczkomat,
+SC2-00420,Resistance Band Set 5pcs,1,43.5,Website,2024-08-31 18:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2024-09-02
+SC2-00421,Whey Protein Concentrate 1kg Vanilla,1,92.0,Website,2024-09-01 16:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2024-09-02
+SC2-00422,Gym Bag Medium,3,181.5,Website,2024-09-02 14:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2024-09-07
+SC2-00423,Gym Bag Medium,3,198.0,Website,2024-09-03 04:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2024-09-05
+SC2-00424,Creatine Monohydrate 500g,2,98.0,Website,2024-09-03 21:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2024-09-04
+SC2-00425,Vitamin D3+K2 60 caps,1,29.0,Instagram,2024-09-04 05:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2024-09-09
+SC2-00426,Shaker Bottle 700ml,1,20.0,Website,2024-09-04 13:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2024-09-06
+SC2-00427,Resistance Band Set 5pcs,1,49.5,Website,2024-09-04 16:00:00,Completed,Manager_B,Bydgoszcz,Poland,DPD Poland,2024-09-07
+SC2-00428,Collagen Peptides 300g,1,66.0,Instagram,2024-09-05 04:00:00,Completed,Manager_A,Lublin,Poland,Poczta Polska,2024-09-08
+SC2-00429,BCAA 2:1:1 Powder 400g,1,68.0,Facebook Shop,2024-09-05 05:00:00,Completed,Manager_A,Gdansk,Poland,InPost Paczkomat,2024-09-06
+SC2-00430,Collagen Peptides 300g,1,64.5,Instagram,2024-09-05 20:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2024-09-07
+SC2-00431,Gym Bag Medium,3,198.0,Instagram,2024-09-06 04:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2024-09-08
+SC2-00432,Collagen Peptides 300g,3,193.5,Instagram,2024-09-06 20:00:00,Completed,Manager_B,Katowice,Poland,Poczta Polska,2024-09-08
+SC2-00433,BCAA 2:1:1 Powder 400g,1,71.0,Facebook Shop,2024-09-07 04:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2024-09-08
+SC2-00434,Resistance Band Set 5pcs,2,85.0,Website,2024-09-07 09:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2024-09-13
+SC2-00435,Omega-3 Fish Oil 90 capsules,2,61.0,Facebook Shop,2024-09-08 08:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2024-09-12
+SC2-00436,Collagen Peptides 300g,2,114.0,Instagram,2024-09-08 11:00:00,Completed,Manager_B,Warsaw,Poland,Poczta Polska,2024-09-10
+SC2-00437,Omega-3 Fish Oil 90 capsules,1,44.0,Website,2024-09-08 18:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2024-09-11
+SC2-00438,Whey Protein Concentrate 1kg Vanilla,2,201.0,Website,2024-09-09 06:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2024-09-13
+SC2-00439,Creatine Monohydrate 500g,3,144.0,Instagram,2024-09-10 07:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2024-09-15
+SC2-00440,Collagen Peptides 300g,1,59.5,Website,2024-09-10 19:00:00,Completed,Manager_C,Lodz,Poland,DPD Poland,2024-09-15
+SC2-00441,Creatine Monohydrate 500g,1,57.0,Website,2024-09-11 01:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2024-09-15
+SC2-00442,Vitamin D3+K2 60 caps,1,31.5,Website,2024-09-11 08:00:00,Completed,Manager_C,Gdansk,Poland,Poczta Polska,2024-09-15
+SC2-00443,Gym Bag Medium,1,62.0,Instagram,2024-09-12 19:00:00,Completed,Manager_B,Katowice,Poland,DPD Poland,2024-09-17
+SC2-00444,Shaker Bottle 700ml,1,18.5,Website,2024-09-13 05:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2024-09-16
+SC2-00445,Pre-Workout Energy Powder 300g,1,88.5,Instagram,2024-09-14 00:00:00,Completed,Manager_C,Wroclaw,Poland,DPD Poland,2024-09-17
+SC2-00446,Resistance Band Set 5pcs,3,139.5,Website,2024-09-18 02:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2024-09-20
+SC2-00447,Magnesium Complex 60 caps,1,36.5,Website,2024-09-18 15:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2024-09-24
+SC2-00448,Whey Protein Concentrate 1kg Vanilla,1,92.5,Website,2024-09-18 17:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2024-09-22
+SC2-00449,BCAA 2:1:1 Powder 400g,1,53.5,Website,2024-09-20 15:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2024-09-24
+SC2-00450,Whey Protein Concentrate 1kg Vanilla,2,179.0,Facebook Shop,2024-09-20 21:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2024-09-25
+SC2-00451,Pre-Workout Energy Powder 300g,3,229.5,Website,2024-09-21 02:00:00,New,Manager_A,Gdansk,Poland,Poczta Polska,
+SC2-00452,Creatine Monohydrate 500g,1,65.5,Website,2024-09-21 06:00:00,Completed,Manager_A,Wroclaw,Poland,DPD Poland,2024-09-27
+SC2-00453,Shaker Bottle 700ml,1,21.0,Website,2024-09-21 10:00:00,Completed,Manager_B,Katowice,Poland,DPD Poland,2024-09-22
+SC2-00454,Gym Bag Medium,3,208.5,Website,2024-09-22 02:00:00,Completed,Manager_B,Gdansk,Poland,Poczta Polska,2024-09-28
+SC2-00455,Collagen Peptides 300g,1,68.5,Website,2024-09-22 09:00:00,Completed,Manager_A,Katowice,Poland,InPost Paczkomat,2024-09-27
+SC2-00456,BCAA 2:1:1 Powder 400g,1,57.0,Facebook Shop,2024-09-24 17:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2024-09-28
+SC2-00457,Collagen Peptides 300g,2,118.0,Website,2024-09-25 19:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2024-10-01
+SC2-00458,BCAA 2:1:1 Powder 400g,1,58.5,Website,2024-09-27 11:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2024-10-01
+SC2-00459,Collagen Peptides 300g,1,71.0,Website,2024-09-27 22:00:00,Completed,Manager_C,Gdansk,Poland,DPD Poland,2024-10-03
+SC2-00460,BCAA 2:1:1 Powder 400g,1,54.0,Instagram,2024-09-28 23:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2024-10-02
+SC2-00461,Gym Bag Medium,1,61.0,Instagram,2024-09-29 18:00:00,New,Manager_A,Katowice,Poland,DPD Poland,
+SC2-00462,Whey Protein Concentrate 1kg Vanilla,1,128.0,Facebook Shop,2024-09-30 15:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2024-10-03
+SC2-00463,Whey Protein Concentrate 1kg Chocolate,1,97.5,Website,2024-09-30 16:00:00,New,Manager_A,Gdansk,Poland,DPD Poland,
+SC2-00464,Creatine Monohydrate 500g,1,47.0,Instagram,2024-09-30 19:00:00,Completed,Manager_B,Poznan,Poland,Poczta Polska,2024-10-06
+SC2-00465,Gym Bag Medium,1,63.0,Website,2024-10-01 11:00:00,Completed,Manager_A,Lodz,Poland,Poczta Polska,2024-10-05
+SC2-00466,Resistance Band Set 5pcs,1,44.0,Website,2024-10-01 12:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2024-10-02
+SC2-00467,Omega-3 Fish Oil 90 capsules,1,43.5,Instagram,2024-10-01 17:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2024-10-05
+SC2-00468,Resistance Band Set 5pcs,1,48.5,Website,2024-10-01 21:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2024-10-07
+SC2-00469,Collagen Peptides 300g,2,110.0,Instagram,2024-10-03 19:00:00,Completed,Manager_A,Wroclaw,Poland,Poczta Polska,2024-10-05
+SC2-00470,Creatine Monohydrate 500g,1,47.5,Website,2024-10-04 09:00:00,Awaiting Payment,Manager_A,Lodz,Poland,InPost Paczkomat,
+SC2-00471,Pre-Workout Energy Powder 300g,1,62.0,Instagram,2024-10-04 13:00:00,Completed,Manager_B,Krakow,Poland,DPD Poland,2024-10-06
+SC2-00472,Shaker Bottle 700ml,1,17.5,Instagram,2024-10-04 22:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2024-10-07
+SC2-00473,BCAA 2:1:1 Powder 400g,1,70.0,Instagram,2024-10-05 15:00:00,Completed,Manager_C,Lublin,Poland,Poczta Polska,2024-10-11
+SC2-00474,Collagen Peptides 300g,2,150.0,Instagram,2024-10-07 23:00:00,New,Manager_C,Szczecin,Poland,DPD Poland,
+SC2-00475,Creatine Monohydrate 500g,1,60.5,Website,2024-10-08 10:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2024-10-12
+SC2-00476,Shaker Bottle 700ml,1,21.0,Instagram,2024-10-09 02:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2024-10-10
+SC2-00477,Pre-Workout Energy Powder 300g,2,145.0,Website,2024-10-09 17:00:00,Completed,Manager_B,Katowice,Poland,InPost Paczkomat,2024-10-13
+SC2-00478,Whey Protein Concentrate 1kg Chocolate,1,126.5,Website,2024-10-10 02:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2024-10-16
+SC2-00479,Vitamin D3+K2 60 caps,1,25.0,Instagram,2024-10-11 18:00:00,New,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,
+SC2-00480,Omega-3 Fish Oil 90 capsules,1,29.5,Instagram,2024-10-12 01:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2024-10-17
+SC2-00481,Gym Bag Medium,1,50.5,Website,2024-10-13 04:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2024-10-16
+SC2-00482,Gym Bag Medium,1,72.0,Instagram,2024-10-13 13:00:00,Completed,Manager_C,Lublin,Poland,InPost Paczkomat,2024-10-14
+SC2-00483,Gym Bag Medium,1,65.0,Website,2024-10-13 23:00:00,Completed,Manager_B,Krakow,Poland,DPD Poland,2024-10-14
+SC2-00484,Pre-Workout Energy Powder 300g,1,88.5,Website,2024-10-14 22:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2024-10-17
+SC2-00485,Creatine Monohydrate 500g,1,47.0,Website,2024-10-15 10:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2024-10-16
+SC2-00486,Whey Protein Concentrate 1kg Chocolate,1,120.5,Website,2024-10-15 20:00:00,Completed,Manager_B,Bydgoszcz,Poland,DPD Poland,2024-10-18
+SC2-00487,Vitamin D3+K2 60 caps,1,27.0,Instagram,2024-10-16 05:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2024-10-22
+SC2-00488,BCAA 2:1:1 Powder 400g,1,51.0,Website,2024-10-16 21:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2024-10-17
+SC2-00489,Omega-3 Fish Oil 90 capsules,1,32.0,Instagram,2024-10-17 21:00:00,Completed,Manager_C,Poznan,Poland,Poczta Polska,2024-10-23
+SC2-00490,Vitamin D3+K2 60 caps,1,24.5,Website,2024-10-18 12:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2024-10-22
+SC2-00491,Whey Protein Concentrate 1kg Vanilla,1,104.0,Website,2024-10-19 05:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2024-10-24
+SC2-00492,Shaker Bottle 700ml,1,17.0,Facebook Shop,2024-10-19 09:00:00,Completed,Manager_A,Poznan,Poland,Poczta Polska,2024-10-23
+SC2-00493,Creatine Monohydrate 500g,1,58.5,Facebook Shop,2024-10-22 16:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2024-10-24
+SC2-00494,Gym Bag Medium,1,56.5,Instagram,2024-10-23 13:00:00,Completed,Manager_B,Poznan,Poland,DPD Poland,2024-10-25
+SC2-00495,Collagen Peptides 300g,2,131.0,Website,2024-10-24 03:00:00,Completed,Manager_A,Gdansk,Poland,DPD Poland,2024-10-26
+SC2-00496,BCAA 2:1:1 Powder 400g,3,178.5,Website,2024-10-24 22:00:00,Completed,Manager_B,Lublin,Poland,DPD Poland,2024-10-29
+SC2-00497,Pre-Workout Energy Powder 300g,1,80.0,Website,2024-10-25 05:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2024-10-27
+SC2-00498,BCAA 2:1:1 Powder 400g,2,102.0,Instagram,2024-10-27 08:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2024-10-31
+SC2-00499,Collagen Peptides 300g,1,73.0,Website,2024-10-27 10:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2024-11-02
+SC2-00500,Whey Protein Concentrate 1kg Chocolate,1,120.5,Facebook Shop,2024-10-28 08:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2024-11-01
+SC2-00501,Vitamin D3+K2 60 caps,3,78.0,Website,2024-10-30 12:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2024-11-04
+SC2-00502,Collagen Peptides 300g,1,72.0,Website,2024-11-01 20:00:00,Completed,Manager_A,Lublin,Poland,DPD Poland,2024-11-06
+SC2-00503,Resistance Band Set 5pcs,1,45.5,Website,2024-11-03 18:00:00,Completed,Manager_C,Lublin,Poland,DPD Poland,2024-11-07
+SC2-00504,Gym Bag Medium,1,68.5,Website,2024-11-04 08:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2024-11-08
+SC2-00505,Whey Protein Concentrate 1kg Vanilla,1,92.5,Website,2024-11-05 05:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2024-11-07
+SC2-00506,Resistance Band Set 5pcs,1,51.0,Website,2024-11-05 20:00:00,Completed,Manager_C,Krakow,Poland,DPD Poland,2024-11-10
+SC2-00507,Shaker Bottle 700ml,1,17.5,Website,2024-11-06 06:00:00,Completed,Manager_A,Lublin,Poland,DPD Poland,2024-11-09
+SC2-00508,Whey Protein Concentrate 1kg Vanilla,2,208.0,Instagram,2024-11-06 13:00:00,Completed,Manager_B,Szczecin,Poland,DPD Poland,2024-11-11
+SC2-00509,Whey Protein Concentrate 1kg Vanilla,1,109.0,Website,2024-11-08 15:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2024-11-13
+SC2-00510,Whey Protein Concentrate 1kg Chocolate,1,124.5,Instagram,2024-11-11 04:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2024-11-15
+SC2-00511,Whey Protein Concentrate 1kg Chocolate,2,216.0,Website,2024-11-13 15:00:00,Cancelled,Manager_B,Wroclaw,Poland,InPost Paczkomat,
+SC2-00512,Vitamin D3+K2 60 caps,1,31.0,Website,2024-11-14 09:00:00,Completed,Manager_C,Wroclaw,Poland,DPD Poland,2024-11-19
+SC2-00513,Vitamin D3+K2 60 caps,1,24.0,Instagram,2024-11-16 01:00:00,Completed,Manager_B,Lodz,Poland,DPD Poland,2024-11-22
+SC2-00514,Omega-3 Fish Oil 90 capsules,1,43.5,Instagram,2024-11-16 08:00:00,Completed,Manager_A,Warsaw,Poland,Poczta Polska,2024-11-22
+SC2-00515,Omega-3 Fish Oil 90 capsules,1,30.5,Instagram,2024-11-17 15:00:00,Completed,Manager_A,Warsaw,Poland,Poczta Polska,2024-11-19
+SC2-00516,Resistance Band Set 5pcs,2,116.0,Website,2024-11-17 20:00:00,Completed,Manager_B,Warsaw,Poland,DPD Poland,2024-11-18
+SC2-00517,Vitamin D3+K2 60 caps,2,62.0,Website,2024-11-18 18:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2024-11-19
+SC2-00518,Resistance Band Set 5pcs,1,55.5,Website,2024-11-20 04:00:00,New,Manager_C,Lodz,Poland,InPost Paczkomat,
+SC2-00519,Gym Bag Medium,3,220.5,Website,2024-11-20 14:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2024-11-23
+SC2-00520,Pre-Workout Energy Powder 300g,1,71.0,Website,2024-11-23 12:00:00,Completed,Manager_C,Lublin,Poland,DPD Poland,2024-11-26
+SC2-00521,BCAA 2:1:1 Powder 400g,1,71.0,Website,2024-11-25 21:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2024-11-28
+SC2-00522,Whey Protein Concentrate 1kg Vanilla,1,111.0,Instagram,2024-11-29 13:00:00,Completed,Manager_B,Wroclaw,Poland,DPD Poland,2024-12-05
+SC2-00523,Pre-Workout Energy Powder 300g,1,60.5,Website,2024-11-30 04:00:00,Completed,Manager_A,Lublin,Poland,Poczta Polska,2024-12-06
+SC2-00524,Whey Protein Concentrate 1kg Vanilla,1,113.0,Website,2024-11-30 23:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2024-12-01
+SC2-00525,Creatine Monohydrate 500g,3,180.0,Instagram,2024-12-02 16:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2024-12-06
+SC2-00526,Whey Protein Concentrate 1kg Vanilla,1,94.5,Website,2024-12-07 02:00:00,Completed,Manager_C,Szczecin,Poland,DPD Poland,2024-12-11
+SC2-00527,Collagen Peptides 300g,3,211.5,Website,2024-12-09 03:00:00,Awaiting Payment,Manager_C,Gdansk,Poland,InPost Paczkomat,
+SC2-00528,Whey Protein Concentrate 1kg Vanilla,1,91.5,Website,2024-12-10 11:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2024-12-16
+SC2-00529,Pre-Workout Energy Powder 300g,3,199.5,Website,2024-12-10 16:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2024-12-15
+SC2-00530,Omega-3 Fish Oil 90 capsules,1,43.0,Website,2024-12-11 06:00:00,Completed,Manager_B,Warsaw,Poland,DPD Poland,2024-12-16
+SC2-00531,Whey Protein Concentrate 1kg Vanilla,1,115.5,Website,2024-12-15 02:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2024-12-21
+SC2-00532,Whey Protein Concentrate 1kg Vanilla,1,125.0,Instagram,2024-12-15 06:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2024-12-18
+SC2-00533,Whey Protein Concentrate 1kg Vanilla,1,126.0,Instagram,2024-12-16 20:00:00,Completed,Manager_C,Lublin,Poland,InPost Paczkomat,2024-12-21
+SC2-00534,Whey Protein Concentrate 1kg Vanilla,1,95.5,Instagram,2024-12-17 08:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2024-12-22
+SC2-00535,Shaker Bottle 700ml,1,16.5,Instagram,2024-12-18 09:00:00,Completed,Manager_B,Gdansk,Poland,Poczta Polska,2024-12-22
+SC2-00536,Gym Bag Medium,1,73.0,Website,2024-12-19 03:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2024-12-23
+SC2-00537,Gym Bag Medium,1,73.5,Website,2024-12-20 20:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2024-12-21
+SC2-00538,BCAA 2:1:1 Powder 400g,1,58.0,Instagram,2024-12-21 13:00:00,Completed,Manager_C,Szczecin,Poland,DPD Poland,2024-12-22
+SC2-00539,Whey Protein Concentrate 1kg Vanilla,1,98.5,Instagram,2024-12-21 20:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2024-12-24
+SC2-00540,Gym Bag Medium,1,64.5,Facebook Shop,2024-12-26 15:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2024-12-28
+SC2-00541,Creatine Monohydrate 500g,1,56.5,Website,2024-12-27 01:00:00,Completed,Manager_B,Wroclaw,Poland,Poczta Polska,2024-12-31
+SC2-00542,Omega-3 Fish Oil 90 capsules,1,30.0,Website,2024-12-31 20:00:00,New,Manager_A,Bydgoszcz,Poland,Poczta Polska,
+SC2-00543,Pre-Workout Energy Powder 300g,1,72.5,Website,2025-01-01 11:00:00,Completed,Manager_B,Warsaw,Poland,DPD Poland,2025-01-07
+SC2-00544,Resistance Band Set 5pcs,1,45.5,Instagram,2025-01-01 17:00:00,Completed,Manager_C,Gdansk,Poland,DPD Poland,2025-01-02
+SC2-00545,Vitamin D3+K2 60 caps,1,30.0,Website,2025-01-01 20:00:00,Completed,Manager_A,Lublin,Poland,DPD Poland,2025-01-04
+SC2-00546,Omega-3 Fish Oil 90 capsules,1,33.5,Website,2025-01-01 21:00:00,Completed,Manager_C,Lublin,Poland,InPost Paczkomat,2025-01-05
+SC2-00547,Shaker Bottle 700ml,1,16.5,Website,2025-01-01 23:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2025-01-04
+SC2-00548,Magnesium Complex 60 caps,2,71.0,Instagram,2025-01-02 00:00:00,Completed,Manager_B,Szczecin,Poland,DPD Poland,2025-01-05
+SC2-00549,Magnesium Complex 60 caps,1,30.5,Website,2025-01-02 22:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2025-01-07
+SC2-00550,Whey Protein Concentrate 1kg Chocolate,2,235.0,Website,2025-01-03 09:00:00,Completed,Manager_B,Warsaw,Poland,Poczta Polska,2025-01-09
+SC2-00551,Creatine Monohydrate 500g,1,67.0,Website,2025-01-04 11:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2025-01-06
+SC2-00552,Whey Protein Concentrate 1kg Chocolate,1,124.0,Instagram,2025-01-04 20:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2025-01-05
+SC2-00553,Creatine Monohydrate 500g,2,114.0,Website,2025-01-06 01:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2025-01-07
+SC2-00554,Magnesium Complex 60 caps,3,97.5,Instagram,2025-01-06 14:00:00,New,Manager_B,Warsaw,Poland,DPD Poland,
+SC2-00555,Whey Protein Concentrate 1kg Chocolate,1,113.0,Website,2025-01-07 01:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2025-01-10
+SC2-00556,Whey Protein Concentrate 1kg Vanilla,1,126.5,Website,2025-01-07 06:00:00,Completed,Manager_C,Krakow,Poland,Poczta Polska,2025-01-09
+SC2-00557,Pre-Workout Energy Powder 300g,1,75.0,Website,2025-01-07 18:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2025-01-11
+SC2-00558,Vitamin D3+K2 60 caps,1,23.5,Website,2025-01-08 09:00:00,Completed,Manager_B,Lublin,Poland,Poczta Polska,2025-01-11
+SC2-00559,Vitamin D3+K2 60 caps,1,30.0,Facebook Shop,2025-01-08 12:00:00,Completed,Manager_B,Szczecin,Poland,DPD Poland,2025-01-14
+SC2-00560,Magnesium Complex 60 caps,1,29.5,Website,2025-01-10 17:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2025-01-15
+SC2-00561,Pre-Workout Energy Powder 300g,3,186.0,Website,2025-01-12 02:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2025-01-17
+SC2-00562,Collagen Peptides 300g,1,61.0,Facebook Shop,2025-01-12 14:00:00,Completed,Manager_B,Poznan,Poland,Poczta Polska,2025-01-16
+SC2-00563,Collagen Peptides 300g,3,199.5,Instagram,2025-01-12 20:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2025-01-18
+SC2-00564,Creatine Monohydrate 500g,2,121.0,Facebook Shop,2025-01-13 05:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2025-01-14
+SC2-00565,Vitamin D3+K2 60 caps,1,19.0,Website,2025-01-13 18:00:00,Completed,Manager_A,Poznan,Poland,Poczta Polska,2025-01-18
+SC2-00566,Omega-3 Fish Oil 90 capsules,2,61.0,Website,2025-01-14 01:00:00,Completed,Manager_A,Gdansk,Poland,InPost Paczkomat,2025-01-15
+SC2-00567,Vitamin D3+K2 60 caps,1,20.5,Facebook Shop,2025-01-17 05:00:00,Completed,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,2025-01-18
+SC2-00568,Whey Protein Concentrate 1kg Vanilla,2,213.0,Website,2025-01-17 23:00:00,Completed,Manager_B,Katowice,Poland,Poczta Polska,2025-01-18
+SC2-00569,Whey Protein Concentrate 1kg Chocolate,2,188.0,Instagram,2025-01-19 00:00:00,Completed,Manager_C,Szczecin,Poland,DPD Poland,2025-01-22
+SC2-00570,Gym Bag Medium,1,60.0,Website,2025-01-19 19:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2025-01-20
+SC2-00571,Gym Bag Medium,1,50.0,Website,2025-01-20 09:00:00,Completed,Manager_A,Szczecin,Poland,InPost Paczkomat,2025-01-24
+SC2-00572,Whey Protein Concentrate 1kg Vanilla,1,113.5,Instagram,2025-01-20 20:00:00,Completed,Manager_A,Katowice,Poland,DPD Poland,2025-01-22
+SC2-00573,Vitamin D3+K2 60 caps,3,73.5,Website,2025-01-21 00:00:00,Completed,Manager_A,Katowice,Poland,InPost Paczkomat,2025-01-23
+SC2-00574,Creatine Monohydrate 500g,1,51.0,Instagram,2025-01-21 06:00:00,New,Manager_C,Gdansk,Poland,InPost Paczkomat,
+SC2-00575,Creatine Monohydrate 500g,2,116.0,Instagram,2025-01-21 11:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2025-01-23
+SC2-00576,BCAA 2:1:1 Powder 400g,1,50.5,Website,2025-01-22 11:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2025-01-24
+SC2-00577,Creatine Monohydrate 500g,1,51.5,Website,2025-01-22 17:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2025-01-25
+SC2-00578,Shaker Bottle 700ml,1,21.5,Website,2025-01-23 04:00:00,Completed,Manager_B,Lodz,Poland,Poczta Polska,2025-01-27
+SC2-00579,Whey Protein Concentrate 1kg Vanilla,3,373.5,Instagram,2025-01-23 16:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2025-01-28
+SC2-00580,Gym Bag Medium,1,58.0,Instagram,2025-01-24 22:00:00,Completed,Manager_B,Warsaw,Poland,DPD Poland,2025-01-27
+SC2-00581,Whey Protein Concentrate 1kg Chocolate,1,102.0,Website,2025-01-25 23:00:00,Completed,Manager_C,Lodz,Poland,DPD Poland,2025-01-31
+SC2-00582,Whey Protein Concentrate 1kg Vanilla,1,111.0,Instagram,2025-01-26 18:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2025-01-31
+SC2-00583,Shaker Bottle 700ml,2,43.0,Instagram,2025-01-26 20:00:00,Completed,Manager_C,Lublin,Poland,InPost Paczkomat,2025-01-29
+SC2-00584,BCAA 2:1:1 Powder 400g,2,144.0,Website,2025-01-27 06:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2025-02-02
+SC2-00585,Resistance Band Set 5pcs,1,50.5,Website,2025-01-28 21:00:00,Completed,Manager_A,Wroclaw,Poland,DPD Poland,2025-02-03
+SC2-00586,Gym Bag Medium,1,51.5,Instagram,2025-01-29 23:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2025-02-04
+SC2-00587,Whey Protein Concentrate 1kg Chocolate,1,128.5,Website,2025-01-30 04:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2025-02-01
+SC2-00588,Resistance Band Set 5pcs,1,47.0,Facebook Shop,2025-01-30 10:00:00,New,Manager_A,Bydgoszcz,Poland,Poczta Polska,
+SC2-00589,Whey Protein Concentrate 1kg Chocolate,1,108.0,Instagram,2025-01-30 19:00:00,Completed,Manager_C,Bydgoszcz,Poland,DPD Poland,2025-01-31
+SC2-00590,Whey Protein Concentrate 1kg Vanilla,1,115.5,Website,2025-01-30 21:00:00,New,Manager_A,Lublin,Poland,InPost Paczkomat,
+SC2-00591,Whey Protein Concentrate 1kg Vanilla,3,345.0,Website,2025-01-30 23:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2025-01-31
+SC2-00592,Whey Protein Concentrate 1kg Vanilla,1,125.0,Website,2025-01-31 08:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2025-02-04
+SC2-00593,Omega-3 Fish Oil 90 capsules,1,39.0,Website,2025-01-31 13:00:00,Completed,Manager_A,Lodz,Poland,DPD Poland,2025-02-02
+SC2-00594,Collagen Peptides 300g,1,63.5,Instagram,2025-02-01 00:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2025-02-06
+SC2-00595,Collagen Peptides 300g,1,74.0,Website,2025-02-02 09:00:00,Completed,Manager_A,Lodz,Poland,Poczta Polska,2025-02-06
+SC2-00596,Omega-3 Fish Oil 90 capsules,1,33.5,Instagram,2025-02-02 16:00:00,Completed,Manager_A,Lodz,Poland,Poczta Polska,2025-02-05
+SC2-00597,Omega-3 Fish Oil 90 capsules,2,61.0,Website,2025-02-03 22:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2025-02-04
+SC2-00598,Whey Protein Concentrate 1kg Vanilla,1,100.0,Instagram,2025-02-05 05:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2025-02-10
+SC2-00599,Whey Protein Concentrate 1kg Chocolate,1,98.0,Website,2025-02-05 17:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2025-02-11
+SC2-00600,Creatine Monohydrate 500g,2,106.0,Website,2025-02-07 07:00:00,Completed,Manager_C,Szczecin,Poland,DPD Poland,2025-02-09
+SC2-00601,Whey Protein Concentrate 1kg Chocolate,1,125.5,Instagram,2025-02-07 22:00:00,Completed,Manager_B,Warsaw,Poland,DPD Poland,2025-02-08
+SC2-00602,Collagen Peptides 300g,1,77.0,Website,2025-02-08 06:00:00,New,Manager_A,Gdansk,Poland,Poczta Polska,
+SC2-00603,Vitamin D3+K2 60 caps,2,62.0,Instagram,2025-02-08 12:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2025-02-14
+SC2-00604,Creatine Monohydrate 500g,1,69.0,Instagram,2025-02-09 09:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2025-02-13
+SC2-00605,Pre-Workout Energy Powder 300g,1,62.0,Website,2025-02-09 23:00:00,New,Manager_C,Krakow,Poland,InPost Paczkomat,
+SC2-00606,Omega-3 Fish Oil 90 capsules,1,30.5,Website,2025-02-10 19:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2025-02-13
+SC2-00607,BCAA 2:1:1 Powder 400g,1,66.5,Facebook Shop,2025-02-11 00:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2025-02-14
+SC2-00608,Pre-Workout Energy Powder 300g,3,225.0,Website,2025-02-12 09:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2025-02-17
+SC2-00609,Gym Bag Medium,1,68.5,Facebook Shop,2025-02-13 03:00:00,Completed,Manager_C,Lublin,Poland,DPD Poland,2025-02-16
+SC2-00610,Vitamin D3+K2 60 caps,1,22.5,Instagram,2025-02-14 13:00:00,Completed,Manager_B,Poznan,Poland,Poczta Polska,2025-02-19
+SC2-00611,Creatine Monohydrate 500g,1,48.5,Website,2025-02-15 02:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2025-02-21
+SC2-00612,Pre-Workout Energy Powder 300g,2,157.0,Website,2025-02-15 22:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2025-02-16
+SC2-00613,Collagen Peptides 300g,2,129.0,Website,2025-02-16 11:00:00,Completed,Manager_B,Wroclaw,Poland,Poczta Polska,2025-02-19
+SC2-00614,BCAA 2:1:1 Powder 400g,1,65.5,Website,2025-02-17 08:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2025-02-21
+SC2-00615,Vitamin D3+K2 60 caps,1,32.0,Instagram,2025-02-17 10:00:00,New,Manager_C,Bydgoszcz,Poland,DPD Poland,
+SC2-00616,Pre-Workout Energy Powder 300g,1,66.5,Instagram,2025-02-17 19:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2025-02-21
+SC2-00617,Vitamin D3+K2 60 caps,2,54.0,Website,2025-02-18 07:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2025-02-20
+SC2-00618,Omega-3 Fish Oil 90 capsules,1,42.0,Instagram,2025-02-19 10:00:00,Completed,Manager_B,Katowice,Poland,InPost Paczkomat,2025-02-25
+SC2-00619,Whey Protein Concentrate 1kg Vanilla,1,125.5,Website,2025-02-20 03:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2025-02-22
+SC2-00620,BCAA 2:1:1 Powder 400g,1,63.0,Website,2025-02-22 05:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2025-02-25
+SC2-00621,Shaker Bottle 700ml,1,19.5,Facebook Shop,2025-02-26 01:00:00,Completed,Manager_B,Lublin,Poland,Poczta Polska,2025-02-27
+SC2-00622,Vitamin D3+K2 60 caps,1,26.0,Website,2025-02-26 04:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2025-03-04
+SC2-00623,Shaker Bottle 700ml,1,20.0,Facebook Shop,2025-02-28 13:00:00,Completed,Manager_C,Katowice,Poland,DPD Poland,2025-03-06
+SC2-00624,Gym Bag Medium,1,64.5,Website,2025-02-28 23:00:00,Cancelled,Manager_C,Krakow,Poland,InPost Paczkomat,
+SC2-00625,Whey Protein Concentrate 1kg Vanilla,2,249.0,Facebook Shop,2025-03-01 01:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2025-03-03
+SC2-00626,Omega-3 Fish Oil 90 capsules,1,31.0,Website,2025-03-03 01:00:00,Completed,Manager_B,Katowice,Poland,InPost Paczkomat,2025-03-09
+SC2-00627,Creatine Monohydrate 500g,3,160.5,Website,2025-03-03 04:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2025-03-04
+SC2-00628,Shaker Bottle 700ml,1,14.5,Instagram,2025-03-03 18:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2025-03-09
+SC2-00629,Creatine Monohydrate 500g,1,56.5,Website,2025-03-04 03:00:00,New,Manager_A,Warsaw,Poland,InPost Paczkomat,
+SC2-00630,Gym Bag Medium,1,51.5,Instagram,2025-03-06 05:00:00,New,Manager_B,Wroclaw,Poland,InPost Paczkomat,
+SC2-00631,Whey Protein Concentrate 1kg Vanilla,1,92.5,Website,2025-03-06 12:00:00,Completed,Manager_B,Wroclaw,Poland,DPD Poland,2025-03-07
+SC2-00632,Whey Protein Concentrate 1kg Chocolate,1,123.5,Facebook Shop,2025-03-06 19:00:00,Completed,Manager_A,Warsaw,Poland,DPD Poland,2025-03-09
+SC2-00633,Whey Protein Concentrate 1kg Chocolate,1,126.5,Website,2025-03-11 23:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2025-03-12
+SC2-00634,Pre-Workout Energy Powder 300g,1,84.5,Instagram,2025-03-13 08:00:00,Completed,Manager_B,Lodz,Poland,Poczta Polska,2025-03-14
+SC2-00635,BCAA 2:1:1 Powder 400g,3,151.5,Instagram,2025-03-16 07:00:00,Completed,Manager_C,Katowice,Poland,DPD Poland,2025-03-19
+SC2-00636,Whey Protein Concentrate 1kg Chocolate,1,102.5,Website,2025-03-17 09:00:00,New,Manager_A,Katowice,Poland,Poczta Polska,
+SC2-00637,Gym Bag Medium,1,51.0,Instagram,2025-03-18 03:00:00,Completed,Manager_B,Wroclaw,Poland,Poczta Polska,2025-03-24
+SC2-00638,Pre-Workout Energy Powder 300g,1,62.0,Facebook Shop,2025-03-19 17:00:00,Cancelled,Manager_C,Poznan,Poland,InPost Paczkomat,
+SC2-00639,Shaker Bottle 700ml,1,16.5,Instagram,2025-03-20 10:00:00,Completed,Manager_B,Katowice,Poland,InPost Paczkomat,2025-03-23
+SC2-00640,Resistance Band Set 5pcs,1,54.0,Website,2025-03-25 14:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2025-03-30
+SC2-00641,Gym Bag Medium,3,154.5,Website,2025-03-26 13:00:00,Completed,Manager_A,Szczecin,Poland,InPost Paczkomat,2025-03-28
+SC2-00642,Vitamin D3+K2 60 caps,1,26.0,Website,2025-03-27 07:00:00,Completed,Manager_B,Poznan,Poland,DPD Poland,2025-03-31
+SC2-00643,Vitamin D3+K2 60 caps,1,23.0,Facebook Shop,2025-03-28 01:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2025-03-29
+SC2-00644,Gym Bag Medium,3,156.0,Website,2025-03-28 21:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2025-03-30
+SC2-00645,Gym Bag Medium,3,151.5,Website,2025-03-30 03:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2025-03-31
+SC2-00646,BCAA 2:1:1 Powder 400g,1,49.5,Instagram,2025-04-01 21:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2025-04-07
+SC2-00647,BCAA 2:1:1 Powder 400g,2,146.0,Website,2025-04-02 11:00:00,Completed,Manager_B,Bydgoszcz,Poland,DPD Poland,2025-04-03
+SC2-00648,Omega-3 Fish Oil 90 capsules,1,33.5,Website,2025-04-08 08:00:00,Completed,Manager_A,Katowice,Poland,InPost Paczkomat,2025-04-14
+SC2-00649,BCAA 2:1:1 Powder 400g,1,63.0,Facebook Shop,2025-04-10 15:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2025-04-15
+SC2-00650,Creatine Monohydrate 500g,1,47.0,Facebook Shop,2025-04-17 09:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2025-04-22
+SC2-00651,Vitamin D3+K2 60 caps,1,20.0,Instagram,2025-04-18 18:00:00,Completed,Manager_A,Szczecin,Poland,InPost Paczkomat,2025-04-22
+SC2-00652,Shaker Bottle 700ml,1,21.5,Website,2025-04-19 17:00:00,Completed,Manager_B,Wroclaw,Poland,DPD Poland,2025-04-24
+SC2-00653,BCAA 2:1:1 Powder 400g,2,132.0,Website,2025-04-20 12:00:00,Completed,Manager_B,Warsaw,Poland,DPD Poland,2025-04-22
+SC2-00654,Omega-3 Fish Oil 90 capsules,1,38.5,Website,2025-04-22 15:00:00,Completed,Manager_A,Warsaw,Poland,DPD Poland,2025-04-27
+SC2-00655,Magnesium Complex 60 caps,2,61.0,Website,2025-04-23 00:00:00,New,Manager_C,Warsaw,Poland,DPD Poland,
+SC2-00656,Gym Bag Medium,1,57.5,Website,2025-04-24 01:00:00,New,Manager_B,Gdansk,Poland,Poczta Polska,
+SC2-00657,Magnesium Complex 60 caps,1,24.5,Website,2025-05-01 02:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2025-05-05
+SC2-00658,Resistance Band Set 5pcs,1,58.0,Instagram,2025-05-09 17:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2025-05-11
+SC2-00659,Collagen Peptides 300g,3,174.0,Instagram,2025-05-09 22:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2025-05-11
+SC2-00660,Pre-Workout Energy Powder 300g,2,142.0,Website,2025-05-11 03:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2025-05-12
+SC2-00661,Magnesium Complex 60 caps,3,103.5,Website,2025-05-15 02:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2025-05-21
+SC2-00662,Magnesium Complex 60 caps,2,54.0,Website,2025-05-16 15:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2025-05-22
+SC2-00663,Shaker Bottle 700ml,1,17.5,Instagram,2025-05-18 01:00:00,New,Manager_B,Krakow,Poland,InPost Paczkomat,
+SC2-00664,Omega-3 Fish Oil 90 capsules,1,37.0,Instagram,2025-05-18 14:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2025-05-21
+SC2-00665,Resistance Band Set 5pcs,1,53.5,Website,2025-05-19 14:00:00,Awaiting Payment,Manager_A,Lodz,Poland,Poczta Polska,
+SC2-00666,Creatine Monohydrate 500g,2,97.0,Website,2025-05-19 16:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2025-05-21
+SC2-00667,Whey Protein Concentrate 1kg Vanilla,3,309.0,Website,2025-05-21 03:00:00,New,Manager_B,Lublin,Poland,InPost Paczkomat,
+SC2-00668,Shaker Bottle 700ml,1,17.0,Instagram,2025-05-21 04:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2025-05-27
+SC2-00669,Vitamin D3+K2 60 caps,1,21.0,Website,2025-05-23 09:00:00,Completed,Manager_A,Szczecin,Poland,DPD Poland,2025-05-28
+SC2-00670,BCAA 2:1:1 Powder 400g,1,53.5,Website,2025-05-24 01:00:00,Cancelled,Manager_A,Wroclaw,Poland,InPost Paczkomat,
+SC2-00671,BCAA 2:1:1 Powder 400g,3,205.5,Website,2025-05-24 11:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2025-05-25
+SC2-00672,Creatine Monohydrate 500g,1,60.5,Instagram,2025-05-24 13:00:00,Completed,Manager_C,Lodz,Poland,DPD Poland,2025-05-29
+SC2-00673,Pre-Workout Energy Powder 300g,1,80.0,Website,2025-05-25 15:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2025-05-26
+SC2-00674,Creatine Monohydrate 500g,1,50.5,Website,2025-05-26 00:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2025-05-29
+SC2-00675,Creatine Monohydrate 500g,1,67.5,Instagram,2025-05-26 22:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2025-05-27
+SC2-00676,Magnesium Complex 60 caps,1,29.0,Website,2025-05-27 03:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2025-06-02
+SC2-00677,Gym Bag Medium,3,192.0,Instagram,2025-05-30 23:00:00,Completed,Manager_A,Poznan,Poland,Poczta Polska,2025-06-02
+SC2-00678,Whey Protein Concentrate 1kg Chocolate,1,117.0,Instagram,2025-06-01 08:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2025-06-05
+SC2-00679,Omega-3 Fish Oil 90 capsules,1,38.5,Website,2025-06-03 06:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2025-06-05
+SC2-00680,Omega-3 Fish Oil 90 capsules,1,38.0,Website,2025-06-06 00:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2025-06-09
+SC2-00681,Vitamin D3+K2 60 caps,1,30.5,Website,2025-06-06 17:00:00,New,Manager_A,Lodz,Poland,InPost Paczkomat,
+SC2-00682,Whey Protein Concentrate 1kg Chocolate,1,124.5,Website,2025-06-07 04:00:00,Completed,Manager_B,Katowice,Poland,InPost Paczkomat,2025-06-08
+SC2-00683,Gym Bag Medium,1,49.0,Instagram,2025-06-10 15:00:00,Completed,Manager_B,Krakow,Poland,DPD Poland,2025-06-14
+SC2-00684,Gym Bag Medium,1,71.5,Website,2025-06-12 20:00:00,Completed,Manager_A,Krakow,Poland,DPD Poland,2025-06-17
+SC2-00685,Resistance Band Set 5pcs,1,52.5,Website,2025-06-13 15:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2025-06-14
+SC2-00686,Magnesium Complex 60 caps,1,38.0,Instagram,2025-06-14 02:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2025-06-18
+SC2-00687,Pre-Workout Energy Powder 300g,1,82.5,Instagram,2025-06-14 20:00:00,Completed,Manager_A,Bydgoszcz,Poland,DPD Poland,2025-06-20
+SC2-00688,Creatine Monohydrate 500g,1,48.0,Facebook Shop,2025-06-16 09:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2025-06-19
+SC2-00689,Magnesium Complex 60 caps,1,36.5,Website,2025-06-18 08:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2025-06-22
+SC2-00690,Collagen Peptides 300g,2,138.0,Website,2025-06-21 16:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2025-06-22
+SC2-00691,Pre-Workout Energy Powder 300g,1,80.5,Facebook Shop,2025-06-23 00:00:00,Completed,Manager_A,Warsaw,Poland,DPD Poland,2025-06-25
+SC2-00692,Vitamin D3+K2 60 caps,3,61.5,Instagram,2025-06-23 06:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2025-06-29
+SC2-00693,Vitamin D3+K2 60 caps,3,73.5,Website,2025-06-23 15:00:00,Completed,Manager_A,Wroclaw,Poland,DPD Poland,2025-06-26
+SC2-00694,Resistance Band Set 5pcs,1,52.0,Website,2025-06-24 06:00:00,New,Manager_B,Lublin,Poland,InPost Paczkomat,
+SC2-00695,Resistance Band Set 5pcs,1,45.5,Instagram,2025-06-27 13:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2025-06-28
+SC2-00696,Shaker Bottle 700ml,3,61.5,Facebook Shop,2025-06-28 22:00:00,Completed,Manager_B,Katowice,Poland,Poczta Polska,2025-07-02
+SC2-00697,Resistance Band Set 5pcs,1,44.0,Instagram,2025-06-29 17:00:00,Completed,Manager_A,Katowice,Poland,InPost Paczkomat,2025-07-04
+SC2-00698,Magnesium Complex 60 caps,1,27.5,Website,2025-07-01 05:00:00,New,Manager_C,Lodz,Poland,InPost Paczkomat,
+SC2-00699,BCAA 2:1:1 Powder 400g,1,54.0,Instagram,2025-07-03 01:00:00,Completed,Manager_C,Katowice,Poland,DPD Poland,2025-07-05
+SC2-00700,Vitamin D3+K2 60 caps,1,31.5,Website,2025-07-03 08:00:00,Completed,Manager_C,Szczecin,Poland,Poczta Polska,2025-07-09
+SC2-00701,Omega-3 Fish Oil 90 capsules,1,40.5,Facebook Shop,2025-07-03 19:00:00,New,Manager_B,Szczecin,Poland,InPost Paczkomat,
+SC2-00702,Shaker Bottle 700ml,1,17.5,Website,2025-07-06 10:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2025-07-09
+SC2-00703,Vitamin D3+K2 60 caps,2,48.0,Website,2025-07-08 01:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2025-07-10
+SC2-00704,Pre-Workout Energy Powder 300g,1,76.5,Website,2025-07-12 17:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2025-07-16
+SC2-00705,BCAA 2:1:1 Powder 400g,3,172.5,Instagram,2025-07-13 10:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2025-07-16
+SC2-00706,Pre-Workout Energy Powder 300g,2,125.0,Instagram,2025-07-16 02:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2025-07-20
+SC2-00707,Omega-3 Fish Oil 90 capsules,1,39.0,Website,2025-07-20 22:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2025-07-26
+SC2-00708,Shaker Bottle 700ml,1,15.0,Instagram,2025-07-22 07:00:00,Completed,Manager_C,Lodz,Poland,DPD Poland,2025-07-27
+SC2-00709,Whey Protein Concentrate 1kg Vanilla,1,101.0,Website,2025-07-22 21:00:00,New,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,
+SC2-00710,Resistance Band Set 5pcs,3,120.0,Website,2025-07-24 09:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2025-07-25
+SC2-00711,Resistance Band Set 5pcs,1,46.5,Facebook Shop,2025-07-27 00:00:00,Completed,Manager_B,Lodz,Poland,DPD Poland,2025-07-29
+SC2-00712,Omega-3 Fish Oil 90 capsules,3,88.5,Facebook Shop,2025-07-27 11:00:00,Completed,Manager_C,Katowice,Poland,Poczta Polska,2025-07-29
+SC2-00713,Whey Protein Concentrate 1kg Vanilla,1,96.5,Instagram,2025-07-28 22:00:00,Cancelled,Manager_C,Bydgoszcz,Poland,DPD Poland,
+SC2-00714,Pre-Workout Energy Powder 300g,1,89.0,Website,2025-07-29 18:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2025-08-02
+SC2-00715,BCAA 2:1:1 Powder 400g,1,69.0,Website,2025-07-31 04:00:00,New,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,
+SC2-00716,Shaker Bottle 700ml,1,19.5,Website,2025-08-01 22:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2025-08-03
+SC2-00717,BCAA 2:1:1 Powder 400g,1,60.0,Website,2025-08-03 13:00:00,Completed,Manager_C,Lublin,Poland,InPost Paczkomat,2025-08-05
+SC2-00718,BCAA 2:1:1 Powder 400g,3,162.0,Instagram,2025-08-03 20:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2025-08-08
+SC2-00719,Shaker Bottle 700ml,1,15.0,Website,2025-08-04 14:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2025-08-06
+SC2-00720,Collagen Peptides 300g,1,59.0,Website,2025-08-04 15:00:00,Completed,Manager_C,Katowice,Poland,Poczta Polska,2025-08-08
+SC2-00721,Shaker Bottle 700ml,1,18.0,Instagram,2025-08-04 21:00:00,Completed,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,2025-08-10
+SC2-00722,Creatine Monohydrate 500g,1,49.0,Instagram,2025-08-05 17:00:00,Completed,Manager_C,Lublin,Poland,InPost Paczkomat,2025-08-10
+SC2-00723,Vitamin D3+K2 60 caps,1,27.5,Website,2025-08-06 04:00:00,Completed,Manager_C,Wroclaw,Poland,DPD Poland,2025-08-07
+SC2-00724,Omega-3 Fish Oil 90 capsules,3,121.5,Instagram,2025-08-10 16:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2025-08-14
+SC2-00725,Omega-3 Fish Oil 90 capsules,1,39.5,Website,2025-08-12 12:00:00,Completed,Manager_A,Gdansk,Poland,InPost Paczkomat,2025-08-18
+SC2-00726,Magnesium Complex 60 caps,2,75.0,Facebook Shop,2025-08-12 16:00:00,Completed,Manager_A,Wroclaw,Poland,Poczta Polska,2025-08-16
+SC2-00727,Pre-Workout Energy Powder 300g,3,256.5,Facebook Shop,2025-08-13 03:00:00,Completed,Manager_A,Lublin,Poland,DPD Poland,2025-08-19
+SC2-00728,Pre-Workout Energy Powder 300g,1,62.0,Website,2025-08-13 13:00:00,Completed,Manager_B,Bydgoszcz,Poland,InPost Paczkomat,2025-08-14
+SC2-00729,Whey Protein Concentrate 1kg Vanilla,1,125.0,Instagram,2025-08-14 06:00:00,Completed,Manager_A,Katowice,Poland,InPost Paczkomat,2025-08-20
+SC2-00730,Pre-Workout Energy Powder 300g,1,64.5,Facebook Shop,2025-08-15 16:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2025-08-18
+SC2-00731,Resistance Band Set 5pcs,1,57.0,Facebook Shop,2025-08-16 23:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2025-08-19
+SC2-00732,BCAA 2:1:1 Powder 400g,1,57.0,Website,2025-08-18 18:00:00,Completed,Manager_A,Wroclaw,Poland,DPD Poland,2025-08-19
+SC2-00733,Collagen Peptides 300g,1,78.5,Facebook Shop,2025-08-19 05:00:00,Awaiting Payment,Manager_A,Gdansk,Poland,InPost Paczkomat,
+SC2-00734,Pre-Workout Energy Powder 300g,1,67.0,Instagram,2025-08-20 14:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2025-08-25
+SC2-00735,Shaker Bottle 700ml,1,21.0,Instagram,2025-08-22 01:00:00,Completed,Manager_A,Katowice,Poland,DPD Poland,2025-08-25
+SC2-00736,Gym Bag Medium,3,178.5,Website,2025-08-22 11:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2025-08-23
+SC2-00737,BCAA 2:1:1 Powder 400g,3,186.0,Facebook Shop,2025-08-25 01:00:00,Completed,Manager_B,Katowice,Poland,DPD Poland,2025-08-29
+SC2-00738,Magnesium Complex 60 caps,1,25.5,Instagram,2025-08-26 04:00:00,Completed,Manager_C,Bydgoszcz,Poland,InPost Paczkomat,2025-08-31
+SC2-00739,Shaker Bottle 700ml,2,33.0,Website,2025-08-27 15:00:00,Completed,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,2025-08-29
+SC2-00740,Whey Protein Concentrate 1kg Chocolate,1,93.5,Facebook Shop,2025-08-28 02:00:00,Completed,Manager_B,Szczecin,Poland,Poczta Polska,2025-08-31
+SC2-00741,Collagen Peptides 300g,1,61.5,Instagram,2025-08-30 05:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2025-09-02
+SC2-00742,Creatine Monohydrate 500g,1,46.0,Website,2025-08-30 14:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2025-09-05
+SC2-00743,Whey Protein Concentrate 1kg Chocolate,1,124.5,Instagram,2025-08-30 17:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2025-09-05
+SC2-00744,Collagen Peptides 300g,1,55.5,Instagram,2025-08-30 18:00:00,Completed,Manager_B,Wroclaw,Poland,DPD Poland,2025-09-05
+SC2-00745,Pre-Workout Energy Powder 300g,3,187.5,Instagram,2025-08-31 10:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2025-09-02
+SC2-00746,Omega-3 Fish Oil 90 capsules,2,59.0,Website,2025-09-02 07:00:00,Completed,Manager_B,Szczecin,Poland,Poczta Polska,2025-09-03
+SC2-00747,Omega-3 Fish Oil 90 capsules,2,83.0,Website,2025-09-03 15:00:00,Completed,Manager_B,Szczecin,Poland,Poczta Polska,2025-09-05
+SC2-00748,Magnesium Complex 60 caps,1,33.0,Website,2025-09-04 03:00:00,Completed,Manager_C,Szczecin,Poland,DPD Poland,2025-09-06
+SC2-00749,Resistance Band Set 5pcs,1,57.0,Instagram,2025-09-04 19:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2025-09-05
+SC2-00750,Pre-Workout Energy Powder 300g,2,144.0,Facebook Shop,2025-09-05 04:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2025-09-10
+SC2-00751,Creatine Monohydrate 500g,1,46.0,Website,2025-09-06 23:00:00,Completed,Manager_B,Krakow,Poland,DPD Poland,2025-09-12
+SC2-00752,Shaker Bottle 700ml,1,18.0,Instagram,2025-09-09 05:00:00,Completed,Manager_B,Wroclaw,Poland,DPD Poland,2025-09-10
+SC2-00753,Gym Bag Medium,2,102.0,Website,2025-09-10 04:00:00,New,Manager_A,Wroclaw,Poland,InPost Paczkomat,
+SC2-00754,Magnesium Complex 60 caps,1,33.0,Instagram,2025-09-10 12:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2025-09-11
+SC2-00755,Magnesium Complex 60 caps,2,76.0,Website,2025-09-11 00:00:00,Completed,Manager_C,Katowice,Poland,DPD Poland,2025-09-14
+SC2-00756,Omega-3 Fish Oil 90 capsules,1,40.5,Facebook Shop,2025-09-11 03:00:00,Completed,Manager_A,Lodz,Poland,DPD Poland,2025-09-13
+SC2-00757,Gym Bag Medium,1,73.0,Instagram,2025-09-12 07:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2025-09-14
+SC2-00758,Omega-3 Fish Oil 90 capsules,2,69.0,Instagram,2025-09-12 18:00:00,Completed,Manager_B,Poznan,Poland,DPD Poland,2025-09-13
+SC2-00759,Omega-3 Fish Oil 90 capsules,1,38.0,Instagram,2025-09-12 22:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2025-09-14
+SC2-00760,BCAA 2:1:1 Powder 400g,1,59.5,Website,2025-09-13 03:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2025-09-14
+SC2-00761,Pre-Workout Energy Powder 300g,1,62.5,Website,2025-09-13 04:00:00,Completed,Manager_B,Poznan,Poland,DPD Poland,2025-09-14
+SC2-00762,Creatine Monohydrate 500g,2,113.0,Website,2025-09-13 07:00:00,New,Manager_C,Wroclaw,Poland,DPD Poland,
+SC2-00763,Magnesium Complex 60 caps,1,33.0,Instagram,2025-09-13 19:00:00,Completed,Manager_A,Bydgoszcz,Poland,DPD Poland,2025-09-16
+SC2-00764,Gym Bag Medium,1,67.5,Website,2025-09-14 05:00:00,New,Manager_C,Lublin,Poland,DPD Poland,
+SC2-00765,Pre-Workout Energy Powder 300g,1,84.5,Instagram,2025-09-14 08:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2025-09-19
+SC2-00766,Whey Protein Concentrate 1kg Vanilla,3,385.5,Website,2025-09-15 07:00:00,Awaiting Payment,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,
+SC2-00767,Pre-Workout Energy Powder 300g,1,68.5,Instagram,2025-09-16 23:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2025-09-19
+SC2-00768,BCAA 2:1:1 Powder 400g,1,55.0,Website,2025-09-17 15:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2025-09-23
+SC2-00769,Collagen Peptides 300g,2,129.0,Facebook Shop,2025-09-17 22:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2025-09-23
+SC2-00770,Omega-3 Fish Oil 90 capsules,1,39.0,Instagram,2025-09-18 21:00:00,Completed,Manager_B,Wroclaw,Poland,DPD Poland,2025-09-21
+SC2-00771,Collagen Peptides 300g,1,75.0,Facebook Shop,2025-09-19 01:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2025-09-21
+SC2-00772,Pre-Workout Energy Powder 300g,3,178.5,Instagram,2025-09-19 21:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2025-09-24
+SC2-00773,Creatine Monohydrate 500g,2,118.0,Instagram,2025-09-20 13:00:00,Completed,Manager_C,Poznan,Poland,Poczta Polska,2025-09-23
+SC2-00774,Collagen Peptides 300g,2,136.0,Instagram,2025-09-21 22:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2025-09-26
+SC2-00775,Collagen Peptides 300g,1,63.5,Website,2025-09-22 10:00:00,Completed,Manager_A,Szczecin,Poland,InPost Paczkomat,2025-09-23
+SC2-00776,Shaker Bottle 700ml,3,57.0,Instagram,2025-09-22 11:00:00,Completed,Manager_C,Katowice,Poland,Poczta Polska,2025-09-25
+SC2-00777,Whey Protein Concentrate 1kg Chocolate,1,102.5,Website,2025-09-22 21:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2025-09-27
+SC2-00778,Creatine Monohydrate 500g,1,67.5,Website,2025-09-23 03:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2025-09-26
+SC2-00779,Whey Protein Concentrate 1kg Vanilla,1,125.0,Facebook Shop,2025-09-23 04:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2025-09-24
+SC2-00780,Gym Bag Medium,1,65.5,Website,2025-09-24 19:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2025-09-30
+SC2-00781,Vitamin D3+K2 60 caps,2,46.0,Instagram,2025-09-25 01:00:00,Completed,Manager_C,Krakow,Poland,DPD Poland,2025-09-27
+SC2-00782,Creatine Monohydrate 500g,1,56.0,Facebook Shop,2025-09-25 12:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2025-09-28
+SC2-00783,Magnesium Complex 60 caps,1,35.5,Facebook Shop,2025-09-25 19:00:00,New,Manager_C,Wroclaw,Poland,InPost Paczkomat,
+SC2-00784,Vitamin D3+K2 60 caps,1,24.5,Instagram,2025-09-26 01:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2025-09-29
+SC2-00785,Resistance Band Set 5pcs,1,48.0,Facebook Shop,2025-09-26 03:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2025-09-30
+SC2-00786,Collagen Peptides 300g,1,73.5,Website,2025-09-26 11:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2025-09-27
+SC2-00787,Shaker Bottle 700ml,1,17.0,Website,2025-09-26 18:00:00,Completed,Manager_A,Warsaw,Poland,Poczta Polska,2025-10-02
+SC2-00788,Shaker Bottle 700ml,1,19.0,Instagram,2025-09-26 21:00:00,New,Manager_B,Gdansk,Poland,InPost Paczkomat,
+SC2-00789,BCAA 2:1:1 Powder 400g,1,62.0,Facebook Shop,2025-09-27 03:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2025-09-28
+SC2-00790,Whey Protein Concentrate 1kg Chocolate,1,118.5,Website,2025-09-27 11:00:00,Cancelled,Manager_B,Poznan,Poland,InPost Paczkomat,
+SC2-00791,Collagen Peptides 300g,2,152.0,Facebook Shop,2025-09-28 12:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2025-10-02
+SC2-00792,BCAA 2:1:1 Powder 400g,1,65.0,Facebook Shop,2025-09-29 16:00:00,Completed,Manager_A,Szczecin,Poland,Poczta Polska,2025-10-02
+SC2-00793,Gym Bag Medium,1,72.5,Instagram,2025-09-29 19:00:00,Completed,Manager_A,Gdansk,Poland,InPost Paczkomat,2025-10-02
+SC2-00794,Omega-3 Fish Oil 90 capsules,1,39.5,Instagram,2025-10-01 13:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2025-10-05
+SC2-00795,Shaker Bottle 700ml,1,20.5,Website,2025-10-02 05:00:00,Completed,Manager_B,Bydgoszcz,Poland,DPD Poland,2025-10-05
+SC2-00796,Omega-3 Fish Oil 90 capsules,1,29.5,Website,2025-10-02 06:00:00,Completed,Manager_B,Gdansk,Poland,Poczta Polska,2025-10-08
+SC2-00797,Magnesium Complex 60 caps,2,53.0,Website,2025-10-02 22:00:00,Completed,Manager_A,Wroclaw,Poland,DPD Poland,2025-10-04
+SC2-00798,Vitamin D3+K2 60 caps,1,27.0,Website,2025-10-04 13:00:00,Awaiting Payment,Manager_C,Wroclaw,Poland,InPost Paczkomat,
+SC2-00799,Vitamin D3+K2 60 caps,2,51.0,Instagram,2025-10-04 20:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2025-10-05
+SC2-00800,Vitamin D3+K2 60 caps,3,60.0,Facebook Shop,2025-10-05 10:00:00,Completed,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,2025-10-10
+SC2-00801,Shaker Bottle 700ml,1,17.0,Website,2025-10-07 01:00:00,Completed,Manager_B,Lodz,Poland,DPD Poland,2025-10-13
+SC2-00802,Omega-3 Fish Oil 90 capsules,2,83.0,Instagram,2025-10-08 03:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2025-10-10
+SC2-00803,Creatine Monohydrate 500g,1,66.0,Website,2025-10-08 08:00:00,Completed,Manager_C,Szczecin,Poland,Poczta Polska,2025-10-14
+SC2-00804,Creatine Monohydrate 500g,1,62.0,Instagram,2025-10-09 19:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2025-10-12
+SC2-00805,Vitamin D3+K2 60 caps,1,19.0,Website,2025-10-10 16:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2025-10-16
+SC2-00806,Pre-Workout Energy Powder 300g,1,75.0,Website,2025-10-11 01:00:00,Completed,Manager_A,Krakow,Poland,DPD Poland,2025-10-17
+SC2-00807,Gym Bag Medium,3,219.0,Instagram,2025-10-11 03:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2025-10-14
+SC2-00808,Magnesium Complex 60 caps,2,60.0,Instagram,2025-10-12 13:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2025-10-15
+SC2-00809,Collagen Peptides 300g,3,190.5,Instagram,2025-10-12 15:00:00,Completed,Manager_A,Poznan,Poland,DPD Poland,2025-10-16
+SC2-00810,Resistance Band Set 5pcs,1,40.0,Instagram,2025-10-13 10:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2025-10-14
+SC2-00811,Collagen Peptides 300g,1,61.0,Instagram,2025-10-14 07:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2025-10-17
+SC2-00812,Whey Protein Concentrate 1kg Chocolate,1,120.5,Website,2025-10-14 19:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2025-10-18
+SC2-00813,Pre-Workout Energy Powder 300g,3,253.5,Website,2025-10-16 01:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2025-10-21
+SC2-00814,Magnesium Complex 60 caps,1,36.5,Website,2025-10-18 12:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2025-10-24
+SC2-00815,Resistance Band Set 5pcs,1,53.5,Facebook Shop,2025-10-22 06:00:00,Completed,Manager_A,Lublin,Poland,DPD Poland,2025-10-24
+SC2-00816,Magnesium Complex 60 caps,2,70.0,Facebook Shop,2025-10-24 05:00:00,Completed,Manager_A,Poznan,Poland,DPD Poland,2025-10-30
+SC2-00817,Magnesium Complex 60 caps,3,108.0,Instagram,2025-10-25 09:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2025-10-29
+SC2-00818,Creatine Monohydrate 500g,1,67.5,Instagram,2025-10-25 18:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2025-10-27
+SC2-00819,Resistance Band Set 5pcs,1,48.0,Website,2025-10-26 12:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2025-10-30
+SC2-00820,Gym Bag Medium,3,171.0,Instagram,2025-10-27 12:00:00,Completed,Manager_A,Krakow,Poland,Poczta Polska,2025-10-28
+SC2-00821,Magnesium Complex 60 caps,3,109.5,Website,2025-10-27 23:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2025-10-30
+SC2-00822,Shaker Bottle 700ml,1,17.5,Instagram,2025-10-28 04:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2025-11-01
+SC2-00823,Pre-Workout Energy Powder 300g,1,82.5,Website,2025-10-29 01:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2025-10-30
+SC2-00824,Omega-3 Fish Oil 90 capsules,1,32.0,Instagram,2025-10-29 20:00:00,Completed,Manager_B,Poznan,Poland,Poczta Polska,2025-10-31
+SC2-00825,Whey Protein Concentrate 1kg Vanilla,1,120.5,Instagram,2025-10-30 00:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2025-11-02
+SC2-00826,Vitamin D3+K2 60 caps,1,31.5,Website,2025-10-30 05:00:00,Completed,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,2025-11-05
+SC2-00827,Resistance Band Set 5pcs,1,46.0,Instagram,2025-11-01 17:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2025-11-03
+SC2-00828,BCAA 2:1:1 Powder 400g,2,117.0,Website,2025-11-03 22:00:00,Completed,Manager_B,Katowice,Poland,DPD Poland,2025-11-04
+SC2-00829,Vitamin D3+K2 60 caps,1,20.5,Instagram,2025-11-07 05:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2025-11-08
+SC2-00830,Whey Protein Concentrate 1kg Vanilla,1,105.5,Facebook Shop,2025-11-08 05:00:00,Awaiting Payment,Manager_A,Szczecin,Poland,DPD Poland,
+SC2-00831,Whey Protein Concentrate 1kg Chocolate,3,327.0,Facebook Shop,2025-11-10 02:00:00,Cancelled,Manager_C,Krakow,Poland,InPost Paczkomat,
+SC2-00832,BCAA 2:1:1 Powder 400g,1,60.0,Website,2025-11-13 03:00:00,Completed,Manager_C,Lodz,Poland,DPD Poland,2025-11-16
+SC2-00833,Creatine Monohydrate 500g,1,56.5,Instagram,2025-11-15 11:00:00,New,Manager_C,Bydgoszcz,Poland,DPD Poland,
+SC2-00834,Omega-3 Fish Oil 90 capsules,1,29.5,Facebook Shop,2025-11-18 17:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2025-11-21
+SC2-00835,Pre-Workout Energy Powder 300g,1,84.5,Website,2025-11-23 05:00:00,Completed,Manager_C,Wroclaw,Poland,Poczta Polska,2025-11-29
+SC2-00836,Pre-Workout Energy Powder 300g,1,72.5,Instagram,2025-11-23 12:00:00,Completed,Manager_C,Bydgoszcz,Poland,DPD Poland,2025-11-24
+SC2-00837,Vitamin D3+K2 60 caps,1,21.5,Website,2025-11-24 03:00:00,Completed,Manager_A,Gdansk,Poland,DPD Poland,2025-11-30
+SC2-00838,Whey Protein Concentrate 1kg Chocolate,1,94.5,Instagram,2025-11-24 12:00:00,Completed,Manager_B,Katowice,Poland,DPD Poland,2025-11-27
+SC2-00839,Gym Bag Medium,1,64.0,Website,2025-11-24 22:00:00,Completed,Manager_A,Poznan,Poland,DPD Poland,2025-11-26
+SC2-00840,Gym Bag Medium,1,61.5,Instagram,2025-11-25 11:00:00,Completed,Manager_C,Gdansk,Poland,DPD Poland,2025-11-30
+SC2-00841,Creatine Monohydrate 500g,1,53.0,Website,2025-11-25 20:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2025-11-26
+SC2-00842,Whey Protein Concentrate 1kg Chocolate,2,244.0,Website,2025-11-27 12:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2025-11-28
+SC2-00843,Omega-3 Fish Oil 90 capsules,1,39.5,Instagram,2025-11-27 15:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2025-12-03
+SC2-00844,Whey Protein Concentrate 1kg Vanilla,1,114.0,Website,2025-11-27 19:00:00,New,Manager_A,Gdansk,Poland,InPost Paczkomat,
+SC2-00845,Omega-3 Fish Oil 90 capsules,1,34.0,Instagram,2025-11-27 21:00:00,Completed,Manager_A,Lublin,Poland,InPost Paczkomat,2025-11-28
+SC2-00846,Whey Protein Concentrate 1kg Chocolate,1,93.5,Website,2025-11-29 08:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2025-12-04
+SC2-00847,Omega-3 Fish Oil 90 capsules,1,44.0,Instagram,2025-11-29 22:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2025-12-05
+SC2-00848,Creatine Monohydrate 500g,1,60.0,Website,2025-11-30 18:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2025-12-04
+SC2-00849,Whey Protein Concentrate 1kg Chocolate,3,282.0,Website,2025-12-04 01:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2025-12-05
+SC2-00850,Magnesium Complex 60 caps,2,73.0,Instagram,2025-12-05 19:00:00,Awaiting Payment,Manager_B,Bydgoszcz,Poland,DPD Poland,
+SC2-00851,Whey Protein Concentrate 1kg Chocolate,1,123.5,Website,2025-12-09 00:00:00,Completed,Manager_B,Krakow,Poland,DPD Poland,2025-12-14
+SC2-00852,Whey Protein Concentrate 1kg Chocolate,1,114.0,Instagram,2025-12-09 17:00:00,Completed,Manager_A,Gdansk,Poland,DPD Poland,2025-12-15
+SC2-00853,Collagen Peptides 300g,1,65.0,Website,2025-12-11 02:00:00,Completed,Manager_C,Wroclaw,Poland,DPD Poland,2025-12-12
+SC2-00854,Creatine Monohydrate 500g,1,52.0,Website,2025-12-11 21:00:00,Completed,Manager_B,Wroclaw,Poland,DPD Poland,2025-12-14
+SC2-00855,Whey Protein Concentrate 1kg Vanilla,1,101.0,Website,2025-12-18 14:00:00,New,Manager_B,Szczecin,Poland,InPost Paczkomat,
+SC2-00856,Gym Bag Medium,2,122.0,Facebook Shop,2025-12-23 12:00:00,New,Manager_C,Poznan,Poland,InPost Paczkomat,
+SC2-00857,Creatine Monohydrate 500g,1,55.0,Website,2025-12-25 12:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2025-12-27
+SC2-00858,Collagen Peptides 300g,1,63.0,Website,2025-12-26 14:00:00,Cancelled,Manager_A,Poznan,Poland,InPost Paczkomat,
+SC2-00859,Whey Protein Concentrate 1kg Chocolate,1,96.0,Instagram,2025-12-27 10:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2026-01-02
+SC2-00860,Shaker Bottle 700ml,1,17.5,Facebook Shop,2025-12-27 20:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2025-12-28
+SC2-00861,BCAA 2:1:1 Powder 400g,2,111.0,Instagram,2025-12-30 09:00:00,Completed,Manager_C,Warsaw,Poland,InPost Paczkomat,2026-01-04
+SC2-00862,BCAA 2:1:1 Powder 400g,3,151.5,Website,2025-12-30 11:00:00,Completed,Manager_B,Lodz,Poland,InPost Paczkomat,2026-01-01
+SC2-00863,Shaker Bottle 700ml,1,21.0,Website,2025-12-31 17:00:00,Completed,Manager_A,Warsaw,Poland,DPD Poland,2026-01-05
+SC2-00864,Creatine Monohydrate 500g,2,130.0,Website,2025-12-31 23:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2026-01-02
+SC2-00865,Whey Protein Concentrate 1kg Chocolate,1,96.0,Website,2026-01-01 16:00:00,Awaiting Payment,Manager_A,Bydgoszcz,Poland,DPD Poland,
+SC2-00866,Shaker Bottle 700ml,1,21.0,Website,2026-01-03 09:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2026-01-08
+SC2-00867,BCAA 2:1:1 Powder 400g,1,58.5,Website,2026-01-03 20:00:00,Completed,Manager_A,Gdansk,Poland,DPD Poland,2026-01-07
+SC2-00868,BCAA 2:1:1 Powder 400g,1,51.0,Instagram,2026-01-04 03:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2026-01-08
+SC2-00869,Creatine Monohydrate 500g,1,46.5,Instagram,2026-01-04 06:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2026-01-10
+SC2-00870,Omega-3 Fish Oil 90 capsules,1,43.0,Instagram,2026-01-07 09:00:00,Completed,Manager_C,Gdansk,Poland,DPD Poland,2026-01-11
+SC2-00871,Shaker Bottle 700ml,1,17.5,Website,2026-01-08 09:00:00,Completed,Manager_B,Szczecin,Poland,DPD Poland,2026-01-13
+SC2-00872,Creatine Monohydrate 500g,1,56.0,Website,2026-01-08 13:00:00,Completed,Manager_C,Krakow,Poland,Poczta Polska,2026-01-09
+SC2-00873,Resistance Band Set 5pcs,3,151.5,Website,2026-01-10 06:00:00,New,Manager_A,Krakow,Poland,InPost Paczkomat,
+SC2-00874,BCAA 2:1:1 Powder 400g,2,121.0,Website,2026-01-10 20:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2026-01-15
+SC2-00875,Resistance Band Set 5pcs,2,95.0,Website,2026-01-11 02:00:00,Completed,Manager_B,Katowice,Poland,DPD Poland,2026-01-14
+SC2-00876,Whey Protein Concentrate 1kg Vanilla,1,129.0,Website,2026-01-11 07:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2026-01-14
+SC2-00877,Vitamin D3+K2 60 caps,1,30.0,Website,2026-01-11 15:00:00,Completed,Manager_C,Katowice,Poland,InPost Paczkomat,2026-01-12
+SC2-00878,Magnesium Complex 60 caps,1,37.5,Instagram,2026-01-11 19:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2026-01-17
+SC2-00879,BCAA 2:1:1 Powder 400g,1,63.5,Website,2026-01-11 20:00:00,Completed,Manager_B,Warsaw,Poland,DPD Poland,2026-01-12
+SC2-00880,Magnesium Complex 60 caps,1,36.0,Instagram,2026-01-12 07:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2026-01-16
+SC2-00881,Pre-Workout Energy Powder 300g,1,65.0,Website,2026-01-12 14:00:00,Cancelled,Manager_C,Lublin,Poland,InPost Paczkomat,
+SC2-00882,Omega-3 Fish Oil 90 capsules,1,41.5,Facebook Shop,2026-01-14 03:00:00,New,Manager_A,Lublin,Poland,InPost Paczkomat,
+SC2-00883,Gym Bag Medium,3,195.0,Website,2026-01-15 12:00:00,Completed,Manager_B,Krakow,Poland,DPD Poland,2026-01-16
+SC2-00884,Gym Bag Medium,2,134.0,Instagram,2026-01-16 05:00:00,Completed,Manager_A,Katowice,Poland,Poczta Polska,2026-01-21
+SC2-00885,Resistance Band Set 5pcs,3,168.0,Website,2026-01-17 10:00:00,New,Manager_C,Krakow,Poland,InPost Paczkomat,
+SC2-00886,Whey Protein Concentrate 1kg Chocolate,1,113.0,Instagram,2026-01-18 01:00:00,Completed,Manager_A,Wroclaw,Poland,Poczta Polska,2026-01-24
+SC2-00887,Vitamin D3+K2 60 caps,1,23.0,Website,2026-01-18 09:00:00,New,Manager_B,Poznan,Poland,Poczta Polska,
+SC2-00888,Creatine Monohydrate 500g,1,64.5,Instagram,2026-01-18 16:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2026-01-22
+SC2-00889,Magnesium Complex 60 caps,3,114.0,Facebook Shop,2026-01-19 19:00:00,Completed,Manager_A,Lodz,Poland,InPost Paczkomat,2026-01-24
+SC2-00890,Magnesium Complex 60 caps,3,87.0,Website,2026-01-20 03:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2026-01-23
+SC2-00891,Pre-Workout Energy Powder 300g,1,86.5,Instagram,2026-01-20 19:00:00,Completed,Manager_A,Bydgoszcz,Poland,DPD Poland,2026-01-26
+SC2-00892,BCAA 2:1:1 Powder 400g,1,73.0,Website,2026-01-21 01:00:00,Completed,Manager_A,Poznan,Poland,InPost Paczkomat,2026-01-24
+SC2-00893,Magnesium Complex 60 caps,1,33.0,Instagram,2026-01-21 07:00:00,Completed,Manager_B,Warsaw,Poland,Poczta Polska,2026-01-27
+SC2-00894,Whey Protein Concentrate 1kg Vanilla,1,119.5,Website,2026-01-22 08:00:00,Completed,Manager_B,Gdansk,Poland,DPD Poland,2026-01-27
+SC2-00895,Magnesium Complex 60 caps,2,54.0,Website,2026-01-22 14:00:00,Completed,Manager_B,Katowice,Poland,InPost Paczkomat,2026-01-28
+SC2-00896,Whey Protein Concentrate 1kg Chocolate,1,124.0,Instagram,2026-01-22 18:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2026-01-23
+SC2-00897,Pre-Workout Energy Powder 300g,1,76.5,Facebook Shop,2026-01-23 09:00:00,Completed,Manager_A,Krakow,Poland,DPD Poland,2026-01-24
+SC2-00898,BCAA 2:1:1 Powder 400g,2,117.0,Website,2026-01-24 15:00:00,Completed,Manager_A,Poznan,Poland,Poczta Polska,2026-01-27
+SC2-00899,Collagen Peptides 300g,1,71.5,Website,2026-01-25 16:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2026-01-28
+SC2-00900,Gym Bag Medium,1,51.0,Website,2026-01-26 17:00:00,Completed,Manager_C,Lodz,Poland,InPost Paczkomat,2026-01-29
+SC2-00901,Pre-Workout Energy Powder 300g,3,253.5,Website,2026-01-28 01:00:00,Completed,Manager_C,Szczecin,Poland,InPost Paczkomat,2026-02-02
+SC2-00902,BCAA 2:1:1 Powder 400g,1,50.5,Facebook Shop,2026-01-28 18:00:00,Completed,Manager_A,Szczecin,Poland,InPost Paczkomat,2026-02-02
+SC2-00903,Magnesium Complex 60 caps,1,25.5,Facebook Shop,2026-01-31 17:00:00,Cancelled,Manager_B,Szczecin,Poland,Poczta Polska,
+SC2-00904,Resistance Band Set 5pcs,1,55.0,Instagram,2026-02-02 02:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2026-02-05
+SC2-00905,Vitamin D3+K2 60 caps,1,26.0,Instagram,2026-02-03 22:00:00,Completed,Manager_B,Wroclaw,Poland,InPost Paczkomat,2026-02-06
+SC2-00906,Resistance Band Set 5pcs,2,95.0,Website,2026-02-04 08:00:00,New,Manager_C,Lublin,Poland,DPD Poland,
+SC2-00907,Whey Protein Concentrate 1kg Chocolate,2,192.0,Website,2026-02-04 19:00:00,Completed,Manager_A,Bydgoszcz,Poland,InPost Paczkomat,2026-02-07
+SC2-00908,BCAA 2:1:1 Powder 400g,1,73.0,Instagram,2026-02-05 08:00:00,New,Manager_C,Krakow,Poland,InPost Paczkomat,
+SC2-00909,Collagen Peptides 300g,1,58.5,Instagram,2026-02-05 11:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2026-02-08
+SC2-00910,Whey Protein Concentrate 1kg Chocolate,1,111.0,Instagram,2026-02-06 01:00:00,Completed,Manager_B,Poznan,Poland,InPost Paczkomat,2026-02-10
+SC2-00911,Resistance Band Set 5pcs,1,44.5,Website,2026-02-06 13:00:00,Completed,Manager_B,Lublin,Poland,DPD Poland,2026-02-11
+SC2-00912,Whey Protein Concentrate 1kg Chocolate,1,126.5,Facebook Shop,2026-02-12 04:00:00,Completed,Manager_C,Krakow,Poland,InPost Paczkomat,2026-02-14
+SC2-00913,Whey Protein Concentrate 1kg Chocolate,1,104.5,Website,2026-02-12 16:00:00,Completed,Manager_A,Gdansk,Poland,InPost Paczkomat,2026-02-15
+SC2-00914,Vitamin D3+K2 60 caps,1,29.0,Website,2026-02-12 18:00:00,Completed,Manager_A,Krakow,Poland,InPost Paczkomat,2026-02-16
+SC2-00915,BCAA 2:1:1 Powder 400g,1,50.0,Instagram,2026-02-12 22:00:00,Completed,Manager_B,Lodz,Poland,DPD Poland,2026-02-16
+SC2-00916,Collagen Peptides 300g,1,62.5,Website,2026-02-13 06:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2026-02-16
+SC2-00917,Whey Protein Concentrate 1kg Chocolate,2,194.0,Website,2026-02-14 12:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2026-02-20
+SC2-00918,Resistance Band Set 5pcs,1,42.5,Website,2026-02-15 06:00:00,Awaiting Payment,Manager_A,Lodz,Poland,InPost Paczkomat,
+SC2-00919,BCAA 2:1:1 Powder 400g,1,52.5,Website,2026-02-15 07:00:00,Completed,Manager_B,Katowice,Poland,InPost Paczkomat,2026-02-16
+SC2-00920,Pre-Workout Energy Powder 300g,1,62.0,Website,2026-02-16 23:00:00,Completed,Manager_B,Lublin,Poland,InPost Paczkomat,2026-02-18
+SC2-00921,Magnesium Complex 60 caps,3,114.0,Instagram,2026-02-17 16:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2026-02-22
+SC2-00922,Creatine Monohydrate 500g,1,47.5,Website,2026-02-20 22:00:00,Cancelled,Manager_A,Lodz,Poland,InPost Paczkomat,
+SC2-00923,Magnesium Complex 60 caps,1,27.0,Instagram,2026-02-21 04:00:00,Completed,Manager_C,Gdansk,Poland,InPost Paczkomat,2026-02-22
+SC2-00924,Resistance Band Set 5pcs,1,56.5,Website,2026-02-21 10:00:00,New,Manager_B,Szczecin,Poland,DPD Poland,
+SC2-00925,Vitamin D3+K2 60 caps,3,61.5,Facebook Shop,2026-02-21 19:00:00,Completed,Manager_C,Gdansk,Poland,DPD Poland,2026-02-23
+SC2-00926,Magnesium Complex 60 caps,1,25.0,Website,2026-02-22 21:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2026-02-28
+SC2-00927,Pre-Workout Energy Powder 300g,2,139.0,Website,2026-02-24 07:00:00,Completed,Manager_B,Poznan,Poland,DPD Poland,2026-02-25
+SC2-00928,Omega-3 Fish Oil 90 capsules,1,38.0,Website,2026-02-28 03:00:00,Completed,Manager_A,Warsaw,Poland,InPost Paczkomat,2026-03-05
+SC2-00929,Gym Bag Medium,1,55.5,Facebook Shop,2026-02-28 21:00:00,New,Manager_C,Lublin,Poland,InPost Paczkomat,
+SC2-00930,Whey Protein Concentrate 1kg Chocolate,1,118.5,Website,2026-03-03 01:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2026-03-08
+SC2-00931,Collagen Peptides 300g,1,58.5,Website,2026-03-06 09:00:00,Completed,Manager_A,Lodz,Poland,Poczta Polska,2026-03-11
+SC2-00932,Vitamin D3+K2 60 caps,1,29.0,Instagram,2026-03-06 20:00:00,Completed,Manager_B,Gdansk,Poland,InPost Paczkomat,2026-03-10
+SC2-00933,Whey Protein Concentrate 1kg Chocolate,1,127.0,Website,2026-03-08 03:00:00,New,Manager_A,Poznan,Poland,InPost Paczkomat,
+SC2-00934,Gym Bag Medium,1,68.0,Website,2026-03-08 13:00:00,Completed,Manager_A,Lodz,Poland,DPD Poland,2026-03-14
+SC2-00935,Collagen Peptides 300g,1,66.0,Website,2026-03-12 20:00:00,Completed,Manager_C,Bydgoszcz,Poland,DPD Poland,2026-03-14
+SC2-00936,Creatine Monohydrate 500g,1,69.0,Facebook Shop,2026-03-13 08:00:00,Awaiting Payment,Manager_A,Szczecin,Poland,DPD Poland,
+SC2-00937,Omega-3 Fish Oil 90 capsules,3,111.0,Website,2026-03-14 23:00:00,Completed,Manager_C,Wroclaw,Poland,InPost Paczkomat,2026-03-19
+SC2-00938,Resistance Band Set 5pcs,1,55.5,Website,2026-03-15 20:00:00,Completed,Manager_B,Szczecin,Poland,InPost Paczkomat,2026-03-17
+SC2-00939,Whey Protein Concentrate 1kg Chocolate,1,94.5,Website,2026-03-16 23:00:00,Completed,Manager_A,Wroclaw,Poland,InPost Paczkomat,2026-03-22
+SC2-00940,Whey Protein Concentrate 1kg Chocolate,1,128.5,Instagram,2026-03-17 07:00:00,Completed,Manager_C,Lublin,Poland,InPost Paczkomat,2026-03-22
+SC2-00941,Vitamin D3+K2 60 caps,1,23.5,Instagram,2026-03-18 07:00:00,New,Manager_A,Gdansk,Poland,DPD Poland,
+SC2-00942,Whey Protein Concentrate 1kg Chocolate,2,193.0,Website,2026-03-19 04:00:00,Completed,Manager_B,Katowice,Poland,DPD Poland,2026-03-20
+SC2-00943,Omega-3 Fish Oil 90 capsules,2,86.0,Facebook Shop,2026-03-23 12:00:00,Completed,Manager_A,Warsaw,Poland,DPD Poland,2026-03-24
+SC2-00944,Pre-Workout Energy Powder 300g,3,201.0,Facebook Shop,2026-03-25 13:00:00,Completed,Manager_B,Krakow,Poland,InPost Paczkomat,2026-03-28
+SC2-00945,Whey Protein Concentrate 1kg Chocolate,1,116.0,Facebook Shop,2026-03-26 15:00:00,Completed,Manager_B,Katowice,Poland,InPost Paczkomat,2026-03-31
+SC2-00946,Resistance Band Set 5pcs,1,55.5,Website,2026-03-27 10:00:00,Completed,Manager_B,Warsaw,Poland,InPost Paczkomat,2026-03-31
+SC2-00947,Omega-3 Fish Oil 90 capsules,1,43.5,Website,2026-03-27 15:00:00,Completed,Manager_C,Gdansk,Poland,DPD Poland,2026-03-30
+SC2-00948,BCAA 2:1:1 Powder 400g,3,190.5,Instagram,2026-03-29 02:00:00,Completed,Manager_C,Poznan,Poland,DPD Poland,2026-03-31
+SC2-00949,Collagen Peptides 300g,1,71.5,Facebook Shop,2026-03-29 10:00:00,Completed,Manager_C,Poznan,Poland,InPost Paczkomat,2026-03-31
+SC2-00950,Omega-3 Fish Oil 90 capsules,1,40.5,Instagram,2026-03-30 09:00:00,Completed,Manager_A,Katowice,Poland,InPost Paczkomat,2026-04-03

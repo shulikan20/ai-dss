@@ -1,0 +1,721 @@
+order_id,product_name,quantity,price_eur,channel,order_date,status,manager,city,country,delivery_service,delivery_date
+SC3-00001,Travel Pet Carrier Bag,3,139.5,Website,2023-07-01 14:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2023-07-02
+SC3-00002,Travel Pet Carrier Bag,1,38.5,Marktplaats,2023-07-02 20:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2023-07-06
+SC3-00003,Dog Raincoat Size M,1,30.0,Instagram,2023-07-08 10:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2023-07-12
+SC3-00004,Automatic Pet Water Fountain,3,93.0,Website,2023-07-09 18:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2023-07-14
+SC3-00005,Travel Pet Carrier Bag,2,106.0,Website,2023-07-12 22:00:00,Completed,Manager_B,Tilburg,Netherlands,DPD,2023-07-14
+SC3-00006,Orthopedic Dog Bed M,1,65.5,Website,2023-07-16 12:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2023-07-21
+SC3-00007,Retractable Dog Leash 5m,1,24.0,Website,2023-07-19 06:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2023-07-20
+SC3-00008,Retractable Dog Leash 5m,3,58.5,Website,2023-07-21 12:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2023-07-22
+SC3-00009,Pet Feeding Mat Silicone,1,11.0,Instagram,2023-07-23 01:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2023-07-24
+SC3-00010,Pet Feeding Mat Silicone,1,9.5,Website,2023-07-25 12:00:00,New,Manager_B,Amsterdam,Netherlands,PostNL,
+SC3-00011,Pet Feeding Mat Silicone,1,11.5,Website,2023-07-25 17:00:00,Completed,Manager_B,Tilburg,Netherlands,DHL Netherlands,2023-07-27
+SC3-00012,Dog Collar Leather M,2,48.0,Instagram,2023-07-26 18:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2023-07-28
+SC3-00013,Dog Collar Leather L,1,29.0,Website,2023-07-27 22:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2023-07-28
+SC3-00014,Pet Feeding Mat Silicone,2,30.0,Instagram,2023-07-28 05:00:00,Completed,Manager_B,The Hague,Netherlands,DHL Netherlands,2023-07-29
+SC3-00015,Dog Raincoat Size M,1,34.5,Website,2023-07-30 14:00:00,Completed,Manager_B,Amsterdam,Netherlands,DHL Netherlands,2023-08-04
+SC3-00016,Dog Collar Leather M,3,63.0,Website,2023-08-02 14:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2023-08-04
+SC3-00017,Orthopedic Dog Bed L,1,91.0,Instagram,2023-08-04 00:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2023-08-10
+SC3-00018,Orthopedic Dog Bed L,1,87.5,Website,2023-08-05 12:00:00,Completed,Manager_B,Almere,Netherlands,DPD,2023-08-11
+SC3-00019,Orthopedic Dog Bed M,1,54.5,Website,2023-08-09 20:00:00,Completed,Manager_B,Almere,Netherlands,DHL Netherlands,2023-08-12
+SC3-00020,Stainless Steel Bowl Set,1,18.5,Website,2023-08-12 22:00:00,New,Manager_A,Rotterdam,Netherlands,PostNL,
+SC3-00021,Stainless Steel Bowl Set,1,16.5,Instagram,2023-08-16 07:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2023-08-20
+SC3-00022,Dog Collar Leather L,3,97.5,Website,2023-08-21 21:00:00,Completed,Manager_A,Breda,Netherlands,DPD,2023-08-24
+SC3-00023,Travel Pet Carrier Bag,1,51.5,Website,2023-08-23 06:00:00,Completed,Manager_B,Tilburg,Netherlands,DHL Netherlands,2023-08-26
+SC3-00024,Travel Pet Carrier Bag,1,43.5,Website,2023-08-23 15:00:00,Completed,Manager_A,Breda,Netherlands,DHL Netherlands,2023-08-26
+SC3-00025,Interactive Cat Toy Wand,3,28.5,Marktplaats,2023-08-24 20:00:00,Completed,Manager_A,Utrecht,Netherlands,DHL Netherlands,2023-08-25
+SC3-00026,Cat Scratching Post 60cm,2,86.0,Website,2023-08-25 17:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2023-08-28
+SC3-00027,Retractable Dog Leash 5m,1,22.0,Instagram,2023-08-26 20:00:00,Completed,Manager_B,Breda,Netherlands,DHL Netherlands,2023-09-01
+SC3-00028,Dog Raincoat Size M,1,24.0,Website,2023-08-28 03:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2023-09-03
+SC3-00029,Retractable Dog Leash 5m,3,69.0,Website,2023-08-29 15:00:00,Awaiting Review,Manager_B,Groningen,Netherlands,PostNL,
+SC3-00030,Automatic Pet Water Fountain,2,81.0,Website,2023-08-30 15:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2023-09-05
+SC3-00031,Orthopedic Dog Bed L,1,76.5,Website,2023-09-01 01:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2023-09-06
+SC3-00032,Dog Collar Leather M,1,20.5,Website,2023-09-02 13:00:00,Completed,Manager_B,Almere,Netherlands,DHL Netherlands,2023-09-07
+SC3-00033,Stainless Steel Bowl Set,2,35.0,Instagram,2023-09-03 15:00:00,Completed,Manager_A,Nijmegen,Netherlands,DPD,2023-09-08
+SC3-00034,Dog Raincoat Size M,1,29.0,Website,2023-09-05 10:00:00,Completed,Manager_B,The Hague,Netherlands,DHL Netherlands,2023-09-08
+SC3-00035,Cat Scratching Post 60cm,1,37.5,Website,2023-09-06 00:00:00,Completed,Manager_B,The Hague,Netherlands,DHL Netherlands,2023-09-10
+SC3-00036,Interactive Cat Toy Wand,1,11.5,Website,2023-09-06 19:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2023-09-11
+SC3-00037,Dog Collar Leather L,1,24.0,Marktplaats,2023-09-10 02:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2023-09-16
+SC3-00038,Dog Collar Leather M,3,78.0,Website,2023-09-15 17:00:00,Completed,Manager_B,Tilburg,Netherlands,DHL Netherlands,2023-09-18
+SC3-00039,Interactive Cat Toy Wand,1,11.0,Instagram,2023-09-18 10:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2023-09-19
+SC3-00040,Automatic Pet Water Fountain,1,38.0,Website,2023-09-18 16:00:00,Awaiting Review,Manager_A,Tilburg,Netherlands,PostNL,
+SC3-00041,Travel Pet Carrier Bag,1,39.0,Instagram,2023-09-19 18:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2023-09-24
+SC3-00042,Cat Scratching Post 60cm,1,35.5,Website,2023-09-19 23:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2023-09-23
+SC3-00043,Pet Feeding Mat Silicone,1,10.0,Website,2023-09-21 09:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2023-09-25
+SC3-00044,Dog Collar Leather M,1,20.5,Instagram,2023-09-22 22:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2023-09-25
+SC3-00045,Orthopedic Dog Bed M,1,64.0,Website,2023-09-26 08:00:00,Completed,Manager_A,Almere,Netherlands,DHL Netherlands,2023-10-01
+SC3-00046,Retractable Dog Leash 5m,1,19.0,Instagram,2023-09-29 07:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2023-10-02
+SC3-00047,Orthopedic Dog Bed L,1,66.5,Website,2023-10-02 13:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2023-10-04
+SC3-00048,Dog Raincoat Size M,1,38.0,Instagram,2023-10-02 19:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2023-10-04
+SC3-00049,Orthopedic Dog Bed L,1,81.5,Website,2023-10-03 04:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2023-10-06
+SC3-00050,Interactive Cat Toy Wand,1,12.5,Website,2023-10-04 00:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2023-10-09
+SC3-00051,Dog Raincoat Size M,1,35.5,Website,2023-10-09 10:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2023-10-11
+SC3-00052,Pet Feeding Mat Silicone,1,12.5,Website,2023-10-10 06:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2023-10-14
+SC3-00053,Interactive Cat Toy Wand,1,12.0,Website,2023-10-12 00:00:00,New,Manager_B,Rotterdam,Netherlands,PostNL,
+SC3-00054,Orthopedic Dog Bed L,1,73.5,Website,2023-10-12 08:00:00,New,Manager_A,Breda,Netherlands,PostNL,
+SC3-00055,Stainless Steel Bowl Set,1,16.0,Instagram,2023-10-14 01:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2023-10-17
+SC3-00056,Dog Collar Leather L,2,61.0,Website,2023-10-14 03:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2023-10-16
+SC3-00057,Travel Pet Carrier Bag,1,47.0,Website,2023-10-15 23:00:00,New,Manager_B,Rotterdam,Netherlands,PostNL,
+SC3-00058,Retractable Dog Leash 5m,1,20.5,Website,2023-10-16 09:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2023-10-21
+SC3-00059,Dog Collar Leather L,1,30.5,Marktplaats,2023-10-16 21:00:00,New,Manager_B,The Hague,Netherlands,PostNL,
+SC3-00060,Orthopedic Dog Bed M,1,67.0,Website,2023-10-17 15:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2023-10-18
+SC3-00061,Stainless Steel Bowl Set,2,28.0,Website,2023-10-18 21:00:00,Completed,Manager_B,The Hague,Netherlands,DHL Netherlands,2023-10-20
+SC3-00062,Stainless Steel Bowl Set,2,36.0,Instagram,2023-10-19 00:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2023-10-22
+SC3-00063,Automatic Pet Water Fountain,1,45.5,Marktplaats,2023-10-19 04:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2023-10-20
+SC3-00064,Dog Collar Leather M,1,22.5,Marktplaats,2023-10-20 17:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2023-10-23
+SC3-00065,Dog Collar Leather L,3,75.0,Website,2023-10-21 05:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2023-10-24
+SC3-00066,Automatic Pet Water Fountain,1,44.5,Website,2023-10-22 00:00:00,Completed,Manager_B,Amsterdam,Netherlands,DHL Netherlands,2023-10-26
+SC3-00067,Dog Raincoat Size M,1,28.5,Instagram,2023-10-22 01:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2023-10-23
+SC3-00068,Retractable Dog Leash 5m,3,58.5,Website,2023-10-23 06:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2023-10-25
+SC3-00069,Dog Collar Leather L,1,30.0,Website,2023-10-24 15:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2023-10-25
+SC3-00070,Orthopedic Dog Bed L,1,66.5,Website,2023-10-26 10:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2023-11-01
+SC3-00071,Interactive Cat Toy Wand,1,13.0,Website,2023-10-27 07:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2023-10-31
+SC3-00072,Retractable Dog Leash 5m,1,17.0,Marktplaats,2023-10-27 11:00:00,Completed,Manager_B,Nijmegen,Netherlands,DPD,2023-10-30
+SC3-00073,Orthopedic Dog Bed L,1,69.5,Website,2023-10-28 22:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2023-10-31
+SC3-00074,Dog Raincoat Size M,1,29.5,Instagram,2023-10-29 06:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2023-11-04
+SC3-00075,Dog Collar Leather M,1,25.5,Marktplaats,2023-10-30 17:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2023-11-04
+SC3-00076,Cat Scratching Post 60cm,1,40.0,Website,2023-10-31 20:00:00,New,Manager_B,Groningen,Netherlands,PostNL,
+SC3-00077,Orthopedic Dog Bed L,1,73.5,Instagram,2023-11-01 13:00:00,Completed,Manager_B,Tilburg,Netherlands,DHL Netherlands,2023-11-03
+SC3-00078,Dog Raincoat Size M,1,28.5,Instagram,2023-11-02 04:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2023-11-07
+SC3-00079,Interactive Cat Toy Wand,1,9.5,Website,2023-11-02 14:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2023-11-06
+SC3-00080,Automatic Pet Water Fountain,1,45.5,Marktplaats,2023-11-03 01:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2023-11-05
+SC3-00081,Cat Scratching Post 60cm,3,109.5,Website,2023-11-03 09:00:00,Completed,Manager_A,Groningen,Netherlands,DHL Netherlands,2023-11-09
+SC3-00082,Travel Pet Carrier Bag,1,52.5,Instagram,2023-11-04 04:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2023-11-10
+SC3-00083,Dog Collar Leather M,1,23.5,Website,2023-11-05 00:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2023-11-09
+SC3-00084,Pet Feeding Mat Silicone,1,10.5,Website,2023-11-06 08:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2023-11-11
+SC3-00085,Dog Collar Leather L,1,26.0,Website,2023-11-06 22:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2023-11-10
+SC3-00086,Dog Collar Leather L,1,30.0,Instagram,2023-11-07 03:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2023-11-09
+SC3-00087,Dog Collar Leather L,1,22.5,Website,2023-11-07 17:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2023-11-11
+SC3-00088,Dog Collar Leather L,1,24.0,Instagram,2023-11-07 18:00:00,Awaiting Review,Manager_B,Almere,Netherlands,PostNL,
+SC3-00089,Interactive Cat Toy Wand,1,13.0,Website,2023-11-08 05:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2023-11-12
+SC3-00090,Retractable Dog Leash 5m,1,24.5,Website,2023-11-08 07:00:00,Completed,Manager_B,Nijmegen,Netherlands,DPD,2023-11-09
+SC3-00091,Retractable Dog Leash 5m,1,16.5,Website,2023-11-09 00:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2023-11-14
+SC3-00092,Orthopedic Dog Bed L,1,87.5,Marktplaats,2023-11-11 04:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2023-11-17
+SC3-00093,Stainless Steel Bowl Set,1,14.5,Website,2023-11-11 14:00:00,Completed,Manager_A,Almere,Netherlands,DPD,2023-11-17
+SC3-00094,Dog Raincoat Size M,1,35.5,Website,2023-11-13 12:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2023-11-18
+SC3-00095,Orthopedic Dog Bed L,1,72.5,Website,2023-11-13 23:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2023-11-15
+SC3-00096,Orthopedic Dog Bed M,1,54.0,Instagram,2023-11-14 10:00:00,Completed,Manager_B,Groningen,Netherlands,DHL Netherlands,2023-11-20
+SC3-00097,Dog Collar Leather L,1,26.5,Instagram,2023-11-14 17:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2023-11-19
+SC3-00098,Dog Collar Leather L,1,22.5,Marktplaats,2023-11-15 02:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2023-11-19
+SC3-00099,Cat Scratching Post 60cm,1,43.0,Instagram,2023-11-16 02:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2023-11-20
+SC3-00100,Pet Feeding Mat Silicone,1,14.0,Instagram,2023-11-17 08:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2023-11-22
+SC3-00101,Retractable Dog Leash 5m,1,21.0,Website,2023-11-17 15:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2023-11-18
+SC3-00102,Pet Feeding Mat Silicone,1,9.5,Website,2023-11-18 02:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2023-11-19
+SC3-00103,Retractable Dog Leash 5m,2,52.0,Instagram,2023-11-18 14:00:00,Completed,Manager_A,Breda,Netherlands,DHL Netherlands,2023-11-21
+SC3-00104,Dog Collar Leather M,2,42.0,Marktplaats,2023-11-20 00:00:00,New,Manager_B,Nijmegen,Netherlands,DPD,
+SC3-00105,Travel Pet Carrier Bag,2,84.0,Website,2023-11-20 14:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2023-11-21
+SC3-00106,Interactive Cat Toy Wand,1,13.0,Website,2023-11-21 01:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2023-11-25
+SC3-00107,Stainless Steel Bowl Set,1,15.0,Instagram,2023-11-23 11:00:00,Completed,Manager_B,Utrecht,Netherlands,DPD,2023-11-27
+SC3-00108,Orthopedic Dog Bed M,1,67.5,Website,2023-11-24 10:00:00,Completed,Manager_A,Tilburg,Netherlands,DHL Netherlands,2023-11-25
+SC3-00109,Pet Feeding Mat Silicone,1,13.5,Website,2023-11-24 15:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2023-11-29
+SC3-00110,Dog Collar Leather M,1,27.5,Website,2023-11-25 03:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2023-12-01
+SC3-00111,Orthopedic Dog Bed M,1,49.5,Website,2023-11-25 10:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2023-11-28
+SC3-00112,Stainless Steel Bowl Set,1,17.0,Website,2023-11-26 05:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2023-11-27
+SC3-00113,Travel Pet Carrier Bag,1,50.0,Website,2023-11-26 06:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2023-11-28
+SC3-00114,Travel Pet Carrier Bag,1,44.5,Website,2023-11-26 07:00:00,New,Manager_A,Tilburg,Netherlands,PostNL,
+SC3-00115,Dog Raincoat Size M,1,37.5,Marktplaats,2023-11-27 21:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2023-12-03
+SC3-00116,Cat Scratching Post 60cm,1,29.0,Website,2023-11-27 23:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2023-11-29
+SC3-00117,Travel Pet Carrier Bag,1,50.5,Instagram,2023-12-01 13:00:00,Returned,Manager_A,Amsterdam,Netherlands,PostNL,
+SC3-00118,Retractable Dog Leash 5m,1,16.5,Website,2023-12-01 16:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2023-12-04
+SC3-00119,Cat Scratching Post 60cm,1,44.0,Instagram,2023-12-02 22:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2023-12-06
+SC3-00120,Cat Scratching Post 60cm,2,81.0,Website,2023-12-03 17:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2023-12-04
+SC3-00121,Interactive Cat Toy Wand,2,26.0,Instagram,2023-12-04 02:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2023-12-08
+SC3-00122,Travel Pet Carrier Bag,1,44.0,Website,2023-12-04 14:00:00,Completed,Manager_A,Amsterdam,Netherlands,DPD,2023-12-07
+SC3-00123,Stainless Steel Bowl Set,2,29.0,Website,2023-12-05 01:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2023-12-11
+SC3-00124,Orthopedic Dog Bed L,1,65.5,Website,2023-12-05 15:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2023-12-06
+SC3-00125,Dog Raincoat Size M,1,37.0,Website,2023-12-06 11:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2023-12-07
+SC3-00126,Dog Raincoat Size M,1,32.0,Website,2023-12-06 22:00:00,Completed,Manager_A,Rotterdam,Netherlands,DHL Netherlands,2023-12-10
+SC3-00127,Stainless Steel Bowl Set,1,17.0,Website,2023-12-07 06:00:00,Completed,Manager_B,Almere,Netherlands,DPD,2023-12-13
+SC3-00128,Orthopedic Dog Bed M,2,120.0,Marktplaats,2023-12-07 20:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2023-12-13
+SC3-00129,Interactive Cat Toy Wand,1,13.5,Website,2023-12-08 01:00:00,New,Manager_B,Rotterdam,Netherlands,PostNL,
+SC3-00130,Automatic Pet Water Fountain,3,102.0,Website,2023-12-08 06:00:00,Completed,Manager_A,The Hague,Netherlands,DHL Netherlands,2023-12-14
+SC3-00131,Dog Collar Leather M,1,24.5,Website,2023-12-08 20:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2023-12-10
+SC3-00132,Dog Collar Leather L,1,25.0,Website,2023-12-09 07:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2023-12-12
+SC3-00133,Pet Feeding Mat Silicone,1,14.0,Website,2023-12-10 01:00:00,New,Manager_A,Amsterdam,Netherlands,PostNL,
+SC3-00134,Dog Collar Leather L,1,33.0,Instagram,2023-12-10 02:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2023-12-14
+SC3-00135,Pet Feeding Mat Silicone,1,12.5,Marktplaats,2023-12-10 03:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2023-12-14
+SC3-00136,Retractable Dog Leash 5m,1,23.5,Instagram,2023-12-10 08:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2023-12-12
+SC3-00137,Pet Feeding Mat Silicone,1,15.5,Instagram,2023-12-11 01:00:00,Completed,Manager_B,Nijmegen,Netherlands,DHL Netherlands,2023-12-13
+SC3-00138,Retractable Dog Leash 5m,1,20.0,Instagram,2023-12-13 01:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2023-12-18
+SC3-00139,Cat Scratching Post 60cm,1,33.5,Website,2023-12-14 10:00:00,New,Manager_A,Breda,Netherlands,PostNL,
+SC3-00140,Orthopedic Dog Bed L,1,74.5,Website,2023-12-15 06:00:00,Awaiting Review,Manager_A,Eindhoven,Netherlands,DPD,
+SC3-00141,Dog Collar Leather L,1,26.5,Instagram,2023-12-16 16:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2023-12-20
+SC3-00142,Pet Feeding Mat Silicone,1,11.0,Instagram,2023-12-17 08:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2023-12-20
+SC3-00143,Travel Pet Carrier Bag,1,53.5,Website,2023-12-18 15:00:00,Completed,Manager_B,Rotterdam,Netherlands,DPD,2023-12-22
+SC3-00144,Retractable Dog Leash 5m,1,25.5,Website,2023-12-19 10:00:00,Returned,Manager_B,Breda,Netherlands,PostNL,
+SC3-00145,Automatic Pet Water Fountain,3,111.0,Website,2023-12-19 22:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2023-12-21
+SC3-00146,Stainless Steel Bowl Set,1,18.0,Marktplaats,2023-12-20 02:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2023-12-26
+SC3-00147,Cat Scratching Post 60cm,1,33.5,Website,2023-12-20 06:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2023-12-21
+SC3-00148,Pet Feeding Mat Silicone,1,9.5,Website,2023-12-20 14:00:00,Completed,Manager_A,Breda,Netherlands,DHL Netherlands,2023-12-21
+SC3-00149,Stainless Steel Bowl Set,1,16.5,Website,2023-12-20 23:00:00,Completed,Manager_A,The Hague,Netherlands,DHL Netherlands,2023-12-26
+SC3-00150,Stainless Steel Bowl Set,2,42.0,Website,2023-12-21 03:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2023-12-24
+SC3-00151,Retractable Dog Leash 5m,1,16.5,Website,2023-12-21 13:00:00,Completed,Manager_A,Almere,Netherlands,DHL Netherlands,2023-12-23
+SC3-00152,Travel Pet Carrier Bag,1,48.0,Website,2023-12-22 04:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2023-12-25
+SC3-00153,Orthopedic Dog Bed M,1,66.5,Website,2023-12-22 05:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2023-12-28
+SC3-00154,Dog Collar Leather L,1,30.5,Instagram,2023-12-23 06:00:00,New,Manager_B,Groningen,Netherlands,PostNL,
+SC3-00155,Dog Collar Leather M,1,21.5,Website,2023-12-24 02:00:00,New,Manager_A,Utrecht,Netherlands,DHL Netherlands,
+SC3-00156,Dog Collar Leather M,1,25.5,Website,2023-12-25 11:00:00,Awaiting Review,Manager_B,Utrecht,Netherlands,PostNL,
+SC3-00157,Interactive Cat Toy Wand,3,28.5,Website,2023-12-25 21:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2023-12-30
+SC3-00158,Automatic Pet Water Fountain,2,64.0,Website,2023-12-27 16:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-01-01
+SC3-00159,Orthopedic Dog Bed L,1,69.5,Website,2023-12-27 23:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2024-01-01
+SC3-00160,Cat Scratching Post 60cm,1,30.5,Marktplaats,2023-12-28 14:00:00,Completed,Manager_B,Amsterdam,Netherlands,DPD,2023-12-31
+SC3-00161,Retractable Dog Leash 5m,1,26.0,Marktplaats,2023-12-29 14:00:00,Completed,Manager_B,Eindhoven,Netherlands,DHL Netherlands,2023-12-31
+SC3-00162,Pet Feeding Mat Silicone,1,9.5,Website,2023-12-29 15:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2024-01-03
+SC3-00163,Dog Raincoat Size M,2,59.0,Website,2023-12-30 00:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2024-01-05
+SC3-00164,Stainless Steel Bowl Set,1,14.5,Website,2023-12-30 06:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2024-01-02
+SC3-00165,Retractable Dog Leash 5m,1,18.0,Website,2024-01-01 05:00:00,Completed,Manager_A,Almere,Netherlands,DPD,2024-01-03
+SC3-00166,Dog Collar Leather M,1,23.5,Website,2024-01-02 00:00:00,New,Manager_B,Breda,Netherlands,PostNL,
+SC3-00167,Dog Raincoat Size M,1,29.0,Website,2024-01-03 07:00:00,Awaiting Review,Manager_A,Nijmegen,Netherlands,PostNL,
+SC3-00168,Dog Collar Leather M,1,26.0,Website,2024-01-06 17:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2024-01-08
+SC3-00169,Stainless Steel Bowl Set,1,19.5,Website,2024-01-08 22:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2024-01-12
+SC3-00170,Cat Scratching Post 60cm,1,40.5,Website,2024-01-10 07:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2024-01-11
+SC3-00171,Retractable Dog Leash 5m,1,24.5,Website,2024-01-14 19:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2024-01-18
+SC3-00172,Orthopedic Dog Bed M,1,53.5,Website,2024-01-16 17:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2024-01-17
+SC3-00173,Dog Collar Leather M,1,26.0,Website,2024-01-19 08:00:00,New,Manager_B,The Hague,Netherlands,DPD,
+SC3-00174,Orthopedic Dog Bed L,2,134.0,Website,2024-01-20 00:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2024-01-26
+SC3-00175,Automatic Pet Water Fountain,3,102.0,Marktplaats,2024-01-20 10:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2024-01-25
+SC3-00176,Retractable Dog Leash 5m,2,50.0,Website,2024-01-22 01:00:00,Completed,Manager_A,Groningen,Netherlands,DHL Netherlands,2024-01-24
+SC3-00177,Orthopedic Dog Bed L,1,83.5,Website,2024-01-22 13:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2024-01-23
+SC3-00178,Interactive Cat Toy Wand,1,11.0,Website,2024-01-28 07:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2024-01-31
+SC3-00179,Cat Scratching Post 60cm,1,35.0,Website,2024-01-28 23:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2024-02-03
+SC3-00180,Automatic Pet Water Fountain,1,35.0,Website,2024-02-03 05:00:00,Completed,Manager_A,Utrecht,Netherlands,DHL Netherlands,2024-02-06
+SC3-00181,Dog Collar Leather L,1,34.0,Instagram,2024-02-07 16:00:00,New,Manager_A,Rotterdam,Netherlands,PostNL,
+SC3-00182,Dog Raincoat Size M,1,34.0,Instagram,2024-02-10 06:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2024-02-16
+SC3-00183,Stainless Steel Bowl Set,1,21.0,Website,2024-02-11 08:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2024-02-15
+SC3-00184,Dog Collar Leather M,1,28.0,Website,2024-02-11 18:00:00,Completed,Manager_B,Groningen,Netherlands,DHL Netherlands,2024-02-13
+SC3-00185,Automatic Pet Water Fountain,1,40.5,Website,2024-02-11 23:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2024-02-13
+SC3-00186,Interactive Cat Toy Wand,1,10.0,Website,2024-02-12 14:00:00,Completed,Manager_B,Eindhoven,Netherlands,DPD,2024-02-18
+SC3-00187,Dog Raincoat Size M,1,29.0,Website,2024-02-13 00:00:00,Returned,Manager_B,Nijmegen,Netherlands,PostNL,
+SC3-00188,Cat Scratching Post 60cm,1,30.0,Website,2024-02-14 13:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2024-02-15
+SC3-00189,Travel Pet Carrier Bag,1,39.5,Website,2024-02-16 14:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2024-02-17
+SC3-00190,Orthopedic Dog Bed L,2,151.0,Website,2024-02-17 00:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2024-02-21
+SC3-00191,Pet Feeding Mat Silicone,1,13.0,Website,2024-02-17 16:00:00,New,Manager_B,Rotterdam,Netherlands,DPD,
+SC3-00192,Orthopedic Dog Bed M,1,50.0,Website,2024-02-20 09:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2024-02-25
+SC3-00193,Orthopedic Dog Bed M,1,63.5,Website,2024-02-23 22:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2024-02-27
+SC3-00194,Dog Collar Leather M,1,18.0,Website,2024-02-26 01:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2024-03-02
+SC3-00195,Stainless Steel Bowl Set,1,19.5,Website,2024-02-26 18:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2024-02-28
+SC3-00196,Retractable Dog Leash 5m,1,16.5,Marktplaats,2024-02-28 09:00:00,Completed,Manager_B,Breda,Netherlands,DPD,2024-03-01
+SC3-00197,Dog Raincoat Size M,1,31.5,Marktplaats,2024-02-29 19:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2024-03-01
+SC3-00198,Pet Feeding Mat Silicone,1,9.5,Website,2024-03-02 03:00:00,Completed,Manager_B,Nijmegen,Netherlands,DHL Netherlands,2024-03-04
+SC3-00199,Interactive Cat Toy Wand,1,12.0,Instagram,2024-03-02 09:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2024-03-04
+SC3-00200,Orthopedic Dog Bed M,1,66.0,Website,2024-03-04 12:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2024-03-07
+SC3-00201,Travel Pet Carrier Bag,2,82.0,Website,2024-03-04 20:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2024-03-09
+SC3-00202,Pet Feeding Mat Silicone,1,14.5,Instagram,2024-03-05 20:00:00,Awaiting Review,Manager_B,Nijmegen,Netherlands,PostNL,
+SC3-00203,Stainless Steel Bowl Set,1,15.0,Marktplaats,2024-03-06 02:00:00,Completed,Manager_A,The Hague,Netherlands,DHL Netherlands,2024-03-08
+SC3-00204,Orthopedic Dog Bed M,2,125.0,Instagram,2024-03-07 00:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2024-03-09
+SC3-00205,Dog Collar Leather L,1,28.0,Website,2024-03-10 14:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2024-03-13
+SC3-00206,Dog Raincoat Size M,1,35.5,Website,2024-03-14 00:00:00,Completed,Manager_B,Nijmegen,Netherlands,DHL Netherlands,2024-03-15
+SC3-00207,Interactive Cat Toy Wand,1,10.5,Website,2024-03-17 10:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2024-03-23
+SC3-00208,Cat Scratching Post 60cm,1,32.0,Instagram,2024-03-18 03:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2024-03-21
+SC3-00209,Travel Pet Carrier Bag,1,38.5,Website,2024-03-18 20:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2024-03-23
+SC3-00210,Stainless Steel Bowl Set,1,22.0,Website,2024-03-20 04:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2024-03-24
+SC3-00211,Dog Collar Leather M,1,21.5,Website,2024-03-20 21:00:00,Returned,Manager_A,Nijmegen,Netherlands,DPD,
+SC3-00212,Cat Scratching Post 60cm,1,37.0,Website,2024-03-21 08:00:00,Completed,Manager_A,Breda,Netherlands,DHL Netherlands,2024-03-24
+SC3-00213,Cat Scratching Post 60cm,1,38.0,Website,2024-03-26 06:00:00,Completed,Manager_A,Amsterdam,Netherlands,DHL Netherlands,2024-03-29
+SC3-00214,Stainless Steel Bowl Set,3,66.0,Instagram,2024-03-27 13:00:00,Awaiting Review,Manager_B,Utrecht,Netherlands,DPD,
+SC3-00215,Orthopedic Dog Bed L,1,80.0,Website,2024-03-29 07:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2024-04-02
+SC3-00216,Automatic Pet Water Fountain,1,44.5,Website,2024-03-29 23:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2024-04-03
+SC3-00217,Retractable Dog Leash 5m,1,18.0,Website,2024-03-30 21:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2024-04-02
+SC3-00218,Retractable Dog Leash 5m,3,63.0,Marktplaats,2024-03-31 06:00:00,Completed,Manager_B,Amsterdam,Netherlands,DPD,2024-04-06
+SC3-00219,Stainless Steel Bowl Set,1,19.5,Website,2024-04-01 02:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2024-04-06
+SC3-00220,Cat Scratching Post 60cm,3,109.5,Website,2024-04-03 13:00:00,Completed,Manager_A,Amsterdam,Netherlands,DPD,2024-04-09
+SC3-00221,Pet Feeding Mat Silicone,2,29.0,Website,2024-04-04 03:00:00,Completed,Manager_B,Utrecht,Netherlands,DHL Netherlands,2024-04-09
+SC3-00222,Retractable Dog Leash 5m,1,24.5,Website,2024-04-06 12:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2024-04-10
+SC3-00223,Dog Raincoat Size M,1,30.5,Marktplaats,2024-04-11 02:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2024-04-12
+SC3-00224,Orthopedic Dog Bed L,1,72.5,Instagram,2024-04-13 10:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2024-04-18
+SC3-00225,Cat Scratching Post 60cm,1,38.0,Website,2024-04-14 14:00:00,Completed,Manager_A,The Hague,Netherlands,DHL Netherlands,2024-04-20
+SC3-00226,Orthopedic Dog Bed M,1,67.5,Instagram,2024-04-19 01:00:00,Completed,Manager_A,Tilburg,Netherlands,DHL Netherlands,2024-04-22
+SC3-00227,Retractable Dog Leash 5m,1,17.5,Website,2024-04-19 17:00:00,Completed,Manager_B,Amsterdam,Netherlands,DPD,2024-04-21
+SC3-00228,Interactive Cat Toy Wand,1,12.0,Website,2024-04-22 21:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2024-04-23
+SC3-00229,Orthopedic Dog Bed L,2,167.0,Instagram,2024-04-24 09:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2024-04-29
+SC3-00230,Travel Pet Carrier Bag,1,42.5,Instagram,2024-04-26 12:00:00,Completed,Manager_B,Groningen,Netherlands,DHL Netherlands,2024-05-02
+SC3-00231,Stainless Steel Bowl Set,1,19.0,Website,2024-04-26 20:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2024-05-02
+SC3-00232,Cat Scratching Post 60cm,1,36.0,Instagram,2024-04-29 11:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2024-05-04
+SC3-00233,Pet Feeding Mat Silicone,1,15.5,Instagram,2024-04-30 09:00:00,Completed,Manager_B,Utrecht,Netherlands,DHL Netherlands,2024-05-06
+SC3-00234,Pet Feeding Mat Silicone,1,14.0,Website,2024-05-01 11:00:00,Completed,Manager_A,The Hague,Netherlands,DHL Netherlands,2024-05-02
+SC3-00235,Automatic Pet Water Fountain,1,33.5,Website,2024-05-01 23:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2024-05-04
+SC3-00236,Stainless Steel Bowl Set,2,33.0,Website,2024-05-06 23:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2024-05-09
+SC3-00237,Orthopedic Dog Bed M,1,64.0,Website,2024-05-08 01:00:00,Completed,Manager_B,Nijmegen,Netherlands,DHL Netherlands,2024-05-10
+SC3-00238,Interactive Cat Toy Wand,3,39.0,Website,2024-05-08 14:00:00,Returned,Manager_A,Groningen,Netherlands,DHL Netherlands,
+SC3-00239,Dog Collar Leather M,1,27.5,Instagram,2024-05-08 20:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2024-05-10
+SC3-00240,Automatic Pet Water Fountain,3,102.0,Instagram,2024-05-08 22:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2024-05-11
+SC3-00241,Dog Raincoat Size M,1,38.0,Website,2024-05-10 11:00:00,Completed,Manager_B,The Hague,Netherlands,DHL Netherlands,2024-05-12
+SC3-00242,Stainless Steel Bowl Set,1,15.0,Website,2024-05-10 17:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2024-05-11
+SC3-00243,Dog Collar Leather M,1,18.5,Website,2024-05-12 03:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2024-05-13
+SC3-00244,Dog Raincoat Size M,1,36.0,Marktplaats,2024-05-13 00:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2024-05-15
+SC3-00245,Orthopedic Dog Bed L,1,68.0,Website,2024-05-13 18:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-05-18
+SC3-00246,Dog Raincoat Size M,3,93.0,Website,2024-05-15 01:00:00,Returned,Manager_A,The Hague,Netherlands,PostNL,
+SC3-00247,Retractable Dog Leash 5m,1,19.0,Website,2024-05-15 11:00:00,Completed,Manager_B,Groningen,Netherlands,DHL Netherlands,2024-05-16
+SC3-00248,Dog Collar Leather M,1,20.5,Website,2024-05-16 08:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2024-05-17
+SC3-00249,Dog Collar Leather M,1,28.0,Instagram,2024-05-17 20:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2024-05-22
+SC3-00250,Dog Collar Leather M,3,61.5,Website,2024-05-19 07:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2024-05-22
+SC3-00251,Dog Collar Leather M,1,22.5,Website,2024-05-22 15:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2024-05-28
+SC3-00252,Automatic Pet Water Fountain,1,31.5,Website,2024-05-24 01:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2024-05-28
+SC3-00253,Dog Raincoat Size M,1,33.5,Website,2024-05-24 19:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2024-05-28
+SC3-00254,Pet Feeding Mat Silicone,1,13.0,Website,2024-05-25 01:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2024-05-30
+SC3-00255,Dog Collar Leather M,1,19.0,Website,2024-05-26 10:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2024-05-31
+SC3-00256,Automatic Pet Water Fountain,1,37.5,Website,2024-06-01 01:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2024-06-04
+SC3-00257,Pet Feeding Mat Silicone,1,12.0,Website,2024-06-03 11:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2024-06-04
+SC3-00258,Dog Collar Leather L,3,93.0,Website,2024-06-03 23:00:00,New,Manager_A,Eindhoven,Netherlands,DHL Netherlands,
+SC3-00259,Retractable Dog Leash 5m,1,24.5,Instagram,2024-06-04 07:00:00,New,Manager_A,The Hague,Netherlands,DHL Netherlands,
+SC3-00260,Dog Collar Leather L,1,27.0,Instagram,2024-06-04 18:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2024-06-09
+SC3-00261,Stainless Steel Bowl Set,2,36.0,Website,2024-06-06 15:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2024-06-12
+SC3-00262,Dog Collar Leather M,3,67.5,Website,2024-06-07 02:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2024-06-09
+SC3-00263,Travel Pet Carrier Bag,1,54.0,Marktplaats,2024-06-08 10:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2024-06-10
+SC3-00264,Travel Pet Carrier Bag,1,43.0,Instagram,2024-06-11 14:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2024-06-16
+SC3-00265,Automatic Pet Water Fountain,1,29.5,Instagram,2024-06-16 11:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2024-06-20
+SC3-00266,Interactive Cat Toy Wand,1,10.0,Website,2024-06-17 12:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2024-06-20
+SC3-00267,Dog Collar Leather M,1,23.0,Website,2024-06-20 15:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2024-06-25
+SC3-00268,Orthopedic Dog Bed M,1,54.0,Instagram,2024-06-23 04:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2024-06-26
+SC3-00269,Dog Collar Leather L,1,26.0,Website,2024-06-24 23:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2024-06-27
+SC3-00270,Orthopedic Dog Bed M,1,64.0,Website,2024-06-29 02:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2024-07-05
+SC3-00271,Interactive Cat Toy Wand,1,11.5,Website,2024-06-29 20:00:00,Completed,Manager_A,Almere,Netherlands,DHL Netherlands,2024-07-01
+SC3-00272,Interactive Cat Toy Wand,1,8.5,Marktplaats,2024-07-04 05:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2024-07-09
+SC3-00273,Pet Feeding Mat Silicone,1,12.0,Marktplaats,2024-07-05 08:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2024-07-08
+SC3-00274,Dog Raincoat Size M,1,38.0,Instagram,2024-07-09 20:00:00,New,Manager_A,Rotterdam,Netherlands,PostNL,
+SC3-00275,Orthopedic Dog Bed M,1,59.5,Instagram,2024-07-10 01:00:00,Completed,Manager_B,Breda,Netherlands,DHL Netherlands,2024-07-16
+SC3-00276,Dog Raincoat Size M,1,38.0,Instagram,2024-07-12 11:00:00,Completed,Manager_A,Groningen,Netherlands,DHL Netherlands,2024-07-13
+SC3-00277,Pet Feeding Mat Silicone,1,10.5,Website,2024-07-15 14:00:00,Completed,Manager_A,Tilburg,Netherlands,DPD,2024-07-16
+SC3-00278,Stainless Steel Bowl Set,1,19.0,Marktplaats,2024-07-17 00:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2024-07-21
+SC3-00279,Orthopedic Dog Bed M,1,49.0,Website,2024-07-18 00:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2024-07-22
+SC3-00280,Dog Collar Leather M,3,69.0,Website,2024-07-19 19:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-07-20
+SC3-00281,Dog Collar Leather M,2,57.0,Marktplaats,2024-07-24 14:00:00,New,Manager_A,Rotterdam,Netherlands,DHL Netherlands,
+SC3-00282,Orthopedic Dog Bed M,1,55.0,Website,2024-07-28 15:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2024-07-31
+SC3-00283,Travel Pet Carrier Bag,1,54.0,Website,2024-07-28 18:00:00,Completed,Manager_B,Tilburg,Netherlands,DPD,2024-07-29
+SC3-00284,Orthopedic Dog Bed M,1,55.0,Marktplaats,2024-07-30 16:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2024-08-03
+SC3-00285,Dog Raincoat Size M,1,31.0,Website,2024-08-01 08:00:00,Completed,Manager_A,Utrecht,Netherlands,DPD,2024-08-07
+SC3-00286,Travel Pet Carrier Bag,1,47.0,Website,2024-08-01 18:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-08-02
+SC3-00287,Retractable Dog Leash 5m,1,17.5,Instagram,2024-08-02 05:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2024-08-03
+SC3-00288,Interactive Cat Toy Wand,1,12.5,Instagram,2024-08-03 12:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2024-08-04
+SC3-00289,Orthopedic Dog Bed L,1,69.5,Website,2024-08-05 01:00:00,Returned,Manager_B,Almere,Netherlands,PostNL,
+SC3-00290,Retractable Dog Leash 5m,2,39.0,Website,2024-08-09 09:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2024-08-13
+SC3-00291,Orthopedic Dog Bed L,1,77.5,Instagram,2024-08-09 23:00:00,New,Manager_B,Groningen,Netherlands,PostNL,
+SC3-00292,Dog Collar Leather L,1,31.0,Website,2024-08-12 10:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2024-08-18
+SC3-00293,Interactive Cat Toy Wand,1,10.5,Website,2024-08-13 16:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2024-08-15
+SC3-00294,Dog Collar Leather L,1,23.5,Website,2024-08-15 17:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-08-17
+SC3-00295,Orthopedic Dog Bed M,1,52.0,Instagram,2024-08-16 12:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2024-08-18
+SC3-00296,Dog Collar Leather M,1,21.5,Instagram,2024-08-18 04:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-08-21
+SC3-00297,Retractable Dog Leash 5m,2,44.0,Marktplaats,2024-08-18 22:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2024-08-23
+SC3-00298,Stainless Steel Bowl Set,1,19.5,Website,2024-08-23 01:00:00,Completed,Manager_A,Breda,Netherlands,DHL Netherlands,2024-08-28
+SC3-00299,Interactive Cat Toy Wand,1,9.0,Website,2024-08-23 12:00:00,Completed,Manager_B,Breda,Netherlands,DHL Netherlands,2024-08-27
+SC3-00300,Pet Feeding Mat Silicone,1,9.5,Website,2024-08-24 17:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2024-08-27
+SC3-00301,Retractable Dog Leash 5m,2,49.0,Website,2024-08-26 13:00:00,Awaiting Review,Manager_B,Eindhoven,Netherlands,DPD,
+SC3-00302,Orthopedic Dog Bed L,1,64.5,Website,2024-09-01 05:00:00,Completed,Manager_B,Amsterdam,Netherlands,DPD,2024-09-04
+SC3-00303,Interactive Cat Toy Wand,1,9.5,Website,2024-09-07 14:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2024-09-10
+SC3-00304,Cat Scratching Post 60cm,1,41.5,Website,2024-09-08 05:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2024-09-13
+SC3-00305,Retractable Dog Leash 5m,1,20.0,Website,2024-09-09 13:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2024-09-14
+SC3-00306,Orthopedic Dog Bed L,1,84.0,Website,2024-09-10 08:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2024-09-11
+SC3-00307,Automatic Pet Water Fountain,1,34.0,Website,2024-09-12 13:00:00,Completed,Manager_A,The Hague,Netherlands,DHL Netherlands,2024-09-16
+SC3-00308,Automatic Pet Water Fountain,1,43.5,Website,2024-09-14 01:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2024-09-17
+SC3-00309,Dog Collar Leather L,1,31.0,Website,2024-09-15 21:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2024-09-21
+SC3-00310,Pet Feeding Mat Silicone,2,29.0,Website,2024-09-19 12:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2024-09-21
+SC3-00311,Orthopedic Dog Bed M,1,50.5,Website,2024-09-19 18:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2024-09-22
+SC3-00312,Automatic Pet Water Fountain,1,33.0,Website,2024-09-21 13:00:00,New,Manager_B,Groningen,Netherlands,PostNL,
+SC3-00313,Orthopedic Dog Bed L,1,63.0,Website,2024-09-21 22:00:00,Completed,Manager_A,Groningen,Netherlands,DPD,2024-09-25
+SC3-00314,Cat Scratching Post 60cm,1,37.0,Website,2024-09-23 20:00:00,New,Manager_B,Amsterdam,Netherlands,DPD,
+SC3-00315,Interactive Cat Toy Wand,1,10.0,Website,2024-09-24 05:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2024-09-29
+SC3-00316,Cat Scratching Post 60cm,2,57.0,Marktplaats,2024-09-25 18:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2024-09-28
+SC3-00317,Dog Collar Leather L,1,30.5,Instagram,2024-09-26 20:00:00,Completed,Manager_B,Tilburg,Netherlands,DHL Netherlands,2024-09-27
+SC3-00318,Automatic Pet Water Fountain,1,38.0,Instagram,2024-09-27 06:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2024-09-29
+SC3-00319,Orthopedic Dog Bed L,2,155.0,Website,2024-09-28 21:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2024-10-01
+SC3-00320,Travel Pet Carrier Bag,1,57.5,Website,2024-10-01 09:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2024-10-02
+SC3-00321,Travel Pet Carrier Bag,1,50.5,Website,2024-10-01 16:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2024-10-07
+SC3-00322,Dog Collar Leather L,3,84.0,Marktplaats,2024-10-02 18:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2024-10-06
+SC3-00323,Dog Raincoat Size M,1,29.0,Website,2024-10-02 22:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2024-10-03
+SC3-00324,Automatic Pet Water Fountain,1,32.0,Website,2024-10-05 08:00:00,Awaiting Review,Manager_B,Utrecht,Netherlands,PostNL,
+SC3-00325,Orthopedic Dog Bed L,1,87.0,Website,2024-10-05 19:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2024-10-06
+SC3-00326,Orthopedic Dog Bed L,1,79.0,Instagram,2024-10-06 12:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2024-10-08
+SC3-00327,Automatic Pet Water Fountain,1,35.5,Instagram,2024-10-06 19:00:00,New,Manager_A,Rotterdam,Netherlands,PostNL,
+SC3-00328,Orthopedic Dog Bed L,1,62.0,Website,2024-10-07 00:00:00,New,Manager_B,The Hague,Netherlands,DHL Netherlands,
+SC3-00329,Dog Collar Leather M,1,26.5,Marktplaats,2024-10-07 06:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-10-12
+SC3-00330,Orthopedic Dog Bed M,1,61.0,Instagram,2024-10-08 07:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2024-10-13
+SC3-00331,Pet Feeding Mat Silicone,1,12.0,Website,2024-10-09 22:00:00,Completed,Manager_A,Rotterdam,Netherlands,DPD,2024-10-13
+SC3-00332,Dog Collar Leather M,1,21.5,Website,2024-10-11 00:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2024-10-12
+SC3-00333,Interactive Cat Toy Wand,1,10.5,Website,2024-10-11 07:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2024-10-17
+SC3-00334,Travel Pet Carrier Bag,1,41.5,Marktplaats,2024-10-11 11:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-10-14
+SC3-00335,Orthopedic Dog Bed M,1,49.5,Website,2024-10-11 19:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2024-10-13
+SC3-00336,Automatic Pet Water Fountain,1,32.0,Website,2024-10-12 02:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2024-10-13
+SC3-00337,Travel Pet Carrier Bag,1,44.5,Website,2024-10-14 05:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2024-10-19
+SC3-00338,Pet Feeding Mat Silicone,1,12.0,Instagram,2024-10-14 09:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2024-10-16
+SC3-00339,Orthopedic Dog Bed M,1,61.5,Website,2024-10-16 14:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2024-10-18
+SC3-00340,Cat Scratching Post 60cm,3,88.5,Website,2024-10-17 03:00:00,Completed,Manager_A,Utrecht,Netherlands,DHL Netherlands,2024-10-23
+SC3-00341,Retractable Dog Leash 5m,1,23.5,Website,2024-10-21 21:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2024-10-26
+SC3-00342,Dog Raincoat Size M,1,24.0,Website,2024-10-23 15:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2024-10-25
+SC3-00343,Orthopedic Dog Bed L,2,163.0,Website,2024-10-25 00:00:00,Completed,Manager_A,Breda,Netherlands,DPD,2024-10-26
+SC3-00344,Orthopedic Dog Bed L,1,78.5,Website,2024-10-25 15:00:00,Completed,Manager_B,Eindhoven,Netherlands,DHL Netherlands,2024-10-30
+SC3-00345,Pet Feeding Mat Silicone,1,10.5,Website,2024-10-26 20:00:00,New,Manager_A,Rotterdam,Netherlands,DHL Netherlands,
+SC3-00346,Cat Scratching Post 60cm,3,126.0,Website,2024-10-26 23:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2024-10-27
+SC3-00347,Dog Raincoat Size M,1,28.0,Website,2024-10-27 14:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2024-10-31
+SC3-00348,Stainless Steel Bowl Set,1,20.0,Website,2024-10-28 14:00:00,Completed,Manager_A,Eindhoven,Netherlands,DHL Netherlands,2024-10-29
+SC3-00349,Dog Raincoat Size M,1,24.5,Instagram,2024-10-28 16:00:00,Awaiting Review,Manager_A,Amsterdam,Netherlands,DPD,
+SC3-00350,Orthopedic Dog Bed M,1,60.5,Instagram,2024-10-31 04:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-11-06
+SC3-00351,Stainless Steel Bowl Set,1,19.0,Website,2024-11-01 10:00:00,Completed,Manager_A,Utrecht,Netherlands,DHL Netherlands,2024-11-06
+SC3-00352,Interactive Cat Toy Wand,1,10.0,Website,2024-11-01 11:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2024-11-05
+SC3-00353,Stainless Steel Bowl Set,3,49.5,Website,2024-11-01 18:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2024-11-05
+SC3-00354,Orthopedic Dog Bed L,3,273.0,Marktplaats,2024-11-02 12:00:00,New,Manager_B,Tilburg,Netherlands,PostNL,
+SC3-00355,Automatic Pet Water Fountain,1,38.5,Website,2024-11-04 07:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2024-11-05
+SC3-00356,Dog Raincoat Size M,3,85.5,Website,2024-11-05 12:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2024-11-08
+SC3-00357,Cat Scratching Post 60cm,1,42.0,Website,2024-11-05 22:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2024-11-06
+SC3-00358,Pet Feeding Mat Silicone,1,12.0,Website,2024-11-07 10:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2024-11-13
+SC3-00359,Orthopedic Dog Bed L,1,87.0,Marktplaats,2024-11-09 03:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2024-11-10
+SC3-00360,Orthopedic Dog Bed M,1,53.5,Instagram,2024-11-10 10:00:00,New,Manager_A,Amsterdam,Netherlands,DHL Netherlands,
+SC3-00361,Automatic Pet Water Fountain,1,40.5,Website,2024-11-10 19:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2024-11-15
+SC3-00362,Stainless Steel Bowl Set,1,17.0,Website,2024-11-11 08:00:00,Completed,Manager_B,Nijmegen,Netherlands,DHL Netherlands,2024-11-12
+SC3-00363,Orthopedic Dog Bed L,2,174.0,Website,2024-11-12 10:00:00,Completed,Manager_A,Tilburg,Netherlands,DHL Netherlands,2024-11-16
+SC3-00364,Dog Collar Leather L,1,25.5,Website,2024-11-12 19:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2024-11-18
+SC3-00365,Dog Collar Leather M,1,20.0,Website,2024-11-13 04:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2024-11-17
+SC3-00366,Dog Raincoat Size M,1,31.5,Website,2024-11-13 20:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2024-11-19
+SC3-00367,Interactive Cat Toy Wand,2,22.0,Website,2024-11-14 13:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-11-20
+SC3-00368,Travel Pet Carrier Bag,1,48.5,Instagram,2024-11-16 23:00:00,Completed,Manager_A,Breda,Netherlands,DHL Netherlands,2024-11-18
+SC3-00369,Interactive Cat Toy Wand,1,10.0,Instagram,2024-11-17 15:00:00,Completed,Manager_A,Tilburg,Netherlands,DPD,2024-11-18
+SC3-00370,Orthopedic Dog Bed M,1,58.5,Instagram,2024-11-19 06:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2024-11-24
+SC3-00371,Interactive Cat Toy Wand,1,13.0,Website,2024-11-19 12:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2024-11-23
+SC3-00372,Dog Raincoat Size M,2,76.0,Website,2024-11-20 09:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2024-11-24
+SC3-00373,Dog Raincoat Size M,1,25.0,Marktplaats,2024-11-21 01:00:00,Awaiting Review,Manager_B,Tilburg,Netherlands,PostNL,
+SC3-00374,Stainless Steel Bowl Set,1,20.5,Website,2024-11-21 08:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2024-11-22
+SC3-00375,Orthopedic Dog Bed L,1,83.5,Instagram,2024-11-21 17:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2024-11-26
+SC3-00376,Orthopedic Dog Bed M,1,53.0,Instagram,2024-11-23 16:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-11-29
+SC3-00377,Pet Feeding Mat Silicone,3,28.5,Instagram,2024-11-25 21:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2024-11-30
+SC3-00378,Stainless Steel Bowl Set,3,52.5,Website,2024-11-27 16:00:00,Completed,Manager_B,The Hague,Netherlands,DHL Netherlands,2024-11-30
+SC3-00379,Interactive Cat Toy Wand,1,9.0,Website,2024-11-27 19:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2024-12-03
+SC3-00380,Travel Pet Carrier Bag,1,45.5,Website,2024-11-29 03:00:00,Completed,Manager_A,Rotterdam,Netherlands,DHL Netherlands,2024-12-02
+SC3-00381,Pet Feeding Mat Silicone,1,9.5,Website,2024-11-30 13:00:00,Completed,Manager_B,Eindhoven,Netherlands,DHL Netherlands,2024-12-02
+SC3-00382,Dog Collar Leather L,1,30.5,Website,2024-12-02 04:00:00,Completed,Manager_B,Eindhoven,Netherlands,DPD,2024-12-05
+SC3-00383,Travel Pet Carrier Bag,1,52.5,Instagram,2024-12-02 16:00:00,Completed,Manager_A,Rotterdam,Netherlands,DHL Netherlands,2024-12-07
+SC3-00384,Retractable Dog Leash 5m,1,23.0,Website,2024-12-04 01:00:00,New,Manager_A,Amsterdam,Netherlands,PostNL,
+SC3-00385,Retractable Dog Leash 5m,1,16.5,Instagram,2024-12-04 10:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-12-07
+SC3-00386,Orthopedic Dog Bed M,1,60.0,Website,2024-12-05 10:00:00,New,Manager_B,Groningen,Netherlands,DPD,
+SC3-00387,Cat Scratching Post 60cm,3,129.0,Instagram,2024-12-05 19:00:00,New,Manager_A,Rotterdam,Netherlands,PostNL,
+SC3-00388,Cat Scratching Post 60cm,1,39.5,Marktplaats,2024-12-06 13:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2024-12-11
+SC3-00389,Dog Collar Leather M,1,22.0,Website,2024-12-06 23:00:00,Completed,Manager_A,Eindhoven,Netherlands,DHL Netherlands,2024-12-09
+SC3-00390,Orthopedic Dog Bed L,2,138.0,Marktplaats,2024-12-07 14:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2024-12-12
+SC3-00391,Automatic Pet Water Fountain,1,39.0,Website,2024-12-08 16:00:00,Completed,Manager_B,Eindhoven,Netherlands,DHL Netherlands,2024-12-09
+SC3-00392,Automatic Pet Water Fountain,2,73.0,Website,2024-12-09 19:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2024-12-15
+SC3-00393,Dog Collar Leather L,1,22.0,Website,2024-12-09 22:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2024-12-10
+SC3-00394,Dog Collar Leather L,1,22.5,Website,2024-12-10 15:00:00,Awaiting Review,Manager_B,Utrecht,Netherlands,PostNL,
+SC3-00395,Dog Collar Leather L,1,31.0,Website,2024-12-11 19:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2024-12-17
+SC3-00396,Orthopedic Dog Bed M,1,61.0,Website,2024-12-12 05:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-12-15
+SC3-00397,Dog Collar Leather M,1,25.5,Marktplaats,2024-12-12 07:00:00,Completed,Manager_A,Utrecht,Netherlands,DHL Netherlands,2024-12-16
+SC3-00398,Cat Scratching Post 60cm,1,43.5,Website,2024-12-12 17:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2024-12-18
+SC3-00399,Pet Feeding Mat Silicone,1,12.5,Website,2024-12-13 02:00:00,Completed,Manager_A,Almere,Netherlands,DHL Netherlands,2024-12-16
+SC3-00400,Stainless Steel Bowl Set,1,16.5,Website,2024-12-13 18:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2024-12-14
+SC3-00401,Retractable Dog Leash 5m,1,25.0,Instagram,2024-12-14 21:00:00,Completed,Manager_A,Almere,Netherlands,DHL Netherlands,2024-12-20
+SC3-00402,Orthopedic Dog Bed L,3,217.5,Website,2024-12-16 03:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2024-12-17
+SC3-00403,Interactive Cat Toy Wand,1,13.5,Website,2024-12-17 17:00:00,New,Manager_B,Tilburg,Netherlands,DPD,
+SC3-00404,Travel Pet Carrier Bag,1,41.5,Instagram,2024-12-19 03:00:00,Awaiting Review,Manager_A,Tilburg,Netherlands,PostNL,
+SC3-00405,Pet Feeding Mat Silicone,1,11.0,Website,2024-12-19 21:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2024-12-23
+SC3-00406,Travel Pet Carrier Bag,1,50.5,Marktplaats,2024-12-20 09:00:00,Completed,Manager_B,Groningen,Netherlands,DPD,2024-12-26
+SC3-00407,Dog Collar Leather L,1,23.5,Instagram,2024-12-20 16:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2024-12-25
+SC3-00408,Cat Scratching Post 60cm,1,30.0,Website,2024-12-22 04:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2024-12-26
+SC3-00409,Interactive Cat Toy Wand,1,8.5,Instagram,2024-12-22 15:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2024-12-25
+SC3-00410,Stainless Steel Bowl Set,1,19.0,Instagram,2024-12-23 14:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2024-12-25
+SC3-00411,Interactive Cat Toy Wand,1,11.5,Instagram,2024-12-24 02:00:00,Returned,Manager_B,Nijmegen,Netherlands,PostNL,
+SC3-00412,Cat Scratching Post 60cm,1,32.5,Website,2024-12-24 07:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2024-12-27
+SC3-00413,Orthopedic Dog Bed L,1,85.5,Website,2024-12-24 22:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2024-12-30
+SC3-00414,Orthopedic Dog Bed M,1,64.0,Website,2024-12-26 02:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2024-12-28
+SC3-00415,Dog Collar Leather L,1,26.5,Website,2024-12-27 14:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2025-01-02
+SC3-00416,Cat Scratching Post 60cm,1,33.5,Website,2024-12-27 16:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2025-01-01
+SC3-00417,Orthopedic Dog Bed L,1,71.5,Website,2024-12-31 06:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2025-01-06
+SC3-00418,Dog Collar Leather L,1,28.5,Instagram,2025-01-03 20:00:00,Completed,Manager_B,Eindhoven,Netherlands,DPD,2025-01-06
+SC3-00419,Stainless Steel Bowl Set,1,19.0,Website,2025-01-05 11:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2025-01-11
+SC3-00420,Interactive Cat Toy Wand,1,13.0,Website,2025-01-06 17:00:00,Awaiting Review,Manager_B,Utrecht,Netherlands,DHL Netherlands,
+SC3-00421,Stainless Steel Bowl Set,3,58.5,Website,2025-01-10 14:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2025-01-15
+SC3-00422,Dog Raincoat Size M,1,36.5,Instagram,2025-01-12 22:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2025-01-13
+SC3-00423,Retractable Dog Leash 5m,3,66.0,Website,2025-01-16 03:00:00,Returned,Manager_B,The Hague,Netherlands,DHL Netherlands,
+SC3-00424,Pet Feeding Mat Silicone,1,14.5,Website,2025-01-18 05:00:00,New,Manager_A,Rotterdam,Netherlands,DPD,
+SC3-00425,Travel Pet Carrier Bag,1,45.5,Website,2025-01-19 06:00:00,Completed,Manager_B,Breda,Netherlands,DHL Netherlands,2025-01-20
+SC3-00426,Dog Collar Leather M,1,22.5,Website,2025-01-20 02:00:00,New,Manager_B,Groningen,Netherlands,DHL Netherlands,
+SC3-00427,Retractable Dog Leash 5m,1,22.5,Website,2025-01-22 05:00:00,Completed,Manager_A,Amsterdam,Netherlands,DHL Netherlands,2025-01-24
+SC3-00428,Retractable Dog Leash 5m,1,26.0,Instagram,2025-01-22 20:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2025-01-23
+SC3-00429,Cat Scratching Post 60cm,1,29.0,Website,2025-01-24 10:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2025-01-30
+SC3-00430,Stainless Steel Bowl Set,1,20.0,Instagram,2025-01-25 06:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-01-31
+SC3-00431,Pet Feeding Mat Silicone,2,23.0,Website,2025-01-26 20:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2025-01-30
+SC3-00432,Interactive Cat Toy Wand,1,10.5,Website,2025-01-28 01:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2025-01-29
+SC3-00433,Dog Collar Leather M,1,22.0,Website,2025-01-28 20:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2025-02-03
+SC3-00434,Dog Collar Leather L,1,26.5,Website,2025-01-30 02:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2025-02-03
+SC3-00435,Interactive Cat Toy Wand,1,11.0,Website,2025-01-30 22:00:00,Completed,Manager_B,Breda,Netherlands,DHL Netherlands,2025-02-04
+SC3-00436,Dog Collar Leather M,1,20.5,Website,2025-02-09 14:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-02-14
+SC3-00437,Travel Pet Carrier Bag,1,38.0,Website,2025-02-13 07:00:00,Completed,Manager_B,Tilburg,Netherlands,DPD,2025-02-19
+SC3-00438,Retractable Dog Leash 5m,2,33.0,Instagram,2025-02-14 01:00:00,Completed,Manager_A,Breda,Netherlands,DPD,2025-02-17
+SC3-00439,Dog Raincoat Size M,1,26.5,Instagram,2025-02-15 10:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2025-02-21
+SC3-00440,Retractable Dog Leash 5m,1,24.5,Website,2025-02-20 16:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2025-02-23
+SC3-00441,Dog Collar Leather L,1,26.5,Website,2025-02-24 07:00:00,Completed,Manager_A,Rotterdam,Netherlands,DPD,2025-03-02
+SC3-00442,Retractable Dog Leash 5m,2,38.0,Website,2025-02-25 16:00:00,Completed,Manager_A,Utrecht,Netherlands,DHL Netherlands,2025-02-26
+SC3-00443,Dog Collar Leather L,3,84.0,Instagram,2025-02-26 11:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2025-02-28
+SC3-00444,Automatic Pet Water Fountain,1,42.5,Website,2025-02-26 23:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2025-03-03
+SC3-00445,Dog Collar Leather M,2,55.0,Marktplaats,2025-03-01 03:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2025-03-03
+SC3-00446,Cat Scratching Post 60cm,1,42.5,Website,2025-03-01 22:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2025-03-06
+SC3-00447,Stainless Steel Bowl Set,1,19.0,Website,2025-03-03 14:00:00,Completed,Manager_B,Tilburg,Netherlands,DPD,2025-03-07
+SC3-00448,Automatic Pet Water Fountain,1,31.5,Website,2025-03-05 07:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2025-03-06
+SC3-00449,Cat Scratching Post 60cm,1,29.0,Website,2025-03-09 11:00:00,New,Manager_A,Groningen,Netherlands,PostNL,
+SC3-00450,Dog Collar Leather L,1,29.0,Website,2025-03-10 01:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2025-03-11
+SC3-00451,Dog Collar Leather M,1,23.0,Marktplaats,2025-03-11 04:00:00,New,Manager_B,Utrecht,Netherlands,PostNL,
+SC3-00452,Retractable Dog Leash 5m,1,23.5,Website,2025-03-12 03:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2025-03-17
+SC3-00453,Interactive Cat Toy Wand,1,10.0,Website,2025-03-13 13:00:00,New,Manager_B,Groningen,Netherlands,PostNL,
+SC3-00454,Orthopedic Dog Bed M,1,44.5,Instagram,2025-03-16 20:00:00,Completed,Manager_A,Almere,Netherlands,DHL Netherlands,2025-03-21
+SC3-00455,Orthopedic Dog Bed M,1,56.5,Website,2025-03-17 06:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2025-03-23
+SC3-00456,Interactive Cat Toy Wand,1,11.0,Instagram,2025-03-22 22:00:00,New,Manager_B,The Hague,Netherlands,DPD,
+SC3-00457,Travel Pet Carrier Bag,2,115.0,Website,2025-03-26 17:00:00,New,Manager_A,Groningen,Netherlands,PostNL,
+SC3-00458,Pet Feeding Mat Silicone,1,12.0,Website,2025-03-29 02:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2025-04-04
+SC3-00459,Orthopedic Dog Bed L,1,84.0,Website,2025-03-31 04:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2025-04-05
+SC3-00460,Stainless Steel Bowl Set,1,21.5,Instagram,2025-03-31 15:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2025-04-04
+SC3-00461,Travel Pet Carrier Bag,1,46.0,Website,2025-04-01 07:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2025-04-06
+SC3-00462,Dog Collar Leather M,1,28.5,Website,2025-04-08 05:00:00,Completed,Manager_B,Breda,Netherlands,DHL Netherlands,2025-04-10
+SC3-00463,Cat Scratching Post 60cm,1,31.5,Website,2025-04-08 22:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2025-04-13
+SC3-00464,Dog Collar Leather M,1,18.5,Marktplaats,2025-04-09 05:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2025-04-12
+SC3-00465,Retractable Dog Leash 5m,1,22.0,Website,2025-04-09 09:00:00,Returned,Manager_A,Utrecht,Netherlands,PostNL,
+SC3-00466,Stainless Steel Bowl Set,1,18.5,Website,2025-04-10 01:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2025-04-16
+SC3-00467,Interactive Cat Toy Wand,1,9.0,Website,2025-04-10 03:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2025-04-12
+SC3-00468,Stainless Steel Bowl Set,2,32.0,Website,2025-04-11 02:00:00,New,Manager_B,The Hague,Netherlands,PostNL,
+SC3-00469,Travel Pet Carrier Bag,2,110.0,Marktplaats,2025-04-11 18:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2025-04-13
+SC3-00470,Dog Raincoat Size M,1,27.0,Website,2025-04-12 03:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2025-04-13
+SC3-00471,Interactive Cat Toy Wand,1,11.5,Website,2025-04-12 21:00:00,New,Manager_B,Groningen,Netherlands,PostNL,
+SC3-00472,Stainless Steel Bowl Set,1,20.0,Website,2025-04-13 20:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2025-04-15
+SC3-00473,Pet Feeding Mat Silicone,1,10.5,Website,2025-04-16 14:00:00,Completed,Manager_A,Breda,Netherlands,DHL Netherlands,2025-04-22
+SC3-00474,Dog Raincoat Size M,1,27.0,Website,2025-04-20 05:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2025-04-26
+SC3-00475,Orthopedic Dog Bed M,1,51.5,Website,2025-04-20 12:00:00,New,Manager_A,Amsterdam,Netherlands,PostNL,
+SC3-00476,Orthopedic Dog Bed L,1,89.0,Website,2025-04-21 00:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2025-04-23
+SC3-00477,Stainless Steel Bowl Set,1,21.0,Website,2025-04-22 00:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2025-04-25
+SC3-00478,Stainless Steel Bowl Set,1,15.5,Website,2025-04-26 23:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2025-05-01
+SC3-00479,Cat Scratching Post 60cm,1,41.0,Website,2025-04-28 22:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2025-05-04
+SC3-00480,Travel Pet Carrier Bag,1,48.0,Instagram,2025-04-29 05:00:00,New,Manager_A,Tilburg,Netherlands,PostNL,
+SC3-00481,Stainless Steel Bowl Set,1,15.0,Instagram,2025-04-30 08:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2025-05-06
+SC3-00482,Stainless Steel Bowl Set,3,54.0,Website,2025-04-30 20:00:00,New,Manager_B,Tilburg,Netherlands,DPD,
+SC3-00483,Dog Collar Leather L,1,25.5,Website,2025-05-02 04:00:00,Awaiting Review,Manager_A,Utrecht,Netherlands,PostNL,
+SC3-00484,Pet Feeding Mat Silicone,1,15.5,Instagram,2025-05-02 19:00:00,Completed,Manager_A,Almere,Netherlands,DHL Netherlands,2025-05-06
+SC3-00485,Orthopedic Dog Bed M,1,49.0,Instagram,2025-05-04 14:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2025-05-10
+SC3-00486,Retractable Dog Leash 5m,3,55.5,Instagram,2025-05-07 12:00:00,Returned,Manager_B,Breda,Netherlands,PostNL,
+SC3-00487,Travel Pet Carrier Bag,1,46.5,Instagram,2025-05-10 02:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2025-05-12
+SC3-00488,Dog Collar Leather L,1,23.0,Instagram,2025-05-11 02:00:00,Returned,Manager_A,Almere,Netherlands,PostNL,
+SC3-00489,Dog Collar Leather L,1,33.5,Website,2025-05-12 07:00:00,Completed,Manager_B,The Hague,Netherlands,DHL Netherlands,2025-05-18
+SC3-00490,Cat Scratching Post 60cm,1,30.0,Website,2025-05-15 01:00:00,New,Manager_B,Groningen,Netherlands,PostNL,
+SC3-00491,Automatic Pet Water Fountain,1,37.5,Website,2025-05-15 04:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2025-05-18
+SC3-00492,Interactive Cat Toy Wand,1,11.5,Website,2025-05-18 06:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2025-05-24
+SC3-00493,Cat Scratching Post 60cm,1,32.0,Website,2025-05-19 12:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2025-05-20
+SC3-00494,Orthopedic Dog Bed L,1,82.0,Marktplaats,2025-05-20 13:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2025-05-22
+SC3-00495,Orthopedic Dog Bed L,1,78.5,Website,2025-05-23 01:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2025-05-24
+SC3-00496,Orthopedic Dog Bed M,1,53.5,Website,2025-05-23 23:00:00,Completed,Manager_A,Eindhoven,Netherlands,DHL Netherlands,2025-05-26
+SC3-00497,Orthopedic Dog Bed L,1,82.5,Website,2025-05-26 09:00:00,Completed,Manager_A,The Hague,Netherlands,DHL Netherlands,2025-05-28
+SC3-00498,Retractable Dog Leash 5m,2,43.0,Website,2025-05-28 03:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2025-05-30
+SC3-00499,Interactive Cat Toy Wand,3,30.0,Website,2025-05-30 15:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2025-06-04
+SC3-00500,Orthopedic Dog Bed L,1,76.0,Website,2025-05-31 21:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2025-06-04
+SC3-00501,Retractable Dog Leash 5m,1,25.5,Website,2025-06-01 13:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2025-06-05
+SC3-00502,Automatic Pet Water Fountain,1,41.0,Website,2025-06-01 20:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2025-06-03
+SC3-00503,Orthopedic Dog Bed M,1,58.0,Website,2025-06-02 18:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2025-06-06
+SC3-00504,Cat Scratching Post 60cm,3,88.5,Instagram,2025-06-05 13:00:00,Completed,Manager_B,Breda,Netherlands,DHL Netherlands,2025-06-08
+SC3-00505,Retractable Dog Leash 5m,1,17.0,Website,2025-06-06 16:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2025-06-11
+SC3-00506,Travel Pet Carrier Bag,1,48.0,Instagram,2025-06-08 22:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2025-06-14
+SC3-00507,Dog Collar Leather M,2,57.0,Website,2025-06-09 22:00:00,Returned,Manager_B,Eindhoven,Netherlands,PostNL,
+SC3-00508,Dog Collar Leather L,1,28.0,Website,2025-06-12 00:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2025-06-18
+SC3-00509,Dog Collar Leather M,1,28.0,Instagram,2025-06-12 11:00:00,Returned,Manager_A,Rotterdam,Netherlands,DPD,
+SC3-00510,Cat Scratching Post 60cm,1,36.5,Website,2025-06-12 15:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-06-15
+SC3-00511,Cat Scratching Post 60cm,1,36.0,Website,2025-06-12 16:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2025-06-14
+SC3-00512,Stainless Steel Bowl Set,1,15.5,Instagram,2025-06-13 12:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2025-06-18
+SC3-00513,Dog Collar Leather M,1,19.0,Website,2025-06-15 15:00:00,Completed,Manager_A,Utrecht,Netherlands,DHL Netherlands,2025-06-21
+SC3-00514,Pet Feeding Mat Silicone,1,13.5,Instagram,2025-06-16 03:00:00,New,Manager_A,Breda,Netherlands,PostNL,
+SC3-00515,Dog Raincoat Size M,1,25.0,Website,2025-06-16 19:00:00,Completed,Manager_B,Utrecht,Netherlands,DPD,2025-06-20
+SC3-00516,Dog Raincoat Size M,1,28.0,Website,2025-06-16 21:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-06-22
+SC3-00517,Cat Scratching Post 60cm,1,43.0,Website,2025-06-17 13:00:00,Completed,Manager_A,Nijmegen,Netherlands,DHL Netherlands,2025-06-23
+SC3-00518,Stainless Steel Bowl Set,1,18.0,Website,2025-06-19 03:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-06-22
+SC3-00519,Pet Feeding Mat Silicone,1,13.0,Website,2025-06-19 16:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2025-06-21
+SC3-00520,Dog Collar Leather L,1,34.0,Marktplaats,2025-06-20 02:00:00,Completed,Manager_B,Groningen,Netherlands,DHL Netherlands,2025-06-23
+SC3-00521,Dog Collar Leather M,2,40.0,Website,2025-06-21 19:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2025-06-25
+SC3-00522,Travel Pet Carrier Bag,1,42.0,Instagram,2025-06-23 02:00:00,Completed,Manager_B,Amsterdam,Netherlands,DPD,2025-06-25
+SC3-00523,Dog Raincoat Size M,1,36.5,Website,2025-06-24 06:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2025-06-26
+SC3-00524,Orthopedic Dog Bed L,1,83.5,Marktplaats,2025-06-26 21:00:00,New,Manager_B,Rotterdam,Netherlands,DHL Netherlands,
+SC3-00525,Dog Collar Leather M,1,20.5,Website,2025-06-27 09:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2025-07-01
+SC3-00526,Dog Collar Leather M,1,18.5,Website,2025-06-29 01:00:00,Completed,Manager_A,Eindhoven,Netherlands,DHL Netherlands,2025-07-03
+SC3-00527,Travel Pet Carrier Bag,2,115.0,Website,2025-06-29 13:00:00,Returned,Manager_A,Tilburg,Netherlands,DPD,
+SC3-00528,Orthopedic Dog Bed L,1,86.5,Website,2025-07-01 14:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-07-05
+SC3-00529,Automatic Pet Water Fountain,1,44.5,Website,2025-07-02 20:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2025-07-08
+SC3-00530,Cat Scratching Post 60cm,1,29.0,Website,2025-07-04 21:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2025-07-10
+SC3-00531,Automatic Pet Water Fountain,1,30.0,Website,2025-07-07 04:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2025-07-13
+SC3-00532,Interactive Cat Toy Wand,1,9.0,Website,2025-07-08 01:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2025-07-10
+SC3-00533,Cat Scratching Post 60cm,1,36.5,Website,2025-07-10 11:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2025-07-13
+SC3-00534,Dog Raincoat Size M,1,33.0,Website,2025-07-11 11:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2025-07-15
+SC3-00535,Cat Scratching Post 60cm,1,39.5,Website,2025-07-13 20:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2025-07-19
+SC3-00536,Interactive Cat Toy Wand,1,11.5,Website,2025-07-17 16:00:00,Completed,Manager_A,The Hague,Netherlands,DHL Netherlands,2025-07-20
+SC3-00537,Orthopedic Dog Bed L,1,84.5,Website,2025-07-20 04:00:00,Awaiting Review,Manager_B,Breda,Netherlands,DHL Netherlands,
+SC3-00538,Dog Raincoat Size M,1,26.0,Website,2025-07-23 05:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2025-07-29
+SC3-00539,Automatic Pet Water Fountain,1,33.5,Website,2025-07-24 11:00:00,Completed,Manager_A,Nijmegen,Netherlands,DHL Netherlands,2025-07-29
+SC3-00540,Interactive Cat Toy Wand,1,12.5,Website,2025-07-25 14:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-07-30
+SC3-00541,Pet Feeding Mat Silicone,3,46.5,Marktplaats,2025-07-28 12:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2025-08-03
+SC3-00542,Retractable Dog Leash 5m,1,17.5,Website,2025-07-30 02:00:00,Returned,Manager_A,Nijmegen,Netherlands,PostNL,
+SC3-00543,Orthopedic Dog Bed L,1,90.5,Website,2025-07-31 08:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2025-08-05
+SC3-00544,Retractable Dog Leash 5m,1,18.5,Website,2025-08-04 16:00:00,Completed,Manager_B,Tilburg,Netherlands,DPD,2025-08-08
+SC3-00545,Dog Collar Leather L,1,24.5,Website,2025-08-05 02:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2025-08-08
+SC3-00546,Automatic Pet Water Fountain,1,40.0,Website,2025-08-07 05:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2025-08-11
+SC3-00547,Orthopedic Dog Bed L,1,86.5,Marktplaats,2025-08-08 04:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2025-08-12
+SC3-00548,Orthopedic Dog Bed L,1,89.0,Website,2025-08-11 21:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2025-08-14
+SC3-00549,Pet Feeding Mat Silicone,1,13.5,Instagram,2025-08-13 00:00:00,New,Manager_B,Tilburg,Netherlands,DHL Netherlands,
+SC3-00550,Automatic Pet Water Fountain,1,33.5,Instagram,2025-08-13 08:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2025-08-17
+SC3-00551,Stainless Steel Bowl Set,1,18.5,Website,2025-08-14 00:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2025-08-18
+SC3-00552,Orthopedic Dog Bed L,1,64.0,Instagram,2025-08-15 05:00:00,New,Manager_A,Almere,Netherlands,PostNL,
+SC3-00553,Orthopedic Dog Bed M,1,64.5,Website,2025-08-15 16:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2025-08-20
+SC3-00554,Stainless Steel Bowl Set,2,44.0,Website,2025-08-18 21:00:00,Completed,Manager_B,Rotterdam,Netherlands,DHL Netherlands,2025-08-24
+SC3-00555,Orthopedic Dog Bed M,1,62.5,Website,2025-08-22 15:00:00,Completed,Manager_B,The Hague,Netherlands,DHL Netherlands,2025-08-27
+SC3-00556,Travel Pet Carrier Bag,3,126.0,Website,2025-08-24 16:00:00,Completed,Manager_B,Groningen,Netherlands,DPD,2025-08-26
+SC3-00557,Dog Collar Leather L,1,24.5,Website,2025-08-25 10:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2025-08-31
+SC3-00558,Travel Pet Carrier Bag,1,41.5,Website,2025-08-27 06:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2025-08-28
+SC3-00559,Cat Scratching Post 60cm,1,42.0,Website,2025-09-01 23:00:00,Completed,Manager_B,Utrecht,Netherlands,DPD,2025-09-03
+SC3-00560,Dog Collar Leather M,1,26.0,Website,2025-09-09 09:00:00,Completed,Manager_A,Tilburg,Netherlands,DHL Netherlands,2025-09-14
+SC3-00561,Dog Collar Leather L,1,23.0,Website,2025-09-10 05:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2025-09-14
+SC3-00562,Dog Raincoat Size M,1,29.5,Website,2025-09-10 19:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2025-09-14
+SC3-00563,Pet Feeding Mat Silicone,1,13.5,Website,2025-09-11 07:00:00,Completed,Manager_A,Rotterdam,Netherlands,DHL Netherlands,2025-09-17
+SC3-00564,Retractable Dog Leash 5m,1,22.5,Website,2025-09-11 12:00:00,Completed,Manager_B,Breda,Netherlands,DPD,2025-09-14
+SC3-00565,Dog Raincoat Size M,1,25.0,Website,2025-09-16 11:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2025-09-19
+SC3-00566,Pet Feeding Mat Silicone,1,13.5,Website,2025-09-20 22:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2025-09-24
+SC3-00567,Orthopedic Dog Bed L,1,76.0,Instagram,2025-09-21 06:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2025-09-25
+SC3-00568,Dog Collar Leather L,1,31.0,Marktplaats,2025-09-21 22:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2025-09-24
+SC3-00569,Dog Collar Leather L,1,25.0,Instagram,2025-09-23 21:00:00,Completed,Manager_A,Groningen,Netherlands,DHL Netherlands,2025-09-29
+SC3-00570,Dog Raincoat Size M,1,30.0,Instagram,2025-09-25 04:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2025-09-27
+SC3-00571,Dog Collar Leather L,1,27.5,Website,2025-09-27 10:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2025-10-03
+SC3-00572,Stainless Steel Bowl Set,3,48.0,Instagram,2025-09-27 22:00:00,Completed,Manager_B,Tilburg,Netherlands,DPD,2025-10-02
+SC3-00573,Orthopedic Dog Bed L,1,91.0,Instagram,2025-09-29 20:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2025-10-02
+SC3-00574,Interactive Cat Toy Wand,1,10.0,Instagram,2025-09-30 04:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2025-10-02
+SC3-00575,Dog Raincoat Size M,3,111.0,Website,2025-10-01 11:00:00,Completed,Manager_B,Tilburg,Netherlands,DPD,2025-10-06
+SC3-00576,Automatic Pet Water Fountain,1,42.0,Instagram,2025-10-02 01:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2025-10-05
+SC3-00577,Dog Raincoat Size M,1,35.5,Website,2025-10-04 04:00:00,New,Manager_A,Breda,Netherlands,PostNL,
+SC3-00578,Orthopedic Dog Bed M,1,52.0,Website,2025-10-04 22:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2025-10-08
+SC3-00579,Dog Collar Leather L,1,30.5,Website,2025-10-05 21:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2025-10-06
+SC3-00580,Dog Raincoat Size M,3,84.0,Website,2025-10-06 06:00:00,Completed,Manager_A,The Hague,Netherlands,DPD,2025-10-10
+SC3-00581,Travel Pet Carrier Bag,1,49.0,Website,2025-10-07 06:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2025-10-10
+SC3-00582,Dog Collar Leather L,1,31.0,Instagram,2025-10-10 22:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2025-10-13
+SC3-00583,Orthopedic Dog Bed L,1,87.5,Instagram,2025-10-11 17:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2025-10-17
+SC3-00584,Retractable Dog Leash 5m,1,22.0,Website,2025-10-12 09:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2025-10-18
+SC3-00585,Dog Collar Leather M,1,28.5,Website,2025-10-13 17:00:00,Completed,Manager_B,The Hague,Netherlands,DHL Netherlands,2025-10-16
+SC3-00586,Orthopedic Dog Bed L,1,63.0,Marktplaats,2025-10-16 13:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-10-19
+SC3-00587,Orthopedic Dog Bed L,3,186.0,Instagram,2025-10-17 20:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-10-23
+SC3-00588,Travel Pet Carrier Bag,1,55.5,Instagram,2025-10-18 07:00:00,Completed,Manager_B,Tilburg,Netherlands,DHL Netherlands,2025-10-22
+SC3-00589,Dog Collar Leather L,1,29.5,Website,2025-10-18 18:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2025-10-24
+SC3-00590,Stainless Steel Bowl Set,1,15.5,Website,2025-10-20 02:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2025-10-21
+SC3-00591,Stainless Steel Bowl Set,1,14.5,Website,2025-10-20 10:00:00,Completed,Manager_A,Nijmegen,Netherlands,DHL Netherlands,2025-10-23
+SC3-00592,Orthopedic Dog Bed L,2,143.0,Website,2025-10-22 01:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2025-10-28
+SC3-00593,Travel Pet Carrier Bag,1,41.0,Website,2025-10-28 00:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2025-11-01
+SC3-00594,Interactive Cat Toy Wand,1,10.5,Website,2025-10-28 21:00:00,Completed,Manager_B,Eindhoven,Netherlands,DHL Netherlands,2025-11-03
+SC3-00595,Dog Collar Leather M,1,24.5,Website,2025-10-29 07:00:00,Completed,Manager_A,Breda,Netherlands,DHL Netherlands,2025-11-02
+SC3-00596,Automatic Pet Water Fountain,1,33.0,Instagram,2025-10-30 02:00:00,New,Manager_B,Rotterdam,Netherlands,DHL Netherlands,
+SC3-00597,Stainless Steel Bowl Set,1,20.0,Website,2025-10-30 06:00:00,Completed,Manager_B,Groningen,Netherlands,DHL Netherlands,2025-11-02
+SC3-00598,Dog Collar Leather M,1,22.5,Instagram,2025-10-31 10:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2025-11-06
+SC3-00599,Interactive Cat Toy Wand,1,14.0,Marktplaats,2025-11-01 01:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2025-11-02
+SC3-00600,Stainless Steel Bowl Set,1,19.0,Website,2025-11-02 16:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2025-11-06
+SC3-00601,Travel Pet Carrier Bag,1,55.5,Website,2025-11-03 01:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2025-11-04
+SC3-00602,Interactive Cat Toy Wand,1,12.0,Website,2025-11-03 06:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2025-11-05
+SC3-00603,Dog Collar Leather L,1,30.0,Website,2025-11-04 00:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2025-11-06
+SC3-00604,Orthopedic Dog Bed L,1,69.0,Website,2025-11-04 10:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2025-11-10
+SC3-00605,Dog Collar Leather M,1,24.0,Instagram,2025-11-05 07:00:00,Completed,Manager_B,Tilburg,Netherlands,DHL Netherlands,2025-11-10
+SC3-00606,Travel Pet Carrier Bag,1,54.0,Website,2025-11-06 00:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2025-11-12
+SC3-00607,Dog Collar Leather L,1,26.0,Website,2025-11-06 10:00:00,Awaiting Review,Manager_A,Almere,Netherlands,DHL Netherlands,
+SC3-00608,Travel Pet Carrier Bag,1,43.5,Website,2025-11-08 19:00:00,Completed,Manager_B,Utrecht,Netherlands,PostNL,2025-11-09
+SC3-00609,Orthopedic Dog Bed M,1,64.0,Website,2025-11-10 01:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2025-11-12
+SC3-00610,Orthopedic Dog Bed L,1,71.5,Website,2025-11-11 08:00:00,Completed,Manager_A,Nijmegen,Netherlands,DHL Netherlands,2025-11-17
+SC3-00611,Stainless Steel Bowl Set,2,32.0,Instagram,2025-11-11 10:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-11-13
+SC3-00612,Dog Raincoat Size M,1,37.5,Website,2025-11-11 12:00:00,Completed,Manager_B,Breda,Netherlands,DHL Netherlands,2025-11-16
+SC3-00613,Stainless Steel Bowl Set,2,38.0,Website,2025-11-11 22:00:00,Completed,Manager_A,Nijmegen,Netherlands,DHL Netherlands,2025-11-15
+SC3-00614,Travel Pet Carrier Bag,1,39.0,Website,2025-11-12 09:00:00,New,Manager_A,Amsterdam,Netherlands,DHL Netherlands,
+SC3-00615,Cat Scratching Post 60cm,1,35.0,Website,2025-11-14 02:00:00,Completed,Manager_B,Amsterdam,Netherlands,DHL Netherlands,2025-11-19
+SC3-00616,Orthopedic Dog Bed L,1,84.0,Marktplaats,2025-11-14 03:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2025-11-15
+SC3-00617,Orthopedic Dog Bed L,3,265.5,Website,2025-11-14 04:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2025-11-18
+SC3-00618,Interactive Cat Toy Wand,2,16.0,Instagram,2025-11-14 05:00:00,Completed,Manager_A,The Hague,Netherlands,DHL Netherlands,2025-11-18
+SC3-00619,Retractable Dog Leash 5m,1,22.5,Website,2025-11-14 15:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2025-11-18
+SC3-00620,Stainless Steel Bowl Set,1,22.0,Website,2025-11-15 17:00:00,Completed,Manager_A,The Hague,Netherlands,DHL Netherlands,2025-11-19
+SC3-00621,Stainless Steel Bowl Set,1,17.5,Website,2025-11-19 07:00:00,Completed,Manager_A,Utrecht,Netherlands,DHL Netherlands,2025-11-25
+SC3-00622,Retractable Dog Leash 5m,1,18.5,Website,2025-11-20 14:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2025-11-22
+SC3-00623,Cat Scratching Post 60cm,1,33.5,Website,2025-11-22 03:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-11-25
+SC3-00624,Travel Pet Carrier Bag,1,45.0,Website,2025-11-23 16:00:00,Awaiting Review,Manager_B,Amsterdam,Netherlands,PostNL,
+SC3-00625,Dog Collar Leather L,1,23.0,Website,2025-11-24 07:00:00,Completed,Manager_B,Almere,Netherlands,PostNL,2025-11-27
+SC3-00626,Automatic Pet Water Fountain,1,40.5,Instagram,2025-11-24 17:00:00,Completed,Manager_A,Eindhoven,Netherlands,DPD,2025-11-28
+SC3-00627,Pet Feeding Mat Silicone,1,12.5,Website,2025-11-26 00:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2025-11-27
+SC3-00628,Dog Collar Leather M,1,19.5,Website,2025-11-26 11:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2025-12-02
+SC3-00629,Retractable Dog Leash 5m,1,21.5,Website,2025-11-27 04:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2025-12-03
+SC3-00630,Stainless Steel Bowl Set,1,20.5,Website,2025-11-27 18:00:00,Completed,Manager_B,Groningen,Netherlands,DHL Netherlands,2025-11-30
+SC3-00631,Cat Scratching Post 60cm,1,32.5,Website,2025-11-29 12:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2025-12-05
+SC3-00632,Pet Feeding Mat Silicone,1,10.5,Website,2025-11-29 16:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2025-12-02
+SC3-00633,Dog Raincoat Size M,1,31.0,Website,2025-11-30 18:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2025-12-06
+SC3-00634,Interactive Cat Toy Wand,1,13.5,Website,2025-12-01 01:00:00,New,Manager_B,Almere,Netherlands,PostNL,
+SC3-00635,Cat Scratching Post 60cm,1,44.0,Instagram,2025-12-01 21:00:00,Completed,Manager_A,Amsterdam,Netherlands,DPD,2025-12-06
+SC3-00636,Orthopedic Dog Bed M,1,44.0,Website,2025-12-02 09:00:00,Completed,Manager_B,Tilburg,Netherlands,DHL Netherlands,2025-12-06
+SC3-00637,Travel Pet Carrier Bag,1,52.0,Website,2025-12-04 04:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2025-12-07
+SC3-00638,Orthopedic Dog Bed L,1,82.5,Website,2025-12-05 00:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2025-12-09
+SC3-00639,Interactive Cat Toy Wand,1,10.5,Website,2025-12-05 12:00:00,Completed,Manager_A,Utrecht,Netherlands,DPD,2025-12-06
+SC3-00640,Dog Collar Leather L,3,73.5,Website,2025-12-06 14:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2025-12-11
+SC3-00641,Dog Raincoat Size M,1,35.0,Marktplaats,2025-12-06 18:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2025-12-12
+SC3-00642,Retractable Dog Leash 5m,1,18.0,Website,2025-12-08 02:00:00,Completed,Manager_B,Nijmegen,Netherlands,DHL Netherlands,2025-12-11
+SC3-00643,Orthopedic Dog Bed L,1,85.5,Website,2025-12-08 23:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2025-12-09
+SC3-00644,Dog Collar Leather L,1,30.0,Website,2025-12-09 05:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2025-12-10
+SC3-00645,Stainless Steel Bowl Set,1,17.5,Instagram,2025-12-10 01:00:00,Awaiting Review,Manager_A,Tilburg,Netherlands,DPD,
+SC3-00646,Dog Collar Leather M,1,19.0,Website,2025-12-10 05:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2025-12-11
+SC3-00647,Cat Scratching Post 60cm,1,35.5,Instagram,2025-12-10 20:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-12-11
+SC3-00648,Stainless Steel Bowl Set,1,20.0,Website,2025-12-11 07:00:00,Completed,Manager_B,Amsterdam,Netherlands,DHL Netherlands,2025-12-12
+SC3-00649,Dog Raincoat Size M,1,35.0,Instagram,2025-12-11 10:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2025-12-15
+SC3-00650,Stainless Steel Bowl Set,1,18.5,Instagram,2025-12-12 10:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-12-16
+SC3-00651,Interactive Cat Toy Wand,1,11.0,Website,2025-12-12 20:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2025-12-13
+SC3-00652,Orthopedic Dog Bed L,1,68.5,Instagram,2025-12-14 02:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2025-12-15
+SC3-00653,Dog Collar Leather L,1,29.5,Website,2025-12-15 23:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2025-12-18
+SC3-00654,Automatic Pet Water Fountain,3,91.5,Website,2025-12-16 17:00:00,Completed,Manager_B,Rotterdam,Netherlands,DHL Netherlands,2025-12-17
+SC3-00655,Dog Collar Leather M,1,22.5,Website,2025-12-16 22:00:00,Completed,Manager_B,Eindhoven,Netherlands,DHL Netherlands,2025-12-22
+SC3-00656,Interactive Cat Toy Wand,1,10.0,Instagram,2025-12-18 08:00:00,Completed,Manager_A,Eindhoven,Netherlands,PostNL,2025-12-21
+SC3-00657,Dog Raincoat Size M,1,36.0,Website,2025-12-19 17:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2025-12-21
+SC3-00658,Travel Pet Carrier Bag,2,92.0,Website,2025-12-20 02:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2025-12-24
+SC3-00659,Interactive Cat Toy Wand,1,11.5,Instagram,2025-12-21 00:00:00,Completed,Manager_B,Rotterdam,Netherlands,PostNL,2025-12-25
+SC3-00660,Orthopedic Dog Bed M,1,52.5,Website,2025-12-22 09:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2025-12-27
+SC3-00661,Travel Pet Carrier Bag,3,130.5,Website,2025-12-22 23:00:00,Completed,Manager_A,Almere,Netherlands,DPD,2025-12-25
+SC3-00662,Pet Feeding Mat Silicone,2,27.0,Website,2025-12-23 21:00:00,Completed,Manager_A,The Hague,Netherlands,DHL Netherlands,2025-12-24
+SC3-00663,Cat Scratching Post 60cm,1,31.5,Marktplaats,2025-12-24 00:00:00,Completed,Manager_B,The Hague,Netherlands,PostNL,2025-12-26
+SC3-00664,Dog Raincoat Size M,1,30.5,Website,2025-12-24 20:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2025-12-26
+SC3-00665,Stainless Steel Bowl Set,1,17.0,Website,2025-12-25 04:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2025-12-26
+SC3-00666,Cat Scratching Post 60cm,1,30.5,Instagram,2025-12-26 00:00:00,Awaiting Review,Manager_B,Utrecht,Netherlands,PostNL,
+SC3-00667,Dog Raincoat Size M,1,25.5,Marktplaats,2025-12-27 11:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2025-12-31
+SC3-00668,Pet Feeding Mat Silicone,2,30.0,Website,2025-12-27 22:00:00,Completed,Manager_B,Nijmegen,Netherlands,DHL Netherlands,2026-01-01
+SC3-00669,Dog Collar Leather L,1,28.5,Instagram,2025-12-28 06:00:00,New,Manager_B,The Hague,Netherlands,PostNL,
+SC3-00670,Orthopedic Dog Bed M,1,68.5,Marktplaats,2025-12-28 12:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2025-12-29
+SC3-00671,Dog Collar Leather M,1,19.0,Marktplaats,2025-12-28 23:00:00,Completed,Manager_A,The Hague,Netherlands,DHL Netherlands,2025-12-29
+SC3-00672,Pet Feeding Mat Silicone,2,18.0,Website,2025-12-29 17:00:00,Completed,Manager_A,The Hague,Netherlands,PostNL,2025-12-30
+SC3-00673,Pet Feeding Mat Silicone,1,13.5,Marktplaats,2025-12-29 22:00:00,Completed,Manager_B,Amsterdam,Netherlands,PostNL,2026-01-01
+SC3-00674,Dog Raincoat Size M,1,32.5,Website,2025-12-30 07:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2026-01-05
+SC3-00675,Cat Scratching Post 60cm,1,38.0,Instagram,2025-12-31 02:00:00,Completed,Manager_B,Breda,Netherlands,PostNL,2026-01-03
+SC3-00676,Cat Scratching Post 60cm,1,38.5,Instagram,2025-12-31 17:00:00,Completed,Manager_B,Groningen,Netherlands,DPD,2026-01-03
+SC3-00677,Pet Feeding Mat Silicone,1,14.0,Website,2026-01-03 02:00:00,Awaiting Review,Manager_A,The Hague,Netherlands,PostNL,
+SC3-00678,Travel Pet Carrier Bag,1,55.0,Website,2026-01-03 13:00:00,Completed,Manager_B,Rotterdam,Netherlands,DHL Netherlands,2026-01-04
+SC3-00679,Interactive Cat Toy Wand,1,11.5,Website,2026-01-09 05:00:00,Completed,Manager_A,Utrecht,Netherlands,DHL Netherlands,2026-01-12
+SC3-00680,Dog Collar Leather M,1,23.5,Website,2026-01-11 23:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2026-01-16
+SC3-00681,Interactive Cat Toy Wand,1,11.0,Website,2026-01-12 00:00:00,Completed,Manager_A,Breda,Netherlands,DHL Netherlands,2026-01-17
+SC3-00682,Dog Raincoat Size M,1,26.0,Marktplaats,2026-01-13 09:00:00,Completed,Manager_A,Utrecht,Netherlands,PostNL,2026-01-14
+SC3-00683,Dog Collar Leather M,2,56.0,Website,2026-01-13 20:00:00,Completed,Manager_A,Eindhoven,Netherlands,DHL Netherlands,2026-01-14
+SC3-00684,Dog Collar Leather M,1,23.5,Instagram,2026-01-13 22:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2026-01-19
+SC3-00685,Travel Pet Carrier Bag,1,44.5,Instagram,2026-01-18 02:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2026-01-21
+SC3-00686,Travel Pet Carrier Bag,1,45.0,Website,2026-01-21 02:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2026-01-26
+SC3-00687,Retractable Dog Leash 5m,1,21.5,Website,2026-01-21 13:00:00,Completed,Manager_B,Utrecht,Netherlands,DHL Netherlands,2026-01-24
+SC3-00688,Automatic Pet Water Fountain,2,66.0,Website,2026-01-30 05:00:00,Awaiting Review,Manager_B,Breda,Netherlands,PostNL,
+SC3-00689,Retractable Dog Leash 5m,1,25.0,Website,2026-01-31 02:00:00,New,Manager_A,Eindhoven,Netherlands,PostNL,
+SC3-00690,Dog Collar Leather L,1,22.5,Website,2026-02-03 00:00:00,New,Manager_A,Utrecht,Netherlands,DHL Netherlands,
+SC3-00691,Retractable Dog Leash 5m,1,21.0,Website,2026-02-03 03:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2026-02-06
+SC3-00692,Stainless Steel Bowl Set,3,54.0,Marktplaats,2026-02-08 20:00:00,Completed,Manager_A,Tilburg,Netherlands,PostNL,2026-02-10
+SC3-00693,Cat Scratching Post 60cm,1,38.0,Website,2026-02-11 08:00:00,New,Manager_A,The Hague,Netherlands,PostNL,
+SC3-00694,Stainless Steel Bowl Set,1,15.5,Website,2026-02-12 02:00:00,Completed,Manager_B,Groningen,Netherlands,PostNL,2026-02-15
+SC3-00695,Dog Collar Leather L,1,29.0,Website,2026-02-13 19:00:00,New,Manager_A,Groningen,Netherlands,PostNL,
+SC3-00696,Dog Collar Leather L,1,30.0,Marktplaats,2026-02-14 16:00:00,Completed,Manager_A,Rotterdam,Netherlands,PostNL,2026-02-17
+SC3-00697,Dog Collar Leather L,1,26.0,Website,2026-02-15 21:00:00,New,Manager_A,Groningen,Netherlands,PostNL,
+SC3-00698,Interactive Cat Toy Wand,3,28.5,Website,2026-02-15 23:00:00,New,Manager_B,The Hague,Netherlands,PostNL,
+SC3-00699,Stainless Steel Bowl Set,2,29.0,Instagram,2026-02-16 21:00:00,Completed,Manager_A,Nijmegen,Netherlands,DHL Netherlands,2026-02-22
+SC3-00700,Interactive Cat Toy Wand,1,11.0,Marktplaats,2026-02-23 08:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2026-02-28
+SC3-00701,Retractable Dog Leash 5m,1,20.5,Website,2026-02-24 00:00:00,Completed,Manager_A,Amsterdam,Netherlands,DHL Netherlands,2026-03-01
+SC3-00702,Travel Pet Carrier Bag,1,40.0,Instagram,2026-02-26 09:00:00,Returned,Manager_B,Utrecht,Netherlands,PostNL,
+SC3-00703,Automatic Pet Water Fountain,1,40.0,Instagram,2026-02-26 18:00:00,Completed,Manager_B,Tilburg,Netherlands,PostNL,2026-03-01
+SC3-00704,Dog Collar Leather M,1,21.5,Website,2026-02-27 07:00:00,Completed,Manager_A,Almere,Netherlands,PostNL,2026-03-01
+SC3-00705,Travel Pet Carrier Bag,3,150.0,Website,2026-03-06 12:00:00,New,Manager_A,Almere,Netherlands,PostNL,
+SC3-00706,Automatic Pet Water Fountain,1,36.5,Instagram,2026-03-06 23:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2026-03-12
+SC3-00707,Cat Scratching Post 60cm,1,43.0,Website,2026-03-07 05:00:00,Completed,Manager_A,Eindhoven,Netherlands,DPD,2026-03-09
+SC3-00708,Automatic Pet Water Fountain,1,44.0,Website,2026-03-07 10:00:00,Completed,Manager_A,Breda,Netherlands,PostNL,2026-03-11
+SC3-00709,Pet Feeding Mat Silicone,1,12.0,Website,2026-03-07 17:00:00,Returned,Manager_B,Utrecht,Netherlands,DHL Netherlands,
+SC3-00710,Dog Collar Leather M,1,22.5,Instagram,2026-03-08 16:00:00,Completed,Manager_A,Amsterdam,Netherlands,PostNL,2026-03-14
+SC3-00711,Travel Pet Carrier Bag,3,120.0,Marktplaats,2026-03-11 20:00:00,Completed,Manager_B,Rotterdam,Netherlands,DHL Netherlands,2026-03-15
+SC3-00712,Cat Scratching Post 60cm,1,30.0,Website,2026-03-12 08:00:00,Completed,Manager_A,Groningen,Netherlands,PostNL,2026-03-14
+SC3-00713,Automatic Pet Water Fountain,1,40.5,Website,2026-03-14 12:00:00,Completed,Manager_B,Eindhoven,Netherlands,PostNL,2026-03-17
+SC3-00714,Orthopedic Dog Bed M,1,55.0,Website,2026-03-15 09:00:00,Completed,Manager_A,Nijmegen,Netherlands,PostNL,2026-03-21
+SC3-00715,Orthopedic Dog Bed L,1,85.5,Website,2026-03-21 12:00:00,New,Manager_A,Eindhoven,Netherlands,DPD,
+SC3-00716,Dog Raincoat Size M,1,30.5,Website,2026-03-23 01:00:00,Completed,Manager_B,Rotterdam,Netherlands,DHL Netherlands,2026-03-24
+SC3-00717,Dog Collar Leather M,1,21.0,Website,2026-03-24 06:00:00,Completed,Manager_B,Nijmegen,Netherlands,PostNL,2026-03-28
+SC3-00718,Stainless Steel Bowl Set,1,18.5,Website,2026-03-28 02:00:00,Completed,Manager_A,Rotterdam,Netherlands,DPD,2026-03-31
+SC3-00719,Orthopedic Dog Bed M,2,100.0,Website,2026-03-28 23:00:00,New,Manager_B,Rotterdam,Netherlands,PostNL,
+SC3-00720,Travel Pet Carrier Bag,1,51.5,Marktplaats,2026-03-29 14:00:00,Completed,Manager_A,Eindhoven,Netherlands,DPD,2026-04-04

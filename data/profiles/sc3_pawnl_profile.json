@@ -1,122 +1,159 @@
 {
-  "company_id": "SC3",
-  "label": "Synthetic B1-type — B2C e-commerce, lifestyle/pet niche",
   "meta": {
-    "type": "B2C",
-    "industry": "Pet Accessories / Lifestyle",
-    "country": "Netherlands",
-    "city": "Amsterdam",
-    "description": "Online store selling premium pet accessories — beds, collars, feeders, toys, carriers. Focuses on design-conscious pet owners. Sells via own website, Instagram, and Marktplaats. Ships across the Netherlands and Belgium."
+    "company_id": "SC3",
+    "profile_version": "1.0",
+    "created_at": "2026-04-07",
+    "sources_used": ["questionnaire", "crm_export"],
+    "profile_completeness": "partial"
   },
-  "profile": {
-    "company_name": "PawNL B.V.",
-    "total_headcount": 5,
-    "sales_team_size": 2,
-    "crm_system": "Shopify",
-    "crm_years_in_use": 4,
-    "other_tools": [
-      "Instagram",
-      "Marktplaats",
-      "Mailchimp",
-      "Notion"
-    ],
-    "crm_managed_by": "Co-founder",
-    "technical_capability": "Low-medium — comfortable with SaaS tools, no developer",
-    "ai_openness": "Open but cautious",
-    "management_aligned": true,
-    "previous_ai_attempts": [
-      "Shopify built-in email automations (welcome, abandoned cart)",
-      "ChatGPT occasionally for product descriptions"
-    ]
+
+  "universal": {
+    "identity": {
+      "industry_segment": "Pet accessories — premium beds, collars, feeders, toys, carriers for design-conscious pet owners in the Netherlands and Belgium",
+      "business_model": "B2C",
+      "company_size_headcount": 5,
+      "country": "Netherlands"
+    },
+    "tech_stack": {
+      "current_tools": ["Shopify", "Instagram", "Marktplaats", "Mailchimp", "Notion"],
+      "crm_system": "Shopify",
+      "crm_years_in_use": 4,
+      "existing_automation": [
+        "Shopify welcome email automation",
+        "Shopify abandoned cart email"
+      ]
+    },
+    "technical_capability": {
+      "level": "low",
+      "who_manages_tools": "Co-founder",
+      "external_it_available": false
+    },
+    "ai_readiness": {
+      "openness_level": "open",
+      "team_alignment": true,
+      "previous_ai_attempts": [
+        { "description": "Shopify built-in email automations", "outcome": "still_in_use" },
+        { "description": "ChatGPT for product descriptions (occasional)", "outcome": "still_in_use" }
+      ]
+    },
+    "data_availability": {
+      "has_structured_export": true,
+      "export_types_available": ["crm_orders"],
+      "history_months": 33,
+      "has_outcome_labels": true,
+      "has_communication_logs": false,
+      "data_quality": "medium",
+      "data_managed_by": "mixed"
+    }
   },
-  "data_availability": {
-    "crm_export_available": true,
-    "crm_export_file": "synthetic_sc3_orders.json",
-    "total_orders": 720,
-    "order_date_range": {
-      "from": "2023-07-01",
-      "to": "2026-03-29"
+
+  "domain_context": {
+    "ecommerce_ops": {
+      "active": true,
+      "selling_channels": ["own_website", "instagram_shop", "marketplace"],
+      "ecommerce_platform": "Shopify",
+      "monthly_order_volume_peak": 90,
+      "monthly_order_volume_regular": 22,
+      "return_rate": 0.08,
+      "fulfillment_model": "self_fulfilled",
+      "post_purchase_contact_freq": "rare",
+      "product_catalog_size": "small_under_50"
     },
-    "channels": {
-      "website": 499,
-      "instagram": 153,
-      "marktplaats": 68
+    "customer_support": {
+      "active": true,
+      "support_channels": ["instagram_dm", "email"],
+      "monthly_inbound_volume": null,
+      "pct_repetitive_questions": 0.80,
+      "avg_first_response_hours": null,
+      "helpdesk_tool": null
     },
-    "currency": "EUR",
-    "price_range": {
-      "min": 8.5,
-      "max": 273.0,
-      "avg": 40.89
-    },
-    "data_quality_overall": "MEDIUM — Shopify data reliable. Marktplaats orders tracked manually in spreadsheet. Return rate estimated verbally, not logged."
+    "crm_sales": { "active": false },
+    "supply_chain": { "active": false },
+    "operations_backoffice": { "active": false },
+    "marketing": { "active": false }
   },
+
   "processes": [
     {
       "process_id": "SC3_P1",
-      "name": "Instagram to Purchase",
-      "type": "B2C Sales via Social DM",
-      "steps": [
-        "Customer sees product post or story on Instagram",
-        "DM asking for size confirmation or shipping costs",
-        "Answered manually by co-founder",
-        "Customer directed to website",
-        "Order placed and fulfilled via Shopify"
-      ],
+      "name": "Instagram DM Pre-sale Support",
+      "domain": "customer_support",
+      "task_type": "repetitive_routine",
+      "trigger": "Inbound Instagram DM — sizing or shipping question",
+      "frequency": "daily",
+      "volume_per_month": null,
       "who_executes": "Co-founder",
-      "avg_duration_days": 2,
-      "conversion_rate": 0.35,
-      "drop_off_reason": "Shipping cost, size/fit uncertainty",
-      "bottlenecks": [
-        {
-          "description": "Sizing questions for collars and carriers answered manually for every customer",
-          "severity": "HIGH",
-          "time_impact": "Daily task, estimated 45 minutes per day"
-        },
-        {
-          "description": "Marktplaats orders entered manually into Shopify — no integration",
-          "severity": "MEDIUM",
-          "time_impact": "15–20 minutes daily"
-        }
-      ],
-      "top_repeated_questions": [
-        "What size collar for a Labrador?",
-        "Do you ship to Belgium?",
-        "Is the bed machine washable?"
-      ],
-      "manual_tasks_wanting_automation": [
-        "Sizing guide FAQ responses",
-        "Shipping information auto-replies",
-        "Marktplaats order sync"
-      ],
-      "data_available_for_process": "Shopify order history (720 orders). Instagram DMs not exported."
+      "bottleneck": {
+        "description": "Sizing questions for collars and carriers answered manually for every customer. Same questions asked repeatedly with no FAQ or auto-response system.",
+        "severity": "high",
+        "time_impact": "Estimated 45 minutes per day",
+        "manual_tasks_wanting_automation": [
+          "Sizing guide FAQ auto-responses",
+          "Shipping cost and destination answers",
+          "Care instructions responses (machine washable etc.)"
+        ]
+      },
+      "kpis": {
+        "tracked": ["Order count"],
+        "current_values": { "conversion_rate_from_dm": 0.35 }
+      },
+      "process_data": {
+        "has_data": true,
+        "source_type": "crm_export",
+        "record_count": 153,
+        "has_outcome_labels": true,
+        "data_quality": "medium"
+      },
+      "confidence_level": "medium"
     },
     {
       "process_id": "SC3_P2",
       "name": "Returns and Complaints Handling",
-      "type": "Customer Support",
-      "steps": [
-        "Customer contacts via email or Instagram about return",
-        "Co-founder assesses reason manually",
-        "Return label sent manually",
-        "Refund processed in Shopify",
-        "Item inspected on return — resell or discard"
-      ],
+      "domain": "ecommerce_ops",
+      "task_type": "mixed",
+      "trigger": "Customer contacts about return or complaint",
+      "frequency": "weekly",
+      "volume_per_month": null,
       "who_executes": "Co-founder",
-      "return_rate_estimate": 0.08,
-      "return_handling_time_days": 4,
-      "bottlenecks": [
-        {
-          "description": "Every return handled manually end-to-end with no self-service option",
-          "severity": "MEDIUM",
-          "time_impact": "Each return takes ~30 minutes of active handling time"
-        }
-      ],
-      "manual_tasks_wanting_automation": [
-        "Return request intake form",
-        "Automated return label generation",
-        "Refund status communication"
-      ],
-      "data_available_for_process": "No structured return log. Verbal estimate only."
+      "bottleneck": {
+        "description": "Every return handled manually end-to-end with no self-service option. Customer must contact, co-founder assesses, sends label, processes refund manually.",
+        "severity": "medium",
+        "time_impact": "~30 minutes active handling time per return case",
+        "manual_tasks_wanting_automation": [
+          "Return request intake form",
+          "Automated return label generation",
+          "Refund status communication"
+        ]
+      },
+      "kpis": {
+        "tracked": ["Return rate"],
+        "current_values": { "return_rate": 0.08, "return_handling_days": 4 }
+      },
+      "process_data": {
+        "has_data": false,
+        "source_type": "none",
+        "record_count": null,
+        "has_outcome_labels": false,
+        "data_quality": "very_low"
+      },
+      "confidence_level": "low"
     }
-  ]
+  ],
+
+  "export_computed": {
+    "computed_from": ["sc3_pawnl_orders.json"],
+    "computed_at": "2026-04-07",
+    "extractor_used": "normalizer_script",
+    "fields": {
+      "history_months": 33,
+      "total_records": 720,
+      "channel_split": { "website": 0.693, "instagram": 0.212, "marktplaats": 0.094 },
+      "has_outcome_labels": true,
+      "avg_order_value_eur": 40.89,
+      "completed_order_rate": 0.853,
+      "peak_months": ["November", "December"]
+    }
+  },
+
+  "unstructured_supplements": []
 }

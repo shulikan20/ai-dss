@@ -1,0 +1,641 @@
+order_id,product_name,quantity,price_eur,channel,order_date,status,manager,city,country,delivery_service,delivery_date
+SC1-00001,Montessori Puzzle 6-shape,1,21.0,Instagram,2023-09-06 14:00:00,Completed,Manager_B,Sankt Pölten,Austria,DPD Austria,2023-09-11
+SC1-00002,Wooden Block Set 40pcs,1,24.5,Website,2023-09-09 02:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2023-09-10
+SC1-00003,Silicone Building Blocks,1,30.5,Website,2023-09-11 19:00:00,New,Manager_A,Dornbirn,Austria,DPD Austria,
+SC1-00004,Balance Bike 12-inch,1,106.5,Website,2023-09-12 19:00:00,Completed,Manager_A,Salzburg,Austria,Österreichische Post,2023-09-17
+SC1-00005,Waldorf Rainbow Stacker,1,37.0,Instagram,2023-09-13 14:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2023-09-18
+SC1-00006,Balance Bike 12-inch,1,97.5,Website,2023-09-19 13:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2023-09-25
+SC1-00007,Wooden Train Track Set,1,55.0,Website,2023-09-20 09:00:00,Completed,Manager_B,Klagenfurt,Austria,DPD Austria,2023-09-25
+SC1-00008,Wooden Train Track Set,1,49.0,Website,2023-09-22 14:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2023-09-27
+SC1-00009,Silicone Building Blocks,3,75.0,Website,2023-09-23 23:00:00,Completed,Manager_A,Wels,Austria,DPD Austria,2023-09-25
+SC1-00010,Montessori Puzzle 6-shape,1,17.5,Website,2023-10-01 01:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2023-10-05
+SC1-00011,Magnetic Drawing Board,1,23.0,Website,2023-10-01 04:00:00,Completed,Manager_A,Innsbruck,Austria,Österreichische Post,2023-10-05
+SC1-00012,Wooden Kitchen Playset,1,81.5,Website,2023-10-02 20:00:00,Completed,Manager_A,Linz,Austria,Österreichische Post,2023-10-08
+SC1-00013,Montessori Puzzle 6-shape,1,26.0,Instagram,2023-10-03 01:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2023-10-08
+SC1-00014,Finger Paint Set,1,15.0,Website,2023-10-05 12:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2023-10-08
+SC1-00015,Felt Animal Sewing Kit,1,18.5,Instagram,2023-10-05 20:00:00,Cancelled,Manager_B,Vienna,Austria,DPD Austria,
+SC1-00016,Finger Paint Set,1,14.0,Website,2023-10-07 08:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2023-10-10
+SC1-00017,Felt Animal Sewing Kit,1,16.0,Website,2023-10-07 13:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2023-10-11
+SC1-00018,Magnetic Drawing Board,3,60.0,Website,2023-10-08 06:00:00,Completed,Manager_A,Graz,Austria,Österreichische Post,2023-10-11
+SC1-00019,Silicone Building Blocks,1,25.0,Instagram,2023-10-09 12:00:00,New,Manager_A,Feldkirch,Austria,DPD Austria,
+SC1-00020,Balance Bike 12-inch,2,208.0,Website,2023-10-10 20:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2023-10-15
+SC1-00021,Wooden Train Track Set,1,49.0,Website,2023-10-11 22:00:00,Completed,Manager_A,Klagenfurt,Austria,Österreichische Post,2023-10-15
+SC1-00022,Silicone Building Blocks,1,32.5,Instagram,2023-10-12 16:00:00,Completed,Manager_A,Feldkirch,Austria,Österreichische Post,2023-10-18
+SC1-00023,Silicone Building Blocks,1,30.5,Website,2023-10-15 01:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2023-10-17
+SC1-00024,Finger Paint Set,1,13.0,Website,2023-10-18 14:00:00,Completed,Manager_A,Feldkirch,Austria,Österreichische Post,2023-10-24
+SC1-00025,Felt Animal Sewing Kit,1,20.0,Website,2023-10-18 17:00:00,Completed,Manager_B,Sankt Pölten,Austria,DPD Austria,2023-10-22
+SC1-00026,Silicone Building Blocks,2,61.0,Website,2023-10-19 03:00:00,Completed,Manager_A,Feldkirch,Austria,Österreichische Post,2023-10-23
+SC1-00027,Montessori Puzzle 6-shape,1,22.5,Website,2023-10-20 04:00:00,Cancelled,Manager_A,Sankt Pölten,Austria,Österreichische Post,
+SC1-00028,Wooden Kitchen Playset,3,214.5,Website,2023-10-21 05:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2023-10-22
+SC1-00029,Magnetic Drawing Board,1,19.0,Website,2023-10-22 23:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2023-10-25
+SC1-00030,Montessori Puzzle 6-shape,1,25.5,Website,2023-10-23 13:00:00,Completed,Manager_A,Innsbruck,Austria,Österreichische Post,2023-10-28
+SC1-00031,Silicone Building Blocks,1,31.5,Website,2023-10-23 20:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2023-10-28
+SC1-00032,Balance Bike 12-inch,1,93.0,Website,2023-10-24 07:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2023-10-26
+SC1-00033,Waldorf Rainbow Stacker,1,38.0,Website,2023-10-25 08:00:00,Completed,Manager_B,Innsbruck,Austria,DPD Austria,2023-10-26
+SC1-00034,Felt Animal Sewing Kit,1,15.5,Website,2023-10-26 01:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2023-10-30
+SC1-00035,Beeswax Modelling Kit,1,12.5,Website,2023-10-26 10:00:00,New,Manager_A,Graz,Austria,DPD Austria,
+SC1-00036,Magnetic Drawing Board,2,41.0,Website,2023-10-28 07:00:00,Completed,Manager_A,Linz,Austria,Österreichische Post,2023-11-03
+SC1-00037,Beeswax Modelling Kit,1,17.5,Website,2023-10-29 10:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2023-10-30
+SC1-00038,Wooden Train Track Set,2,120.0,Website,2023-10-31 08:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2023-11-02
+SC1-00039,Balance Bike 12-inch,1,124.5,Website,2023-10-31 23:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2023-11-02
+SC1-00040,Waldorf Rainbow Stacker,1,48.5,Website,2023-11-02 05:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2023-11-07
+SC1-00041,Felt Animal Sewing Kit,1,17.0,Website,2023-11-02 23:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2023-11-05
+SC1-00042,Felt Animal Sewing Kit,3,64.5,Website,2023-11-04 23:00:00,Completed,Manager_B,Sankt Pölten,Austria,DPD Austria,2023-11-10
+SC1-00043,Waldorf Rainbow Stacker,1,48.0,Website,2023-11-05 18:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2023-11-09
+SC1-00044,Wooden Block Set 40pcs,1,29.5,Website,2023-11-06 01:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2023-11-12
+SC1-00045,Magnetic Drawing Board,1,20.5,Website,2023-11-06 12:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2023-11-10
+SC1-00046,Sensory Ball Set,3,58.5,Instagram,2023-11-07 02:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2023-11-09
+SC1-00047,Magnetic Drawing Board,1,22.0,Website,2023-11-07 07:00:00,Awaiting Review,Manager_B,Feldkirch,Austria,Österreichische Post,
+SC1-00048,Montessori Puzzle 6-shape,1,22.5,Website,2023-11-08 08:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2023-11-10
+SC1-00049,Montessori Puzzle 6-shape,2,44.0,Website,2023-11-09 04:00:00,New,Manager_B,Linz,Austria,Österreichische Post,
+SC1-00050,Sensory Ball Set,1,14.0,Website,2023-11-09 06:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2023-11-11
+SC1-00051,Balance Bike 12-inch,2,246.0,Website,2023-11-09 11:00:00,New,Manager_B,Sankt Pölten,Austria,DPD Austria,
+SC1-00052,Balance Bike 12-inch,1,97.0,Instagram,2023-11-09 23:00:00,New,Manager_B,Graz,Austria,DPD Austria,
+SC1-00053,Felt Animal Sewing Kit,2,36.0,Instagram,2023-11-10 05:00:00,Completed,Manager_B,Klagenfurt,Austria,DPD Austria,2023-11-15
+SC1-00054,Felt Animal Sewing Kit,1,23.5,Website,2023-11-11 03:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2023-11-13
+SC1-00055,Waldorf Rainbow Stacker,3,133.5,Instagram,2023-11-11 05:00:00,New,Manager_A,Vienna,Austria,Österreichische Post,
+SC1-00056,Wooden Kitchen Playset,1,57.0,Website,2023-11-11 10:00:00,Completed,Manager_A,Klagenfurt,Austria,Österreichische Post,2023-11-16
+SC1-00057,Felt Animal Sewing Kit,1,19.5,Website,2023-11-12 04:00:00,Awaiting Review,Manager_A,Klagenfurt,Austria,DPD Austria,
+SC1-00058,Montessori Puzzle 6-shape,3,61.5,Website,2023-11-12 05:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2023-11-17
+SC1-00059,Beeswax Modelling Kit,1,14.0,Website,2023-11-12 14:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2023-11-14
+SC1-00060,Wooden Kitchen Playset,1,76.0,Instagram,2023-11-13 01:00:00,Completed,Manager_A,Linz,Austria,Österreichische Post,2023-11-17
+SC1-00061,Montessori Puzzle 6-shape,1,25.0,Website,2023-11-13 11:00:00,Completed,Manager_A,Klagenfurt,Austria,Österreichische Post,2023-11-16
+SC1-00062,Sensory Ball Set,1,16.5,Instagram,2023-11-13 13:00:00,New,Manager_B,Salzburg,Austria,DPD Austria,
+SC1-00063,Balance Bike 12-inch,3,369.0,Website,2023-11-13 17:00:00,Completed,Manager_B,Wels,Austria,Österreichische Post,2023-11-18
+SC1-00064,Felt Animal Sewing Kit,1,19.0,Website,2023-11-14 10:00:00,Completed,Manager_B,Wels,Austria,Österreichische Post,2023-11-18
+SC1-00065,Montessori Puzzle 6-shape,1,23.5,Website,2023-11-15 01:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2023-11-17
+SC1-00066,Silicone Building Blocks,1,32.0,Instagram,2023-11-15 06:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2023-11-16
+SC1-00067,Felt Animal Sewing Kit,1,15.5,Website,2023-11-15 09:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2023-11-17
+SC1-00068,Balance Bike 12-inch,2,191.0,Website,2023-11-15 16:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2023-11-19
+SC1-00069,Montessori Puzzle 6-shape,1,23.5,Website,2023-11-16 15:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2023-11-18
+SC1-00070,Finger Paint Set,1,14.0,Instagram,2023-11-16 20:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2023-11-18
+SC1-00071,Sensory Ball Set,1,19.0,Instagram,2023-11-16 21:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2023-11-18
+SC1-00072,Wooden Kitchen Playset,1,72.0,Website,2023-11-16 23:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2023-11-22
+SC1-00073,Montessori Puzzle 6-shape,1,22.0,Website,2023-11-17 11:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2023-11-19
+SC1-00074,Wooden Block Set 40pcs,1,37.5,Website,2023-11-18 00:00:00,Completed,Manager_A,Salzburg,Austria,Österreichische Post,2023-11-21
+SC1-00075,Montessori Puzzle 6-shape,1,20.5,Website,2023-11-20 19:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2023-11-23
+SC1-00076,Balance Bike 12-inch,1,118.5,Instagram,2023-11-20 23:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2023-11-23
+SC1-00077,Silicone Building Blocks,1,26.0,Website,2023-11-21 01:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2023-11-25
+SC1-00078,Wooden Block Set 40pcs,1,35.0,Website,2023-11-21 15:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2023-11-27
+SC1-00079,Beeswax Modelling Kit,1,17.5,Website,2023-11-22 03:00:00,Cancelled,Manager_A,Feldkirch,Austria,Österreichische Post,
+SC1-00080,Wooden Kitchen Playset,1,66.0,Website,2023-11-22 12:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2023-11-27
+SC1-00081,Montessori Puzzle 6-shape,1,20.0,Website,2023-11-22 16:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2023-11-28
+SC1-00082,Sensory Ball Set,1,18.5,Website,2023-11-23 17:00:00,Completed,Manager_A,Salzburg,Austria,Österreichische Post,2023-11-26
+SC1-00083,Wooden Block Set 40pcs,2,67.0,Instagram,2023-11-24 09:00:00,Completed,Manager_A,Graz,Austria,Österreichische Post,2023-11-25
+SC1-00084,Felt Animal Sewing Kit,1,20.5,Website,2023-11-25 10:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2023-11-30
+SC1-00085,Silicone Building Blocks,3,91.5,Website,2023-11-25 21:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2023-11-28
+SC1-00086,Silicone Building Blocks,1,28.0,Website,2023-11-26 16:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2023-11-30
+SC1-00087,Waldorf Rainbow Stacker,1,38.5,Website,2023-11-27 01:00:00,Completed,Manager_B,Innsbruck,Austria,Österreichische Post,2023-12-02
+SC1-00088,Wooden Kitchen Playset,1,64.0,Website,2023-11-27 17:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2023-12-03
+SC1-00089,Wooden Block Set 40pcs,1,32.5,Website,2023-11-28 00:00:00,Completed,Manager_A,Klagenfurt,Austria,DPD Austria,2023-12-04
+SC1-00090,Wooden Block Set 40pcs,1,30.5,Website,2023-11-29 08:00:00,Completed,Manager_B,Innsbruck,Austria,DPD Austria,2023-12-01
+SC1-00091,Felt Animal Sewing Kit,1,22.5,Website,2023-12-01 13:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2023-12-06
+SC1-00092,Magnetic Drawing Board,1,22.0,Instagram,2023-12-02 05:00:00,Completed,Manager_A,Klagenfurt,Austria,DPD Austria,2023-12-08
+SC1-00093,Balance Bike 12-inch,1,105.0,Website,2023-12-02 18:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2023-12-07
+SC1-00094,Felt Animal Sewing Kit,1,23.0,Website,2023-12-03 04:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2023-12-08
+SC1-00095,Finger Paint Set,1,15.0,Instagram,2023-12-03 09:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2023-12-07
+SC1-00096,Magnetic Drawing Board,3,78.0,Website,2023-12-03 16:00:00,Completed,Manager_A,Graz,Austria,Österreichische Post,2023-12-05
+SC1-00097,Montessori Puzzle 6-shape,1,25.0,Website,2023-12-05 12:00:00,Awaiting Review,Manager_B,Klagenfurt,Austria,Österreichische Post,
+SC1-00098,Wooden Block Set 40pcs,3,100.5,Instagram,2023-12-05 13:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2023-12-11
+SC1-00099,Wooden Train Track Set,2,114.0,Website,2023-12-05 22:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2023-12-09
+SC1-00100,Waldorf Rainbow Stacker,1,46.5,Website,2023-12-06 02:00:00,Completed,Manager_B,Dornbirn,Austria,Österreichische Post,2023-12-10
+SC1-00101,Beeswax Modelling Kit,1,13.0,Website,2023-12-06 11:00:00,Completed,Manager_B,Sankt Pölten,Austria,DPD Austria,2023-12-11
+SC1-00102,Wooden Block Set 40pcs,1,33.0,Instagram,2023-12-06 16:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2023-12-11
+SC1-00103,Magnetic Drawing Board,1,21.0,Website,2023-12-07 05:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2023-12-08
+SC1-00104,Balance Bike 12-inch,1,119.0,Website,2023-12-07 13:00:00,Completed,Manager_A,Graz,Austria,Österreichische Post,2023-12-08
+SC1-00105,Wooden Block Set 40pcs,2,72.0,Website,2023-12-08 00:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2023-12-13
+SC1-00106,Wooden Train Track Set,1,70.0,Website,2023-12-08 05:00:00,New,Manager_A,Linz,Austria,DPD Austria,
+SC1-00107,Silicone Building Blocks,1,27.0,Website,2023-12-10 13:00:00,Completed,Manager_A,Vienna,Austria,Österreichische Post,2023-12-13
+SC1-00108,Magnetic Drawing Board,1,24.5,Website,2023-12-11 00:00:00,Cancelled,Manager_A,Linz,Austria,Österreichische Post,
+SC1-00109,Wooden Kitchen Playset,1,61.0,Website,2023-12-11 08:00:00,New,Manager_A,Graz,Austria,DPD Austria,
+SC1-00110,Wooden Kitchen Playset,1,64.0,Website,2023-12-11 20:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2023-12-12
+SC1-00111,Balance Bike 12-inch,1,134.0,Website,2023-12-12 08:00:00,New,Manager_B,Dornbirn,Austria,Österreichische Post,
+SC1-00112,Wooden Kitchen Playset,1,66.0,Website,2023-12-12 12:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2023-12-17
+SC1-00113,Beeswax Modelling Kit,1,14.5,Instagram,2023-12-14 15:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2023-12-19
+SC1-00114,Magnetic Drawing Board,3,66.0,Website,2023-12-15 15:00:00,Completed,Manager_B,Klagenfurt,Austria,Österreichische Post,2023-12-16
+SC1-00115,Wooden Kitchen Playset,1,60.0,Website,2023-12-15 20:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2023-12-19
+SC1-00116,Felt Animal Sewing Kit,1,19.0,Instagram,2023-12-17 08:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2023-12-20
+SC1-00117,Finger Paint Set,1,11.5,Website,2023-12-18 08:00:00,New,Manager_B,Klagenfurt,Austria,Österreichische Post,
+SC1-00118,Beeswax Modelling Kit,1,14.0,Instagram,2023-12-18 10:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2023-12-21
+SC1-00119,Silicone Building Blocks,1,30.5,Website,2023-12-18 17:00:00,Completed,Manager_A,Salzburg,Austria,Österreichische Post,2023-12-19
+SC1-00120,Wooden Block Set 40pcs,1,25.0,Website,2023-12-19 12:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2023-12-23
+SC1-00121,Felt Animal Sewing Kit,3,61.5,Website,2023-12-19 13:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2023-12-23
+SC1-00122,Balance Bike 12-inch,1,131.0,Website,2023-12-19 17:00:00,Completed,Manager_B,Graz,Austria,Österreichische Post,2023-12-22
+SC1-00123,Montessori Puzzle 6-shape,1,23.0,Instagram,2023-12-20 16:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2023-12-21
+SC1-00124,Magnetic Drawing Board,1,25.5,Website,2023-12-20 19:00:00,Awaiting Review,Manager_A,Salzburg,Austria,DPD Austria,
+SC1-00125,Silicone Building Blocks,1,31.5,Website,2023-12-21 05:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2023-12-23
+SC1-00126,Balance Bike 12-inch,1,130.0,Website,2023-12-21 12:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2023-12-24
+SC1-00127,Magnetic Drawing Board,1,22.5,Website,2023-12-21 17:00:00,Completed,Manager_A,Wels,Austria,DPD Austria,2023-12-25
+SC1-00128,Wooden Train Track Set,1,57.0,Website,2023-12-21 20:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2023-12-24
+SC1-00129,Felt Animal Sewing Kit,1,15.5,Instagram,2023-12-22 05:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2023-12-28
+SC1-00130,Waldorf Rainbow Stacker,1,49.5,Website,2023-12-22 10:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2023-12-23
+SC1-00131,Silicone Building Blocks,1,33.5,Website,2023-12-22 18:00:00,Completed,Manager_A,Salzburg,Austria,Österreichische Post,2023-12-26
+SC1-00132,Magnetic Drawing Board,1,18.0,Website,2023-12-23 06:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2023-12-26
+SC1-00133,Silicone Building Blocks,1,33.0,Instagram,2023-12-23 12:00:00,New,Manager_B,Vienna,Austria,Österreichische Post,
+SC1-00134,Waldorf Rainbow Stacker,3,118.5,Website,2023-12-24 00:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2023-12-28
+SC1-00135,Wooden Train Track Set,1,51.0,Website,2023-12-25 04:00:00,Completed,Manager_B,Innsbruck,Austria,DPD Austria,2023-12-27
+SC1-00136,Wooden Kitchen Playset,1,69.0,Instagram,2023-12-25 06:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2023-12-29
+SC1-00137,Waldorf Rainbow Stacker,1,47.5,Website,2023-12-27 09:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2024-01-01
+SC1-00138,Magnetic Drawing Board,1,26.0,Website,2023-12-28 01:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2023-12-29
+SC1-00139,Felt Animal Sewing Kit,1,18.0,Instagram,2023-12-28 21:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2024-01-03
+SC1-00140,Wooden Block Set 40pcs,2,69.0,Website,2023-12-29 20:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2023-12-30
+SC1-00141,Wooden Block Set 40pcs,1,25.5,Website,2023-12-30 07:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2024-01-02
+SC1-00142,Wooden Kitchen Playset,1,83.5,Instagram,2023-12-30 12:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2023-12-31
+SC1-00143,Silicone Building Blocks,1,33.0,Website,2023-12-31 00:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2024-01-03
+SC1-00144,Finger Paint Set,1,12.0,Website,2023-12-31 19:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2024-01-06
+SC1-00145,Waldorf Rainbow Stacker,1,42.0,Instagram,2024-01-03 04:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2024-01-04
+SC1-00146,Finger Paint Set,3,43.5,Website,2024-01-04 19:00:00,Completed,Manager_A,Feldkirch,Austria,Österreichische Post,2024-01-10
+SC1-00147,Balance Bike 12-inch,1,106.0,Website,2024-01-05 09:00:00,New,Manager_B,Klagenfurt,Austria,DPD Austria,
+SC1-00148,Wooden Kitchen Playset,1,58.0,Instagram,2024-01-06 00:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2024-01-08
+SC1-00149,Waldorf Rainbow Stacker,1,37.5,Website,2024-01-06 20:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2024-01-10
+SC1-00150,Beeswax Modelling Kit,1,17.0,Website,2024-01-09 08:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2024-01-12
+SC1-00151,Wooden Train Track Set,2,123.0,Website,2024-01-18 01:00:00,Completed,Manager_A,Wels,Austria,DPD Austria,2024-01-21
+SC1-00152,Beeswax Modelling Kit,1,13.5,Website,2024-01-19 08:00:00,Completed,Manager_B,Klagenfurt,Austria,DPD Austria,2024-01-22
+SC1-00153,Felt Animal Sewing Kit,1,21.5,Website,2024-01-19 20:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2024-01-22
+SC1-00154,Sensory Ball Set,1,15.0,Website,2024-01-21 08:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2024-01-24
+SC1-00155,Finger Paint Set,1,17.5,Instagram,2024-01-24 04:00:00,New,Manager_B,Innsbruck,Austria,DPD Austria,
+SC1-00156,Felt Animal Sewing Kit,1,17.5,Website,2024-01-24 17:00:00,Completed,Manager_B,Graz,Austria,Österreichische Post,2024-01-25
+SC1-00157,Wooden Train Track Set,1,63.0,Website,2024-01-24 21:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2024-01-30
+SC1-00158,Sensory Ball Set,1,21.5,Website,2024-01-24 23:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2024-01-30
+SC1-00159,Sensory Ball Set,2,32.0,Website,2024-01-26 00:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2024-01-27
+SC1-00160,Wooden Train Track Set,1,62.5,Website,2024-01-27 22:00:00,New,Manager_B,Vienna,Austria,Österreichische Post,
+SC1-00161,Magnetic Drawing Board,1,21.5,Website,2024-01-29 23:00:00,Completed,Manager_B,Vienna,Austria,Österreichische Post,2024-01-31
+SC1-00162,Finger Paint Set,1,16.0,Website,2024-01-30 09:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2024-02-02
+SC1-00163,Balance Bike 12-inch,1,114.5,Website,2024-01-30 13:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2024-02-02
+SC1-00164,Felt Animal Sewing Kit,1,20.0,Website,2024-02-03 21:00:00,Completed,Manager_B,Innsbruck,Austria,Österreichische Post,2024-02-08
+SC1-00165,Balance Bike 12-inch,1,121.5,Website,2024-02-04 16:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2024-02-05
+SC1-00166,Balance Bike 12-inch,1,109.0,Website,2024-02-06 03:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2024-02-11
+SC1-00167,Balance Bike 12-inch,1,119.5,Instagram,2024-02-07 04:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2024-02-10
+SC1-00168,Wooden Block Set 40pcs,1,33.5,Website,2024-02-10 03:00:00,Completed,Manager_B,Dornbirn,Austria,Österreichische Post,2024-02-12
+SC1-00169,Wooden Train Track Set,1,53.0,Website,2024-02-10 19:00:00,New,Manager_A,Salzburg,Austria,DPD Austria,
+SC1-00170,Magnetic Drawing Board,1,24.0,Website,2024-02-13 17:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2024-02-16
+SC1-00171,Balance Bike 12-inch,1,134.5,Website,2024-02-19 19:00:00,New,Manager_B,Graz,Austria,DPD Austria,
+SC1-00172,Wooden Train Track Set,1,68.0,Website,2024-02-28 12:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2024-02-29
+SC1-00173,Wooden Block Set 40pcs,1,30.0,Instagram,2024-02-29 18:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2024-03-06
+SC1-00174,Wooden Block Set 40pcs,1,37.0,Website,2024-03-02 09:00:00,New,Manager_A,Wels,Austria,Österreichische Post,
+SC1-00175,Waldorf Rainbow Stacker,1,36.0,Website,2024-03-04 09:00:00,Completed,Manager_B,Vienna,Austria,Österreichische Post,2024-03-06
+SC1-00176,Montessori Puzzle 6-shape,1,20.0,Instagram,2024-03-06 07:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2024-03-07
+SC1-00177,Magnetic Drawing Board,1,26.0,Website,2024-03-09 21:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2024-03-10
+SC1-00178,Finger Paint Set,1,17.5,Website,2024-03-10 00:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2024-03-16
+SC1-00179,Beeswax Modelling Kit,2,29.0,Instagram,2024-03-13 12:00:00,Completed,Manager_B,Dornbirn,Austria,Österreichische Post,2024-03-15
+SC1-00180,Wooden Block Set 40pcs,1,32.0,Instagram,2024-03-13 21:00:00,Completed,Manager_B,Feldkirch,Austria,Österreichische Post,2024-03-17
+SC1-00181,Felt Animal Sewing Kit,1,17.0,Website,2024-03-15 07:00:00,Awaiting Review,Manager_B,Vienna,Austria,DPD Austria,
+SC1-00182,Wooden Kitchen Playset,3,187.5,Website,2024-03-20 16:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2024-03-25
+SC1-00183,Wooden Block Set 40pcs,1,35.5,Website,2024-03-25 09:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2024-03-26
+SC1-00184,Beeswax Modelling Kit,1,17.0,Website,2024-03-27 06:00:00,Completed,Manager_B,Vienna,Austria,Österreichische Post,2024-03-28
+SC1-00185,Beeswax Modelling Kit,1,16.0,Website,2024-03-29 18:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2024-04-03
+SC1-00186,Wooden Block Set 40pcs,1,29.5,Website,2024-03-29 20:00:00,New,Manager_B,Klagenfurt,Austria,DPD Austria,
+SC1-00187,Magnetic Drawing Board,1,25.5,Instagram,2024-04-05 12:00:00,Completed,Manager_A,Salzburg,Austria,Österreichische Post,2024-04-07
+SC1-00188,Balance Bike 12-inch,1,93.0,Website,2024-04-07 04:00:00,New,Manager_A,Vienna,Austria,Österreichische Post,
+SC1-00189,Wooden Train Track Set,1,70.0,Instagram,2024-04-10 04:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2024-04-15
+SC1-00190,Felt Animal Sewing Kit,1,21.5,Website,2024-04-11 15:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2024-04-16
+SC1-00191,Felt Animal Sewing Kit,1,23.5,Website,2024-04-13 02:00:00,New,Manager_B,Klagenfurt,Austria,Österreichische Post,
+SC1-00192,Beeswax Modelling Kit,3,46.5,Website,2024-04-14 18:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2024-04-20
+SC1-00193,Magnetic Drawing Board,1,20.5,Website,2024-04-16 00:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2024-04-22
+SC1-00194,Silicone Building Blocks,2,50.0,Website,2024-04-17 09:00:00,New,Manager_B,Dornbirn,Austria,DPD Austria,
+SC1-00195,Beeswax Modelling Kit,1,14.5,Instagram,2024-04-20 11:00:00,Completed,Manager_B,Innsbruck,Austria,DPD Austria,2024-04-23
+SC1-00196,Balance Bike 12-inch,2,180.0,Website,2024-04-23 12:00:00,Completed,Manager_B,Innsbruck,Austria,Österreichische Post,2024-04-29
+SC1-00197,Waldorf Rainbow Stacker,1,40.0,Website,2024-04-25 07:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2024-04-29
+SC1-00198,Silicone Building Blocks,1,32.5,Website,2024-04-28 01:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2024-05-04
+SC1-00199,Montessori Puzzle 6-shape,1,18.5,Instagram,2024-04-28 07:00:00,New,Manager_B,Dornbirn,Austria,DPD Austria,
+SC1-00200,Wooden Kitchen Playset,1,77.5,Website,2024-04-30 10:00:00,New,Manager_B,Linz,Austria,DPD Austria,
+SC1-00201,Waldorf Rainbow Stacker,1,44.0,Website,2024-05-01 07:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2024-05-06
+SC1-00202,Wooden Block Set 40pcs,1,24.5,Website,2024-05-04 21:00:00,Awaiting Review,Manager_B,Sankt Pölten,Austria,Österreichische Post,
+SC1-00203,Montessori Puzzle 6-shape,1,26.0,Website,2024-05-05 03:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2024-05-11
+SC1-00204,Balance Bike 12-inch,1,116.5,Website,2024-05-06 02:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2024-05-08
+SC1-00205,Finger Paint Set,3,51.0,Website,2024-05-06 20:00:00,Completed,Manager_A,Graz,Austria,Österreichische Post,2024-05-07
+SC1-00206,Silicone Building Blocks,1,24.5,Instagram,2024-05-09 23:00:00,New,Manager_B,Linz,Austria,Österreichische Post,
+SC1-00207,Beeswax Modelling Kit,1,17.0,Website,2024-05-15 18:00:00,Completed,Manager_A,Innsbruck,Austria,Österreichische Post,2024-05-21
+SC1-00208,Montessori Puzzle 6-shape,1,26.0,Instagram,2024-05-18 03:00:00,New,Manager_B,Feldkirch,Austria,DPD Austria,
+SC1-00209,Finger Paint Set,1,15.0,Website,2024-05-24 14:00:00,Completed,Manager_B,Feldkirch,Austria,Österreichische Post,2024-05-27
+SC1-00210,Sensory Ball Set,3,63.0,Instagram,2024-05-25 02:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2024-05-27
+SC1-00211,Wooden Kitchen Playset,3,261.0,Website,2024-05-26 20:00:00,Completed,Manager_B,Innsbruck,Austria,Österreichische Post,2024-05-30
+SC1-00212,Silicone Building Blocks,1,29.0,Website,2024-05-29 03:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2024-06-03
+SC1-00213,Sensory Ball Set,1,14.5,Website,2024-05-29 12:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2024-06-02
+SC1-00214,Wooden Train Track Set,1,63.5,Website,2024-05-30 18:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2024-05-31
+SC1-00215,Sensory Ball Set,1,21.5,Website,2024-06-03 19:00:00,New,Manager_B,Graz,Austria,Österreichische Post,
+SC1-00216,Magnetic Drawing Board,3,69.0,Website,2024-06-03 23:00:00,Completed,Manager_A,Klagenfurt,Austria,Österreichische Post,2024-06-07
+SC1-00217,Wooden Block Set 40pcs,1,29.0,Website,2024-06-04 12:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2024-06-06
+SC1-00218,Magnetic Drawing Board,1,23.5,Instagram,2024-06-05 14:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2024-06-09
+SC1-00219,Balance Bike 12-inch,1,107.5,Website,2024-06-16 12:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2024-06-18
+SC1-00220,Balance Bike 12-inch,3,315.0,Instagram,2024-06-20 01:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2024-06-21
+SC1-00221,Wooden Block Set 40pcs,1,24.0,Website,2024-06-23 14:00:00,Completed,Manager_A,Linz,Austria,Österreichische Post,2024-06-27
+SC1-00222,Magnetic Drawing Board,1,21.5,Website,2024-06-25 16:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2024-06-29
+SC1-00223,Wooden Block Set 40pcs,1,32.5,Website,2024-06-26 04:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2024-06-27
+SC1-00224,Silicone Building Blocks,1,25.5,Website,2024-06-27 07:00:00,Completed,Manager_B,Graz,Austria,Österreichische Post,2024-06-30
+SC1-00225,Felt Animal Sewing Kit,1,19.0,Website,2024-06-29 16:00:00,Completed,Manager_B,Innsbruck,Austria,DPD Austria,2024-07-05
+SC1-00226,Wooden Train Track Set,1,57.0,Instagram,2024-07-05 03:00:00,Completed,Manager_B,Feldkirch,Austria,Österreichische Post,2024-07-09
+SC1-00227,Waldorf Rainbow Stacker,1,46.0,Website,2024-07-10 03:00:00,Completed,Manager_B,Feldkirch,Austria,Österreichische Post,2024-07-14
+SC1-00228,Wooden Kitchen Playset,1,83.5,Website,2024-07-11 03:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2024-07-12
+SC1-00229,Wooden Block Set 40pcs,1,32.0,Website,2024-07-11 07:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2024-07-12
+SC1-00230,Sensory Ball Set,1,21.5,Website,2024-07-12 04:00:00,Awaiting Review,Manager_A,Linz,Austria,DPD Austria,
+SC1-00231,Wooden Train Track Set,1,58.5,Website,2024-07-14 02:00:00,Awaiting Review,Manager_B,Wels,Austria,Österreichische Post,
+SC1-00232,Wooden Block Set 40pcs,1,30.5,Website,2024-07-16 15:00:00,Completed,Manager_A,Salzburg,Austria,Österreichische Post,2024-07-21
+SC1-00233,Waldorf Rainbow Stacker,1,38.5,Website,2024-07-18 10:00:00,Completed,Manager_B,Sankt Pölten,Austria,DPD Austria,2024-07-20
+SC1-00234,Wooden Train Track Set,1,48.0,Instagram,2024-07-20 19:00:00,New,Manager_B,Feldkirch,Austria,DPD Austria,
+SC1-00235,Wooden Kitchen Playset,1,83.5,Website,2024-07-24 17:00:00,Completed,Manager_B,Dornbirn,Austria,Österreichische Post,2024-07-28
+SC1-00236,Silicone Building Blocks,1,23.0,Website,2024-07-28 03:00:00,Completed,Manager_A,Graz,Austria,Österreichische Post,2024-08-03
+SC1-00237,Finger Paint Set,1,15.0,Instagram,2024-07-28 18:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2024-08-01
+SC1-00238,Balance Bike 12-inch,1,104.0,Website,2024-07-29 18:00:00,New,Manager_B,Wels,Austria,DPD Austria,
+SC1-00239,Waldorf Rainbow Stacker,3,105.0,Website,2024-07-31 07:00:00,Completed,Manager_A,Klagenfurt,Austria,DPD Austria,2024-08-02
+SC1-00240,Wooden Train Track Set,1,73.0,Instagram,2024-07-31 22:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2024-08-03
+SC1-00241,Wooden Block Set 40pcs,2,56.0,Website,2024-08-08 23:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2024-08-13
+SC1-00242,Montessori Puzzle 6-shape,1,21.5,Website,2024-08-09 15:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2024-08-14
+SC1-00243,Waldorf Rainbow Stacker,1,36.5,Website,2024-08-11 12:00:00,New,Manager_A,Innsbruck,Austria,Österreichische Post,
+SC1-00244,Waldorf Rainbow Stacker,1,43.5,Website,2024-08-13 20:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2024-08-16
+SC1-00245,Finger Paint Set,1,10.0,Website,2024-08-14 10:00:00,Completed,Manager_B,Graz,Austria,Österreichische Post,2024-08-18
+SC1-00246,Montessori Puzzle 6-shape,1,23.5,Instagram,2024-08-14 21:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2024-08-17
+SC1-00247,Wooden Kitchen Playset,2,145.0,Website,2024-08-16 03:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2024-08-22
+SC1-00248,Finger Paint Set,2,29.0,Website,2024-08-21 04:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2024-08-22
+SC1-00249,Wooden Kitchen Playset,1,66.0,Instagram,2024-08-29 19:00:00,Completed,Manager_B,Vienna,Austria,Österreichische Post,2024-09-04
+SC1-00250,Balance Bike 12-inch,2,182.0,Website,2024-09-03 01:00:00,Completed,Manager_A,Innsbruck,Austria,Österreichische Post,2024-09-09
+SC1-00251,Waldorf Rainbow Stacker,1,45.0,Website,2024-09-04 11:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2024-09-09
+SC1-00252,Beeswax Modelling Kit,2,30.0,Website,2024-09-11 04:00:00,Completed,Manager_A,Innsbruck,Austria,Österreichische Post,2024-09-15
+SC1-00253,Beeswax Modelling Kit,1,14.0,Instagram,2024-09-12 00:00:00,Completed,Manager_A,Innsbruck,Austria,Österreichische Post,2024-09-16
+SC1-00254,Sensory Ball Set,1,21.5,Website,2024-09-17 15:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2024-09-19
+SC1-00255,Balance Bike 12-inch,3,306.0,Website,2024-09-19 14:00:00,Completed,Manager_B,Dornbirn,Austria,Österreichische Post,2024-09-21
+SC1-00256,Magnetic Drawing Board,1,22.0,Website,2024-09-20 13:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2024-09-22
+SC1-00257,Silicone Building Blocks,1,26.0,Website,2024-09-21 01:00:00,New,Manager_B,Linz,Austria,DPD Austria,
+SC1-00258,Silicone Building Blocks,1,24.5,Website,2024-09-23 09:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2024-09-28
+SC1-00259,Sensory Ball Set,1,16.0,Instagram,2024-09-24 16:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2024-09-28
+SC1-00260,Wooden Train Track Set,1,67.0,Instagram,2024-09-26 07:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2024-09-29
+SC1-00261,Beeswax Modelling Kit,1,13.0,Website,2024-09-26 16:00:00,New,Manager_A,Sankt Pölten,Austria,Österreichische Post,
+SC1-00262,Magnetic Drawing Board,1,19.5,Instagram,2024-10-02 00:00:00,Completed,Manager_A,Klagenfurt,Austria,Österreichische Post,2024-10-04
+SC1-00263,Felt Animal Sewing Kit,1,19.5,Instagram,2024-10-02 22:00:00,Completed,Manager_B,Vienna,Austria,Österreichische Post,2024-10-07
+SC1-00264,Balance Bike 12-inch,1,125.0,Website,2024-10-05 22:00:00,Awaiting Review,Manager_A,Linz,Austria,Österreichische Post,
+SC1-00265,Montessori Puzzle 6-shape,3,73.5,Instagram,2024-10-06 09:00:00,Completed,Manager_A,Klagenfurt,Austria,Österreichische Post,2024-10-12
+SC1-00266,Wooden Train Track Set,1,62.5,Instagram,2024-10-06 19:00:00,Completed,Manager_A,Innsbruck,Austria,Österreichische Post,2024-10-07
+SC1-00267,Balance Bike 12-inch,1,105.5,Website,2024-10-08 07:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2024-10-09
+SC1-00268,Balance Bike 12-inch,1,105.0,Website,2024-10-10 16:00:00,Completed,Manager_A,Wels,Austria,DPD Austria,2024-10-16
+SC1-00269,Wooden Kitchen Playset,3,171.0,Website,2024-10-12 17:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2024-10-17
+SC1-00270,Wooden Kitchen Playset,1,66.5,Instagram,2024-10-14 19:00:00,Completed,Manager_B,Innsbruck,Austria,DPD Austria,2024-10-20
+SC1-00271,Beeswax Modelling Kit,1,15.0,Website,2024-10-15 21:00:00,Completed,Manager_A,Klagenfurt,Austria,DPD Austria,2024-10-20
+SC1-00272,Wooden Train Track Set,1,53.5,Website,2024-10-16 11:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2024-10-19
+SC1-00273,Montessori Puzzle 6-shape,1,21.5,Website,2024-10-17 12:00:00,Cancelled,Manager_A,Dornbirn,Austria,DPD Austria,
+SC1-00274,Beeswax Modelling Kit,1,13.5,Website,2024-10-18 05:00:00,Completed,Manager_B,Klagenfurt,Austria,DPD Austria,2024-10-21
+SC1-00275,Wooden Block Set 40pcs,2,66.0,Website,2024-10-19 02:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2024-10-25
+SC1-00276,Silicone Building Blocks,2,52.0,Website,2024-10-20 10:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2024-10-21
+SC1-00277,Wooden Train Track Set,1,70.5,Website,2024-10-20 20:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2024-10-21
+SC1-00278,Wooden Kitchen Playset,1,87.0,Instagram,2024-10-23 23:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2024-10-27
+SC1-00279,Wooden Train Track Set,1,73.0,Instagram,2024-10-25 16:00:00,Completed,Manager_B,Innsbruck,Austria,DPD Austria,2024-10-29
+SC1-00280,Beeswax Modelling Kit,1,18.5,Instagram,2024-10-26 21:00:00,Completed,Manager_B,Dornbirn,Austria,Österreichische Post,2024-10-28
+SC1-00281,Magnetic Drawing Board,1,25.5,Website,2024-10-28 03:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2024-10-30
+SC1-00282,Sensory Ball Set,1,19.5,Website,2024-10-29 07:00:00,Completed,Manager_A,Wels,Austria,DPD Austria,2024-11-02
+SC1-00283,Felt Animal Sewing Kit,2,31.0,Website,2024-10-31 12:00:00,Completed,Manager_A,Vienna,Austria,Österreichische Post,2024-11-01
+SC1-00284,Wooden Train Track Set,1,61.0,Instagram,2024-11-01 07:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2024-11-03
+SC1-00285,Silicone Building Blocks,1,26.5,Website,2024-11-02 05:00:00,Completed,Manager_B,Graz,Austria,Österreichische Post,2024-11-07
+SC1-00286,Magnetic Drawing Board,1,21.5,Website,2024-11-03 01:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2024-11-04
+SC1-00287,Sensory Ball Set,3,63.0,Website,2024-11-04 03:00:00,Completed,Manager_A,Wels,Austria,DPD Austria,2024-11-08
+SC1-00288,Wooden Kitchen Playset,1,63.0,Instagram,2024-11-04 15:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2024-11-07
+SC1-00289,Wooden Block Set 40pcs,1,35.0,Website,2024-11-05 16:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2024-11-07
+SC1-00290,Beeswax Modelling Kit,1,16.5,Website,2024-11-05 22:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2024-11-07
+SC1-00291,Wooden Train Track Set,1,58.5,Instagram,2024-11-06 18:00:00,Completed,Manager_A,Salzburg,Austria,Österreichische Post,2024-11-12
+SC1-00292,Balance Bike 12-inch,1,109.0,Website,2024-11-06 20:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2024-11-12
+SC1-00293,Finger Paint Set,2,26.0,Website,2024-11-07 00:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2024-11-11
+SC1-00294,Sensory Ball Set,1,16.0,Instagram,2024-11-07 23:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2024-11-13
+SC1-00295,Wooden Kitchen Playset,1,78.0,Instagram,2024-11-08 04:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2024-11-09
+SC1-00296,Wooden Kitchen Playset,1,66.5,Website,2024-11-08 19:00:00,New,Manager_B,Feldkirch,Austria,DPD Austria,
+SC1-00297,Felt Animal Sewing Kit,1,21.0,Instagram,2024-11-09 01:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2024-11-13
+SC1-00298,Montessori Puzzle 6-shape,1,20.0,Website,2024-11-09 05:00:00,Awaiting Review,Manager_A,Wels,Austria,DPD Austria,
+SC1-00299,Felt Animal Sewing Kit,1,21.5,Website,2024-11-09 15:00:00,Completed,Manager_B,Sankt Pölten,Austria,DPD Austria,2024-11-15
+SC1-00300,Wooden Kitchen Playset,1,86.0,Website,2024-11-10 02:00:00,Completed,Manager_B,Vienna,Austria,Österreichische Post,2024-11-15
+SC1-00301,Balance Bike 12-inch,1,90.5,Website,2024-11-10 15:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2024-11-16
+SC1-00302,Balance Bike 12-inch,2,262.0,Website,2024-11-10 16:00:00,New,Manager_A,Sankt Pölten,Austria,Österreichische Post,
+SC1-00303,Wooden Kitchen Playset,1,67.0,Website,2024-11-10 22:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2024-11-15
+SC1-00304,Wooden Train Track Set,1,51.0,Instagram,2024-11-11 07:00:00,New,Manager_B,Innsbruck,Austria,Österreichische Post,
+SC1-00305,Waldorf Rainbow Stacker,3,100.5,Website,2024-11-11 13:00:00,New,Manager_A,Feldkirch,Austria,DPD Austria,
+SC1-00306,Wooden Kitchen Playset,1,69.0,Website,2024-11-12 23:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2024-11-14
+SC1-00307,Sensory Ball Set,2,37.0,Website,2024-11-13 22:00:00,Completed,Manager_A,Vienna,Austria,Österreichische Post,2024-11-14
+SC1-00308,Sensory Ball Set,1,19.0,Website,2024-11-15 11:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2024-11-17
+SC1-00309,Montessori Puzzle 6-shape,1,22.0,Website,2024-11-16 18:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2024-11-19
+SC1-00310,Wooden Train Track Set,1,57.5,Instagram,2024-11-16 21:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2024-11-18
+SC1-00311,Beeswax Modelling Kit,1,16.0,Website,2024-11-18 00:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2024-11-22
+SC1-00312,Wooden Kitchen Playset,1,74.5,Instagram,2024-11-18 03:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2024-11-20
+SC1-00313,Wooden Kitchen Playset,1,56.0,Website,2024-11-18 10:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2024-11-21
+SC1-00314,Magnetic Drawing Board,1,18.0,Website,2024-11-19 15:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2024-11-21
+SC1-00315,Finger Paint Set,1,13.0,Instagram,2024-11-20 01:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2024-11-25
+SC1-00316,Montessori Puzzle 6-shape,1,25.5,Website,2024-11-21 16:00:00,Completed,Manager_B,Innsbruck,Austria,Österreichische Post,2024-11-26
+SC1-00317,Wooden Block Set 40pcs,3,96.0,Website,2024-11-21 19:00:00,Completed,Manager_B,Klagenfurt,Austria,Österreichische Post,2024-11-25
+SC1-00318,Sensory Ball Set,1,22.0,Instagram,2024-11-22 09:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2024-11-27
+SC1-00319,Silicone Building Blocks,1,28.0,Instagram,2024-11-23 01:00:00,Completed,Manager_A,Innsbruck,Austria,Österreichische Post,2024-11-25
+SC1-00320,Felt Animal Sewing Kit,2,48.0,Website,2024-11-23 13:00:00,Completed,Manager_B,Sankt Pölten,Austria,DPD Austria,2024-11-26
+SC1-00321,Felt Animal Sewing Kit,1,16.5,Website,2024-11-23 18:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2024-11-29
+SC1-00322,Felt Animal Sewing Kit,3,58.5,Website,2024-11-23 19:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2024-11-28
+SC1-00323,Wooden Train Track Set,1,63.5,Website,2024-11-23 21:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2024-11-25
+SC1-00324,Sensory Ball Set,1,22.0,Website,2024-11-24 04:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2024-11-29
+SC1-00325,Wooden Block Set 40pcs,1,35.0,Website,2024-11-25 04:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2024-11-30
+SC1-00326,Wooden Kitchen Playset,2,173.0,Website,2024-11-25 23:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2024-11-26
+SC1-00327,Balance Bike 12-inch,1,123.0,Website,2024-11-26 10:00:00,Cancelled,Manager_B,Salzburg,Austria,Österreichische Post,
+SC1-00328,Felt Animal Sewing Kit,1,16.5,Instagram,2024-11-26 13:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2024-11-28
+SC1-00329,Magnetic Drawing Board,1,28.0,Website,2024-11-26 19:00:00,New,Manager_B,Klagenfurt,Austria,DPD Austria,
+SC1-00330,Finger Paint Set,1,17.0,Website,2024-11-27 01:00:00,Completed,Manager_B,Wels,Austria,Österreichische Post,2024-11-29
+SC1-00331,Montessori Puzzle 6-shape,1,20.5,Website,2024-11-27 20:00:00,Completed,Manager_A,Graz,Austria,Österreichische Post,2024-12-01
+SC1-00332,Waldorf Rainbow Stacker,3,109.5,Website,2024-11-28 15:00:00,New,Manager_B,Graz,Austria,Österreichische Post,
+SC1-00333,Wooden Block Set 40pcs,1,35.5,Website,2024-11-28 21:00:00,Completed,Manager_A,Salzburg,Austria,Österreichische Post,2024-12-03
+SC1-00334,Silicone Building Blocks,1,23.0,Website,2024-11-29 06:00:00,Completed,Manager_A,Graz,Austria,Österreichische Post,2024-12-04
+SC1-00335,Finger Paint Set,3,48.0,Website,2024-11-29 14:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2024-11-30
+SC1-00336,Finger Paint Set,2,36.0,Instagram,2024-11-29 20:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2024-12-02
+SC1-00337,Beeswax Modelling Kit,1,16.5,Instagram,2024-11-30 11:00:00,New,Manager_B,Innsbruck,Austria,Österreichische Post,
+SC1-00338,Beeswax Modelling Kit,1,13.5,Website,2024-12-01 17:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2024-12-04
+SC1-00339,Sensory Ball Set,1,14.5,Website,2024-12-02 04:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2024-12-05
+SC1-00340,Wooden Kitchen Playset,1,85.5,Instagram,2024-12-02 16:00:00,Completed,Manager_A,Klagenfurt,Austria,Österreichische Post,2024-12-07
+SC1-00341,Beeswax Modelling Kit,1,18.5,Website,2024-12-02 22:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2024-12-04
+SC1-00342,Wooden Train Track Set,1,72.5,Website,2024-12-03 01:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2024-12-05
+SC1-00343,Wooden Block Set 40pcs,1,26.5,Instagram,2024-12-03 02:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2024-12-09
+SC1-00344,Montessori Puzzle 6-shape,1,16.5,Instagram,2024-12-05 03:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2024-12-11
+SC1-00345,Montessori Puzzle 6-shape,1,25.0,Website,2024-12-05 07:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2024-12-10
+SC1-00346,Balance Bike 12-inch,1,96.0,Instagram,2024-12-05 14:00:00,Completed,Manager_B,Innsbruck,Austria,DPD Austria,2024-12-11
+SC1-00347,Wooden Kitchen Playset,1,65.0,Website,2024-12-05 17:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2024-12-06
+SC1-00348,Beeswax Modelling Kit,1,18.0,Website,2024-12-06 08:00:00,New,Manager_B,Klagenfurt,Austria,DPD Austria,
+SC1-00349,Balance Bike 12-inch,1,109.5,Instagram,2024-12-06 14:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2024-12-08
+SC1-00350,Wooden Train Track Set,1,57.0,Instagram,2024-12-06 17:00:00,Completed,Manager_A,Vienna,Austria,Österreichische Post,2024-12-11
+SC1-00351,Felt Animal Sewing Kit,2,33.0,Instagram,2024-12-07 01:00:00,Completed,Manager_B,Vienna,Austria,Österreichische Post,2024-12-10
+SC1-00352,Silicone Building Blocks,1,22.5,Website,2024-12-08 03:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2024-12-09
+SC1-00353,Wooden Kitchen Playset,2,119.0,Website,2024-12-08 04:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2024-12-14
+SC1-00354,Wooden Block Set 40pcs,1,26.0,Website,2024-12-09 01:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2024-12-14
+SC1-00355,Magnetic Drawing Board,1,28.5,Website,2024-12-09 10:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2024-12-11
+SC1-00356,Magnetic Drawing Board,1,28.0,Website,2024-12-09 21:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2024-12-10
+SC1-00357,Waldorf Rainbow Stacker,1,47.5,Website,2024-12-10 09:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2024-12-13
+SC1-00358,Magnetic Drawing Board,1,29.0,Website,2024-12-10 12:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2024-12-12
+SC1-00359,Silicone Building Blocks,1,25.5,Website,2024-12-11 18:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2024-12-12
+SC1-00360,Beeswax Modelling Kit,1,18.5,Instagram,2024-12-12 12:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2024-12-15
+SC1-00361,Beeswax Modelling Kit,1,13.5,Website,2024-12-12 21:00:00,Cancelled,Manager_A,Salzburg,Austria,Österreichische Post,
+SC1-00362,Wooden Train Track Set,1,67.0,Instagram,2024-12-13 01:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2024-12-16
+SC1-00363,Montessori Puzzle 6-shape,1,21.5,Website,2024-12-14 02:00:00,Awaiting Review,Manager_A,Graz,Austria,DPD Austria,
+SC1-00364,Beeswax Modelling Kit,3,48.0,Website,2024-12-14 17:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2024-12-16
+SC1-00365,Wooden Train Track Set,1,61.5,Website,2024-12-15 13:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2024-12-21
+SC1-00366,Beeswax Modelling Kit,3,48.0,Website,2024-12-15 16:00:00,Awaiting Review,Manager_B,Wels,Austria,DPD Austria,
+SC1-00367,Finger Paint Set,1,12.5,Instagram,2024-12-16 16:00:00,Completed,Manager_B,Klagenfurt,Austria,DPD Austria,2024-12-21
+SC1-00368,Waldorf Rainbow Stacker,1,34.5,Website,2024-12-17 08:00:00,Awaiting Review,Manager_B,Feldkirch,Austria,DPD Austria,
+SC1-00369,Silicone Building Blocks,1,24.5,Website,2024-12-17 20:00:00,Completed,Manager_B,Innsbruck,Austria,Österreichische Post,2024-12-22
+SC1-00370,Magnetic Drawing Board,1,27.5,Website,2024-12-19 08:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2024-12-22
+SC1-00371,Magnetic Drawing Board,3,64.5,Website,2024-12-19 19:00:00,Awaiting Review,Manager_B,Innsbruck,Austria,Österreichische Post,
+SC1-00372,Montessori Puzzle 6-shape,1,25.0,Instagram,2024-12-21 07:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2024-12-27
+SC1-00373,Silicone Building Blocks,1,24.0,Website,2024-12-21 09:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2024-12-24
+SC1-00374,Wooden Train Track Set,1,54.5,Instagram,2024-12-21 22:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2024-12-26
+SC1-00375,Beeswax Modelling Kit,1,14.5,Website,2024-12-23 20:00:00,New,Manager_A,Linz,Austria,DPD Austria,
+SC1-00376,Finger Paint Set,1,12.0,Website,2024-12-24 18:00:00,Completed,Manager_B,Sankt Pölten,Austria,DPD Austria,2024-12-26
+SC1-00377,Magnetic Drawing Board,1,28.0,Website,2024-12-25 02:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2024-12-28
+SC1-00378,Balance Bike 12-inch,1,119.0,Website,2024-12-27 01:00:00,Completed,Manager_B,Sankt Pölten,Austria,DPD Austria,2024-12-28
+SC1-00379,Magnetic Drawing Board,1,20.0,Instagram,2024-12-27 18:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2024-12-29
+SC1-00380,Balance Bike 12-inch,1,102.0,Website,2024-12-28 19:00:00,New,Manager_B,Wels,Austria,DPD Austria,
+SC1-00381,Sensory Ball Set,1,17.0,Website,2024-12-29 14:00:00,Completed,Manager_A,Klagenfurt,Austria,DPD Austria,2025-01-04
+SC1-00382,Wooden Block Set 40pcs,1,31.5,Website,2024-12-30 10:00:00,Completed,Manager_B,Sankt Pölten,Austria,DPD Austria,2025-01-01
+SC1-00383,Wooden Kitchen Playset,1,65.5,Website,2024-12-31 10:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2025-01-06
+SC1-00384,Wooden Kitchen Playset,1,81.5,Instagram,2024-12-31 21:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2025-01-02
+SC1-00385,Magnetic Drawing Board,1,25.0,Website,2025-01-05 22:00:00,Awaiting Review,Manager_B,Dornbirn,Austria,DPD Austria,
+SC1-00386,Waldorf Rainbow Stacker,2,91.0,Website,2025-01-06 18:00:00,Completed,Manager_B,Wels,Austria,Österreichische Post,2025-01-07
+SC1-00387,Magnetic Drawing Board,2,52.0,Website,2025-01-11 09:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2025-01-13
+SC1-00388,Waldorf Rainbow Stacker,1,52.0,Website,2025-01-12 05:00:00,Completed,Manager_B,Graz,Austria,Österreichische Post,2025-01-18
+SC1-00389,Sensory Ball Set,1,18.5,Website,2025-01-12 22:00:00,Completed,Manager_A,Linz,Austria,Österreichische Post,2025-01-16
+SC1-00390,Balance Bike 12-inch,1,120.5,Instagram,2025-01-14 05:00:00,Awaiting Review,Manager_A,Linz,Austria,DPD Austria,
+SC1-00391,Silicone Building Blocks,1,31.5,Website,2025-01-15 16:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2025-01-19
+SC1-00392,Silicone Building Blocks,1,27.0,Instagram,2025-01-17 13:00:00,Completed,Manager_A,Graz,Austria,Österreichische Post,2025-01-22
+SC1-00393,Waldorf Rainbow Stacker,1,40.5,Website,2025-01-20 03:00:00,Completed,Manager_A,Wels,Austria,DPD Austria,2025-01-26
+SC1-00394,Balance Bike 12-inch,1,92.0,Website,2025-01-23 21:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2025-01-29
+SC1-00395,Balance Bike 12-inch,1,92.5,Website,2025-01-24 15:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2025-01-27
+SC1-00396,Balance Bike 12-inch,1,128.5,Website,2025-02-07 22:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2025-02-10
+SC1-00397,Wooden Kitchen Playset,1,57.0,Website,2025-02-08 22:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2025-02-11
+SC1-00398,Wooden Kitchen Playset,1,87.5,Website,2025-02-12 01:00:00,Completed,Manager_B,Vienna,Austria,Österreichische Post,2025-02-15
+SC1-00399,Montessori Puzzle 6-shape,1,23.5,Instagram,2025-02-14 06:00:00,Completed,Manager_B,Innsbruck,Austria,Österreichische Post,2025-02-16
+SC1-00400,Wooden Block Set 40pcs,1,37.5,Website,2025-02-15 08:00:00,New,Manager_A,Sankt Pölten,Austria,Österreichische Post,
+SC1-00401,Felt Animal Sewing Kit,1,17.5,Website,2025-02-16 03:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2025-02-17
+SC1-00402,Finger Paint Set,2,27.0,Instagram,2025-02-16 16:00:00,Completed,Manager_B,Innsbruck,Austria,Österreichische Post,2025-02-21
+SC1-00403,Wooden Block Set 40pcs,1,25.5,Website,2025-02-17 13:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2025-02-20
+SC1-00404,Balance Bike 12-inch,1,108.0,Website,2025-02-22 16:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2025-02-26
+SC1-00405,Waldorf Rainbow Stacker,1,50.0,Website,2025-02-28 02:00:00,Completed,Manager_A,Feldkirch,Austria,Österreichische Post,2025-03-05
+SC1-00406,Wooden Kitchen Playset,1,58.0,Website,2025-03-06 03:00:00,Completed,Manager_A,Linz,Austria,Österreichische Post,2025-03-11
+SC1-00407,Balance Bike 12-inch,1,110.5,Website,2025-03-06 19:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2025-03-11
+SC1-00408,Waldorf Rainbow Stacker,3,106.5,Instagram,2025-03-16 02:00:00,Completed,Manager_B,Innsbruck,Austria,Österreichische Post,2025-03-21
+SC1-00409,Wooden Kitchen Playset,1,77.5,Instagram,2025-03-18 02:00:00,Completed,Manager_A,Feldkirch,Austria,Österreichische Post,2025-03-19
+SC1-00410,Beeswax Modelling Kit,1,15.0,Website,2025-03-18 07:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2025-03-22
+SC1-00411,Wooden Block Set 40pcs,1,27.5,Website,2025-03-19 12:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2025-03-21
+SC1-00412,Montessori Puzzle 6-shape,1,20.5,Website,2025-03-19 13:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2025-03-20
+SC1-00413,Finger Paint Set,1,17.0,Instagram,2025-03-20 14:00:00,Completed,Manager_B,Wels,Austria,Österreichische Post,2025-03-22
+SC1-00414,Wooden Train Track Set,1,68.0,Website,2025-03-21 22:00:00,Completed,Manager_B,Sankt Pölten,Austria,DPD Austria,2025-03-26
+SC1-00415,Beeswax Modelling Kit,1,17.0,Website,2025-03-27 22:00:00,Cancelled,Manager_A,Innsbruck,Austria,Österreichische Post,
+SC1-00416,Felt Animal Sewing Kit,1,16.0,Instagram,2025-03-31 20:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2025-04-02
+SC1-00417,Montessori Puzzle 6-shape,1,21.0,Instagram,2025-04-02 04:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2025-04-05
+SC1-00418,Beeswax Modelling Kit,1,14.5,Website,2025-04-02 18:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2025-04-05
+SC1-00419,Finger Paint Set,3,34.5,Instagram,2025-04-04 04:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2025-04-07
+SC1-00420,Montessori Puzzle 6-shape,2,37.0,Instagram,2025-04-05 10:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2025-04-10
+SC1-00421,Balance Bike 12-inch,1,125.0,Website,2025-04-07 03:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2025-04-12
+SC1-00422,Montessori Puzzle 6-shape,1,23.5,Website,2025-04-08 16:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2025-04-14
+SC1-00423,Finger Paint Set,1,15.0,Website,2025-04-18 07:00:00,Completed,Manager_B,Graz,Austria,Österreichische Post,2025-04-19
+SC1-00424,Waldorf Rainbow Stacker,1,37.0,Website,2025-04-19 02:00:00,Completed,Manager_B,Innsbruck,Austria,DPD Austria,2025-04-21
+SC1-00425,Sensory Ball Set,1,20.5,Website,2025-04-21 22:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2025-04-25
+SC1-00426,Waldorf Rainbow Stacker,3,133.5,Instagram,2025-05-02 06:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2025-05-03
+SC1-00427,Silicone Building Blocks,1,27.0,Instagram,2025-05-02 12:00:00,Completed,Manager_A,Vienna,Austria,Österreichische Post,2025-05-08
+SC1-00428,Silicone Building Blocks,1,22.5,Website,2025-05-06 12:00:00,New,Manager_B,Dornbirn,Austria,DPD Austria,
+SC1-00429,Wooden Kitchen Playset,1,64.5,Website,2025-05-06 17:00:00,Completed,Manager_B,Dornbirn,Austria,Österreichische Post,2025-05-12
+SC1-00430,Wooden Block Set 40pcs,1,30.5,Website,2025-05-07 20:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2025-05-09
+SC1-00431,Wooden Kitchen Playset,1,82.0,Website,2025-05-08 12:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2025-05-14
+SC1-00432,Silicone Building Blocks,2,53.0,Website,2025-05-10 20:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2025-05-12
+SC1-00433,Montessori Puzzle 6-shape,1,23.5,Website,2025-05-14 09:00:00,Completed,Manager_A,Klagenfurt,Austria,Österreichische Post,2025-05-17
+SC1-00434,Wooden Block Set 40pcs,1,30.5,Website,2025-05-14 14:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2025-05-18
+SC1-00435,Balance Bike 12-inch,1,134.0,Website,2025-05-18 04:00:00,Completed,Manager_B,Graz,Austria,Österreichische Post,2025-05-24
+SC1-00436,Balance Bike 12-inch,1,130.5,Website,2025-05-19 02:00:00,Awaiting Review,Manager_A,Linz,Austria,Österreichische Post,
+SC1-00437,Sensory Ball Set,2,41.0,Website,2025-05-19 06:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2025-05-25
+SC1-00438,Montessori Puzzle 6-shape,1,19.5,Instagram,2025-05-25 02:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2025-05-29
+SC1-00439,Montessori Puzzle 6-shape,1,22.0,Website,2025-05-27 06:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2025-06-02
+SC1-00440,Waldorf Rainbow Stacker,3,100.5,Website,2025-05-28 00:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2025-06-01
+SC1-00441,Felt Animal Sewing Kit,1,23.0,Website,2025-05-29 22:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2025-06-03
+SC1-00442,Balance Bike 12-inch,1,130.5,Instagram,2025-06-02 07:00:00,New,Manager_B,Wels,Austria,DPD Austria,
+SC1-00443,Wooden Block Set 40pcs,1,38.0,Instagram,2025-06-06 21:00:00,Completed,Manager_B,Dornbirn,Austria,Österreichische Post,2025-06-08
+SC1-00444,Sensory Ball Set,2,37.0,Website,2025-06-09 16:00:00,Completed,Manager_A,Feldkirch,Austria,Österreichische Post,2025-06-13
+SC1-00445,Wooden Train Track Set,1,50.5,Website,2025-06-09 17:00:00,Completed,Manager_B,Graz,Austria,Österreichische Post,2025-06-14
+SC1-00446,Felt Animal Sewing Kit,2,37.0,Website,2025-06-13 07:00:00,Completed,Manager_B,Feldkirch,Austria,Österreichische Post,2025-06-14
+SC1-00447,Wooden Train Track Set,1,68.5,Website,2025-06-14 17:00:00,Completed,Manager_B,Innsbruck,Austria,Österreichische Post,2025-06-17
+SC1-00448,Finger Paint Set,1,13.5,Website,2025-06-16 21:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2025-06-18
+SC1-00449,Beeswax Modelling Kit,1,16.5,Website,2025-06-20 06:00:00,New,Manager_A,Dornbirn,Austria,DPD Austria,
+SC1-00450,Felt Animal Sewing Kit,1,22.0,Website,2025-07-01 12:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2025-07-03
+SC1-00451,Waldorf Rainbow Stacker,1,44.0,Instagram,2025-07-03 23:00:00,Completed,Manager_A,Wels,Austria,DPD Austria,2025-07-06
+SC1-00452,Finger Paint Set,1,15.0,Website,2025-07-05 08:00:00,Completed,Manager_B,Wels,Austria,Österreichische Post,2025-07-11
+SC1-00453,Balance Bike 12-inch,1,119.5,Website,2025-07-08 21:00:00,New,Manager_A,Graz,Austria,DPD Austria,
+SC1-00454,Wooden Train Track Set,1,60.5,Website,2025-07-09 12:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2025-07-11
+SC1-00455,Felt Animal Sewing Kit,1,18.0,Instagram,2025-07-10 15:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2025-07-11
+SC1-00456,Beeswax Modelling Kit,1,15.0,Instagram,2025-07-13 04:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2025-07-18
+SC1-00457,Silicone Building Blocks,1,24.0,Website,2025-07-13 15:00:00,Completed,Manager_A,Wels,Austria,DPD Austria,2025-07-19
+SC1-00458,Beeswax Modelling Kit,1,17.5,Website,2025-07-14 19:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2025-07-19
+SC1-00459,Finger Paint Set,1,13.5,Website,2025-07-14 23:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2025-07-19
+SC1-00460,Sensory Ball Set,1,16.5,Instagram,2025-07-18 04:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2025-07-21
+SC1-00461,Sensory Ball Set,2,42.0,Website,2025-07-24 03:00:00,Cancelled,Manager_B,Wels,Austria,DPD Austria,
+SC1-00462,Balance Bike 12-inch,2,186.0,Instagram,2025-07-24 20:00:00,New,Manager_B,Innsbruck,Austria,Österreichische Post,
+SC1-00463,Wooden Kitchen Playset,1,81.0,Website,2025-07-25 21:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2025-07-26
+SC1-00464,Finger Paint Set,1,13.5,Instagram,2025-07-26 19:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2025-07-28
+SC1-00465,Wooden Block Set 40pcs,2,64.0,Website,2025-07-27 17:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2025-08-01
+SC1-00466,Magnetic Drawing Board,1,18.5,Website,2025-07-29 20:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2025-08-03
+SC1-00467,Wooden Train Track Set,1,61.0,Website,2025-08-01 05:00:00,Completed,Manager_B,Wels,Austria,Österreichische Post,2025-08-04
+SC1-00468,Sensory Ball Set,1,18.5,Website,2025-08-04 21:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2025-08-07
+SC1-00469,Wooden Block Set 40pcs,3,111.0,Instagram,2025-08-05 23:00:00,New,Manager_A,Innsbruck,Austria,DPD Austria,
+SC1-00470,Wooden Train Track Set,1,54.0,Website,2025-08-06 10:00:00,Completed,Manager_A,Klagenfurt,Austria,Österreichische Post,2025-08-09
+SC1-00471,Magnetic Drawing Board,1,27.0,Website,2025-08-07 04:00:00,Completed,Manager_A,Graz,Austria,Österreichische Post,2025-08-09
+SC1-00472,Wooden Block Set 40pcs,1,31.5,Website,2025-08-09 01:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2025-08-13
+SC1-00473,Wooden Block Set 40pcs,1,25.5,Instagram,2025-08-10 23:00:00,Completed,Manager_B,Wels,Austria,Österreichische Post,2025-08-16
+SC1-00474,Sensory Ball Set,1,18.0,Instagram,2025-08-11 00:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2025-08-16
+SC1-00475,Balance Bike 12-inch,2,196.0,Website,2025-08-14 06:00:00,Completed,Manager_B,Vienna,Austria,Österreichische Post,2025-08-19
+SC1-00476,Finger Paint Set,1,14.5,Website,2025-08-19 02:00:00,Completed,Manager_B,Vienna,Austria,Österreichische Post,2025-08-20
+SC1-00477,Magnetic Drawing Board,1,28.0,Instagram,2025-08-22 14:00:00,Completed,Manager_B,Klagenfurt,Austria,Österreichische Post,2025-08-23
+SC1-00478,Wooden Train Track Set,3,166.5,Website,2025-08-22 22:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2025-08-24
+SC1-00479,Felt Animal Sewing Kit,2,39.0,Website,2025-08-31 19:00:00,New,Manager_A,Sankt Pölten,Austria,Österreichische Post,
+SC1-00480,Balance Bike 12-inch,1,96.0,Website,2025-09-03 06:00:00,New,Manager_B,Salzburg,Austria,Österreichische Post,
+SC1-00481,Silicone Building Blocks,1,23.0,Instagram,2025-09-09 07:00:00,Awaiting Review,Manager_A,Wels,Austria,DPD Austria,
+SC1-00482,Magnetic Drawing Board,1,21.5,Instagram,2025-09-13 02:00:00,New,Manager_B,Graz,Austria,DPD Austria,
+SC1-00483,Finger Paint Set,1,11.0,Website,2025-09-14 15:00:00,Completed,Manager_A,Innsbruck,Austria,Österreichische Post,2025-09-18
+SC1-00484,Waldorf Rainbow Stacker,2,96.0,Website,2025-09-17 04:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2025-09-22
+SC1-00485,Wooden Train Track Set,1,63.0,Website,2025-09-18 05:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2025-09-24
+SC1-00486,Felt Animal Sewing Kit,1,24.0,Instagram,2025-09-21 20:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2025-09-23
+SC1-00487,Silicone Building Blocks,2,64.0,Website,2025-09-24 17:00:00,Completed,Manager_B,Dornbirn,Austria,Österreichische Post,2025-09-28
+SC1-00488,Silicone Building Blocks,1,27.0,Instagram,2025-10-01 10:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2025-10-05
+SC1-00489,Montessori Puzzle 6-shape,1,23.5,Website,2025-10-02 03:00:00,New,Manager_A,Salzburg,Austria,Österreichische Post,
+SC1-00490,Finger Paint Set,3,37.5,Website,2025-10-03 17:00:00,Completed,Manager_A,Klagenfurt,Austria,Österreichische Post,2025-10-06
+SC1-00491,Balance Bike 12-inch,1,110.5,Website,2025-10-06 17:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2025-10-11
+SC1-00492,Silicone Building Blocks,1,33.5,Website,2025-10-06 19:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2025-10-07
+SC1-00493,Beeswax Modelling Kit,1,17.0,Instagram,2025-10-07 17:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2025-10-11
+SC1-00494,Wooden Train Track Set,1,56.0,Instagram,2025-10-08 06:00:00,New,Manager_A,Linz,Austria,DPD Austria,
+SC1-00495,Wooden Kitchen Playset,1,59.0,Website,2025-10-08 20:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2025-10-11
+SC1-00496,Wooden Kitchen Playset,1,73.0,Website,2025-10-11 10:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2025-10-17
+SC1-00497,Wooden Kitchen Playset,1,58.5,Website,2025-10-12 14:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2025-10-15
+SC1-00498,Wooden Kitchen Playset,1,68.5,Instagram,2025-10-14 09:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2025-10-17
+SC1-00499,Magnetic Drawing Board,1,26.5,Website,2025-10-14 23:00:00,New,Manager_A,Wels,Austria,Österreichische Post,
+SC1-00500,Felt Animal Sewing Kit,2,41.0,Website,2025-10-15 23:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2025-10-20
+SC1-00501,Balance Bike 12-inch,1,105.5,Website,2025-10-18 00:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2025-10-24
+SC1-00502,Felt Animal Sewing Kit,1,20.5,Website,2025-10-18 23:00:00,Completed,Manager_B,Klagenfurt,Austria,Österreichische Post,2025-10-23
+SC1-00503,Beeswax Modelling Kit,1,15.0,Website,2025-10-19 22:00:00,Completed,Manager_B,Sankt Pölten,Austria,DPD Austria,2025-10-24
+SC1-00504,Waldorf Rainbow Stacker,1,43.5,Website,2025-10-20 03:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2025-10-22
+SC1-00505,Finger Paint Set,3,45.0,Website,2025-10-20 07:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2025-10-25
+SC1-00506,Wooden Block Set 40pcs,1,35.0,Website,2025-10-22 12:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2025-10-23
+SC1-00507,Balance Bike 12-inch,2,252.0,Website,2025-10-22 18:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2025-10-25
+SC1-00508,Wooden Kitchen Playset,1,86.5,Instagram,2025-10-24 22:00:00,Completed,Manager_A,Linz,Austria,Österreichische Post,2025-10-29
+SC1-00509,Montessori Puzzle 6-shape,1,25.5,Instagram,2025-10-26 00:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2025-10-27
+SC1-00510,Balance Bike 12-inch,1,128.5,Instagram,2025-10-28 08:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2025-11-03
+SC1-00511,Wooden Train Track Set,1,72.5,Website,2025-10-31 22:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2025-11-06
+SC1-00512,Montessori Puzzle 6-shape,1,16.5,Instagram,2025-11-01 01:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2025-11-03
+SC1-00513,Silicone Building Blocks,1,26.5,Website,2025-11-01 12:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2025-11-07
+SC1-00514,Wooden Block Set 40pcs,3,105.0,Instagram,2025-11-01 23:00:00,Cancelled,Manager_A,Innsbruck,Austria,Österreichische Post,
+SC1-00515,Silicone Building Blocks,1,27.0,Website,2025-11-02 18:00:00,Completed,Manager_B,Klagenfurt,Austria,DPD Austria,2025-11-07
+SC1-00516,Magnetic Drawing Board,1,18.5,Instagram,2025-11-03 08:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2025-11-05
+SC1-00517,Silicone Building Blocks,2,56.0,Website,2025-11-03 18:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2025-11-07
+SC1-00518,Balance Bike 12-inch,3,334.5,Instagram,2025-11-04 06:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2025-11-08
+SC1-00519,Felt Animal Sewing Kit,2,46.0,Instagram,2025-11-04 18:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2025-11-05
+SC1-00520,Balance Bike 12-inch,1,110.5,Website,2025-11-07 04:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2025-11-12
+SC1-00521,Felt Animal Sewing Kit,1,21.5,Website,2025-11-07 16:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2025-11-13
+SC1-00522,Sensory Ball Set,1,15.0,Instagram,2025-11-08 01:00:00,New,Manager_A,Klagenfurt,Austria,DPD Austria,
+SC1-00523,Balance Bike 12-inch,1,130.5,Website,2025-11-08 14:00:00,New,Manager_A,Feldkirch,Austria,Österreichische Post,
+SC1-00524,Beeswax Modelling Kit,1,18.0,Website,2025-11-09 05:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2025-11-15
+SC1-00525,Finger Paint Set,2,27.0,Website,2025-11-09 17:00:00,Completed,Manager_A,Klagenfurt,Austria,DPD Austria,2025-11-13
+SC1-00526,Sensory Ball Set,1,18.5,Website,2025-11-10 11:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2025-11-11
+SC1-00527,Felt Animal Sewing Kit,1,16.0,Instagram,2025-11-12 23:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2025-11-13
+SC1-00528,Silicone Building Blocks,1,22.5,Website,2025-11-13 04:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2025-11-15
+SC1-00529,Waldorf Rainbow Stacker,1,46.0,Instagram,2025-11-13 11:00:00,Completed,Manager_A,Linz,Austria,Österreichische Post,2025-11-17
+SC1-00530,Waldorf Rainbow Stacker,1,36.0,Instagram,2025-11-13 23:00:00,Completed,Manager_B,Graz,Austria,Österreichische Post,2025-11-17
+SC1-00531,Silicone Building Blocks,1,29.0,Instagram,2025-11-14 04:00:00,Completed,Manager_B,Innsbruck,Austria,DPD Austria,2025-11-16
+SC1-00532,Waldorf Rainbow Stacker,1,38.5,Website,2025-11-14 14:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2025-11-15
+SC1-00533,Wooden Kitchen Playset,3,259.5,Website,2025-11-15 06:00:00,Completed,Manager_A,Vienna,Austria,Österreichische Post,2025-11-21
+SC1-00534,Montessori Puzzle 6-shape,2,44.0,Instagram,2025-11-16 14:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2025-11-18
+SC1-00535,Balance Bike 12-inch,1,122.0,Instagram,2025-11-16 23:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2025-11-21
+SC1-00536,Wooden Block Set 40pcs,1,31.0,Website,2025-11-18 13:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2025-11-24
+SC1-00537,Finger Paint Set,1,14.0,Instagram,2025-11-18 19:00:00,Completed,Manager_A,Graz,Austria,Österreichische Post,2025-11-23
+SC1-00538,Wooden Kitchen Playset,2,144.0,Website,2025-11-19 05:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2025-11-25
+SC1-00539,Magnetic Drawing Board,1,21.0,Website,2025-11-19 14:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2025-11-24
+SC1-00540,Sensory Ball Set,1,17.0,Website,2025-11-19 22:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2025-11-22
+SC1-00541,Montessori Puzzle 6-shape,1,18.5,Website,2025-11-20 03:00:00,Completed,Manager_B,Innsbruck,Austria,Österreichische Post,2025-11-26
+SC1-00542,Felt Animal Sewing Kit,1,20.5,Website,2025-11-20 06:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2025-11-22
+SC1-00543,Beeswax Modelling Kit,1,12.5,Instagram,2025-11-21 02:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2025-11-26
+SC1-00544,Waldorf Rainbow Stacker,1,45.0,Instagram,2025-11-22 00:00:00,Completed,Manager_B,Graz,Austria,Österreichische Post,2025-11-25
+SC1-00545,Magnetic Drawing Board,1,27.5,Instagram,2025-11-23 01:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2025-11-26
+SC1-00546,Balance Bike 12-inch,2,235.0,Website,2025-11-23 18:00:00,New,Manager_B,Graz,Austria,DPD Austria,
+SC1-00547,Sensory Ball Set,1,21.5,Instagram,2025-11-25 22:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2025-11-30
+SC1-00548,Balance Bike 12-inch,1,104.0,Website,2025-11-27 08:00:00,New,Manager_B,Salzburg,Austria,Österreichische Post,
+SC1-00549,Finger Paint Set,1,11.0,Website,2025-11-28 07:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2025-12-03
+SC1-00550,Montessori Puzzle 6-shape,3,52.5,Website,2025-11-28 21:00:00,Completed,Manager_A,Klagenfurt,Austria,Österreichische Post,2025-12-03
+SC1-00551,Wooden Train Track Set,1,69.5,Website,2025-11-30 03:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2025-12-05
+SC1-00552,Sensory Ball Set,1,20.0,Website,2025-12-01 06:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2025-12-03
+SC1-00553,Balance Bike 12-inch,1,105.0,Website,2025-12-01 15:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2025-12-03
+SC1-00554,Wooden Block Set 40pcs,1,26.0,Instagram,2025-12-03 06:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2025-12-05
+SC1-00555,Wooden Block Set 40pcs,3,82.5,Website,2025-12-03 17:00:00,Completed,Manager_A,Salzburg,Austria,Österreichische Post,2025-12-06
+SC1-00556,Felt Animal Sewing Kit,1,17.0,Website,2025-12-04 19:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2025-12-08
+SC1-00557,Finger Paint Set,3,54.0,Website,2025-12-05 10:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2025-12-06
+SC1-00558,Sensory Ball Set,1,21.5,Website,2025-12-05 19:00:00,New,Manager_B,Feldkirch,Austria,DPD Austria,
+SC1-00559,Wooden Block Set 40pcs,1,35.5,Website,2025-12-06 22:00:00,New,Manager_B,Graz,Austria,Österreichische Post,
+SC1-00560,Magnetic Drawing Board,1,21.0,Website,2025-12-07 19:00:00,Completed,Manager_B,Graz,Austria,DPD Austria,2025-12-13
+SC1-00561,Balance Bike 12-inch,1,117.5,Website,2025-12-08 15:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2025-12-14
+SC1-00562,Felt Animal Sewing Kit,1,16.5,Website,2025-12-09 05:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2025-12-11
+SC1-00563,Wooden Kitchen Playset,1,66.5,Website,2025-12-10 01:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2025-12-16
+SC1-00564,Waldorf Rainbow Stacker,3,130.5,Website,2025-12-10 09:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2025-12-11
+SC1-00565,Wooden Block Set 40pcs,1,27.0,Website,2025-12-11 04:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2025-12-16
+SC1-00566,Silicone Building Blocks,1,25.0,Website,2025-12-11 15:00:00,Cancelled,Manager_A,Vienna,Austria,DPD Austria,
+SC1-00567,Balance Bike 12-inch,1,98.0,Website,2025-12-11 22:00:00,Completed,Manager_A,Innsbruck,Austria,Österreichische Post,2025-12-16
+SC1-00568,Wooden Block Set 40pcs,2,61.0,Website,2025-12-12 05:00:00,Awaiting Review,Manager_B,Vienna,Austria,DPD Austria,
+SC1-00569,Felt Animal Sewing Kit,1,18.5,Website,2025-12-13 01:00:00,New,Manager_A,Graz,Austria,Österreichische Post,
+SC1-00570,Waldorf Rainbow Stacker,3,97.5,Website,2025-12-13 04:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2025-12-17
+SC1-00571,Wooden Train Track Set,3,154.5,Website,2025-12-13 14:00:00,Completed,Manager_A,Linz,Austria,Österreichische Post,2025-12-16
+SC1-00572,Montessori Puzzle 6-shape,1,19.0,Website,2025-12-14 22:00:00,Completed,Manager_A,Dornbirn,Austria,DPD Austria,2025-12-16
+SC1-00573,Sensory Ball Set,1,17.0,Website,2025-12-15 05:00:00,Awaiting Review,Manager_B,Wels,Austria,Österreichische Post,
+SC1-00574,Beeswax Modelling Kit,2,35.0,Website,2025-12-16 08:00:00,Completed,Manager_B,Wels,Austria,Österreichische Post,2025-12-20
+SC1-00575,Waldorf Rainbow Stacker,1,40.5,Website,2025-12-16 16:00:00,Completed,Manager_B,Innsbruck,Austria,Österreichische Post,2025-12-20
+SC1-00576,Felt Animal Sewing Kit,1,19.0,Website,2025-12-17 22:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2025-12-22
+SC1-00577,Wooden Block Set 40pcs,1,24.0,Website,2025-12-18 21:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2025-12-19
+SC1-00578,Silicone Building Blocks,2,56.0,Instagram,2025-12-19 06:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2025-12-23
+SC1-00579,Silicone Building Blocks,2,66.0,Website,2025-12-19 23:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2025-12-20
+SC1-00580,Felt Animal Sewing Kit,1,16.0,Instagram,2025-12-20 00:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2025-12-24
+SC1-00581,Finger Paint Set,1,11.5,Website,2025-12-20 10:00:00,Completed,Manager_A,Klagenfurt,Austria,Österreichische Post,2025-12-22
+SC1-00582,Montessori Puzzle 6-shape,1,23.0,Instagram,2025-12-20 13:00:00,Completed,Manager_B,Dornbirn,Austria,Österreichische Post,2025-12-26
+SC1-00583,Finger Paint Set,2,26.0,Instagram,2025-12-22 09:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2025-12-23
+SC1-00584,Felt Animal Sewing Kit,2,33.0,Instagram,2025-12-22 14:00:00,Completed,Manager_A,Salzburg,Austria,Österreichische Post,2025-12-26
+SC1-00585,Wooden Block Set 40pcs,2,59.0,Website,2025-12-23 02:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2025-12-27
+SC1-00586,Magnetic Drawing Board,1,23.5,Website,2025-12-23 06:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2025-12-24
+SC1-00587,Finger Paint Set,2,21.0,Website,2025-12-23 12:00:00,Completed,Manager_A,Graz,Austria,Österreichische Post,2025-12-28
+SC1-00588,Sensory Ball Set,1,19.0,Website,2025-12-24 13:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2025-12-28
+SC1-00589,Balance Bike 12-inch,1,93.5,Website,2025-12-25 15:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2025-12-30
+SC1-00590,Felt Animal Sewing Kit,1,17.5,Website,2025-12-25 19:00:00,New,Manager_B,Innsbruck,Austria,DPD Austria,
+SC1-00591,Balance Bike 12-inch,1,110.0,Website,2025-12-25 21:00:00,Completed,Manager_A,Sankt Pölten,Austria,Österreichische Post,2025-12-31
+SC1-00592,Sensory Ball Set,1,15.0,Website,2025-12-26 10:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2025-12-29
+SC1-00593,Magnetic Drawing Board,3,67.5,Website,2025-12-27 10:00:00,Completed,Manager_B,Dornbirn,Austria,Österreichische Post,2025-12-28
+SC1-00594,Silicone Building Blocks,2,52.0,Instagram,2025-12-29 12:00:00,Completed,Manager_A,Innsbruck,Austria,Österreichische Post,2026-01-04
+SC1-00595,Wooden Kitchen Playset,1,71.5,Instagram,2025-12-29 23:00:00,Completed,Manager_A,Sankt Pölten,Austria,DPD Austria,2025-12-31
+SC1-00596,Silicone Building Blocks,1,26.5,Website,2025-12-30 04:00:00,Completed,Manager_B,Innsbruck,Austria,DPD Austria,2026-01-01
+SC1-00597,Montessori Puzzle 6-shape,1,23.5,Instagram,2025-12-30 06:00:00,Completed,Manager_A,Klagenfurt,Austria,DPD Austria,2025-12-31
+SC1-00598,Magnetic Drawing Board,1,22.5,Website,2025-12-30 10:00:00,Completed,Manager_A,Innsbruck,Austria,Österreichische Post,2026-01-04
+SC1-00599,Wooden Kitchen Playset,1,73.5,Website,2025-12-30 15:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2026-01-03
+SC1-00600,Silicone Building Blocks,1,31.5,Instagram,2025-12-30 19:00:00,Awaiting Review,Manager_A,Sankt Pölten,Austria,Österreichische Post,
+SC1-00601,Felt Animal Sewing Kit,1,17.5,Instagram,2025-12-31 04:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2026-01-02
+SC1-00602,Montessori Puzzle 6-shape,1,19.0,Instagram,2025-12-31 12:00:00,Completed,Manager_B,Wels,Austria,Österreichische Post,2026-01-02
+SC1-00603,Sensory Ball Set,1,19.5,Website,2026-01-02 05:00:00,Completed,Manager_A,Wels,Austria,DPD Austria,2026-01-08
+SC1-00604,Magnetic Drawing Board,1,28.5,Website,2026-01-05 12:00:00,Completed,Manager_B,Klagenfurt,Austria,Österreichische Post,2026-01-10
+SC1-00605,Wooden Train Track Set,1,56.5,Website,2026-01-07 18:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2026-01-10
+SC1-00606,Finger Paint Set,1,17.5,Website,2026-01-08 18:00:00,Completed,Manager_B,Salzburg,Austria,Österreichische Post,2026-01-13
+SC1-00607,Magnetic Drawing Board,1,24.0,Website,2026-01-11 01:00:00,New,Manager_A,Salzburg,Austria,Österreichische Post,
+SC1-00608,Finger Paint Set,1,18.0,Website,2026-01-11 13:00:00,Completed,Manager_A,Klagenfurt,Austria,DPD Austria,2026-01-15
+SC1-00609,Waldorf Rainbow Stacker,2,69.0,Instagram,2026-01-19 16:00:00,Completed,Manager_B,Linz,Austria,Österreichische Post,2026-01-23
+SC1-00610,Wooden Kitchen Playset,1,81.0,Website,2026-01-21 13:00:00,Completed,Manager_B,Vienna,Austria,DPD Austria,2026-01-24
+SC1-00611,Sensory Ball Set,1,19.5,Website,2026-01-22 10:00:00,Completed,Manager_B,Wels,Austria,Österreichische Post,2026-01-26
+SC1-00612,Wooden Train Track Set,3,148.5,Instagram,2026-01-23 04:00:00,Completed,Manager_B,Dornbirn,Austria,Österreichische Post,2026-01-28
+SC1-00613,Finger Paint Set,2,35.0,Instagram,2026-01-24 07:00:00,Completed,Manager_B,Feldkirch,Austria,Österreichische Post,2026-01-29
+SC1-00614,Wooden Train Track Set,1,51.0,Website,2026-01-25 10:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2026-01-30
+SC1-00615,Wooden Block Set 40pcs,1,31.5,Website,2026-01-26 17:00:00,Completed,Manager_A,Linz,Austria,DPD Austria,2026-01-30
+SC1-00616,Balance Bike 12-inch,2,224.0,Website,2026-01-28 14:00:00,Completed,Manager_B,Vienna,Austria,Österreichische Post,2026-02-01
+SC1-00617,Silicone Building Blocks,1,27.0,Website,2026-01-30 06:00:00,Completed,Manager_B,Graz,Austria,Österreichische Post,2026-02-03
+SC1-00618,Beeswax Modelling Kit,1,18.5,Website,2026-01-30 18:00:00,Completed,Manager_A,Klagenfurt,Austria,DPD Austria,2026-02-03
+SC1-00619,Sensory Ball Set,1,17.0,Website,2026-02-01 12:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2026-02-03
+SC1-00620,Silicone Building Blocks,1,28.5,Website,2026-02-02 23:00:00,Completed,Manager_A,Vienna,Austria,DPD Austria,2026-02-04
+SC1-00621,Wooden Block Set 40pcs,1,32.0,Instagram,2026-02-08 05:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2026-02-11
+SC1-00622,Balance Bike 12-inch,3,337.5,Website,2026-02-12 16:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2026-02-16
+SC1-00623,Silicone Building Blocks,1,28.0,Website,2026-02-14 19:00:00,Completed,Manager_B,Linz,Austria,DPD Austria,2026-02-20
+SC1-00624,Finger Paint Set,1,12.0,Website,2026-02-19 09:00:00,Completed,Manager_A,Salzburg,Austria,DPD Austria,2026-02-23
+SC1-00625,Silicone Building Blocks,1,26.5,Website,2026-02-21 10:00:00,Completed,Manager_A,Innsbruck,Austria,DPD Austria,2026-02-25
+SC1-00626,Magnetic Drawing Board,1,27.5,Website,2026-02-22 15:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2026-02-26
+SC1-00627,Felt Animal Sewing Kit,3,72.0,Website,2026-02-23 10:00:00,New,Manager_A,Graz,Austria,Österreichische Post,
+SC1-00628,Silicone Building Blocks,1,31.0,Website,2026-02-24 09:00:00,Completed,Manager_B,Wels,Austria,DPD Austria,2026-03-02
+SC1-00629,Wooden Block Set 40pcs,3,81.0,Website,2026-02-26 09:00:00,Completed,Manager_B,Dornbirn,Austria,DPD Austria,2026-03-01
+SC1-00630,Beeswax Modelling Kit,1,13.5,Website,2026-03-03 01:00:00,New,Manager_B,Dornbirn,Austria,DPD Austria,
+SC1-00631,Wooden Kitchen Playset,1,76.5,Website,2026-03-04 07:00:00,Completed,Manager_A,Klagenfurt,Austria,DPD Austria,2026-03-07
+SC1-00632,Finger Paint Set,1,17.5,Website,2026-03-07 23:00:00,Completed,Manager_A,Wels,Austria,Österreichische Post,2026-03-13
+SC1-00633,Balance Bike 12-inch,1,99.5,Website,2026-03-11 06:00:00,Completed,Manager_A,Graz,Austria,DPD Austria,2026-03-13
+SC1-00634,Wooden Train Track Set,1,50.5,Website,2026-03-13 02:00:00,Completed,Manager_B,Salzburg,Austria,DPD Austria,2026-03-15
+SC1-00635,Beeswax Modelling Kit,1,17.0,Website,2026-03-15 19:00:00,Awaiting Review,Manager_B,Wels,Austria,Österreichische Post,
+SC1-00636,Montessori Puzzle 6-shape,1,23.0,Website,2026-03-16 01:00:00,Completed,Manager_B,Feldkirch,Austria,DPD Austria,2026-03-17
+SC1-00637,Magnetic Drawing Board,1,19.0,Website,2026-03-22 07:00:00,Completed,Manager_A,Dornbirn,Austria,Österreichische Post,2026-03-24
+SC1-00638,Finger Paint Set,1,15.0,Instagram,2026-03-22 21:00:00,Completed,Manager_A,Feldkirch,Austria,DPD Austria,2026-03-25
+SC1-00639,Balance Bike 12-inch,1,106.0,Instagram,2026-03-26 14:00:00,Completed,Manager_B,Sankt Pölten,Austria,Österreichische Post,2026-04-01
+SC1-00640,Sensory Ball Set,1,22.0,Website,2026-03-29 20:00:00,New,Manager_A,Innsbruck,Austria,DPD Austria,

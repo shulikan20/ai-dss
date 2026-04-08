@@ -1,127 +1,165 @@
 {
-  "company_id": "SC1",
-  "label": "Synthetic B1-type — B2C e-commerce, product retail",
   "meta": {
-    "type": "B2C",
-    "industry": "Children's Toys / Educational Products",
-    "country": "Austria",
-    "city": "Vienna",
-    "description": "Online store specialising in premium handcrafted and Montessori-inspired wooden toys and educational games for children aged 0–8. Sells primarily through own website with growing Instagram presence. Products sourced from local Austrian and German workshops."
+    "company_id": "SC1",
+    "profile_version": "1.0",
+    "created_at": "2026-04-07",
+    "sources_used": ["questionnaire", "crm_export"],
+    "profile_completeness": "partial"
   },
-  "profile": {
-    "company_name": "TinyWonders GmbH",
-    "total_headcount": 6,
-    "sales_team_size": 2,
-    "crm_system": "Shopify (built-in)",
-    "crm_years_in_use": 3,
-    "other_tools": [
-      "Klaviyo",
-      "Instagram",
-      "Canva"
-    ],
-    "crm_managed_by": "Founder",
-    "technical_capability": "Low — founder manages all tools",
-    "ai_openness": "Open",
-    "management_aligned": true,
-    "previous_ai_attempts": [
-      "Klaviyo automated email sequences for abandoned cart",
-      "Instagram auto-reply for common DM questions (basic keyword trigger)"
-    ]
+
+  "universal": {
+    "identity": {
+      "industry_segment": "Children's toys and educational products — premium handcrafted wooden toys and Montessori-inspired games for ages 0–8",
+      "business_model": "B2C",
+      "company_size_headcount": 6,
+      "country": "Austria"
+    },
+    "tech_stack": {
+      "current_tools": ["Shopify", "Klaviyo", "Instagram", "Canva"],
+      "crm_system": "Shopify",
+      "crm_years_in_use": 3,
+      "existing_automation": [
+        "Klaviyo abandoned cart email sequence",
+        "Instagram auto-reply via keyword trigger for common DM questions"
+      ]
+    },
+    "technical_capability": {
+      "level": "low",
+      "who_manages_tools": "Founder",
+      "external_it_available": false
+    },
+    "ai_readiness": {
+      "openness_level": "open",
+      "team_alignment": true,
+      "previous_ai_attempts": [
+        { "description": "Klaviyo abandoned cart automation", "outcome": "still_in_use" },
+        { "description": "Instagram keyword auto-reply", "outcome": "still_in_use" }
+      ]
+    },
+    "data_availability": {
+      "has_structured_export": true,
+      "export_types_available": ["crm_orders"],
+      "history_months": 30,
+      "has_outcome_labels": true,
+      "has_communication_logs": false,
+      "data_quality": "medium",
+      "data_managed_by": "dedicated_system"
+    }
   },
-  "data_availability": {
-    "crm_export_available": true,
-    "crm_export_file": "synthetic_sc1_orders.json",
-    "total_orders": 640,
-    "order_date_range": {
-      "from": "2023-09-06",
-      "to": "2026-03-29"
+
+  "domain_context": {
+    "ecommerce_ops": {
+      "active": true,
+      "selling_channels": ["own_website", "instagram_shop"],
+      "ecommerce_platform": "Shopify",
+      "monthly_order_volume_peak": 120,
+      "monthly_order_volume_regular": 18,
+      "return_rate": null,
+      "fulfillment_model": "self_fulfilled",
+      "post_purchase_contact_freq": "occasional",
+      "product_catalog_size": "small_under_50"
     },
-    "channels": {
-      "website": 476,
-      "instagram": 164
+    "customer_support": {
+      "active": true,
+      "support_channels": ["instagram_dm", "email"],
+      "monthly_inbound_volume": null,
+      "pct_repetitive_questions": 0.75,
+      "avg_first_response_hours": null,
+      "helpdesk_tool": null
     },
-    "currency": "EUR",
-    "price_range": {
-      "min": 10.0,
-      "max": 369.0,
-      "avg": 52.13
+    "marketing": {
+      "active": true,
+      "active_channels": ["instagram", "email"],
+      "content_creation_burden": "high",
+      "has_email_marketing": true,
+      "campaign_performance_tracked": true
     },
-    "data_quality_overall": "MEDIUM — order history reliable, no customer lifetime value tracking, no return log"
+    "crm_sales": { "active": false },
+    "supply_chain": { "active": false },
+    "operations_backoffice": { "active": false }
   },
+
   "processes": [
     {
       "process_id": "SC1_P1",
-      "name": "Instagram DM to Purchase",
-      "type": "B2C Sales via Social DM",
-      "steps": [
-        "Parent sends DM asking about age suitability or gifting advice",
-        "Founder responds manually with product suggestions",
-        "Customer selects product",
-        "Redirected to website checkout or PayPal link",
-        "Confirmation email sent automatically via Shopify",
-        "Order shipped via Österreichische Post or DPD"
-      ],
+      "name": "Instagram DM Pre-sale to Purchase",
+      "domain": "customer_support",
+      "task_type": "mixed",
+      "trigger": "Inbound Instagram DM — age suitability or gift advice question",
+      "frequency": "daily",
+      "volume_per_month": null,
       "who_executes": "Founder + 1 part-time assistant",
-      "avg_duration_days": 3,
-      "conversion_rate": 0.45,
-      "drop_off_reason": "Price sensitivity, comparison shopping",
-      "kpis_tracked": [
-        "Monthly revenue",
-        "Order count"
-      ],
-      "bottlenecks": [
-        {
-          "description": "All gifting advice and age-suitability questions answered manually, one by one",
-          "severity": "HIGH",
-          "time_impact": "1.5–2 hours per day of founder time during peak season"
-        },
-        {
-          "description": "No structured follow-up for customers who ask but do not buy",
-          "severity": "MEDIUM",
-          "time_impact": "Estimated 20–30% of interested leads lost with no follow-up"
-        }
-      ],
-      "top_repeated_questions": [
-        "Is this suitable for a 2-year-old?",
-        "Do you do gift wrapping?",
-        "How long is shipping?"
-      ],
-      "manual_tasks_wanting_automation": [
-        "Age suitability FAQ responses",
-        "Gift recommendation guidance",
-        "Abandoned cart follow-up"
-      ],
-      "data_available_for_process": "Shopify order history (640 orders). No DM conversation logs."
+      "bottleneck": {
+        "description": "Every gifting advice and age-suitability question answered manually one by one. No template or FAQ system exists.",
+        "severity": "high",
+        "time_impact": "1.5–2 hours per day of founder time during peak season (Nov–Dec)",
+        "manual_tasks_wanting_automation": [
+          "Age suitability FAQ responses",
+          "Gift recommendation guidance",
+          "Shipping time and cost answers"
+        ]
+      },
+      "kpis": {
+        "tracked": ["Order count", "Monthly revenue"],
+        "current_values": { "conversion_rate_from_dm": 0.45 }
+      },
+      "process_data": {
+        "has_data": true,
+        "source_type": "crm_export",
+        "record_count": 164,
+        "has_outcome_labels": true,
+        "data_quality": "medium"
+      },
+      "confidence_level": "medium"
     },
     {
       "process_id": "SC1_P2",
-      "name": "Seasonal Campaign Management",
-      "type": "Marketing Operations",
-      "steps": [
-        "Plan seasonal content calendar (Christmas, Easter, Back to School)",
-        "Write product descriptions and social captions",
-        "Design promotional graphics in Canva",
-        "Schedule posts and email campaign in Klaviyo",
-        "Monitor performance and respond to comments"
-      ],
+      "name": "Seasonal Marketing Campaign",
+      "domain": "marketing",
+      "task_type": "mixed",
+      "trigger": "Seasonal calendar event (Christmas, Easter, Back to School)",
+      "frequency": "monthly",
+      "volume_per_month": 1,
       "who_executes": "Founder",
-      "peak_months": [
-        "November",
-        "December"
-      ],
-      "bottlenecks": [
-        {
-          "description": "Entire content pipeline handled by one person — writing, design, scheduling",
-          "severity": "HIGH",
-          "time_impact": "Approximately 3 days per major campaign"
-        }
-      ],
-      "manual_tasks_wanting_automation": [
-        "Product description generation",
-        "Social media caption variants",
-        "Campaign brief templates"
-      ],
-      "data_available_for_process": "Klaviyo email metrics available but not exported."
+      "bottleneck": {
+        "description": "Entire content pipeline — writing, design, scheduling — handled by one person with no templates or AI assistance.",
+        "severity": "high",
+        "time_impact": "Approximately 3 working days per major campaign",
+        "manual_tasks_wanting_automation": [
+          "Product description generation",
+          "Social media caption variants",
+          "Campaign brief templates"
+        ]
+      },
+      "kpis": {
+        "tracked": ["Email open rate", "Order count during campaign"],
+        "current_values": {}
+      },
+      "process_data": {
+        "has_data": true,
+        "source_type": "platform_export",
+        "record_count": null,
+        "has_outcome_labels": false,
+        "data_quality": "low"
+      },
+      "confidence_level": "low"
     }
-  ]
+  ],
+
+  "export_computed": {
+    "computed_from": ["sc1_tinywonders_orders.json"],
+    "computed_at": "2026-04-07",
+    "extractor_used": "normalizer_script",
+    "fields": {
+      "history_months": 30,
+      "total_records": 640,
+      "channel_split": { "website": 0.744, "instagram": 0.256 },
+      "has_outcome_labels": true,
+      "avg_order_value_eur": 52.13,
+      "completed_order_rate": 0.842,
+      "peak_months": ["November", "December"]
+    }
+  },
+
+  "unstructured_supplements": []
 }

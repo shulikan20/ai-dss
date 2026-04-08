@@ -1,0 +1,213 @@
+{
+  "_comment": "AI-DSS Canonical Company Profile Schema v2. This file defines every field, its source, and its role in the matching pipeline. Actual company profiles are separate files that follow this structure. Source legend: Q=questionnaire only, E=computed from export only, Q+E=questionnaire primary but export overrides with higher confidence, derived=computed by profile_builder from other fields.",
+
+  "schema_version": "1.0",
+
+  "top_level_structure": {
+    "meta": "Administrative — tracking what sources were used and profile quality",
+    "universal": "Domain-agnostic company fields — always filled for every company",
+    "domain_context": "Domain-specific context blocks — only filled for active domains",
+    "processes": "Array of process entries — one per identified bottleneck",
+    "export_computed": "Values computed from any export — populated by normalizer scripts or LLM extractor",
+    "unstructured_supplements": "Unmapped export data — stored for LLM pipeline, ignored by classical pipeline"
+  },
+
+  "meta": {
+    "company_id":         { "type": "string", "source": "system" },
+    "profile_version":    { "type": "string", "source": "system" },
+    "created_at":         { "type": "date",   "source": "system" },
+    "sources_used":       {
+      "type": "array",
+      "items": ["questionnaire", "crm_export", "platform_export", "analytics_export", "manual_extraction", "llm_extraction"],
+      "source": "system",
+      "description": "Every source that contributed to this profile. Determines overall confidence ceiling."
+    },
+    "profile_completeness": {
+      "type": "string",
+      "enum": ["minimal", "partial", "full"],
+      "source": "derived",
+      "description": "minimal=questionnaire only. partial=questionnaire + some export fields. full=questionnaire + export confirmed key fields."
+    }
+  },
+
+  "universal": {
+
+    "identity": {
+      "industry_segment":       { "type": "string",  "source": "Q", "pipeline_use": "fit_scoring",       "description": "Free text. What the company does and sells." },
+      "business_model":         { "type": "enum",    "source": "Q", "pipeline_use": "fit_scoring",       "values": ["B2C", "B2B", "B2B_B2C_mixed"] },
+      "company_size_headcount": { "type": "integer", "source": "Q", "pipeline_use": "feasibility_filter","description": "Total headcount including part-time." },
+      "country":                { "type": "string",  "source": "Q", "pipeline_use": "feasibility_filter","description": "Country of operation. Affects GDPR, tool availability, language." }
+    },
+
+    "tech_stack": {
+      "current_tools":      { "type": "string[]", "source": "Q",   "pipeline_use": "fit_scoring",       "description": "All tools in use. Used to detect integration compatibility and avoid recommending what they already have." },
+      "crm_system":         { "type": "string",   "source": "Q",   "pipeline_use": "fit_scoring",       "description": "Primary CRM or order system. null if none." },
+      "crm_years_in_use":   { "type": "number",   "source": "Q",   "pipeline_use": "confidence_assignment", "description": "Proxy for data depth and process maturity." },
+      "existing_automation":{ "type": "string[]", "source": "Q",   "pipeline_use": "fit_scoring",       "description": "Automation already running. Prevents recommending duplicates." }
+    },
+
+    "technical_capability": {
+      "level":               { "type": "enum",    "source": "Q", "pipeline_use": "feasibility_filter", "values": ["low", "medium", "high"], "description": "low=owner manages all, no IT. medium=SaaS-comfortable, external dev available. high=in-house technical staff." },
+      "who_manages_tools":   { "type": "string",  "source": "Q", "pipeline_use": "feasibility_filter" },
+      "external_it_available":{ "type": "boolean","source": "Q", "pipeline_use": "feasibility_filter", "description": "Whether an external developer is accessible for setup." }
+    },
+
+    "ai_readiness": {
+      "openness_level": { "type": "enum",    "source": "Q", "pipeline_use": "fit_scoring", "values": ["resistant", "neutral", "open", "very_open"] },
+      "team_alignment": { "type": "boolean", "source": "Q", "pipeline_use": "fit_scoring" },
+      "previous_ai_attempts": {
+        "type": "array",
+        "source": "Q",
+        "pipeline_use": "fit_scoring",
+        "items": {
+          "description": "string",
+          "outcome": ["abandoned", "still_in_use", "failed_to_implement", "unknown"]
+        },
+        "description": "Failed attempts lower readiness score for similar tool categories."
+      }
+    },
+
+    "data_availability": {
+      "_comment": "Company-level data signals. Process-level data availability is more precise and lives inside each process entry.",
+      "has_structured_export":   { "type": "boolean",  "source": "Q+E", "pipeline_use": "feasibility_filter", "description": "If false, all data-dependent tools are deprioritized across all processes." },
+      "export_types_available":  { "type": "enum[]",   "source": "Q+E", "pipeline_use": "feasibility_filter", "values": ["crm_orders", "crm_contacts", "crm_analytics", "platform_analytics", "email_marketing", "ad_platform", "accounting", "inventory", "other"] },
+      "history_months":          { "type": "integer",  "source": "Q+E", "pipeline_use": "feasibility_filter", "description": "Months of historical data. Time-series tools need 6–12 minimum." },
+      "has_outcome_labels":      { "type": "boolean",  "source": "Q+E", "pipeline_use": "feasibility_filter", "description": "Won/lost or completed/cancelled labels. Required for supervised ML tools." },
+      "has_communication_logs":  { "type": "boolean",  "source": "Q",   "pipeline_use": "feasibility_filter", "description": "Email, DM, or chat logs. Required for NLP tools." },
+      "data_quality":            { "type": "enum",     "source": "Q+E", "pipeline_use": "confidence_assignment","values": ["very_low", "low", "medium", "high"] },
+      "data_managed_by":         { "type": "enum",     "source": "Q",   "pipeline_use": "feasibility_filter", "values": ["dedicated_system", "spreadsheet", "mixed", "none"] }
+    }
+  },
+
+  "domain_context": {
+    "_comment": "Only domains marked active:true are filled. A company may have multiple active domains.",
+
+    "ecommerce_ops": {
+      "active":                       { "type": "boolean" },
+      "selling_channels":             { "type": "enum[]",  "source": "Q",   "pipeline_use": "fit_scoring", "values": ["own_website", "instagram_shop", "marketplace", "physical_store", "whatsapp", "other"] },
+      "ecommerce_platform":           { "type": "string",  "source": "Q",   "pipeline_use": "fit_scoring" },
+      "monthly_order_volume_peak":    { "type": "integer", "source": "Q+E", "pipeline_use": "fit_scoring", "description": "Peak monthly orders. Low volume reduces automation ROI." },
+      "monthly_order_volume_regular": { "type": "integer", "source": "Q+E", "pipeline_use": "fit_scoring" },
+      "return_rate":                  { "type": "number",  "source": "Q+E", "pipeline_use": "fit_scoring", "description": "Fraction of orders returned. High = candidate for return automation or sizing tools." },
+      "fulfillment_model":            { "type": "enum",    "source": "Q",   "pipeline_use": "fit_scoring", "values": ["self_fulfilled", "marketplace_fulfilled", "mixed", "dropship"] },
+      "post_purchase_contact_freq":   { "type": "enum",    "source": "Q",   "pipeline_use": "fit_scoring", "values": ["very_frequent", "frequent", "occasional", "rare"], "description": "How often customers contact after order. High = candidate for automated status updates." },
+      "product_catalog_size":         { "type": "enum",    "source": "Q",   "pipeline_use": "fit_scoring", "values": ["small_under_50", "medium_50_500", "large_over_500"] }
+    },
+
+    "customer_support": {
+      "active":                     { "type": "boolean" },
+      "support_channels":           { "type": "enum[]",  "source": "Q",   "pipeline_use": "fit_scoring", "values": ["instagram_dm", "whatsapp", "email", "phone", "chat_widget", "marketplace_inbox"] },
+      "monthly_inbound_volume":     { "type": "integer", "source": "Q+E", "pipeline_use": "fit_scoring", "description": "Monthly inbound contacts. ROI threshold for automation." },
+      "pct_repetitive_questions":   { "type": "number",  "source": "Q",   "pipeline_use": "fit_scoring", "description": "Fraction of questions that are repetitive. High = FAQ automation candidate." },
+      "avg_first_response_hours":   { "type": "number",  "source": "Q+E", "pipeline_use": "fit_scoring", "description": "Average time to first response. High = quantified bottleneck." },
+      "helpdesk_tool":              { "type": "string",  "source": "Q",   "pipeline_use": "feasibility_filter", "description": "null if no helpdesk tool exists." }
+    },
+
+    "crm_sales": {
+      "active":                     { "type": "boolean" },
+      "sales_cycle_days_min":       { "type": "integer", "source": "Q", "pipeline_use": "fit_scoring" },
+      "sales_cycle_days_max":       { "type": "integer", "source": "Q", "pipeline_use": "fit_scoring" },
+      "pipeline_stages_defined":    { "type": "boolean", "source": "Q", "pipeline_use": "feasibility_filter", "description": "Required for stage-level analysis tools." },
+      "lead_sources":               { "type": "string[]","source": "Q", "pipeline_use": "fit_scoring" },
+      "sales_team_size":            { "type": "integer", "source": "Q", "pipeline_use": "fit_scoring" },
+      "lead_volume_per_month":      { "type": "integer", "source": "Q+E","pipeline_use": "fit_scoring" },
+      "crm_data_discipline":        { "type": "enum",    "source": "Q+E","pipeline_use": "feasibility_filter", "values": ["low", "medium", "high"], "description": "How consistently CRM fields and stages are updated. Low makes CRM-dependent tools unreliable." }
+    },
+
+    "supply_chain": {
+      "active":                        { "type": "boolean" },
+      "active_supplier_count":         { "type": "integer", "source": "Q", "pipeline_use": "fit_scoring" },
+      "supplier_countries":            { "type": "string[]","source": "Q", "pipeline_use": "fit_scoring", "description": "Cross-border sourcing increases tracking complexity." },
+      "inbound_tracking_available":    { "type": "boolean", "source": "Q", "pipeline_use": "feasibility_filter" },
+      "inventory_tracking_method":     { "type": "enum",    "source": "Q", "pipeline_use": "feasibility_filter", "values": ["dedicated_system", "spreadsheet", "marketplace_system", "manual", "none"] },
+      "stockout_frequency":            { "type": "enum",    "source": "Q", "pipeline_use": "fit_scoring", "values": ["never", "rarely", "occasionally", "frequently"] },
+      "demand_forecasting_method":     { "type": "enum",    "source": "Q", "pipeline_use": "fit_scoring", "values": ["none", "gut_feeling", "manual_data_review", "spreadsheet_model", "dedicated_tool"] },
+      "procurement_approval_steps":    { "type": "integer", "source": "Q", "pipeline_use": "fit_scoring", "description": "High count = candidate for approval workflow automation." }
+    },
+
+    "operations_backoffice": {
+      "active":                      { "type": "boolean" },
+      "document_types_produced":     { "type": "enum[]",  "source": "Q", "pipeline_use": "fit_scoring", "values": ["proposals", "contracts", "reports", "invoices", "briefs", "presentations", "other"] },
+      "time_on_documentation_pct":   { "type": "number",  "source": "Q", "pipeline_use": "fit_scoring", "description": "% of team time on documentation. High = document generation candidate." },
+      "templates_in_use":            { "type": "boolean", "source": "Q", "pipeline_use": "fit_scoring" },
+      "approval_workflows_exist":    { "type": "boolean", "source": "Q", "pipeline_use": "fit_scoring" },
+      "internal_coordination_tool":  { "type": "enum",    "source": "Q", "pipeline_use": "fit_scoring", "values": ["none", "email_only", "whatsapp", "slack", "notion", "jira", "other"] }
+    },
+
+    "marketing": {
+      "active":                        { "type": "boolean" },
+      "active_channels":               { "type": "enum[]",  "source": "Q", "pipeline_use": "fit_scoring", "values": ["instagram", "facebook", "google_ads", "email", "tiktok", "seo", "none"] },
+      "content_creation_burden":       { "type": "enum",    "source": "Q", "pipeline_use": "fit_scoring", "values": ["low", "medium", "high"] },
+      "has_email_marketing":           { "type": "boolean", "source": "Q", "pipeline_use": "fit_scoring" },
+      "campaign_performance_tracked":  { "type": "boolean", "source": "Q", "pipeline_use": "feasibility_filter", "description": "Required for optimization and attribution tools." }
+    }
+  },
+
+  "processes": {
+    "_comment": "Array. One entry per identified bottleneck. Matching runs per process, not per company.",
+    "items": {
+      "process_id":     { "type": "string" },
+      "name":           { "type": "string" },
+      "domain":         { "type": "enum", "source": "Q", "pipeline_use": "fit_scoring", "values": ["crm_sales", "customer_support", "ecommerce_ops", "supply_chain", "operations_backoffice", "marketing", "procurement", "finance", "hr", "it_ops", "manufacturing"] },
+      "task_type":      { "type": "enum", "source": "Q", "pipeline_use": "fit_scoring", "values": ["repetitive_routine", "judgment_intensive", "mixed"] },
+      "trigger":        { "type": "string",  "source": "Q", "pipeline_use": "fit_scoring" },
+      "frequency":      { "type": "enum",    "source": "Q", "pipeline_use": "fit_scoring", "values": ["continuous", "daily", "weekly", "monthly", "ad_hoc"] },
+      "volume_per_month":{ "type": "integer","source": "Q+E","pipeline_use": "fit_scoring" },
+      "who_executes":   { "type": "string",  "source": "Q", "pipeline_use": "fit_scoring" },
+
+      "bottleneck": {
+        "description":                  { "type": "string",   "source": "Q", "pipeline_use": "fit_scoring", "description": "Free text. Used for semantic similarity matching against tool capability descriptions." },
+        "severity":                     { "type": "enum",     "source": "Q", "pipeline_use": "fit_scoring", "values": ["low", "medium", "high"] },
+        "time_impact":                  { "type": "string",   "source": "Q", "pipeline_use": "fit_scoring" },
+        "manual_tasks_wanting_automation":{ "type": "string[]","source": "Q", "pipeline_use": "fit_scoring", "description": "Explicit automation wants. Strong signal for tool category matching." }
+      },
+
+      "kpis": {
+        "tracked":        { "type": "string[]", "source": "Q",   "pipeline_use": "fit_scoring" },
+        "current_values": { "type": "object",   "source": "Q+E", "pipeline_use": "confidence_assignment", "description": "KPI name → current value. Export overrides questionnaire estimate." }
+      },
+
+      "process_data": {
+        "_comment": "Data availability scoped to this process specifically. More precise than company-level.",
+        "has_data":          { "type": "boolean", "source": "Q+E", "pipeline_use": "feasibility_filter" },
+        "source_type":       { "type": "enum",    "source": "Q+E", "pipeline_use": "feasibility_filter", "values": ["crm_export", "platform_export", "spreadsheet", "analytics_dashboard", "none"] },
+        "record_count":      { "type": "integer", "source": "E",   "pipeline_use": "feasibility_filter", "description": "Computed from export. null if no export." },
+        "has_outcome_labels":{ "type": "boolean", "source": "Q+E", "pipeline_use": "feasibility_filter" },
+        "data_quality":      { "type": "enum",    "source": "Q+E", "pipeline_use": "confidence_assignment", "values": ["very_low", "low", "medium", "high"] }
+      },
+
+      "confidence_level": { "type": "enum", "source": "derived", "pipeline_use": "confidence_assignment", "values": ["low", "medium", "high"], "description": "high=export confirmed. medium=questionnaire only, plausible. low=estimated or incomplete." }
+    }
+  },
+
+  "export_computed": {
+    "_comment": "Populated by normalizer scripts or LLM extractor from any export provided. These values override Q fields where source=Q+E. The profile_builder merges this into the profile.",
+    "computed_from":       { "type": "string[]", "description": "Which export files these values came from." },
+    "computed_at":         { "type": "date" },
+    "extractor_used":      { "type": "enum", "values": ["normalizer_script", "llm_extractor", "manual"] },
+    "fields": {
+      "_comment": "Free key-value store. Any field extracted from an export lands here before being merged into the main profile by profile_builder.",
+      "example_fields": {
+        "history_months": 36,
+        "total_records": 1046,
+        "channel_split": { "website": 0.52, "instagram": 0.48 },
+        "has_outcome_labels": true,
+        "avg_order_value": 2135,
+        "return_rate": 0.01,
+        "monthly_volume_avg": 29
+      }
+    }
+  },
+
+  "unstructured_supplements": {
+    "_comment": "Data from exports that could not be mapped to any schema field. Stored here so the LLM matching pipeline can optionally use it as context. The classical pipeline ignores this block entirely.",
+    "type": "array",
+    "items": {
+      "source_file":     { "type": "string", "description": "Original filename." },
+      "source_type":     { "type": "enum",   "values": ["crm_analytics_screenshot", "dashboard_export", "spreadsheet", "other"] },
+      "description":     { "type": "string", "description": "What this data contains, in plain text." },
+      "content_summary": { "type": "string", "description": "Key numbers or facts extracted, in plain text. Not structured." },
+      "used_in_matching":{ "type": "boolean","description": "Always false for classical pipeline. LLM pipeline sets to true if it reads this block." }
+    }
+  }
+}

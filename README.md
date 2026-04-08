@@ -5,7 +5,7 @@ and context to suitable AI tools and automation solutions.
 
 ## Synthetic data
 
-`data/synthetic/` contains fictional company profiles and sample CRM 
+`data/` contains fictional company profiles and sample CRM 
 order datasets for development and testing purposes.
 
 To regenerate:

@@ -1,86 +1,110 @@
 {
-  "company_id": "SC4",
-  "label": "Synthetic B2-type — retail, physical + online, supply chain focus",
   "meta": {
-    "type": "B2C",
-    "industry": "Outdoor / Hiking Equipment — Retail",
-    "country": "Sweden",
-    "city": "Stockholm",
-    "description": "Sells outdoor hiking and camping gear — backpacks, trekking poles, sleeping bags, waterproof jackets. Operates 2 physical stores in Stockholm and Gothenburg plus an online store. Sources from 5 suppliers in Germany and Taiwan."
+    "company_id": "SC4",
+    "profile_version": "1.0",
+    "created_at": "2026-04-07",
+    "sources_used": ["questionnaire"],
+    "profile_completeness": "minimal"
   },
-  "profile": {
-    "company_name": "TrailNord AB",
-    "total_headcount": 22,
-    "sales_team_size": 6,
-    "crm_system": "Fortnox (accounting) + Shopify (online)",
-    "crm_years_in_use": 5,
-    "other_tools": [
-      "Shopify",
-      "Fortnox",
-      "Excel for stock"
-    ],
-    "crm_managed_by": "Operations manager",
-    "technical_capability": "Medium — operations manager handles tools, IT consultant on retainer",
-    "ai_openness": "Open",
-    "management_aligned": true,
-    "previous_ai_attempts": [
-      "None formally"
-    ]
+
+  "universal": {
+    "identity": {
+      "industry_segment": "Outdoor and hiking equipment retail — backpacks, trekking poles, sleeping bags, waterproof jackets. 2 physical stores plus online.",
+      "business_model": "B2C",
+      "company_size_headcount": 22,
+      "country": "Sweden"
+    },
+    "tech_stack": {
+      "current_tools": ["Shopify", "Fortnox", "Excel"],
+      "crm_system": "Shopify (online) + Fortnox (accounting)",
+      "crm_years_in_use": 5,
+      "existing_automation": []
+    },
+    "technical_capability": {
+      "level": "medium",
+      "who_manages_tools": "Operations manager",
+      "external_it_available": true
+    },
+    "ai_readiness": {
+      "openness_level": "open",
+      "team_alignment": true,
+      "previous_ai_attempts": []
+    },
+    "data_availability": {
+      "has_structured_export": false,
+      "export_types_available": [],
+      "history_months": 60,
+      "has_outcome_labels": false,
+      "has_communication_logs": false,
+      "data_quality": "low",
+      "data_managed_by": "mixed"
+    }
   },
-  "data_availability": {
-    "crm_export_available": false,
-    "notes": "Shopify tracks online orders. Physical store sales in Fortnox. Stock managed in Excel across both locations. No unified export available.",
-    "data_quality_overall": "LOW-MEDIUM — online data clean in Shopify, physical store data fragmented."
+
+  "domain_context": {
+    "supply_chain": {
+      "active": true,
+      "active_supplier_count": 5,
+      "supplier_countries": ["Germany", "Taiwan"],
+      "inbound_tracking_available": false,
+      "inventory_tracking_method": "spreadsheet",
+      "stockout_frequency": "occasionally",
+      "demand_forecasting_method": "manual_data_review",
+      "procurement_approval_steps": 2
+    },
+    "ecommerce_ops": {
+      "active": true,
+      "selling_channels": ["own_website", "physical_store"],
+      "ecommerce_platform": "Shopify",
+      "monthly_order_volume_peak": null,
+      "monthly_order_volume_regular": null,
+      "return_rate": null,
+      "fulfillment_model": "self_fulfilled",
+      "post_purchase_contact_freq": "rare",
+      "product_catalog_size": "medium_50_500"
+    },
+    "crm_sales": { "active": false },
+    "customer_support": { "active": false },
+    "operations_backoffice": { "active": false },
+    "marketing": { "active": false }
   },
+
   "processes": [
     {
       "process_id": "SC4_P1",
       "name": "Procurement and Supplier Orders",
-      "type": "Supply Chain / Procurement",
-      "steps": [
-        "Stock coordinator checks Excel spreadsheet weekly",
-        "Low-stock items flagged manually",
-        "Email sent to supplier to request quote or place reorder",
-        "Quote compared manually against previous orders",
-        "Purchase order created in Fortnox",
-        "Goods received, stock updated in Excel and Shopify"
-      ],
+      "domain": "supply_chain",
+      "task_type": "mixed",
+      "trigger": "Weekly manual stock check or staff observation of low shelf stock",
+      "frequency": "weekly",
+      "volume_per_month": 4,
       "who_executes": "Operations manager + stock coordinator",
-      "active_suppliers": 5,
-      "supplier_countries": [
-        "Germany",
-        "Taiwan"
-      ],
-      "reorder_triggers": [
-        "Manual weekly stock check",
-        "Staff noticing low shelf stock"
-      ],
-      "approval_required": true,
-      "approval_people": 2,
-      "lead_time_days": {
-        "min": 14,
-        "max": 45
+      "bottleneck": {
+        "description": "No automated low-stock alerts. Stock checked manually in Excel weekly. Supplier lead times from Taiwan unpredictable by up to 2 weeks. No consolidated stock view across online store and 2 physical locations.",
+        "severity": "high",
+        "time_impact": "4–5 stockouts per year, each causing 1–2 weeks lost sales on affected SKUs. Over-ordering used as buffer for unpredictable lead times.",
+        "manual_tasks_wanting_automation": [
+          "Automated low-stock alerts",
+          "Inbound shipment tracking",
+          "Consolidated inventory view across locations"
+        ]
       },
-      "bottlenecks": [
-        {
-          "description": "No automated low-stock alerts — relies on weekly manual check",
-          "severity": "HIGH",
-          "time_impact": "Stockouts occur 4–5 times per year, each causing 1–2 weeks of lost sales on affected SKUs"
-        },
-        {
-          "description": "Supplier lead time uncertainty — Taiwan shipments unpredictable by up to 2 weeks",
-          "severity": "HIGH",
-          "time_impact": "Planning horizon unreliable, causes over-ordering as buffer"
-        },
-        {
-          "description": "No consolidated stock view across online and two physical stores",
-          "severity": "MEDIUM",
-          "time_impact": "Staff manually check each location's Excel file to answer customer availability questions"
-        }
-      ],
-      "demand_forecasting": "Based on last year same season, informally",
-      "stockout_frequency": "4–5 per year on individual SKUs",
-      "data_available_for_process": "Fortnox purchase orders. Excel stock sheets. No delivery tracking data."
+      "kpis": {
+        "tracked": ["Stock level", "Stockout events per year"],
+        "current_values": { "stockout_events_per_year": 5 }
+      },
+      "process_data": {
+        "has_data": false,
+        "source_type": "none",
+        "record_count": null,
+        "has_outcome_labels": false,
+        "data_quality": "low"
+      },
+      "confidence_level": "low"
     }
-  ]
+  ],
+
+  "export_computed": null,
+
+  "unstructured_supplements": []
 }

@@ -1,125 +1,141 @@
 {
-  "company_id": "SC5",
-  "label": "Synthetic B3-type — service company, creative/agency",
   "meta": {
-    "type": "B2B/B2C mixed",
-    "client_split": {
-      "b2b_companies": 0.55,
-      "b2c_individuals": 0.45
-    },
-    "industry": "Event Management / Creative Agency",
-    "country": "Spain",
-    "city": "Madrid",
-    "description": "Small event management and creative production agency. Organises corporate events, brand activations, and private celebrations. Also provides photography and video content. Team of 4 with a network of 10 freelance collaborators."
+    "company_id": "SC5",
+    "profile_version": "1.0",
+    "created_at": "2026-04-07",
+    "sources_used": ["questionnaire"],
+    "profile_completeness": "minimal"
   },
-  "profile": {
-    "company_name": "Ola Creativa S.L.",
-    "total_headcount": 4,
-    "outsource_partners": 10,
-    "crm_system": "None — Google Sheets and email",
-    "other_tools": [
-      "Google Workspace",
-      "WhatsApp Business",
-      "Canva",
-      "Adobe Suite"
-    ],
-    "crm_managed_by": "Managing director manually",
-    "technical_capability": "Low — comfortable with Google tools only",
-    "ai_openness": "Curious but not yet adopted",
-    "management_aligned": true,
-    "previous_ai_attempts": [
-      "None formally — team uses ChatGPT occasionally for drafting"
-    ],
-    "client_growth_rate": "~10% per quarter in number of active clients",
-    "revenue_split_by_service": {
-      "corporate_events": 0.5,
-      "brand_activations": 0.25,
-      "private_events": 0.15,
-      "photo_video": 0.1
+
+  "universal": {
+    "identity": {
+      "industry_segment": "Event management and creative production agency — corporate events, brand activations, private celebrations, photography and video content",
+      "business_model": "B2B_B2C_mixed",
+      "company_size_headcount": 4,
+      "country": "Spain"
+    },
+    "tech_stack": {
+      "current_tools": ["Google Workspace", "WhatsApp Business", "Canva", "Adobe Suite"],
+      "crm_system": null,
+      "crm_years_in_use": null,
+      "existing_automation": []
+    },
+    "technical_capability": {
+      "level": "low",
+      "who_manages_tools": "Managing director",
+      "external_it_available": false
+    },
+    "ai_readiness": {
+      "openness_level": "neutral",
+      "team_alignment": true,
+      "previous_ai_attempts": [
+        { "description": "ChatGPT for drafting (occasional, informal)", "outcome": "still_in_use" }
+      ]
+    },
+    "data_availability": {
+      "has_structured_export": false,
+      "export_types_available": [],
+      "history_months": null,
+      "has_outcome_labels": false,
+      "has_communication_logs": false,
+      "data_quality": "very_low",
+      "data_managed_by": "none"
     }
   },
-  "data_availability": {
-    "crm_export_available": false,
-    "notes": "All client and project data in Google Sheets. No structured CRM. Invoicing via email with PDF invoices. No ticket or case tracking.",
-    "data_quality_overall": "VERY LOW — no structured data. Financial summary available manually."
+
+  "domain_context": {
+    "operations_backoffice": {
+      "active": true,
+      "document_types_produced": ["proposals", "contracts", "reports", "briefs", "presentations"],
+      "time_on_documentation_pct": 0.45,
+      "templates_in_use": false,
+      "approval_workflows_exist": false,
+      "internal_coordination_tool": "whatsapp"
+    },
+    "crm_sales": {
+      "active": true,
+      "sales_cycle_days_min": 3,
+      "sales_cycle_days_max": 21,
+      "pipeline_stages_defined": false,
+      "lead_sources": ["referrals", "instagram", "linkedin"],
+      "sales_team_size": 1,
+      "lead_volume_per_month": 5,
+      "crm_data_discipline": "low"
+    },
+    "ecommerce_ops": { "active": false },
+    "customer_support": { "active": false },
+    "supply_chain": { "active": false },
+    "marketing": { "active": false }
   },
+
   "processes": [
     {
       "process_id": "SC5_P1",
-      "name": "Client Acquisition and Proposal",
-      "type": "CRM / Sales",
-      "steps": [
-        "Inquiry arrives via WhatsApp, email, or referral",
-        "Discovery call with managing director",
-        "Custom proposal written from scratch in Google Docs",
-        "Proposal sent via email",
-        "Negotiation and contract signing (PDF contract via email)",
-        "50% deposit invoice sent before work begins"
-      ],
+      "name": "Client Proposal and Contract",
+      "domain": "crm_sales",
+      "task_type": "judgment_intensive",
+      "trigger": "Inbound inquiry via WhatsApp, email, or referral",
+      "frequency": "weekly",
+      "volume_per_month": 5,
       "who_executes": "Managing director",
-      "lead_sources": {
-        "referrals": 0.7,
-        "instagram": 0.15,
-        "linkedin": 0.1,
-        "other": 0.05
+      "bottleneck": {
+        "description": "Every proposal written from scratch in Google Docs with no templates or reuse from previous proposals. Contract sent as static PDF requiring printing and scanning from some clients.",
+        "severity": "high",
+        "time_impact": "3–5 hours per proposal, 3–6 proposals per month. Contract signing adds 1–3 days.",
+        "manual_tasks_wanting_automation": [
+          "Proposal generation from event brief",
+          "Contract template auto-population",
+          "Follow-up email sequencing after proposal sent"
+        ]
       },
-      "avg_proposal_writing_time_hours": 4,
-      "conversion_rate": 0.3,
-      "drop_off_reason": "Budget too low, timing mismatch",
-      "bottlenecks": [
-        {
-          "description": "Every proposal written from scratch — no templates, no reuse of previous proposals",
-          "severity": "HIGH",
-          "time_impact": "3–5 hours per proposal, 3–6 proposals per month"
-        },
-        {
-          "description": "Contract sent as static PDF — no e-signature, requires printing and scanning from some clients",
-          "severity": "MEDIUM",
-          "time_impact": "Adds 1–3 days to contract signing cycle"
-        }
-      ],
-      "manual_tasks_wanting_automation": [
-        "Proposal generation from event brief",
-        "Contract template population",
-        "Follow-up email sequencing after proposal sent"
-      ],
-      "data_available_for_process": "None structured."
+      "kpis": {
+        "tracked": ["New client count", "Revenue"],
+        "current_values": { "conversion_rate": 0.30, "client_growth_per_quarter": 0.10 }
+      },
+      "process_data": {
+        "has_data": false,
+        "source_type": "none",
+        "record_count": null,
+        "has_outcome_labels": false,
+        "data_quality": "very_low"
+      },
+      "confidence_level": "low"
     },
     {
       "process_id": "SC5_P2",
-      "name": "Event Execution Coordination",
-      "type": "Operations / Back-office",
-      "steps": [
-        "Create project plan in Google Sheets per event",
-        "Brief and coordinate freelancers via WhatsApp groups",
-        "Track tasks, deadlines, and deliverables manually",
-        "Collect assets from freelancers (photos, videos, documents)",
-        "Compile post-event report for client"
-      ],
-      "who_executes": "Managing director + 1 project coordinator",
-      "time_allocation": {
-        "coordination_and_admin": 0.45,
-        "creative_and_execution": 0.4,
-        "client_communication": 0.15
+      "name": "Event Execution and Reporting",
+      "domain": "operations_backoffice",
+      "task_type": "mixed",
+      "trigger": "Confirmed event booking",
+      "frequency": "monthly",
+      "volume_per_month": 3,
+      "who_executes": "Managing director + 1 project coordinator + freelancers",
+      "bottleneck": {
+        "description": "Post-event reports written manually from photos, notes, and attendance data with no template. Freelancer coordination done entirely via WhatsApp groups with no task tracking — information lives in chat history.",
+        "severity": "high",
+        "time_impact": "4–6 hours per post-event report. Significant time lost to freelancer follow-ups and missed updates.",
+        "manual_tasks_wanting_automation": [
+          "Post-event report generation from structured inputs",
+          "Freelancer briefing document generation",
+          "Task and deadline tracking"
+        ]
       },
-      "bottlenecks": [
-        {
-          "description": "Post-event reports written manually from photos, notes, and attendance data — no template",
-          "severity": "HIGH",
-          "time_impact": "4–6 hours per report, one report per event"
-        },
-        {
-          "description": "Freelancer coordination via WhatsApp — no task tracking, information lives in chat history",
-          "severity": "HIGH",
-          "time_impact": "Significant time lost to follow-ups, missed updates, repeated questions"
-        }
-      ],
-      "manual_tasks_wanting_automation": [
-        "Post-event report generation",
-        "Freelancer briefing document generation",
-        "Task and deadline tracking"
-      ],
-      "data_available_for_process": "None structured."
+      "kpis": {
+        "tracked": ["Client satisfaction", "Event delivery on time"],
+        "current_values": {}
+      },
+      "process_data": {
+        "has_data": false,
+        "source_type": "none",
+        "record_count": null,
+        "has_outcome_labels": false,
+        "data_quality": "very_low"
+      },
+      "confidence_level": "low"
     }
-  ]
+  ],
+
+  "export_computed": null,
+
+  "unstructured_supplements": []
 }

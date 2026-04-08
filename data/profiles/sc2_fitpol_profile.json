@@ -1,122 +1,165 @@
 {
-  "company_id": "SC2",
-  "label": "Synthetic B1-type — B2C e-commerce, health/supplement niche",
   "meta": {
-    "type": "B2C",
-    "industry": "Fitness Supplements / Sports Nutrition",
-    "country": "Poland",
-    "city": "Warsaw",
-    "description": "E-commerce store selling fitness supplements — protein powders, creatine, vitamins, and gym accessories. Sells across own website, Instagram, and Facebook Shop. Targets gym-goers and recreational athletes aged 18–35."
+    "company_id": "SC2",
+    "profile_version": "1.0",
+    "created_at": "2026-04-07",
+    "sources_used": ["questionnaire", "crm_export"],
+    "profile_completeness": "partial"
   },
-  "profile": {
-    "company_name": "FitPol Sp. z o.o.",
-    "total_headcount": 9,
-    "sales_team_size": 3,
-    "crm_system": "WooCommerce + HubSpot Free",
-    "crm_years_in_use": 2,
-    "other_tools": [
-      "Meta Ads Manager",
-      "Mailchimp",
-      "Instagram",
-      "Facebook Shop"
-    ],
-    "crm_managed_by": "Marketing manager",
-    "technical_capability": "Medium — marketing manager handles tools, external developer for website",
-    "ai_openness": "Very open — actively looking for tools",
-    "management_aligned": true,
-    "previous_ai_attempts": [
-      "ChatGPT for writing product descriptions (occasional)",
-      "Meta Advantage+ for ad targeting automation"
-    ]
+
+  "universal": {
+    "identity": {
+      "industry_segment": "Fitness supplements and sports nutrition — protein powders, creatine, vitamins, gym accessories for recreational athletes aged 18–35",
+      "business_model": "B2C",
+      "company_size_headcount": 9,
+      "country": "Poland"
+    },
+    "tech_stack": {
+      "current_tools": ["WooCommerce", "HubSpot Free", "Meta Ads Manager", "Mailchimp", "Instagram", "Facebook Shop"],
+      "crm_system": "WooCommerce + HubSpot Free",
+      "crm_years_in_use": 2,
+      "existing_automation": [
+        "Meta Advantage+ for ad targeting",
+        "WooCommerce automatic order confirmation email"
+      ]
+    },
+    "technical_capability": {
+      "level": "medium",
+      "who_manages_tools": "Marketing manager",
+      "external_it_available": true
+    },
+    "ai_readiness": {
+      "openness_level": "very_open",
+      "team_alignment": true,
+      "previous_ai_attempts": [
+        { "description": "ChatGPT for product descriptions (occasional)", "outcome": "still_in_use" },
+        { "description": "Meta Advantage+ ad targeting", "outcome": "still_in_use" }
+      ]
+    },
+    "data_availability": {
+      "has_structured_export": true,
+      "export_types_available": ["crm_orders", "ad_platform", "email_marketing"],
+      "history_months": 36,
+      "has_outcome_labels": true,
+      "has_communication_logs": false,
+      "data_quality": "medium",
+      "data_managed_by": "dedicated_system"
+    }
   },
-  "data_availability": {
-    "crm_export_available": true,
-    "crm_export_file": "synthetic_sc2_orders.json",
-    "total_orders": 950,
-    "order_date_range": {
-      "from": "2023-04-04",
-      "to": "2026-03-30"
+
+  "domain_context": {
+    "ecommerce_ops": {
+      "active": true,
+      "selling_channels": ["own_website", "instagram_shop", "marketplace"],
+      "ecommerce_platform": "WooCommerce",
+      "monthly_order_volume_peak": 150,
+      "monthly_order_volume_regular": 80,
+      "return_rate": 0.03,
+      "fulfillment_model": "self_fulfilled",
+      "post_purchase_contact_freq": "frequent",
+      "product_catalog_size": "small_under_50"
     },
-    "channels": {
-      "website": 527,
-      "instagram": 296,
-      "facebook_shop": 127
+    "customer_support": {
+      "active": true,
+      "support_channels": ["instagram_dm", "email"],
+      "monthly_inbound_volume": null,
+      "pct_repetitive_questions": 0.70,
+      "avg_first_response_hours": null,
+      "helpdesk_tool": null
     },
-    "currency": "PLN",
-    "price_range": {
-      "min": 14.5,
-      "max": 385.5,
-      "avg": 81.83
+    "marketing": {
+      "active": true,
+      "active_channels": ["instagram", "facebook", "google_ads", "email"],
+      "content_creation_burden": "high",
+      "has_email_marketing": true,
+      "campaign_performance_tracked": true
     },
-    "data_quality_overall": "MEDIUM-HIGH — order history and channel data reliable. HubSpot has contact records but no deal stages used."
+    "crm_sales": { "active": false },
+    "supply_chain": { "active": false },
+    "operations_backoffice": { "active": false }
   },
+
   "processes": [
     {
       "process_id": "SC2_P1",
-      "name": "Multi-channel Order Fulfillment",
-      "type": "B2C E-commerce Operations",
-      "steps": [
-        "Order placed on website, Instagram, or Facebook Shop",
-        "Orders pulled manually into WooCommerce dashboard each morning",
-        "Picked and packed by warehouse staff",
-        "Shipped via InPost Paczkomat (primary) or DPD",
-        "Tracking sent automatically via WooCommerce email"
-      ],
+      "name": "Multi-channel Order Intake and Fulfillment",
+      "domain": "ecommerce_ops",
+      "task_type": "repetitive_routine",
+      "trigger": "Order placed on website, Instagram, or Facebook Shop",
+      "frequency": "daily",
+      "volume_per_month": 80,
       "who_executes": "Warehouse team (2 people) + marketing manager for issues",
-      "avg_duration_days": 2,
-      "volume": {
-        "monthly_avg": 80,
-        "peak_monthly": 150
+      "bottleneck": {
+        "description": "Orders from Instagram and Facebook must be manually checked and entered into WooCommerce each morning. No native channel sync exists.",
+        "severity": "high",
+        "time_impact": "30–45 minutes per day of manual data entry",
+        "manual_tasks_wanting_automation": [
+          "Order sync from Instagram and Facebook to WooCommerce",
+          "Supplement dosage and compatibility FAQ responses",
+          "Order status update messages to customers"
+        ]
       },
-      "bottlenecks": [
-        {
-          "description": "Orders from Instagram and Facebook must be manually checked and entered — no native sync",
-          "severity": "HIGH",
-          "time_impact": "30–45 minutes per day of manual data entry"
-        },
-        {
-          "description": "Post-purchase customer questions (dosage advice, compatibility) handled via Instagram DM by marketing manager",
-          "severity": "MEDIUM",
-          "time_impact": "1 hour per day average"
-        }
-      ],
-      "top_repeated_questions": [
-        "How do I take this with other supplements?",
-        "Is this product suitable for beginners?",
-        "When will my order arrive?"
-      ],
-      "manual_tasks_wanting_automation": [
-        "Order sync from social channels to WooCommerce",
-        "Supplement dosage FAQ responses",
-        "Order status updates"
-      ],
-      "data_available_for_process": "WooCommerce export (950 orders). No support ticket log."
+      "kpis": {
+        "tracked": ["Order count", "Fulfillment time"],
+        "current_values": { "avg_fulfillment_days": 2 }
+      },
+      "process_data": {
+        "has_data": true,
+        "source_type": "crm_export",
+        "record_count": 950,
+        "has_outcome_labels": true,
+        "data_quality": "medium"
+      },
+      "confidence_level": "medium"
     },
     {
       "process_id": "SC2_P2",
-      "name": "Performance Marketing Management",
-      "type": "Marketing Operations",
-      "steps": [
-        "Set up and monitor Meta ad campaigns",
-        "Analyze weekly performance data (CPA, ROAS, CTR)",
-        "Adjust audiences and creatives based on results",
-        "Write new ad copy and product content",
-        "Send monthly newsletter via Mailchimp"
-      ],
+      "name": "Performance Marketing Reporting",
+      "domain": "marketing",
+      "task_type": "judgment_intensive",
+      "trigger": "Weekly review cycle",
+      "frequency": "weekly",
+      "volume_per_month": 4,
       "who_executes": "Marketing manager",
-      "bottlenecks": [
-        {
-          "description": "Campaign performance diagnosis is manual — pulling numbers from Meta, WooCommerce, Mailchimp separately",
-          "severity": "HIGH",
-          "time_impact": "Half a day per week spent on reporting across platforms"
-        }
-      ],
-      "manual_tasks_wanting_automation": [
-        "Cross-platform performance reporting",
-        "Ad copy variants generation",
-        "Email newsletter drafts"
-      ],
-      "data_available_for_process": "Meta Ads data available via dashboard. Mailchimp metrics available. No unified dashboard."
+      "bottleneck": {
+        "description": "Campaign performance data pulled manually from Meta Ads, WooCommerce, and Mailchimp separately. No unified view. Analysis and reporting done from scratch each week.",
+        "severity": "high",
+        "time_impact": "Half a working day per week",
+        "manual_tasks_wanting_automation": [
+          "Cross-platform performance reporting",
+          "Ad copy variant generation",
+          "Email newsletter drafts"
+        ]
+      },
+      "kpis": {
+        "tracked": ["CPA", "ROAS", "CTR", "Email open rate"],
+        "current_values": {}
+      },
+      "process_data": {
+        "has_data": true,
+        "source_type": "platform_export",
+        "record_count": null,
+        "has_outcome_labels": false,
+        "data_quality": "medium"
+      },
+      "confidence_level": "low"
     }
-  ]
+  ],
+
+  "export_computed": {
+    "computed_from": ["sc2_fitpol_orders.json"],
+    "computed_at": "2026-04-07",
+    "extractor_used": "normalizer_script",
+    "fields": {
+      "history_months": 36,
+      "total_records": 950,
+      "channel_split": { "website": 0.555, "instagram": 0.312, "facebook_shop": 0.134 },
+      "has_outcome_labels": true,
+      "avg_order_value_pln": 81.83,
+      "completed_order_rate": 0.867,
+      "peak_months": ["January", "September"]
+    }
+  },
+
+  "unstructured_supplements": []
 }
