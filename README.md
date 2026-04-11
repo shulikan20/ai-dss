@@ -17,9 +17,9 @@ python data/synthetic/generate_synthetic_companies.py
 
 Python 3.9+
 ```
-pip install -r requirements.txt
+pip install -r requirements.txt 
 ```
-
+##
 ## Repository Structure
 
 ```
