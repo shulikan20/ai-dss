@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-DSS · Catalog</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&family=Geist:wght@300;400;500;600&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;--surface:#111;--s2:#181818;--s3:#1e1e1e;
+  --border:#1f1f1f;--border2:#2a2a2a;
+  --text:#e2e2de;--muted:#555;--muted2:#888;
+  --green:#6fff6a;--blue:#60a5fa;--yellow:#facc15;--red:#f87171;--purple:#a78bfa;
+  --mono:'Geist Mono',monospace;--sans:'Geist',sans-serif;
+}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:13px;line-height:1.6;display:flex;min-height:100vh}
+
+/* sidebar */
+.sidebar{width:210px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.logo{padding:20px;border-bottom:1px solid var(--border)}
+.logo-title{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--green);letter-spacing:.08em}
+.logo-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.nav{flex:1;padding:12px 0;overflow-y:auto}
+.nav-label{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;padding:10px 16px 4px}
+.nav-item{display:flex;align-items:center;gap:8px;padding:6px 16px;cursor:pointer;color:var(--muted2);font-size:12px;border-left:2px solid transparent;transition:all .1s;user-select:none}
+.nav-item:hover{color:var(--text);background:var(--s2)}
+.nav-item.active{color:var(--green);border-left-color:var(--green);background:rgba(111,255,106,.04)}
+.nav-item .badge{margin-left:auto;font-family:var(--mono);font-size:10px;background:var(--s3);padding:1px 7px;border-radius:10px;color:var(--muted)}
+.nav-item.active .badge{background:rgba(111,255,106,.12);color:var(--green)}
+.sidebar-foot{padding:14px 16px;border-top:1px solid var(--border)}
+.stats-row{display:flex;gap:10px;margin-bottom:12px}
+.stat{flex:1;background:var(--s2);border:1px solid var(--border2);border-radius:8px;padding:8px 10px}
+.stat-n{font-family:var(--mono);font-size:18px;font-weight:600;color:var(--text)}
+.stat-l{font-size:10px;color:var(--muted);margin-top:1px}
+
+/* main */
+.main{flex:1;overflow:auto;padding:32px 36px;max-width:960px}
+.view{display:none}.view.active{display:block}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.page-title{font-family:var(--mono);font-size:18px;font-weight:600}
+.page-desc{font-size:11px;color:var(--muted);margin-top:3px}
+.btn-primary{background:var(--green);color:#000;border:none;border-radius:7px;padding:8px 16px;font-family:var(--mono);font-size:12px;font-weight:600;cursor:pointer;transition:opacity .15s}
+.btn-primary:hover{opacity:.85}
+
+/* search */
+.search-bar{display:flex;gap:8px;margin-bottom:18px}
+.search-input{flex:1;background:var(--s2);border:1px solid var(--border2);border-radius:7px;padding:8px 14px;font-family:var(--sans);font-size:12px;color:var(--text);outline:none}
+.search-input:focus{border-color:var(--green)}
+.filter-select{background:var(--s2);border:1px solid var(--border2);border-radius:7px;padding:8px 12px;font-family:var(--mono);font-size:11px;color:var(--muted2);outline:none;cursor:pointer}
+.filter-select:focus{border-color:var(--border2)}
+
+/* cards */
+.card-grid{display:flex;flex-direction:column;gap:8px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .15s}
+.card:hover{border-color:var(--border2)}
+.card-head{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer}
+.card-cid{font-family:var(--mono);font-size:9px;color:var(--muted);background:var(--s2);padding:2px 7px;border-radius:3px;flex-shrink:0}
+.card-name{font-weight:500;font-size:13px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pill{font-family:var(--mono);font-size:9px;padding:2px 8px;border-radius:10px;flex-shrink:0}
+.pill-domain{color:var(--blue);background:rgba(96,165,250,.1)}
+.pill-cost{color:var(--green);background:rgba(111,255,106,.08)}
+.pill-warn{color:var(--yellow);background:rgba(250,204,21,.08)}
+.card-btns{display:flex;gap:5px;margin-left:8px;flex-shrink:0}
+.btn-sm{background:none;border:1px solid var(--border2);border-radius:5px;padding:3px 9px;font-family:var(--mono);font-size:10px;cursor:pointer;transition:all .1s;color:var(--muted2)}
+.btn-sm:hover{color:var(--text);background:var(--s2)}
+.btn-del{color:var(--red);border-color:rgba(248,113,113,.2)}
+.btn-del:hover{background:rgba(248,113,113,.08)}
+.card-body{display:none;padding:0 14px 14px;border-top:1px solid var(--border)}
+.card-body.open{display:block;padding-top:12px}
+.cb-desc{font-size:12px;color:var(--muted2);line-height:1.6;margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.tag{font-family:var(--mono);font-size:10px;background:var(--s2);border:1px solid var(--border);border-radius:4px;padding:2px 7px;color:var(--muted2)}
+.tag-g{color:var(--green);border-color:rgba(111,255,106,.2);background:rgba(111,255,106,.04)}
+.tag-r{color:var(--red);border-color:rgba(248,113,113,.2);background:rgba(248,113,113,.04)}
+.tag-y{color:var(--yellow);border-color:rgba(250,204,21,.2);background:rgba(250,204,21,.04)}
+.tag-b{color:var(--blue);border-color:rgba(96,165,250,.2);background:rgba(96,165,250,.04)}
+.prod-section{border-top:1px solid var(--border);padding-top:10px;margin-top:10px}
+.prod-section-title{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.prod-chips{display:flex;flex-wrap:wrap;gap:6px}
+.prod-chip{display:inline-flex;align-items:center;gap:5px;background:var(--s2);border:1px solid var(--border);border-radius:5px;padding:3px 9px;font-size:11px;color:var(--text)}
+.prod-chip-dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0}
+.prod-chip-cost{font-family:var(--mono);font-size:9px;color:var(--muted);margin-left:4px}
+
+/* empty */
+.empty{text-align:center;padding:56px 20px;color:var(--muted);border:1px dashed var(--border);border-radius:10px}
+.empty-icon{font-size:28px;margin-bottom:10px}
+
+/* modal */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(6px);z-index:50;display:none;justify-content:center;align-items:flex-start;padding:40px 20px;overflow-y:auto}
+.overlay.open{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border2);border-radius:14px;width:100%;max-width:660px;padding:28px;position:relative;margin:auto}
+.modal-head{margin-bottom:20px}
+.modal-title{font-family:var(--mono);font-size:15px;font-weight:600}
+.modal-sub{font-size:11px;color:var(--muted);margin-top:3px}
+.btn-close{position:absolute;top:18px;right:18px;background:none;border:1px solid var(--border2);border-radius:6px;color:var(--muted2);cursor:pointer;font-size:13px;padding:3px 9px;font-family:var(--mono)}
+.btn-close:hover{color:var(--text)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fg-full{grid-column:1/-1}
+.fg{display:flex;flex-direction:column;gap:4px}
+.fl{font-family:var(--mono);font-size:9px;font-weight:600;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.fl .req{color:var(--red)}
+.fi,.fs,.fta{background:var(--s2);border:1px solid var(--border2);border-radius:6px;padding:7px 11px;font-family:var(--sans);font-size:12px;color:var(--text);outline:none;width:100%;transition:border-color .15s}
+.fi:focus,.fs:focus,.fta:focus{border-color:var(--green)}
+.fta{resize:vertical;min-height:66px}
+.fh{font-size:10px;color:var(--muted);line-height:1.4}
+.fs option{background:var(--s2)}
+.form-sec{grid-column:1/-1;border-top:1px solid var(--border);padding-top:14px;margin-top:2px}
+.form-sec-title{font-family:var(--mono);font-size:9px;font-weight:600;color:var(--green);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.modal-foot{margin-top:20px;display:flex;justify-content:flex-end;gap:8px}
+.btn-cancel{background:none;border:1px solid var(--border2);border-radius:6px;padding:7px 16px;font-family:var(--mono);font-size:11px;color:var(--muted2);cursor:pointer}
+.btn-cancel:hover{color:var(--text)}
+.btn-save{background:var(--green);color:#000;border:none;border-radius:6px;padding:8px 20px;font-family:var(--mono);font-size:12px;font-weight:600;cursor:pointer}
+.btn-save:hover{opacity:.85}
+
+/* toast */
+.toast{position:fixed;bottom:22px;right:22px;background:var(--green);color:#000;font-family:var(--mono);font-size:12px;font-weight:600;padding:9px 16px;border-radius:8px;z-index:999;transform:translateY(50px);opacity:0;transition:all .22s}
+.toast.show{transform:translateY(0);opacity:1}
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="logo">
+    <div class="logo-title">AI-DSS</div>
+    <div class="logo-sub">Tool Catalog Editor</div>
+  </div>
+  <nav class="nav">
+    <div class="nav-label">Views</div>
+    <div class="nav-item active" onclick="showView('capabilities',this)">
+      <span>Capabilities</span>
+      <span class="badge" id="n-cap">—</span>
+    </div>
+    <div class="nav-item" onclick="showView('products',this)">
+      <span>Products</span>
+      <span class="badge" id="n-prod">—</span>
+    </div>
+  </nav>
+  <div class="sidebar-foot">
+    <div class="stats-row">
+      <div class="stat"><div class="stat-n" id="s-cap">—</div><div class="stat-l">Capabilities</div></div>
+      <div class="stat"><div class="stat-n" id="s-prod">—</div><div class="stat-l">Products</div></div>
+    </div>
+  </div>
+</aside>
+
+<main class="main">
+
+  <!-- Capabilities view -->
+  <div class="view active" id="view-capabilities">
+    <div class="topbar">
+      <div><div class="page-title">Capabilities</div><div class="page-desc">AI capability patterns — category level, domain-agnostic</div></div>
+      <button class="btn-primary" onclick="openCapModal()">+ Add Capability</button>
+    </div>
+    <div class="search-bar">
+      <input class="search-input" id="cap-search" placeholder="Search capabilities…" oninput="filterCaps()">
+      <select class="filter-select" id="cap-domain-filter" onchange="filterCaps()">
+        <option value="">All domains</option>
+        <option>customer_support</option><option>ecommerce_ops</option><option>crm_sales</option>
+        <option>marketing</option><option>operations_backoffice</option><option>supply_chain</option>
+        <option>finance</option><option>hr</option><option>it_ops</option><option>product_engineering</option>
+        <option>manufacturing</option><option>procurement</option>
+      </select>
+    </div>
+    <div class="card-grid" id="cap-list"></div>
+  </div>
+
+  <!-- Products view -->
+  <div class="view" id="view-products">
+    <div class="topbar">
+      <div><div class="page-title">Products</div><div class="page-desc">Specific tools implementing a capability</div></div>
+      <button class="btn-primary" onclick="openProdModal()">+ Add Product</button>
+    </div>
+    <div class="search-bar">
+      <input class="search-input" id="prod-search" placeholder="Search products…" oninput="filterProds()">
+      <select class="filter-select" id="prod-cap-filter" onchange="filterProds()">
+        <option value="">All capabilities</option>
+      </select>
+      <select class="filter-select" id="prod-cost-filter" onchange="filterProds()">
+        <option value="">All costs</option>
+        <option>low</option><option>medium</option><option>high</option><option>enterprise</option>
+      </select>
+    </div>
+    <div class="card-grid" id="prod-list"></div>
+  </div>
+
+</main>
+
+<!-- Capability modal -->
+<div class="overlay" id="cap-overlay">
+<div class="modal">
+  <div class="modal-head">
+    <div class="modal-title" id="cap-modal-title">Add Capability</div>
+    <div class="modal-sub">Define a category of AI functionality</div>
+  </div>
+  <button class="btn-close" onclick="closeOverlay('cap-overlay')">✕</button>
+  <div class="form-grid">
+    <div class="fg"><label class="fl">Capability ID <span class="req">*</span></label><input class="fi" id="c-id" placeholder="faq_dm_automation"></div>
+    <div class="fg"><label class="fl">Name <span class="req">*</span></label><input class="fi" id="c-name" placeholder="FAQ Automation for DMs"></div>
+    <div class="fg"><label class="fl">Domain <span class="req">*</span></label>
+      <select class="fs" id="c-domain"><option value="">Select…</option>
+        <option>customer_support</option><option>ecommerce_ops</option><option>crm_sales</option>
+        <option>marketing</option><option>operations_backoffice</option><option>supply_chain</option>
+        <option>finance</option><option>hr</option><option>it_ops</option>
+        <option>product_engineering</option><option>manufacturing</option><option>procurement</option>
+      </select>
+    </div>
+    <div class="fg"><label class="fl">Use Case Category</label><input class="fi" id="c-cat" placeholder="automated_messaging"></div>
+    <div class="fg"><label class="fl">Task Type</label>
+      <select class="fs" id="c-task"><option value="">Select…</option>
+        <option>repetitive_routine</option><option>judgment_intensive</option><option>mixed</option>
+      </select>
+    </div>
+    <div class="fg"><label class="fl">Primary Outcome</label>
+      <select class="fs" id="c-outcome"><option value="">Select…</option>
+        <option>time_saved</option><option>conversion</option><option>response_time</option>
+        <option>cost</option><option>accuracy</option><option>visibility</option>
+      </select>
+    </div>
+    <div class="fg fg-full"><label class="fl">Description <span class="req">*</span></label><textarea class="fta" id="c-desc" placeholder="What does this AI capability do? This gets vector-embedded for semantic matching."></textarea></div>
+    <div class="fg fg-full"><label class="fl">Bottleneck Keywords</label><input class="fi" id="c-kw" placeholder="repetitive questions, manual responses, slow reply time"><span class="fh">Comma-separated. How companies describe this problem.</span></div>
+
+    <div class="form-sec">
+      <div class="form-sec-title">Feasibility Gates</div>
+      <div class="form-grid" style="margin:0">
+        <div class="fg"><label class="fl">Works Without Data</label>
+          <select class="fs" id="c-nodata"><option value="1">Yes — no data needed</option><option value="0">No — requires data</option></select>
+        </div>
+        <div class="fg"><label class="fl">Min History Gate (months)</label><input class="fi" id="c-months" type="number" min="1" placeholder="Leave blank = none"></div>
+        <div class="fg"><label class="fl">Min Technical Capability</label>
+          <select class="fs" id="c-tech"><option value="1">1 — Low</option><option value="2">2 — Medium</option><option value="3">3 — High</option></select>
+        </div>
+        <div class="fg"><label class="fl">Required Data Types</label><input class="fi" id="c-dt" placeholder="order_history, contact_records"><span class="fh">Comma-separated</span></div>
+      </div>
+    </div>
+
+    <div class="fg"><label class="fl">Time to Value — min weeks</label><input class="fi" id="c-tvmin" type="number" min="1" placeholder="1"></div>
+    <div class="fg"><label class="fl">Time to Value — max weeks</label><input class="fi" id="c-tvmax" type="number" min="1" placeholder="4"></div>
+    <div class="fg fg-full"><label class="fl">Secondary Outcomes</label><input class="fi" id="c-sec" placeholder="response_time, conversion"><span class="fh">Comma-separated</span></div>
+  </div>
+  <div class="modal-foot">
+    <button class="btn-cancel" onclick="closeOverlay('cap-overlay')">Cancel</button>
+    <button class="btn-save" onclick="saveCap()">Save Capability</button>
+  </div>
+</div>
+</div>
+
+<!-- Product modal -->
+<div class="overlay" id="prod-overlay">
+<div class="modal">
+  <div class="modal-head">
+    <div class="modal-title" id="prod-modal-title">Add Product</div>
+    <div class="modal-sub">A specific tool that implements a capability</div>
+  </div>
+  <button class="btn-close" onclick="closeOverlay('prod-overlay')">✕</button>
+  <div class="form-grid">
+    <div class="fg"><label class="fl">Product ID <span class="req">*</span></label><input class="fi" id="p-id" placeholder="manychat"></div>
+    <div class="fg"><label class="fl">Capability <span class="req">*</span></label><select class="fs" id="p-cap"></select></div>
+    <div class="fg"><label class="fl">Name <span class="req">*</span></label><input class="fi" id="p-name" placeholder="ManyChat"></div>
+    <div class="fg"><label class="fl">Vendor</label><input class="fi" id="p-vendor" placeholder="ManyChat Inc."></div>
+    <div class="fg fg-full"><label class="fl">URL</label><input class="fi" id="p-url" placeholder="https://manychat.com"></div>
+
+    <div class="form-sec">
+      <div class="form-sec-title">Compatibility</div>
+      <div class="form-grid" style="margin:0">
+        <div class="fg fg-full"><label class="fl">Integrations</label><input class="fi" id="p-int" placeholder="instagram_dm, whatsapp, shopify, email"><span class="fh">Comma-separated platform/tool names</span></div>
+        <div class="fg"><label class="fl">GDPR Compliant</label>
+          <select class="fs" id="p-gdpr"><option value="1">Yes</option><option value="0">No / Unknown</option></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-sec">
+      <div class="form-sec-title">Readiness Scoring</div>
+      <div class="form-grid" style="margin:0">
+        <div class="fg"><label class="fl">Deployment</label>
+          <select class="fs" id="p-dep"><option>saas</option><option>api</option><option>self_hosted</option><option>hybrid</option></select>
+        </div>
+        <div class="fg"><label class="fl">Pricing Model</label>
+          <select class="fs" id="p-prc"><option>freemium</option><option>free</option><option>subscription</option><option>usage</option><option>enterprise</option></select>
+        </div>
+        <div class="fg"><label class="fl">Free Tier</label>
+          <select class="fs" id="p-free"><option value="1">Yes</option><option value="0">No</option></select>
+        </div>
+        <div class="fg"><label class="fl">Cost Tier</label>
+          <select class="fs" id="p-cost"><option>low</option><option>medium</option><option>high</option><option>enterprise</option></select>
+        </div>
+        <div class="fg fg-full"><label class="fl">Cost Notes</label><input class="fi" id="p-costn" placeholder="Free up to 1,000 contacts. Pro from ~$15/mo."></div>
+        <div class="fg"><label class="fl">Implementation Effort</label>
+          <select class="fs" id="p-eff"><option>low</option><option>medium</option><option>high</option></select>
+        </div>
+        <div class="fg"><label class="fl">Min Technical Capability</label>
+          <select class="fs" id="p-tech"><option value="1">1 — Low</option><option value="2">2 — Medium</option><option value="3">3 — High</option></select>
+        </div>
+        <div class="fg fg-full"><label class="fl">Setup Notes</label><textarea class="fta" style="min-height:50px" id="p-setup" placeholder="No-code flow builder. Setup in 1–2 days."></textarea></div>
+      </div>
+    </div>
+
+    <div class="form-sec">
+      <div class="form-sec-title">Data Requirements (confidence modifiers)</div>
+      <div class="form-grid" style="margin:0">
+        <div class="fg"><label class="fl">Min History (months)</label><input class="fi" id="p-months" type="number" min="1" placeholder="Leave blank = none"></div>
+        <div class="fg"><label class="fl">Min Record Count</label><input class="fi" id="p-recs" type="number" min="1" placeholder="Leave blank = none"></div>
+        <div class="fg"><label class="fl">Works with Limited Data</label>
+          <select class="fs" id="p-lim"><option value="1">Yes — degrades gracefully</option><option value="0">No — needs full data</option></select>
+        </div>
+        <div class="fg fg-full"><label class="fl">Data Requirement Notes</label><input class="fi" id="p-datn" placeholder="No historical data needed. Works from day 1."></div>
+      </div>
+    </div>
+
+    <div class="fg fg-full"><label class="fl">Notes</label><textarea class="fta" style="min-height:50px" id="p-notes" placeholder="Best fit for B2C shops with Instagram as primary channel."></textarea></div>
+  </div>
+  <div class="modal-foot">
+    <button class="btn-cancel" onclick="closeOverlay('prod-overlay')">Cancel</button>
+    <button class="btn-save" onclick="saveProd()">Save Product</button>
+  </div>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let capabilities = [];
+let products = [];
+let editCapId = null;
+let editProdId = null;
+
+// ── API ───────────────────────────────────────────────────────────────────────
+const api = {
+  get: url => fetch(url).then(r => r.json()),
+  post: (url, data) => fetch(url, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(r=>r.json()),
+  put: (url, data) => fetch(url, {method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(r=>r.json()),
+  del: url => fetch(url, {method:'DELETE'}).then(r=>r.json()),
+};
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+async function init() {
+  await loadAll();
+}
+
+async function loadAll() {
+  [capabilities, products] = await Promise.all([
+    api.get('/api/capabilities'),
+    api.get('/api/products'),
+  ]);
+  updateCounts();
+  renderCaps();
+  renderProds();
+  populateCapFilter();
+}
+
+function updateCounts() {
+  document.getElementById('n-cap').textContent = capabilities.length;
+  document.getElementById('n-prod').textContent = products.length;
+  document.getElementById('s-cap').textContent = capabilities.length;
+  document.getElementById('s-prod').textContent = products.length;
+}
+
+// ── Navigation ────────────────────────────────────────────────────────────────
+function showView(id, el) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  el.classList.add('active');
+}
+
+// ── Render Capabilities ───────────────────────────────────────────────────────
+function renderCaps(filtered) {
+  const list = document.getElementById('cap-list');
+  const items = filtered || capabilities;
+  if (!items.length) {
+    list.innerHTML = '<div class="empty"><div class="empty-icon">📦</div>No capabilities found.</div>';
+    return;
+  }
+  list.innerHTML = items.map(c => {
+    const prods = products.filter(p => p.capability_id === c.capability_id);
+    const kw = (c.bottleneck_keywords || []).slice(0,3).join(', ');
+    return `<div class="card">
+      <div class="card-head" onclick="toggleBody('cb-${c.capability_id}')">
+        <span class="card-cid">${c.capability_id}</span>
+        <span class="card-name">${c.name}</span>
+        <span class="pill pill-domain">${c.domain}</span>
+        <div class="card-btns" onclick="event.stopPropagation()">
+          <button class="btn-sm" onclick="editCap('${c.capability_id}')">Edit</button>
+          <button class="btn-sm btn-del" onclick="deleteCap('${c.capability_id}')">Delete</button>
+        </div>
+      </div>
+      <div class="card-body" id="cb-${c.capability_id}">
+        <div class="cb-desc">${c.description || '—'}</div>
+        <div class="tags">
+          <span class="tag">${c.task_type_target || '—'}</span>
+          <span class="tag ${c.works_without_data ? 'tag-g' : 'tag-r'}">${c.works_without_data ? 'no data needed' : 'data required'}</span>
+          ${c.min_history_months_gate ? `<span class="tag tag-y">≥${c.min_history_months_gate}mo gate</span>` : ''}
+          ${c.primary_outcome ? `<span class="tag">→ ${c.primary_outcome}</span>` : ''}
+          ${c.time_to_value_weeks_min ? `<span class="tag">${c.time_to_value_weeks_min}–${c.time_to_value_weeks_max}w value</span>` : ''}
+          ${c.min_technical_capability > 1 ? `<span class="tag tag-y">tech: ${['','low','medium','high'][c.min_technical_capability]}</span>` : ''}
+        </div>
+        ${kw ? `<div style="font-size:11px;color:var(--muted);margin-top:4px">Keywords: ${kw}${(c.bottleneck_keywords||[]).length>3?'…':''}</div>` : ''}
+        <div class="prod-section">
+          <div class="prod-section-title">${prods.length} product${prods.length!==1?'s':''}</div>
+          <div class="prod-chips">
+            ${prods.map(p=>`<span class="prod-chip"><span class="prod-chip-dot"></span>${p.name}<span class="prod-chip-cost">${p.cost_tier}</span></span>`).join('')}
+            ${!prods.length?'<span style="color:var(--muted);font-size:11px">None yet — add products below</span>':''}
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function filterCaps() {
+  const q = document.getElementById('cap-search').value.toLowerCase();
+  const d = document.getElementById('cap-domain-filter').value;
+  const filtered = capabilities.filter(c =>
+    (!q || c.name.toLowerCase().includes(q) || c.capability_id.includes(q) || (c.description||'').toLowerCase().includes(q)) &&
+    (!d || c.domain === d)
+  );
+  renderCaps(filtered);
+}
+
+// ── Render Products ───────────────────────────────────────────────────────────
+function renderProds(filtered) {
+  const list = document.getElementById('prod-list');
+  const items = filtered || products;
+  if (!items.length) {
+    list.innerHTML = '<div class="empty"><div class="empty-icon">🔧</div>No products found.</div>';
+    return;
+  }
+  list.innerHTML = items.map(p => {
+    const cap = capabilities.find(c => c.capability_id === p.capability_id);
+    return `<div class="card">
+      <div class="card-head" onclick="toggleBody('pb-${p.product_id}')">
+        <span class="card-cid">${p.product_id}</span>
+        <span class="card-name">${p.name}</span>
+        <span class="pill pill-cost">${p.cost_tier}</span>
+        ${p.has_free_tier ? '<span class="pill" style="color:var(--green);background:rgba(111,255,106,.06)">free tier</span>' : ''}
+        <div class="card-btns" onclick="event.stopPropagation()">
+          <button class="btn-sm" onclick="editProd('${p.product_id}')">Edit</button>
+          <button class="btn-sm btn-del" onclick="deleteProd('${p.product_id}')">Delete</button>
+        </div>
+      </div>
+      <div class="card-body" id="pb-${p.product_id}">
+        ${cap ? `<div class="cb-desc" style="margin-bottom:8px">Implements: <strong style="color:var(--text)">${cap.name}</strong></div>` : ''}
+        ${p.notes ? `<div class="cb-desc">${p.notes}</div>` : ''}
+        <div class="tags">
+          <span class="tag">${p.deployment_model}</span>
+          <span class="tag">${p.pricing_model}</span>
+          <span class="tag">${p.implementation_effort} effort</span>
+          <span class="tag ${p.gdpr_compliant ? 'tag-g' : 'tag-r'}">${p.gdpr_compliant ? 'GDPR ✓' : 'GDPR ?'}</span>
+          ${p.min_history_months ? `<span class="tag tag-y">≥${p.min_history_months}mo data</span>` : ''}
+          ${p.works_with_limited_data ? '<span class="tag tag-g">limited data ok</span>' : '<span class="tag tag-r">needs full data</span>'}
+        </div>
+        ${p.cost_notes ? `<div style="font-size:11px;color:var(--muted);margin-top:6px">${p.cost_notes}</div>` : ''}
+        ${p.integrations?.length ? `<div style="font-size:11px;color:var(--muted);margin-top:4px">Integrates with: ${p.integrations.join(', ')}</div>` : ''}
+        ${p.setup_notes ? `<div style="font-size:11px;color:var(--muted);margin-top:4px">${p.setup_notes}</div>` : ''}
+        ${p.url ? `<div style="margin-top:6px"><a href="${p.url}" target="_blank" style="color:var(--blue);font-size:11px">${p.url}</a></div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function filterProds() {
+  const q = document.getElementById('prod-search').value.toLowerCase();
+  const cap = document.getElementById('prod-cap-filter').value;
+  const cost = document.getElementById('prod-cost-filter').value;
+  const filtered = products.filter(p =>
+    (!q || p.name.toLowerCase().includes(q) || p.product_id.includes(q) || (p.notes||'').toLowerCase().includes(q)) &&
+    (!cap || p.capability_id === cap) &&
+    (!cost || p.cost_tier === cost)
+  );
+  renderProds(filtered);
+}
+
+function populateCapFilter() {
+  const sel = document.getElementById('prod-cap-filter');
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">All capabilities</option>' +
+    capabilities.map(c => `<option value="${c.capability_id}" ${cur===c.capability_id?'selected':''}>${c.capability_id}</option>`).join('');
+}
+
+function toggleBody(id) {
+  document.getElementById(id)?.classList.toggle('open');
+}
+
+// ── Capability CRUD ───────────────────────────────────────────────────────────
+function openCapModal(cap) {
+  editCapId = cap?.capability_id || null;
+  document.getElementById('cap-modal-title').textContent = cap ? 'Edit Capability' : 'Add Capability';
+  const f = id => document.getElementById(id);
+  f('c-id').value = cap?.capability_id || ''; f('c-id').disabled = !!cap;
+  f('c-name').value = cap?.name || '';
+  f('c-domain').value = cap?.domain || '';
+  f('c-cat').value = cap?.use_case_category || '';
+  f('c-task').value = cap?.task_type_target || '';
+  f('c-outcome').value = cap?.primary_outcome || '';
+  f('c-desc').value = cap?.description || '';
+  f('c-kw').value = (cap?.bottleneck_keywords || []).join(', ');
+  f('c-nodata').value = cap?.works_without_data !== undefined ? cap.works_without_data : 1;
+  f('c-months').value = cap?.min_history_months_gate || '';
+  f('c-tech').value = cap?.min_technical_capability || 1;
+  f('c-dt').value = (cap?.required_data_types || []).join(', ');
+  f('c-tvmin').value = cap?.time_to_value_weeks_min || '';
+  f('c-tvmax').value = cap?.time_to_value_weeks_max || '';
+  f('c-sec').value = (cap?.secondary_outcomes || []).join(', ');
+  document.getElementById('cap-overlay').classList.add('open');
+}
+
+async function saveCap() {
+  const f = id => document.getElementById(id);
+  const id = f('c-id').value.trim();
+  if (!id || !f('c-name').value || !f('c-domain').value) { toast('Fill required fields', true); return; }
+  const data = {
+    capability_id: id, name: f('c-name').value.trim(), domain: f('c-domain').value,
+    use_case_category: f('c-cat').value.trim(), task_type_target: f('c-task').value,
+    primary_outcome: f('c-outcome').value, description: f('c-desc').value.trim(),
+    bottleneck_keywords: f('c-kw').value.split(',').map(s=>s.trim()).filter(Boolean),
+    works_without_data: parseInt(f('c-nodata').value),
+    min_history_months_gate: f('c-months').value ? parseInt(f('c-months').value) : null,
+    min_technical_capability: parseInt(f('c-tech').value),
+    required_data_types: f('c-dt').value.split(',').map(s=>s.trim()).filter(Boolean),
+    time_to_value_weeks_min: f('c-tvmin').value ? parseInt(f('c-tvmin').value) : null,
+    time_to_value_weeks_max: f('c-tvmax').value ? parseInt(f('c-tvmax').value) : null,
+    secondary_outcomes: f('c-sec').value.split(',').map(s=>s.trim()).filter(Boolean),
+  };
+  const res = editCapId
+    ? await api.put(`/api/capabilities/${editCapId}`, data)
+    : await api.post('/api/capabilities', data);
+  if (!res.ok) { toast(res.error || 'Error', true); return; }
+  toast(editCapId ? 'Capability updated' : 'Capability added');
+  closeOverlay('cap-overlay');
+  await loadAll();
+}
+
+function editCap(id) { openCapModal(capabilities.find(c => c.capability_id === id)); }
+
+async function deleteCap(id) {
+  if (!confirm(`Delete capability "${id}" and all its products?`)) return;
+  await api.del(`/api/capabilities/${id}`);
+  toast('Deleted'); await loadAll();
+}
+
+// ── Product CRUD ──────────────────────────────────────────────────────────────
+function openProdModal(prod) {
+  editProdId = prod?.product_id || null;
+  document.getElementById('prod-modal-title').textContent = prod ? 'Edit Product' : 'Add Product';
+  const f = id => document.getElementById(id);
+  const capSel = f('p-cap');
+  capSel.innerHTML = capabilities.map(c =>
+    `<option value="${c.capability_id}" ${prod?.capability_id===c.capability_id?'selected':''}>${c.capability_id}</option>`
+  ).join('');
+  f('p-id').value = prod?.product_id || ''; f('p-id').disabled = !!prod;
+  f('p-name').value = prod?.name || '';
+  f('p-vendor').value = prod?.vendor || '';
+  f('p-url').value = prod?.url || '';
+  f('p-int').value = (prod?.integrations || []).join(', ');
+  f('p-gdpr').value = prod?.gdpr_compliant !== undefined ? prod.gdpr_compliant : 1;
+  f('p-dep').value = prod?.deployment_model || 'saas';
+  f('p-prc').value = prod?.pricing_model || 'freemium';
+  f('p-free').value = prod?.has_free_tier !== undefined ? prod.has_free_tier : 1;
+  f('p-cost').value = prod?.cost_tier || 'low';
+  f('p-costn').value = prod?.cost_notes || '';
+  f('p-eff').value = prod?.implementation_effort || 'low';
+  f('p-tech').value = prod?.min_technical_capability || 1;
+  f('p-setup').value = prod?.setup_notes || '';
+  f('p-months').value = prod?.min_history_months || '';
+  f('p-recs').value = prod?.min_record_count || '';
+  f('p-lim').value = prod?.works_with_limited_data !== undefined ? prod.works_with_limited_data : 1;
+  f('p-datn').value = prod?.data_requirement_notes || '';
+  f('p-notes').value = prod?.notes || '';
+  document.getElementById('prod-overlay').classList.add('open');
+}
+
+async function saveProd() {
+  const f = id => document.getElementById(id);
+  const id = f('p-id').value.trim();
+  if (!id || !f('p-name').value || !f('p-cap').value) { toast('Fill required fields', true); return; }
+  const data = {
+    product_id: id, capability_id: f('p-cap').value, name: f('p-name').value.trim(),
+    vendor: f('p-vendor').value.trim(), url: f('p-url').value.trim(),
+    integrations: f('p-int').value.split(',').map(s=>s.trim()).filter(Boolean),
+    gdpr_compliant: parseInt(f('p-gdpr').value),
+    deployment_model: f('p-dep').value, pricing_model: f('p-prc').value,
+    has_free_tier: parseInt(f('p-free').value), cost_tier: f('p-cost').value,
+    cost_notes: f('p-costn').value.trim(), implementation_effort: f('p-eff').value,
+    min_technical_capability: parseInt(f('p-tech').value), setup_notes: f('p-setup').value.trim(),
+    min_history_months: f('p-months').value ? parseInt(f('p-months').value) : null,
+    min_record_count: f('p-recs').value ? parseInt(f('p-recs').value) : null,
+    works_with_limited_data: parseInt(f('p-lim').value),
+    data_requirement_notes: f('p-datn').value.trim(), notes: f('p-notes').value.trim(),
+  };
+  const res = editProdId
+    ? await api.put(`/api/products/${editProdId}`, data)
+    : await api.post('/api/products', data);
+  if (!res.ok) { toast(res.error || 'Error', true); return; }
+  toast(editProdId ? 'Product updated' : 'Product added');
+  closeOverlay('prod-overlay');
+  await loadAll();
+}
+
+function editProd(id) { openProdModal(products.find(p => p.product_id === id)); }
+
+async function deleteProd(id) {
+  if (!confirm(`Delete product "${id}"?`)) return;
+  await api.del(`/api/products/${id}`);
+  toast('Deleted'); await loadAll();
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function closeOverlay(id) { document.getElementById(id).classList.remove('open'); }
+
+function toast(msg, isErr) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.background = isErr ? 'var(--red)' : 'var(--green)';
+  t.style.color = isErr ? '#fff' : '#000';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+init();
+</script>
+</body>
+</html>
