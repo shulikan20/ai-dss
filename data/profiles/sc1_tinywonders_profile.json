@@ -3,10 +3,12 @@
     "company_id": "SC1",
     "profile_version": "1.0",
     "created_at": "2026-04-07",
-    "sources_used": ["questionnaire", "crm_export"],
+    "sources_used": [
+      "questionnaire",
+      "crm_export"
+    ],
     "profile_completeness": "partial"
   },
-
   "universal": {
     "identity": {
       "industry_segment": "Children's toys and educational products — premium handcrafted wooden toys and Montessori-inspired games for ages 0–8",
@@ -15,7 +17,12 @@
       "country": "Austria"
     },
     "tech_stack": {
-      "current_tools": ["Shopify", "Klaviyo", "Instagram", "Canva"],
+      "current_tools": [
+        "Shopify",
+        "Klaviyo",
+        "Instagram",
+        "Canva"
+      ],
       "crm_system": "Shopify",
       "crm_years_in_use": 3,
       "existing_automation": [
@@ -32,25 +39,36 @@
       "openness_level": "open",
       "team_alignment": true,
       "previous_ai_attempts": [
-        { "description": "Klaviyo abandoned cart automation", "outcome": "still_in_use" },
-        { "description": "Instagram keyword auto-reply", "outcome": "still_in_use" }
+        {
+          "description": "Klaviyo abandoned cart automation",
+          "outcome": "still_in_use"
+        },
+        {
+          "description": "Instagram keyword auto-reply",
+          "outcome": "still_in_use"
+        }
       ]
     },
     "data_availability": {
       "has_structured_export": true,
-      "export_types_available": ["crm_orders"],
+      "export_types_available": [
+        "crm_orders"
+      ],
       "history_months": 30,
       "has_outcome_labels": true,
       "has_communication_logs": false,
       "data_quality": "medium",
       "data_managed_by": "dedicated_system"
-    }
+    },
+    "implementation_support_requested": false
   },
-
   "domain_context": {
     "ecommerce_ops": {
       "active": true,
-      "selling_channels": ["own_website", "instagram_shop"],
+      "selling_channels": [
+        "own_website",
+        "instagram_shop"
+      ],
       "ecommerce_platform": "Shopify",
       "monthly_order_volume_peak": 120,
       "monthly_order_volume_regular": 18,
@@ -61,7 +79,10 @@
     },
     "customer_support": {
       "active": true,
-      "support_channels": ["instagram_dm", "email"],
+      "support_channels": [
+        "instagram_dm",
+        "email"
+      ],
       "monthly_inbound_volume": null,
       "pct_repetitive_questions": 0.75,
       "avg_first_response_hours": null,
@@ -69,16 +90,24 @@
     },
     "marketing": {
       "active": true,
-      "active_channels": ["instagram", "email"],
+      "active_channels": [
+        "instagram",
+        "email"
+      ],
       "content_creation_burden": "high",
       "has_email_marketing": true,
       "campaign_performance_tracked": true
     },
-    "crm_sales": { "active": false },
-    "supply_chain": { "active": false },
-    "operations_backoffice": { "active": false }
+    "crm_sales": {
+      "active": false
+    },
+    "supply_chain": {
+      "active": false
+    },
+    "operations_backoffice": {
+      "active": false
+    }
   },
-
   "processes": [
     {
       "process_id": "SC1_P1",
@@ -100,8 +129,13 @@
         ]
       },
       "kpis": {
-        "tracked": ["Order count", "Monthly revenue"],
-        "current_values": { "conversion_rate_from_dm": 0.45 }
+        "tracked": [
+          "Order count",
+          "Monthly revenue"
+        ],
+        "current_values": {
+          "conversion_rate_from_dm": 0.45
+        }
       },
       "process_data": {
         "has_data": true,
@@ -132,7 +166,10 @@
         ]
       },
       "kpis": {
-        "tracked": ["Email open rate", "Order count during campaign"],
+        "tracked": [
+          "Email open rate",
+          "Order count during campaign"
+        ],
         "current_values": {}
       },
       "process_data": {
@@ -145,21 +182,27 @@
       "confidence_level": "low"
     }
   ],
-
   "export_computed": {
-    "computed_from": ["sc1_tinywonders_orders.json"],
+    "computed_from": [
+      "sc1_tinywonders_orders.json"
+    ],
     "computed_at": "2026-04-07",
     "extractor_used": "normalizer_script",
     "fields": {
       "history_months": 30,
       "total_records": 640,
-      "channel_split": { "website": 0.744, "instagram": 0.256 },
+      "channel_split": {
+        "website": 0.744,
+        "instagram": 0.256
+      },
       "has_outcome_labels": true,
       "avg_order_value_eur": 52.13,
       "completed_order_rate": 0.842,
-      "peak_months": ["November", "December"]
+      "peak_months": [
+        "November",
+        "December"
+      ]
     }
   },
-
   "unstructured_supplements": []
 }

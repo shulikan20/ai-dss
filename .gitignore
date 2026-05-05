@@ -2,4 +2,6 @@ __pycache__/
 *.pyc
 .env
 .DS_STORE
-#
+tools/architecture/frontend/node_modules/
+tools/architecture/frontend/dist/
+process_flow.html

@@ -3,10 +3,11 @@
     "company_id": "SC4",
     "profile_version": "1.0",
     "created_at": "2026-04-07",
-    "sources_used": ["questionnaire"],
+    "sources_used": [
+      "questionnaire"
+    ],
     "profile_completeness": "minimal"
   },
-
   "universal": {
     "identity": {
       "industry_segment": "Outdoor and hiking equipment retail — backpacks, trekking poles, sleeping bags, waterproof jackets. 2 physical stores plus online.",
@@ -15,7 +16,11 @@
       "country": "Sweden"
     },
     "tech_stack": {
-      "current_tools": ["Shopify", "Fortnox", "Excel"],
+      "current_tools": [
+        "Shopify",
+        "Fortnox",
+        "Excel"
+      ],
       "crm_system": "Shopify (online) + Fortnox (accounting)",
       "crm_years_in_use": 5,
       "existing_automation": []
@@ -38,14 +43,17 @@
       "has_communication_logs": false,
       "data_quality": "low",
       "data_managed_by": "mixed"
-    }
+    },
+    "implementation_support_requested": false
   },
-
   "domain_context": {
     "supply_chain": {
       "active": true,
       "active_supplier_count": 5,
-      "supplier_countries": ["Germany", "Taiwan"],
+      "supplier_countries": [
+        "Germany",
+        "Taiwan"
+      ],
       "inbound_tracking_available": false,
       "inventory_tracking_method": "spreadsheet",
       "stockout_frequency": "occasionally",
@@ -54,7 +62,10 @@
     },
     "ecommerce_ops": {
       "active": true,
-      "selling_channels": ["own_website", "physical_store"],
+      "selling_channels": [
+        "own_website",
+        "physical_store"
+      ],
       "ecommerce_platform": "Shopify",
       "monthly_order_volume_peak": null,
       "monthly_order_volume_regular": null,
@@ -63,12 +74,19 @@
       "post_purchase_contact_freq": "rare",
       "product_catalog_size": "medium_50_500"
     },
-    "crm_sales": { "active": false },
-    "customer_support": { "active": false },
-    "operations_backoffice": { "active": false },
-    "marketing": { "active": false }
+    "crm_sales": {
+      "active": false
+    },
+    "customer_support": {
+      "active": false
+    },
+    "operations_backoffice": {
+      "active": false
+    },
+    "marketing": {
+      "active": false
+    }
   },
-
   "processes": [
     {
       "process_id": "SC4_P1",
@@ -90,8 +108,13 @@
         ]
       },
       "kpis": {
-        "tracked": ["Stock level", "Stockout events per year"],
-        "current_values": { "stockout_events_per_year": 5 }
+        "tracked": [
+          "Stock level",
+          "Stockout events per year"
+        ],
+        "current_values": {
+          "stockout_events_per_year": 5
+        }
       },
       "process_data": {
         "has_data": false,
@@ -103,8 +126,6 @@
       "confidence_level": "low"
     }
   ],
-
   "export_computed": null,
-
   "unstructured_supplements": []
 }

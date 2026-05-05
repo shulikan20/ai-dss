@@ -24,6 +24,7 @@ def get_capabilities():
         d["bottleneck_keywords"] = json.loads(d["bottleneck_keywords"] or "[]")
         d["required_data_types"] = json.loads(d["required_data_types"] or "[]")
         d["secondary_outcomes"] = json.loads(d["secondary_outcomes"] or "[]")
+        d["mapped_pain_points"] = json.loads(d.get("mapped_pain_points") or "[]")
         # attach product count
         count = conn.execute(
             "SELECT COUNT(*) FROM products WHERE capability_id=?", (d["capability_id"],)
@@ -46,8 +47,9 @@ def add_capability():
                 requires_historical_data, required_data_types,
                 works_without_data, min_history_months_gate, min_technical_capability,
                 primary_outcome, secondary_outcomes,
-                time_to_value_weeks_min, time_to_value_weeks_max
-            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+                time_to_value_weeks_min, time_to_value_weeks_max,
+                mapped_pain_points
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         """, [
             data["capability_id"], data["name"], data["domain"],
             data.get("use_case_category", ""), data.get("task_type_target", ""),
@@ -62,6 +64,7 @@ def add_capability():
             json.dumps(data.get("secondary_outcomes", [])),
             data.get("time_to_value_weeks_min") or None,
             data.get("time_to_value_weeks_max") or None,
+            json.dumps(data.get("mapped_pain_points", [])),
         ])
         conn.commit()
         conn.close()
@@ -82,7 +85,8 @@ def update_capability(cap_id):
             requires_historical_data=?, required_data_types=?,
             works_without_data=?, min_history_months_gate=?, min_technical_capability=?,
             primary_outcome=?, secondary_outcomes=?,
-            time_to_value_weeks_min=?, time_to_value_weeks_max=?
+            time_to_value_weeks_min=?, time_to_value_weeks_max=?,
+            mapped_pain_points=?
         WHERE capability_id=?
     """, [
         data["name"], data["domain"],
@@ -98,6 +102,7 @@ def update_capability(cap_id):
         json.dumps(data.get("secondary_outcomes", [])),
         data.get("time_to_value_weeks_min") or None,
         data.get("time_to_value_weeks_max") or None,
+        json.dumps(data.get("mapped_pain_points", [])),
         cap_id,
     ])
     conn.commit()

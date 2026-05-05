@@ -3,10 +3,12 @@
     "company_id": "SC3",
     "profile_version": "1.0",
     "created_at": "2026-04-07",
-    "sources_used": ["questionnaire", "crm_export"],
+    "sources_used": [
+      "questionnaire",
+      "crm_export"
+    ],
     "profile_completeness": "partial"
   },
-
   "universal": {
     "identity": {
       "industry_segment": "Pet accessories — premium beds, collars, feeders, toys, carriers for design-conscious pet owners in the Netherlands and Belgium",
@@ -15,7 +17,13 @@
       "country": "Netherlands"
     },
     "tech_stack": {
-      "current_tools": ["Shopify", "Instagram", "Marktplaats", "Mailchimp", "Notion"],
+      "current_tools": [
+        "Shopify",
+        "Instagram",
+        "Marktplaats",
+        "Mailchimp",
+        "Notion"
+      ],
       "crm_system": "Shopify",
       "crm_years_in_use": 4,
       "existing_automation": [
@@ -32,25 +40,37 @@
       "openness_level": "open",
       "team_alignment": true,
       "previous_ai_attempts": [
-        { "description": "Shopify built-in email automations", "outcome": "still_in_use" },
-        { "description": "ChatGPT for product descriptions (occasional)", "outcome": "still_in_use" }
+        {
+          "description": "Shopify built-in email automations",
+          "outcome": "still_in_use"
+        },
+        {
+          "description": "ChatGPT for product descriptions (occasional)",
+          "outcome": "still_in_use"
+        }
       ]
     },
     "data_availability": {
       "has_structured_export": true,
-      "export_types_available": ["crm_orders"],
+      "export_types_available": [
+        "crm_orders"
+      ],
       "history_months": 33,
       "has_outcome_labels": true,
       "has_communication_logs": false,
       "data_quality": "medium",
       "data_managed_by": "mixed"
-    }
+    },
+    "implementation_support_requested": false
   },
-
   "domain_context": {
     "ecommerce_ops": {
       "active": true,
-      "selling_channels": ["own_website", "instagram_shop", "marketplace"],
+      "selling_channels": [
+        "own_website",
+        "instagram_shop",
+        "marketplace"
+      ],
       "ecommerce_platform": "Shopify",
       "monthly_order_volume_peak": 90,
       "monthly_order_volume_regular": 22,
@@ -61,18 +81,28 @@
     },
     "customer_support": {
       "active": true,
-      "support_channels": ["instagram_dm", "email"],
+      "support_channels": [
+        "instagram_dm",
+        "email"
+      ],
       "monthly_inbound_volume": null,
-      "pct_repetitive_questions": 0.80,
+      "pct_repetitive_questions": 0.8,
       "avg_first_response_hours": null,
       "helpdesk_tool": null
     },
-    "crm_sales": { "active": false },
-    "supply_chain": { "active": false },
-    "operations_backoffice": { "active": false },
-    "marketing": { "active": false }
+    "crm_sales": {
+      "active": false
+    },
+    "supply_chain": {
+      "active": false
+    },
+    "operations_backoffice": {
+      "active": false
+    },
+    "marketing": {
+      "active": false
+    }
   },
-
   "processes": [
     {
       "process_id": "SC3_P1",
@@ -94,8 +124,12 @@
         ]
       },
       "kpis": {
-        "tracked": ["Order count"],
-        "current_values": { "conversion_rate_from_dm": 0.35 }
+        "tracked": [
+          "Order count"
+        ],
+        "current_values": {
+          "conversion_rate_from_dm": 0.35
+        }
       },
       "process_data": {
         "has_data": true,
@@ -126,8 +160,13 @@
         ]
       },
       "kpis": {
-        "tracked": ["Return rate"],
-        "current_values": { "return_rate": 0.08, "return_handling_days": 4 }
+        "tracked": [
+          "Return rate"
+        ],
+        "current_values": {
+          "return_rate": 0.08,
+          "return_handling_days": 4
+        }
       },
       "process_data": {
         "has_data": false,
@@ -139,21 +178,28 @@
       "confidence_level": "low"
     }
   ],
-
   "export_computed": {
-    "computed_from": ["sc3_pawnl_orders.json"],
+    "computed_from": [
+      "sc3_pawnl_orders.json"
+    ],
     "computed_at": "2026-04-07",
     "extractor_used": "normalizer_script",
     "fields": {
       "history_months": 33,
       "total_records": 720,
-      "channel_split": { "website": 0.693, "instagram": 0.212, "marktplaats": 0.094 },
+      "channel_split": {
+        "website": 0.693,
+        "instagram": 0.212,
+        "marktplaats": 0.094
+      },
       "has_outcome_labels": true,
       "avg_order_value_eur": 40.89,
       "completed_order_rate": 0.853,
-      "peak_months": ["November", "December"]
+      "peak_months": [
+        "November",
+        "December"
+      ]
     }
   },
-
   "unstructured_supplements": []
 }

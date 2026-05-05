@@ -3,10 +3,12 @@
     "company_id": "SC2",
     "profile_version": "1.0",
     "created_at": "2026-04-07",
-    "sources_used": ["questionnaire", "crm_export"],
+    "sources_used": [
+      "questionnaire",
+      "crm_export"
+    ],
     "profile_completeness": "partial"
   },
-
   "universal": {
     "identity": {
       "industry_segment": "Fitness supplements and sports nutrition — protein powders, creatine, vitamins, gym accessories for recreational athletes aged 18–35",
@@ -15,7 +17,14 @@
       "country": "Poland"
     },
     "tech_stack": {
-      "current_tools": ["WooCommerce", "HubSpot Free", "Meta Ads Manager", "Mailchimp", "Instagram", "Facebook Shop"],
+      "current_tools": [
+        "WooCommerce",
+        "HubSpot Free",
+        "Meta Ads Manager",
+        "Mailchimp",
+        "Instagram",
+        "Facebook Shop"
+      ],
       "crm_system": "WooCommerce + HubSpot Free",
       "crm_years_in_use": 2,
       "existing_automation": [
@@ -32,25 +41,39 @@
       "openness_level": "very_open",
       "team_alignment": true,
       "previous_ai_attempts": [
-        { "description": "ChatGPT for product descriptions (occasional)", "outcome": "still_in_use" },
-        { "description": "Meta Advantage+ ad targeting", "outcome": "still_in_use" }
+        {
+          "description": "ChatGPT for product descriptions (occasional)",
+          "outcome": "still_in_use"
+        },
+        {
+          "description": "Meta Advantage+ ad targeting",
+          "outcome": "still_in_use"
+        }
       ]
     },
     "data_availability": {
       "has_structured_export": true,
-      "export_types_available": ["crm_orders", "ad_platform", "email_marketing"],
+      "export_types_available": [
+        "crm_orders",
+        "ad_platform",
+        "email_marketing"
+      ],
       "history_months": 36,
       "has_outcome_labels": true,
       "has_communication_logs": false,
       "data_quality": "medium",
       "data_managed_by": "dedicated_system"
-    }
+    },
+    "implementation_support_requested": false
   },
-
   "domain_context": {
     "ecommerce_ops": {
       "active": true,
-      "selling_channels": ["own_website", "instagram_shop", "marketplace"],
+      "selling_channels": [
+        "own_website",
+        "instagram_shop",
+        "marketplace"
+      ],
       "ecommerce_platform": "WooCommerce",
       "monthly_order_volume_peak": 150,
       "monthly_order_volume_regular": 80,
@@ -61,24 +84,37 @@
     },
     "customer_support": {
       "active": true,
-      "support_channels": ["instagram_dm", "email"],
+      "support_channels": [
+        "instagram_dm",
+        "email"
+      ],
       "monthly_inbound_volume": null,
-      "pct_repetitive_questions": 0.70,
+      "pct_repetitive_questions": 0.7,
       "avg_first_response_hours": null,
       "helpdesk_tool": null
     },
     "marketing": {
       "active": true,
-      "active_channels": ["instagram", "facebook", "google_ads", "email"],
+      "active_channels": [
+        "instagram",
+        "facebook",
+        "google_ads",
+        "email"
+      ],
       "content_creation_burden": "high",
       "has_email_marketing": true,
       "campaign_performance_tracked": true
     },
-    "crm_sales": { "active": false },
-    "supply_chain": { "active": false },
-    "operations_backoffice": { "active": false }
+    "crm_sales": {
+      "active": false
+    },
+    "supply_chain": {
+      "active": false
+    },
+    "operations_backoffice": {
+      "active": false
+    }
   },
-
   "processes": [
     {
       "process_id": "SC2_P1",
@@ -100,8 +136,13 @@
         ]
       },
       "kpis": {
-        "tracked": ["Order count", "Fulfillment time"],
-        "current_values": { "avg_fulfillment_days": 2 }
+        "tracked": [
+          "Order count",
+          "Fulfillment time"
+        ],
+        "current_values": {
+          "avg_fulfillment_days": 2
+        }
       },
       "process_data": {
         "has_data": true,
@@ -132,7 +173,12 @@
         ]
       },
       "kpis": {
-        "tracked": ["CPA", "ROAS", "CTR", "Email open rate"],
+        "tracked": [
+          "CPA",
+          "ROAS",
+          "CTR",
+          "Email open rate"
+        ],
         "current_values": {}
       },
       "process_data": {
@@ -145,21 +191,28 @@
       "confidence_level": "low"
     }
   ],
-
   "export_computed": {
-    "computed_from": ["sc2_fitpol_orders.json"],
+    "computed_from": [
+      "sc2_fitpol_orders.json"
+    ],
     "computed_at": "2026-04-07",
     "extractor_used": "normalizer_script",
     "fields": {
       "history_months": 36,
       "total_records": 950,
-      "channel_split": { "website": 0.555, "instagram": 0.312, "facebook_shop": 0.134 },
+      "channel_split": {
+        "website": 0.555,
+        "instagram": 0.312,
+        "facebook_shop": 0.134
+      },
       "has_outcome_labels": true,
       "avg_order_value_pln": 81.83,
       "completed_order_rate": 0.867,
-      "peak_months": ["January", "September"]
+      "peak_months": [
+        "January",
+        "September"
+      ]
     }
   },
-
   "unstructured_supplements": []
 }
