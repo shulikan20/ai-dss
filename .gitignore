@@ -5,3 +5,5 @@ __pycache__/
 tools/architecture/frontend/node_modules/
 tools/architecture/frontend/dist/
 process_flow.html
+architecture.html
+tools

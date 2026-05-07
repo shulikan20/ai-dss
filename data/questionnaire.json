@@ -1,0 +1,530 @@
+{
+  "meta": {
+    "version": "1.0",
+    "title": "AI Adoption Readiness Questionnaire",
+    "description": "Intake form for the AI Adoption DSS. Answers populate Q-tagged fields in the company profile schema.",
+    "schema_version_target": "1.0",
+    "total_sections": 13
+  },
+  "sections": [
+    {
+      "id": "identity",
+      "title": "Company Identity",
+      "description": "Basic information about your company.",
+      "questions": [
+        {
+          "id": "q_legal_name",
+          "text": "What is your company's legal name?",
+          "type": "text",
+          "required": true,
+          "schema_field": "universal.identity.legal_name",
+          "placeholder": "e.g. TinyWonders GmbH"
+        },
+        {
+          "id": "q_country",
+          "text": "In which country is your company registered?",
+          "type": "text",
+          "required": true,
+          "schema_field": "universal.identity.country",
+          "placeholder": "e.g. Austria"
+        },
+        {
+          "id": "q_city",
+          "text": "In which city is your company based?",
+          "type": "text",
+          "required": false,
+          "schema_field": "universal.identity.city",
+          "placeholder": "e.g. Vienna"
+        },
+        {
+          "id": "q_employee_count",
+          "text": "How many full-time employees does your company have?",
+          "type": "integer",
+          "required": true,
+          "schema_field": "universal.identity.employee_count",
+          "placeholder": "e.g. 6"
+        },
+        {
+          "id": "q_industry_segment",
+          "text": "What best describes your industry?",
+          "type": "select",
+          "required": true,
+          "schema_field": "universal.identity.industry_segment",
+          "options": [
+            "E-commerce / Retail",
+            "Wholesale / B2B Trade",
+            "Manufacturing",
+            "Professional Services",
+            "Events & Entertainment",
+            "Healthcare",
+            "Education",
+            "Hospitality & Tourism",
+            "Logistics & Transport",
+            "Other"
+          ]
+        },
+        {
+          "id": "q_business_model",
+          "text": "Which best describes your business model?",
+          "type": "select",
+          "required": true,
+          "schema_field": "universal.identity.business_model",
+          "options": [
+            "B2C",
+            "B2B",
+            "B2B2C",
+            "Marketplace",
+            "Other"
+          ]
+        },
+        {
+          "id": "q_annual_revenue_eur",
+          "text": "What is your approximate annual revenue in EUR?",
+          "type": "select",
+          "required": false,
+          "schema_field": "universal.identity.annual_revenue_eur_approx",
+          "options": [
+            "Under €100,000",
+            "€100,000 – €500,000",
+            "€500,000 – €2,000,000",
+            "€2,000,000 – €10,000,000",
+            "Over €10,000,000",
+            "Prefer not to say"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "processes",
+      "title": "Operational Processes",
+      "description": "Help us understand how your business operates day-to-day.",
+      "questions": [
+        {
+          "id": "q_primary_process",
+          "text": "What is the primary operational process that drives your business? (the one your team spends the most time on)",
+          "type": "textarea",
+          "required": true,
+          "schema_field": "universal.processes.primary_process_description",
+          "placeholder": "e.g. Managing incoming customer orders, packaging, and coordinating shipments with our courier partner."
+        },
+        {
+          "id": "q_bottleneck",
+          "text": "What is your biggest operational bottleneck right now? (the thing that slows you down most or wastes the most time)",
+          "type": "textarea",
+          "required": true,
+          "schema_field": "universal.processes.bottleneck_description",
+          "placeholder": "e.g. We spend 2 hours every day answering the same WhatsApp and Instagram questions about sizing, availability, and shipping times."
+        },
+        {
+          "id": "q_active_domains",
+          "text": "Which of the following operational areas are active in your business? (select all that apply)",
+          "type": "multiselect",
+          "required": true,
+          "schema_field": "universal.processes.active_domains",
+          "options": [
+            "E-commerce & order management",
+            "CRM & sales",
+            "Customer support",
+            "Marketing & content",
+            "Operations & back-office",
+            "Supply chain & inventory"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "current_tools",
+      "title": "Current Technology Stack",
+      "description": "Which tools and platforms does your company currently use?",
+      "questions": [
+        {
+          "id": "q_current_tools",
+          "text": "Which of the following tools does your company currently use? (select all that apply)",
+          "type": "multiselect",
+          "required": true,
+          "schema_field": "universal.current_tools.tools_in_use",
+          "options": [
+            "Shopify",
+            "WooCommerce",
+            "Magento",
+            "PrestaShop",
+            "KeyCRM",
+            "Bitrix24",
+            "HubSpot",
+            "Salesforce",
+            "Pipedrive",
+            "1C",
+            "SAP",
+            "QuickBooks",
+            "Xero",
+            "Instagram",
+            "Facebook",
+            "TikTok",
+            "Mailchimp",
+            "Klaviyo",
+            "Sendgrid",
+            "Slack",
+            "Notion",
+            "Trello",
+            "Asana",
+            "Google Sheets / Excel",
+            "WhatsApp Business",
+            "Telegram Bot",
+            "Ozon",
+            "Rozetka",
+            "Amazon",
+            "eBay",
+            "Custom ERP / CRM (self-built)",
+            "None / Paper-based processes"
+          ]
+        },
+        {
+          "id": "q_current_tools_other",
+          "text": "Are there any other important tools you use that are not listed above?",
+          "type": "text",
+          "required": false,
+          "schema_field": "universal.current_tools.tools_in_use_other",
+          "placeholder": "Separate multiple tools with commas"
+        },
+        {
+          "id": "q_has_crm",
+          "text": "Do you have a CRM system where you track customer relationships?",
+          "type": "boolean",
+          "required": true,
+          "schema_field": "universal.current_tools.has_crm"
+        }
+      ]
+    },
+    {
+      "id": "data_availability",
+      "title": "Data & Exports",
+      "description": "Understanding what data you have helps us determine which AI tools can work for you.",
+      "questions": [
+        {
+          "id": "q_has_structured_export",
+          "text": "Can you export your business data (orders, customers, products) in a structured format such as CSV or Excel?",
+          "type": "boolean",
+          "required": true,
+          "schema_field": "universal.data_availability.has_structured_export"
+        },
+        {
+          "id": "q_export_types",
+          "text": "Which types of data can you export? (select all that apply)",
+          "type": "multiselect",
+          "required": false,
+          "schema_field": "universal.data_availability.export_types_available",
+          "options": [
+            "Order history",
+            "Customer list / contact data",
+            "Product catalog",
+            "Inventory levels",
+            "Sales / revenue reports",
+            "Email / conversation logs",
+            "Marketing campaign data",
+            "None of the above"
+          ],
+          "depends_on": {
+            "question_id": "q_has_structured_export",
+            "value": true
+          }
+        },
+        {
+          "id": "q_history_months",
+          "text": "How many months of historical data do you have available?",
+          "type": "integer",
+          "required": false,
+          "schema_field": "universal.data_availability.history_months",
+          "placeholder": "e.g. 18"
+        },
+        {
+          "id": "q_monthly_transactions",
+          "text": "Approximately how many transactions (orders, sales, interactions) does your business handle per month?",
+          "type": "select",
+          "required": false,
+          "schema_field": "universal.data_availability.monthly_transaction_volume_approx",
+          "options": [
+            "Fewer than 50",
+            "50 – 200",
+            "200 – 1,000",
+            "1,000 – 5,000",
+            "More than 5,000"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "technical_capability",
+      "title": "Technical Capability",
+      "description": "This helps us understand what level of technical setup you can handle.",
+      "questions": [
+        {
+          "id": "q_tech_level",
+          "text": "How would you describe your team's technical capability?",
+          "type": "select",
+          "required": true,
+          "schema_field": "universal.technical_capability.level",
+          "options": [
+            "Low — we use off-the-shelf tools, no technical setup possible",
+            "Medium — we can configure integrations (e.g. Zapier, API keys) but no custom development",
+            "High — we have developer access and can build or modify code"
+          ],
+          "option_values": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        {
+          "id": "q_has_developer",
+          "text": "Does your company have access to a developer (in-house or external)?",
+          "type": "boolean",
+          "required": true,
+          "schema_field": "universal.technical_capability.has_developer_access"
+        }
+      ]
+    },
+    {
+      "id": "implementation_support",
+      "title": "Implementation Support",
+      "description": "Would you like help setting up the recommended tools?",
+      "questions": [
+        {
+          "id": "q_implementation_support_requested",
+          "text": "If a recommended tool requires technical setup, would you be open to getting implementation support?",
+          "type": "select",
+          "required": true,
+          "schema_field": "universal.implementation_support_requested",
+          "options": [
+            "No — I will implement tools on my own",
+            "Yes — I am open to getting implementation help"
+          ],
+          "option_values": [
+            false,
+            true
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crm_sales",
+      "title": "CRM & Sales (if applicable)",
+      "description": "Complete this section if CRM & Sales is one of your active domains.",
+      "depends_on": {
+        "question_id": "q_active_domains",
+        "contains": "CRM & sales"
+      },
+      "questions": [
+        {
+          "id": "q_crm_sales_volume",
+          "text": "How many active leads or customers do you manage at any given time?",
+          "type": "select",
+          "required": false,
+          "schema_field": "crm_sales.pipeline.active_leads_approx",
+          "options": [
+            "Under 50",
+            "50–200",
+            "200–1,000",
+            "Over 1,000"
+          ]
+        },
+        {
+          "id": "q_crm_pain_followup",
+          "text": "Do you struggle with following up on leads in a timely manner?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "crm_sales.pipeline.pain_slow_followup"
+        },
+        {
+          "id": "q_crm_pain_reporting",
+          "text": "Do you find it difficult to get a clear picture of your sales pipeline at any moment?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "crm_sales.pipeline.pain_unclear_reporting"
+        }
+      ]
+    },
+    {
+      "id": "ecommerce",
+      "title": "E-commerce & Orders (if applicable)",
+      "description": "Complete this section if E-commerce is one of your active domains.",
+      "depends_on": {
+        "question_id": "q_active_domains",
+        "contains": "E-commerce & order management"
+      },
+      "questions": [
+        {
+          "id": "q_ecomm_platform",
+          "text": "Which e-commerce platform do you primarily use?",
+          "type": "select",
+          "required": false,
+          "schema_field": "ecommerce_ops.platform.primary_platform",
+          "options": [
+            "Shopify",
+            "WooCommerce",
+            "Magento",
+            "Custom",
+            "Other"
+          ]
+        },
+        {
+          "id": "q_ecomm_pain_returns",
+          "text": "Are returns and refunds a significant manual workload for your team?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "ecommerce_ops.pain_points.pain_manual_returns"
+        },
+        {
+          "id": "q_ecomm_pain_inventory",
+          "text": "Do you have difficulty tracking stock levels and avoiding stockouts?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "ecommerce_ops.pain_points.pain_inventory_tracking"
+        }
+      ]
+    },
+    {
+      "id": "customer_support",
+      "title": "Customer Support (if applicable)",
+      "description": "Complete this section if Customer Support is one of your active domains.",
+      "depends_on": {
+        "question_id": "q_active_domains",
+        "contains": "Customer support"
+      },
+      "questions": [
+        {
+          "id": "q_pain_repetitive_support",
+          "text": "Do you spend significant time answering the same customer questions repeatedly (e.g. via DM, email, or chat)?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "universal.processes.pain_repetitive_support"
+        },
+        {
+          "id": "q_pain_slow_response",
+          "text": "Do customers complain about slow response times, or do you struggle to respond quickly?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "universal.processes.pain_slow_response"
+        },
+        {
+          "id": "q_pain_ticket_overload",
+          "text": "Is your support team overwhelmed by the volume of incoming inquiries?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "universal.processes.pain_ticket_overload"
+        }
+      ]
+    },
+    {
+      "id": "marketing",
+      "title": "Marketing (if applicable)",
+      "description": "Complete this section if Marketing is one of your active domains.",
+      "depends_on": {
+        "question_id": "q_active_domains",
+        "contains": "Marketing & content"
+      },
+      "questions": [
+        {
+          "id": "q_pain_manual_content_creation",
+          "text": "Does content creation (social posts, emails, product descriptions) take significant time each week?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "universal.processes.pain_manual_content_creation"
+        },
+        {
+          "id": "q_pain_low_marketing_roi",
+          "text": "Are you unsatisfied with the return on your marketing efforts (low open rates, low conversion, poor ad performance)?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "universal.processes.pain_low_marketing_roi"
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Operations & Back-office (if applicable)",
+      "description": "Complete this section if Operations & Back-office is one of your active domains.",
+      "depends_on": {
+        "question_id": "q_active_domains",
+        "contains": "Operations & back-office"
+      },
+      "questions": [
+        {
+          "id": "q_pain_manual_data_entry",
+          "text": "Does your team spend significant time on manual data entry or copying information between tools?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "universal.processes.pain_manual_data_entry"
+        },
+        {
+          "id": "q_pain_manual_invoicing",
+          "text": "Is invoice processing, proposal writing, or document creation a significant time drain?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "universal.processes.pain_manual_invoicing"
+        },
+        {
+          "id": "q_pain_no_data_insights",
+          "text": "Do you find it difficult to get a clear, actionable picture of your business performance from your data?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "universal.processes.pain_no_data_insights"
+        }
+      ]
+    },
+    {
+      "id": "supply_chain",
+      "title": "Supply Chain & Inventory (if applicable)",
+      "description": "Complete this section if Supply Chain & Inventory is one of your active domains.",
+      "depends_on": {
+        "question_id": "q_active_domains",
+        "contains": "Supply chain & inventory"
+      },
+      "questions": [
+        {
+          "id": "q_pain_stockouts",
+          "text": "Do you regularly run out of stock on popular items?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "universal.processes.pain_stockouts"
+        },
+        {
+          "id": "q_pain_overstock",
+          "text": "Do you have problems with overstocking slow-moving items?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "universal.processes.pain_overstock"
+        },
+        {
+          "id": "q_pain_supplier_tracking",
+          "text": "Is managing supplier communication, orders, or purchase tracking a significant bottleneck?",
+          "type": "boolean",
+          "required": false,
+          "schema_field": "universal.processes.pain_supplier_tracking"
+        }
+      ]
+    },
+    {
+      "id": "unstructured",
+      "title": "Anything else?",
+      "description": "Any additional context that might help us understand your situation.",
+      "questions": [
+        {
+          "id": "q_additional_context",
+          "text": "Is there anything else important about your business situation, goals, or constraints that we should know?",
+          "type": "textarea",
+          "required": false,
+          "schema_field": "universal.unstructured_supplements.open_notes",
+          "placeholder": "e.g. We are planning to expand to two new markets next year. We work primarily with seasonal products so Q4 is critical."
+        },
+        {
+          "id": "q_ai_experience",
+          "text": "Have you tried any AI tools before? If yes, what was your experience?",
+          "type": "textarea",
+          "required": false,
+          "schema_field": "universal.unstructured_supplements.prior_ai_experience",
+          "placeholder": "e.g. We tried Chatbase for a chatbot but stopped using it after two weeks."
+        }
+      ]
+    }
+  ]
+}
