@@ -1,8 +1,9 @@
 import sqlite3
 import json
 import os
+from pathlib import Path
 
-DB_PATH = "catalog.db"
+DB_PATH = Path(__file__).parent / "catalog.db"
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS capabilities (
