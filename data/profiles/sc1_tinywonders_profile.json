@@ -14,7 +14,8 @@
       "industry_segment": "Children's toys and educational products — premium handcrafted wooden toys and Montessori-inspired games for ages 0–8",
       "business_model": "B2C",
       "company_size_headcount": 6,
-      "country": "Austria"
+      "country": "Austria",
+      "legal_name": "TinyWonders GmbH"
     },
     "tech_stack": {
       "current_tools": [
@@ -60,7 +61,20 @@
       "data_quality": "medium",
       "data_managed_by": "dedicated_system"
     },
-    "implementation_support_requested": false
+    "implementation_support_requested": false,
+    "processes": {
+      "pain_repetitive_support": true,
+      "pain_slow_response": true,
+      "pain_ticket_overload": false,
+      "pain_manual_content_creation": true,
+      "pain_low_marketing_roi": false,
+      "pain_manual_data_entry": false,
+      "pain_manual_invoicing": false,
+      "pain_no_data_insights": false,
+      "pain_stockouts": false,
+      "pain_overstock": false,
+      "pain_supplier_tracking": false
+    }
   },
   "domain_context": {
     "ecommerce_ops": {
@@ -75,7 +89,11 @@
       "return_rate": null,
       "fulfillment_model": "self_fulfilled",
       "post_purchase_contact_freq": "occasional",
-      "product_catalog_size": "small_under_50"
+      "product_catalog_size": "small_under_50",
+      "pain_points": {
+        "pain_manual_returns": false,
+        "pain_inventory_tracking": false
+      }
     },
     "customer_support": {
       "active": true,

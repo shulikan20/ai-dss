@@ -14,7 +14,8 @@
       "industry_segment": "Fitness supplements and sports nutrition — protein powders, creatine, vitamins, gym accessories for recreational athletes aged 18–35",
       "business_model": "B2C",
       "company_size_headcount": 9,
-      "country": "Poland"
+      "country": "Poland",
+      "legal_name": "FitPol Sp. z o.o."
     },
     "tech_stack": {
       "current_tools": [
@@ -64,7 +65,20 @@
       "data_quality": "medium",
       "data_managed_by": "dedicated_system"
     },
-    "implementation_support_requested": false
+    "implementation_support_requested": false,
+    "processes": {
+      "pain_repetitive_support": true,
+      "pain_slow_response": false,
+      "pain_ticket_overload": false,
+      "pain_manual_content_creation": true,
+      "pain_low_marketing_roi": false,
+      "pain_manual_data_entry": true,
+      "pain_manual_invoicing": false,
+      "pain_no_data_insights": true,
+      "pain_stockouts": false,
+      "pain_overstock": false,
+      "pain_supplier_tracking": false
+    }
   },
   "domain_context": {
     "ecommerce_ops": {
@@ -80,7 +94,11 @@
       "return_rate": 0.03,
       "fulfillment_model": "self_fulfilled",
       "post_purchase_contact_freq": "frequent",
-      "product_catalog_size": "small_under_50"
+      "product_catalog_size": "small_under_50",
+      "pain_points": {
+        "pain_manual_returns": false,
+        "pain_inventory_tracking": false
+      }
     },
     "customer_support": {
       "active": true,

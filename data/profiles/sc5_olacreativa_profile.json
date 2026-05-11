@@ -13,7 +13,8 @@
       "industry_segment": "Event management and creative production agency — corporate events, brand activations, private celebrations, photography and video content",
       "business_model": "B2B_B2C_mixed",
       "company_size_headcount": 4,
-      "country": "Spain"
+      "country": "Spain",
+      "legal_name": "Ola Creativa S.L."
     },
     "tech_stack": {
       "current_tools": [
@@ -50,7 +51,20 @@
       "data_quality": "very_low",
       "data_managed_by": "none"
     },
-    "implementation_support_requested": false
+    "implementation_support_requested": false,
+    "processes": {
+      "pain_repetitive_support": false,
+      "pain_slow_response": false,
+      "pain_ticket_overload": false,
+      "pain_manual_content_creation": false,
+      "pain_low_marketing_roi": false,
+      "pain_manual_data_entry": true,
+      "pain_manual_invoicing": true,
+      "pain_no_data_insights": false,
+      "pain_stockouts": false,
+      "pain_overstock": false,
+      "pain_supplier_tracking": false
+    }
   },
   "domain_context": {
     "operations_backoffice": {
@@ -79,7 +93,11 @@
       ],
       "sales_team_size": 1,
       "lead_volume_per_month": 5,
-      "crm_data_discipline": "low"
+      "crm_data_discipline": "low",
+      "pipeline": {
+        "pain_slow_followup": false,
+        "pain_unclear_reporting": true
+      }
     },
     "ecommerce_ops": {
       "active": false
