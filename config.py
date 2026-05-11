@@ -24,7 +24,7 @@ class Config:
     LLM_MODEL: str = "llama3.1:8b"
     LLM_BASE_URL: str = "http://localhost:11434"
     LLM_TIMEOUT_SEC: int = 120
-    USE_LLM_ENRICHMENT: bool = True  # False to offline mode
+    USE_LLM_ENRICHMENT: bool = True
     TOPSIS_WEIGHTS: dict = field(default_factory=lambda: {
         "semantic_fit": 0.35,
         "integration_compat": 0.25,
@@ -38,7 +38,6 @@ class Config:
     CF_ACTIVATION_THRESHOLD: int = 50
 
     def __post_init__(self) -> None:
-        """Validate weights sum on startup so misconfiguration fails fast."""
         total = sum(self.TOPSIS_WEIGHTS.values())
         if abs(total - 1.0) > 1e-9:
             raise ValueError(
