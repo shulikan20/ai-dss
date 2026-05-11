@@ -6,4 +6,7 @@ tools/architecture/frontend/node_modules/
 tools/architecture/frontend/dist/
 process_flow.html
 architecture.html
-tools
+tools/architecture/
+tools/catalog
+tests
+tests/
