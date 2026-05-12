@@ -153,6 +153,7 @@ class RankedCandidate:
 
     def __repr__(self) -> str:
         return (
+            f"====== OUTPUT ======    "
             f"RankedCandidate(cap={self.capability.capability_id!r}, "
             f"topsis={self.topsis_score:.3f}, "
             f"dims=[sem={self.semantic_fit:.2f}, "
@@ -160,4 +161,5 @@ class RankedCandidate:
             f"dat={self.data_readiness:.2f}, "
             f"tec={self.tech_fit:.2f}, "
             f"pain={self.pain_point_match:.2f}])"
+            f"   ====== OUTPUT ======"
         )

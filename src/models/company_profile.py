@@ -43,8 +43,6 @@ _COUNTRY_TO_ISO2: dict[str, str] = {
 }
 _TECH_LEVEL_MAP: dict[str, int] = {"low": 1, "medium": 2, "high": 3}
 
-
-
 @dataclass
 class CompanyProfile:
     company_id: str
