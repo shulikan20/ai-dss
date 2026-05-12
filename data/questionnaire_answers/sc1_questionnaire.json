@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "company_id": "SC1",
+    "profile_version": "1.0",
+    "created_at": "2026-04-07",
+    "sources_used": [
+      "questionnaire"
+    ],
+    "profile_completeness": "minimal"
+  },
+  "universal": {
+    "identity": {
+      "legal_name": "TinyWonders GmbH",
+      "industry_segment": "Children's toys and educational products — premium handcrafted wooden toys and Montessori-inspired games for ages 0–8",
+      "business_model": "B2C",
+      "company_size_headcount": 6,
+      "country": "Austria"
+    },
+    "tech_stack": {
+      "current_tools": [
+        "Shopify",
+        "Klaviyo",
+        "Instagram",
+        "Canva"
+      ],
+      "crm_system": "Shopify",
+      "crm_years_in_use": 3,
+      "existing_automation": [
+        "Klaviyo abandoned cart email sequence",
+        "Instagram auto-reply via keyword trigger for common DM questions"
+      ]
+    },
+    "technical_capability": {
+      "level": "low",
+      "who_manages_tools": "Founder",
+      "external_it_available": false
+    },
+    "ai_readiness": {
+      "openness_level": "open",
+      "team_alignment": true,
+      "previous_ai_attempts": [
+        {
+          "description": "Klaviyo abandoned cart automation",
+          "outcome": "still_in_use"
+        },
+        {
+          "description": "Instagram keyword auto-reply",
+          "outcome": "still_in_use"
+        }
+      ]
+    },
+    "data_availability": {
+      "has_structured_export": true,
+      "export_types_available": [
+        "orders"
+      ],
+      "history_months": 30,
+      "has_outcome_labels": true,
+      "has_communication_logs": false,
+      "data_quality": "medium",
+      "data_managed_by": "dedicated_system"
+    },
+    "processes": {
+      "pain_repetitive_support": true,
+      "pain_slow_response": true,
+      "pain_ticket_overload": false,
+      "pain_manual_content_creation": true,
+      "pain_low_marketing_roi": false,
+      "pain_manual_data_entry": false,
+      "pain_manual_invoicing": false,
+      "pain_no_data_insights": false,
+      "pain_stockouts": false,
+      "pain_overstock": false,
+      "pain_supplier_tracking": false
+    },
+    "implementation_support_requested": false
+  },
+  "domain_context": {
+    "ecommerce_ops": {
+      "active": true,
+      "selling_channels": [
+        "own_website",
+        "instagram_shop"
+      ],
+      "ecommerce_platform": "Shopify",
+      "monthly_order_volume_peak": 120,
+      "monthly_order_volume_regular": 18,
+      "return_rate": null,
+      "fulfillment_model": "self_fulfilled",
+      "post_purchase_contact_freq": "occasional",
+      "product_catalog_size": "small_under_50",
+      "pain_points": {
+        "pain_manual_returns": false,
+        "pain_inventory_tracking": false
+      }
+    },
+    "customer_support": {
+      "active": true,
+      "support_channels": [
+        "instagram_dm",
+        "email"
+      ],
+      "monthly_inbound_volume": null,
+      "pct_repetitive_questions": 0.75,
+      "avg_first_response_hours": null,
+      "helpdesk_tool": null
+    },
+    "marketing": {
+      "active": true,
+      "active_channels": [
+        "instagram",
+        "email"
+      ],
+      "content_creation_burden": "high",
+      "has_email_marketing": true,
+      "campaign_performance_tracked": true
+    },
+    "crm_sales": {
+      "active": false
+    },
+    "supply_chain": {
+      "active": false
+    },
+    "operations_backoffice": {
+      "active": false
+    }
+  },
+  "processes": [
+    {
+      "process_id": "SC1_P1",
+      "name": "Instagram DM Pre-sale to Purchase",
+      "domain": "customer_support",
+      "task_type": "mixed",
+      "trigger": "Inbound Instagram DM — age suitability or gift advice question",
+      "frequency": "daily",
+      "volume_per_month": null,
+      "who_executes": "Founder + 1 part-time assistant",
+      "bottleneck": {
+        "description": "Every gifting advice and age-suitability question answered manually one by one. No template or FAQ system exists.",
+        "severity": "high",
+        "time_impact": "1.5–2 hours per day of founder time during peak season (Nov–Dec)",
+        "manual_tasks_wanting_automation": [
+          "Age suitability FAQ responses",
+          "Gift recommendation guidance",
+          "Shipping time and cost answers"
+        ]
+      },
+      "process_data": {
+        "has_data": false,
+        "source_type": "none",
+        "record_count": null,
+        "has_outcome_labels": false,
+        "data_quality": "very_low"
+      }
+    },
+    {
+      "process_id": "SC1_P2",
+      "name": "Seasonal Marketing Campaign",
+      "domain": "marketing",
+      "task_type": "mixed",
+      "trigger": "Seasonal calendar event (Christmas, Easter, Back to School)",
+      "frequency": "monthly",
+      "volume_per_month": 1,
+      "who_executes": "Founder",
+      "bottleneck": {
+        "description": "Entire content pipeline — writing, design, scheduling — handled by one person with no templates or AI assistance.",
+        "severity": "high",
+        "time_impact": "Approximately 3 working days per major campaign",
+        "manual_tasks_wanting_automation": [
+          "Product description generation",
+          "Social media caption variants",
+          "Campaign brief templates"
+        ]
+      },
+      "process_data": {
+        "has_data": false,
+        "source_type": "none",
+        "record_count": null,
+        "has_outcome_labels": false,
+        "data_quality": "very_low"
+      }
+    }
+  ]
+}

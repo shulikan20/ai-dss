@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "company_id": "SC4",
+    "profile_version": "1.0",
+    "created_at": "2026-04-07",
+    "sources_used": ["questionnaire"],
+    "profile_completeness": "minimal"
+  },
+  "universal": {
+    "identity": {
+      "legal_name": "TrailNord AB",
+      "industry_segment": "Outdoor and hiking equipment retail — backpacks, trekking poles, sleeping bags, waterproof jackets. 2 physical stores plus online.",
+      "business_model": "B2C",
+      "company_size_headcount": 22,
+      "country": "Sweden"
+    },
+    "tech_stack": {
+      "current_tools": ["Shopify", "Fortnox", "Excel"],
+      "crm_system": "Shopify (online) + Fortnox (accounting)",
+      "crm_years_in_use": 5,
+      "existing_automation": []
+    },
+    "technical_capability": {
+      "level": "medium",
+      "who_manages_tools": "Operations manager",
+      "external_it_available": true
+    },
+    "ai_readiness": {
+      "openness_level": "open",
+      "team_alignment": true,
+      "previous_ai_attempts": []
+    },
+    "data_availability": {
+      "has_structured_export": false,
+      "export_types_available": [],
+      "history_months": 60,
+      "has_outcome_labels": false,
+      "has_communication_logs": false,
+      "data_quality": "low",
+      "data_managed_by": "mixed"
+    },
+    "processes": {
+      "pain_repetitive_support": false,
+      "pain_slow_response": false,
+      "pain_ticket_overload": false,
+      "pain_manual_content_creation": false,
+      "pain_low_marketing_roi": false,
+      "pain_manual_data_entry": false,
+      "pain_manual_invoicing": false,
+      "pain_no_data_insights": false,
+      "pain_stockouts": true,
+      "pain_overstock": true,
+      "pain_supplier_tracking": true
+    },
+    "implementation_support_requested": false
+  },
+  "domain_context": {
+    "supply_chain": {
+      "active": true,
+      "active_supplier_count": 5,
+      "supplier_countries": ["Germany", "Taiwan"],
+      "inbound_tracking_available": false,
+      "inventory_tracking_method": "spreadsheet",
+      "stockout_frequency": "occasionally",
+      "demand_forecasting_method": "manual_data_review",
+      "procurement_approval_steps": 2
+    },
+    "ecommerce_ops": {
+      "active": true,
+      "selling_channels": ["own_website", "physical_store"],
+      "ecommerce_platform": "Shopify",
+      "monthly_order_volume_peak": null,
+      "monthly_order_volume_regular": null,
+      "return_rate": null,
+      "fulfillment_model": "self_fulfilled",
+      "post_purchase_contact_freq": "rare",
+      "product_catalog_size": "medium_50_500",
+      "pain_points": {
+        "pain_manual_returns": false,
+        "pain_inventory_tracking": true
+      }
+    },
+    "crm_sales": {"active": false},
+    "customer_support": {"active": false},
+    "operations_backoffice": {"active": false},
+    "marketing": {"active": false}
+  },
+  "processes": [
+    {
+      "process_id": "SC4_P1",
+      "name": "Procurement and Supplier Orders",
+      "domain": "supply_chain",
+      "task_type": "mixed",
+      "trigger": "Weekly manual stock check or staff observation of low shelf stock",
+      "frequency": "weekly",
+      "volume_per_month": 4,
+      "who_executes": "Operations manager + stock coordinator",
+      "bottleneck": {
+        "description": "No automated low-stock alerts. Stock checked manually in Excel weekly. Supplier lead times from Taiwan unpredictable by up to 2 weeks. No consolidated stock view across online store and 2 physical locations.",
+        "severity": "high",
+        "time_impact": "4–5 stockouts per year, each causing 1–2 weeks lost sales on affected SKUs.",
+        "manual_tasks_wanting_automation": [
+          "Automated low-stock alerts",
+          "Inbound shipment tracking",
+          "Consolidated inventory view across locations"
+        ]
+      },
+      "process_data": {
+        "has_data": false,
+        "source_type": "none",
+        "record_count": null,
+        "has_outcome_labels": false,
+        "data_quality": "low"
+      }
+    }
+  ]
+}

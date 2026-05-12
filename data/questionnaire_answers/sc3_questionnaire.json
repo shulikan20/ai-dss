@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "company_id": "SC3",
+    "profile_version": "1.0",
+    "created_at": "2026-04-07",
+    "sources_used": [
+      "questionnaire"
+    ],
+    "profile_completeness": "minimal"
+  },
+  "universal": {
+    "identity": {
+      "legal_name": "PawNL B.V.",
+      "industry_segment": "Pet accessories — premium beds, collars, feeders, toys, carriers for design-conscious pet owners in the Netherlands and Belgium",
+      "business_model": "B2C",
+      "company_size_headcount": 5,
+      "country": "Netherlands"
+    },
+    "tech_stack": {
+      "current_tools": [
+        "Shopify",
+        "Instagram",
+        "Marktplaats",
+        "Mailchimp",
+        "Notion"
+      ],
+      "crm_system": "Shopify",
+      "crm_years_in_use": 4,
+      "existing_automation": [
+        "Shopify welcome email automation",
+        "Shopify abandoned cart email"
+      ]
+    },
+    "technical_capability": {
+      "level": "low",
+      "who_manages_tools": "Co-founder",
+      "external_it_available": false
+    },
+    "ai_readiness": {
+      "openness_level": "open",
+      "team_alignment": true,
+      "previous_ai_attempts": [
+        {
+          "description": "Shopify built-in email automations",
+          "outcome": "still_in_use"
+        },
+        {
+          "description": "ChatGPT for product descriptions (occasional)",
+          "outcome": "still_in_use"
+        }
+      ]
+    },
+    "data_availability": {
+      "has_structured_export": true,
+      "export_types_available": [
+        "orders"
+      ],
+      "history_months": 33,
+      "has_outcome_labels": true,
+      "has_communication_logs": false,
+      "data_quality": "medium",
+      "data_managed_by": "mixed"
+    },
+    "processes": {
+      "pain_repetitive_support": true,
+      "pain_slow_response": false,
+      "pain_ticket_overload": false,
+      "pain_manual_content_creation": false,
+      "pain_low_marketing_roi": false,
+      "pain_manual_data_entry": false,
+      "pain_manual_invoicing": false,
+      "pain_no_data_insights": false,
+      "pain_stockouts": false,
+      "pain_overstock": false,
+      "pain_supplier_tracking": false
+    },
+    "implementation_support_requested": false
+  },
+  "domain_context": {
+    "ecommerce_ops": {
+      "active": true,
+      "selling_channels": [
+        "own_website",
+        "instagram_shop",
+        "marketplace"
+      ],
+      "ecommerce_platform": "Shopify",
+      "monthly_order_volume_peak": 90,
+      "monthly_order_volume_regular": 22,
+      "return_rate": 0.08,
+      "fulfillment_model": "self_fulfilled",
+      "post_purchase_contact_freq": "rare",
+      "product_catalog_size": "small_under_50",
+      "pain_points": {
+        "pain_manual_returns": true,
+        "pain_inventory_tracking": false
+      }
+    },
+    "customer_support": {
+      "active": true,
+      "support_channels": [
+        "instagram_dm",
+        "email"
+      ],
+      "monthly_inbound_volume": null,
+      "pct_repetitive_questions": 0.8,
+      "avg_first_response_hours": null,
+      "helpdesk_tool": null
+    },
+    "crm_sales": {
+      "active": false
+    },
+    "supply_chain": {
+      "active": false
+    },
+    "operations_backoffice": {
+      "active": false
+    },
+    "marketing": {
+      "active": false
+    }
+  },
+  "processes": [
+    {
+      "process_id": "SC3_P1",
+      "name": "Instagram DM Pre-sale Support",
+      "domain": "customer_support",
+      "task_type": "repetitive_routine",
+      "trigger": "Inbound Instagram DM — sizing or shipping question",
+      "frequency": "daily",
+      "volume_per_month": null,
+      "who_executes": "Co-founder",
+      "bottleneck": {
+        "description": "Sizing questions for collars and carriers answered manually for every customer. Same questions asked repeatedly with no FAQ or auto-response system.",
+        "severity": "high",
+        "time_impact": "Estimated 45 minutes per day",
+        "manual_tasks_wanting_automation": [
+          "Sizing guide FAQ auto-responses",
+          "Shipping cost and destination answers",
+          "Care instructions responses (machine washable etc.)"
+        ]
+      },
+      "process_data": {
+        "has_data": false,
+        "source_type": "none",
+        "record_count": null,
+        "has_outcome_labels": false,
+        "data_quality": "very_low"
+      }
+    },
+    {
+      "process_id": "SC3_P2",
+      "name": "Returns and Complaints Handling",
+      "domain": "ecommerce_ops",
+      "task_type": "mixed",
+      "trigger": "Customer contacts about return or complaint",
+      "frequency": "weekly",
+      "volume_per_month": null,
+      "who_executes": "Co-founder",
+      "bottleneck": {
+        "description": "Every return handled manually end-to-end with no self-service option. Customer must contact, co-founder assesses, sends label, processes refund manually.",
+        "severity": "medium",
+        "time_impact": "~30 minutes active handling time per return case",
+        "manual_tasks_wanting_automation": [
+          "Return request intake form",
+          "Automated return label generation",
+          "Refund status communication"
+        ]
+      },
+      "process_data": {
+        "has_data": false,
+        "source_type": "none",
+        "record_count": null,
+        "has_outcome_labels": false,
+        "data_quality": "very_low"
+      }
+    }
+  ]
+}
