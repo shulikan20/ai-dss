@@ -55,9 +55,8 @@
     "data_availability": {
       "has_structured_export": true,
       "export_types_available": [
-        "crm_orders",
-        "ad_platform",
-        "email_marketing"
+        "orders",
+        "marketing"
       ],
       "history_months": 36,
       "has_outcome_labels": true,

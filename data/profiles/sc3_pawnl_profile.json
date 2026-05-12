@@ -54,7 +54,7 @@
     "data_availability": {
       "has_structured_export": true,
       "export_types_available": [
-        "crm_orders"
+        "orders"
       ],
       "history_months": 33,
       "has_outcome_labels": true,
