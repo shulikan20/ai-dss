@@ -10,3 +10,7 @@ tools/architecture/
 tools/catalog
 tests
 tests/
+scripts
+scripts/
+src/tools/tool_embeddings.npy
+src/tools/tool_embeddings_index.json
