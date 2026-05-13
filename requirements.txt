@@ -1,1 +1,7 @@
-flask
+# pip install -r requirements.txt
+flask>=3.0.0
+numpy>=1.26.0
+sentence-transformers>=2.7.0
+torch>=2.2.0
+scikit-learn>=1.4.0
+pymcdm>=1.1.0
