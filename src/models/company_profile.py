@@ -43,6 +43,7 @@ _COUNTRY_TO_ISO2: dict[str, str] = {
 }
 _TECH_LEVEL_MAP: dict[str, int] = {"low": 1, "medium": 2, "high": 3}
 
+
 @dataclass
 class CompanyProfile:
     company_id: str
@@ -56,6 +57,7 @@ class CompanyProfile:
     history_months: int = 0
     export_types_available: list[str] = field(default_factory=list)
     has_structured_export: bool = False
+    has_communication_logs: bool = False
     technical_level: int = 1
     implementation_support_requested: bool = False
     pain_point_flags: dict[str, bool] = field(default_factory=dict)
@@ -96,7 +98,7 @@ class CompanyProfile:
             domain for domain, block in domain_context.items()
             if isinstance(block, dict) and block.get("active", False)
         ]
- 
+
         parts = []
         for proc in processes_list:
             if not isinstance(proc, dict):
@@ -107,7 +109,7 @@ class CompanyProfile:
                 name = proc.get("name", "")
                 parts.append(f"[{name}] {desc}" if name else desc)
         bottleneck = " | ".join(parts)
- 
+
         order_count = int(export_fields.get("total_records") or 0)
         if not order_count:
             counts = [
@@ -115,7 +117,7 @@ class CompanyProfile:
                 for p in processes_list if isinstance(p, dict)
             ]
             order_count = max(counts, default=0)
- 
+
         history_months = int(
             data_av.get("history_months")
             or export_fields.get("history_months")
@@ -131,9 +133,9 @@ class CompanyProfile:
             or raw.get("_source_file", "unknown")
         )
         country_raw = str(identity.get("country") or "").strip()
-        country = _COUNTRY_TO_ISO2.get(country_raw.lower(), country_raw.upper()[:2]) 
+        country = _COUNTRY_TO_ISO2.get(country_raw.lower(), country_raw.upper()[:2])
         pain_flags: dict[str, bool] = {}
- 
+
         universal_procs = universal.get("processes", {})
         for key, val in universal_procs.items():
             if "pain" in key.lower() and isinstance(val, bool):
@@ -176,6 +178,7 @@ class CompanyProfile:
             has_structured_export=bool(
                 export_types or data_av.get("has_structured_export")
             ),
+            has_communication_logs=bool(data_av.get("has_communication_logs")),
             technical_level=max(1, min(3, tech_level)),
             implementation_support_requested=bool(
                 universal.get("implementation_support_requested")
@@ -186,7 +189,6 @@ class CompanyProfile:
         )
  
     def to_dict(self) -> dict[str, Any]:
-        """Serialise back to flat dict (useful for debugging and logging)."""
         return {
             "company_id": self.company_id,
             "company_name": self.company_name,
@@ -199,6 +201,7 @@ class CompanyProfile:
             "history_months": self.history_months,
             "export_types_available": self.export_types_available,
             "has_structured_export": self.has_structured_export,
+            "has_communication_logs": self.has_communication_logs,
             "technical_level": self.technical_level,
             "implementation_support_requested": self.implementation_support_requested,
             "pain_point_flags": self.pain_point_flags,
@@ -215,4 +218,3 @@ class CompanyProfile:
             f"pain_points_confirmed={len(self.confirmed_pain_points)})"
             f"   ====== OUTPUT ======"
         )
- 
