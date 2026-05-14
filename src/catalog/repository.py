@@ -7,7 +7,6 @@ from pathlib import Path
 from config import CFG
 from src.models.catalog_item import Capability, Product
 
-
 class CatalogRepository:
     def __init__(self, db_path: Path | str | None = None):
         self._path = Path(db_path) if db_path else CFG.CATALOG_DB
@@ -59,7 +58,7 @@ class CatalogRepository:
             f"WHERE capability_id IN ({placeholders})",
             cap_ids,
         ).fetchall()
-        
+
         integrations_map: dict[str, set[str]] = {
             cid: set() for cid in cap_ids
         }
@@ -94,6 +93,12 @@ class CatalogRepository:
             return json.loads(row["mapped_pain_points"] or "[]")
         except (json.JSONDecodeError, TypeError):
             return []
+
+    def get_capability_ids_with_products(self) -> set[str]:
+        rows = self._conn_get().execute(
+            "SELECT DISTINCT capability_id FROM products"
+        ).fetchall()
+        return {row["capability_id"] for row in rows}
 
     def get_gdpr_capable_capability_ids(self) -> set[str]:
         rows = self._conn_get().execute(
