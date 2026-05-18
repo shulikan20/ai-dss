@@ -5,3 +5,4 @@ sentence-transformers>=2.7.0
 torch>=2.2.0
 scikit-learn>=1.4.0
 pymcdm>=1.1.0
+requests
