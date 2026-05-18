@@ -18,10 +18,10 @@ class Config:
     SCHEMA_PATH: Path = ROOT / "data" / "schema" / "company_profile_schema.json"
     QUESTIONNAIRE: Path = ROOT / "data" / "questionnaire.json"
     SYSTEM_PROMPT: Path = ROOT / "src" / "matching" / "llm" / "prompts" / "system_prompt.txt"
-    BI_ENCODER_MODEL: str = "all-MiniLM-L6-v2"
+    BI_ENCODER_MODEL: str = "multi-qa-MiniLM-L6-cos-v1"
     CROSS_ENCODER_MODEL: str = "cross-encoder/ms-marco-MiniLM-L6-v2"
     BI_ENCODER_TOP_K: int = 40
-    LLM_MODEL: str = "llama3.1:8b"
+    LLM_MODEL: str = "phi4"
     LLM_BASE_URL: str = "http://localhost:11434"
     LLM_TIMEOUT_SEC: int = 120
     USE_LLM_ENRICHMENT: bool = True
