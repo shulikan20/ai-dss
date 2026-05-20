@@ -27,10 +27,10 @@ class Config:
     USE_LLM_ENRICHMENT: bool = True
     TOPSIS_WEIGHTS: dict = field(default_factory=lambda: {
         "semantic_fit": 0.35,
-        "integration_compat": 0.25,
+        "integration_compat": 0.05,
         "data_readiness": 0.20,
         "tech_fit": 0.10,
-        "pain_point_match": 0.10,
+        "pain_point_match": 0.30,
     })
     CLASSICAL_WEIGHT: float = 0.5
     LLM_WEIGHT: float = 0.5
