@@ -1,45 +1,52 @@
-# AI-DSS — AI Tool Recommendation System for Small Businesses
+# AI-DSS — AI Decision Support System for SMEs
 
-A decision support system that matches a company's operational processes 
-and context to suitable AI tools and automation solutions.
+Recommends AI tools to SME e-commerce operators based on their operational bottlenecks.
+Bachelor thesis project comparing three recommendation pipeline architectures.
 
-## Synthetic data
+## Pipelines
 
-`data/` contains fictional company profiles and sample CRM 
-order datasets for development and testing purposes.
+| | Classical | LLM | Hybrid |
+|---|---|---|---|
+| Method | SBERT + TOPSIS | phi4 via Ollama | TOPSIS shortlist → LLM re-rank |
+| Speed | < 1s | ~42s | ~45s |
+| P@1 | 1.000 | 0.800 | 1.000 |
+| R@3 | 0.900 | 1.000 | 1.000 |
 
-To regenerate:
+## Setup
+
 ```bash
-python data/synthetic/generate_synthetic_companies.py
+# 1. Clone and install
+git clone <repo>
+cd ai-dss
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+# 2. Start Ollama
+ollama serve
+ollama pull phi4
+
+# 3. Build the catalog
+python -m src.catalog.embedder
 ```
 
-## Requirements
-
-Python 3.9+
-```
-pip install -r requirements.txt 
-```
-##
-## Repository Structure
+## Structure
 
 ```
-data/
-  exports/        # synthetic CRM order datasets (SC1–SC3)
-  profiles/       # normalized company profiles (SC1–SC5)
-  schema/         # canonical company profile schema
-
-scripts/
-  generate_synthetic_data.py  # generates synthetic CRM exports
-
-src/
-  ingestion/      # profile builder and data normalizers (in progress)
-  matching/       # classical and LLM matching pipelines (in progress)
-  tools/
-    build_catalog.py   # rebuilds catalog.db from seed data
-    catalog_ui.html    # browser interface for viewing/editing the catalog
-    catalog.db         # SQLite tool catalog (as of latest update: 18 capabilities, 38 products)
-    CATALOG.md         # catalog field reference
-    server.py          # local Flask server for the catalog UI
+ai-dss/
+├── config.py           # all paths, model names, TOPSIS weights
+├── data/               # questionnaire inputs + company profiles
+├── src/
+│   ├── models/         # CompanyProfile, ClassicalResult, LLMResult, HybridResult
+│   ├── ingestion/      # questionnaire → CompanyProfile
+│   ├── catalog/        # SQLite repository + SBERT embedder
+│   └── matching/
+│       ├── classical/  # bi-encoder, cross-encoder, TOPSIS, explanation
+│       ├── llm/        # Ollama extractor + LLM engine
+│       ├── hybrid/     # HybridEngine, ShortlistReranker, HybridAggregator
+│       └── feedback/   # FeedbackLogger, CFScorer
+└── requirements.txt
 ```
 
-Real company data (B1/B2/B3) is not published. Only synthetic data is included in this repository.
+## Catalog
+
+30 capabilities · 62 products · 6 domains (crm_sales, customer_support, ecommerce_ops, marketing, operations_backoffice, supply_chain)
