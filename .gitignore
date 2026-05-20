@@ -14,3 +14,4 @@ scripts
 scripts/
 src/tools/tool_embeddings.npy
 src/tools/tool_embeddings_index.json
+results/
