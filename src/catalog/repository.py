@@ -19,7 +19,7 @@ class CatalogRepository:
                     f"catalog.db not found at {self._path}. "
                     "Run build_catalog.py first."
                 )
-            self._conn = sqlite3.connect(str(self._path))
+            self._conn = sqlite3.connect(str(self._path), check_same_thread=False)
             self._conn.row_factory = sqlite3.Row
         return self._conn
 
