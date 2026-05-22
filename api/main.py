@@ -1,0 +1,136 @@
+from __future__ import annotations
+
+import os
+import sys
+from contextlib import asynccontextmanager
+from pathlib import Path
+import requests
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+from config import CFG
+from src.catalog.repository import CatalogRepository
+from src.matching.classical.classical_engine import ClassicalEngine
+from src.matching.hybrid.hybrid_engine import HybridEngine
+
+from api.models import HealthResponse
+from api.translator.question_schema import QUESTION_SCHEMA
+from api.constants import DISCLOSURE_TEXT, PRIVACY_NOTICE, API_VERSION
+
+_ollama_base = os.environ.get("OLLAMA_URL", "http://localhost:11434")
+OLLAMA_HEALTH_URL = f"{_ollama_base}/api/tags"
+OLLAMA_PING_TIMEOUT_S = 2.0
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    repo: CatalogRepository | None = None
+
+    try:
+        repo = CatalogRepository()
+        repo.__enter__()
+        classical_engine = ClassicalEngine.build(repo=repo)
+        hybrid_engine = HybridEngine.build(repo=repo)
+
+        app.state.repo = repo
+        app.state.classical_engine = classical_engine
+        app.state.hybrid_engine = hybrid_engine
+        app.state.ollama_available = _ping_ollama()
+
+        n = len(repo.get_capabilities())
+        ollama_msg = "available" if app.state.ollama_available else "offline — classical fallback active"
+        print(f"[AI-DSS] Catalog: {n} capabilities")
+        print(f"[AI-DSS] Engines ready | Ollama: {ollama_msg}")
+
+    except FileNotFoundError as exc:
+        print(f"[AI-DSS] Startup failed — catalog not found: {exc}")
+        print(
+            "[AI-DSS] Run these first:\n"
+            "  python src/tools/build_catalog.py\n"
+            "  python scripts/extend_catalog.py\n"
+            "  python -m src.catalog.embedder"
+        )
+        raise
+
+    yield
+
+    if repo is not None:
+        repo.__exit__(None, None, None)
+        print("[AI-DSS] CatalogRepository closed")
+
+_dev_origins = ["http://localhost:3000", "http://localhost:5173"]
+ALLOWED_ORIGINS: list[str] = os.environ.get(
+    "ALLOWED_ORIGINS", ",".join(_dev_origins)
+).split(",")
+
+app = FastAPI(
+    title="AI-DSS API",
+    description=(
+        "AI-powered decision support system — recommends AI tools to "
+        "SME e-commerce operators based on their operational profile."
+    ),
+    version=API_VERSION,
+    lifespan=lifespan,
+    docs_url=None if os.environ.get("DISABLE_DOCS") == "1" else "/docs",
+    redoc_url=None if os.environ.get("DISABLE_DOCS") == "1" else "/redoc",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=ALLOWED_ORIGINS,
+    allow_credentials=False,
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type", "Authorization"],
+)
+
+from api.routes.recommend import router as recommend_router
+app.include_router(recommend_router, prefix="/api", tags=["recommendations"])
+
+from api.routes.catalog import router as catalog_router
+app.include_router(catalog_router, prefix="/api", tags=["catalog"])
+
+# Phase 5
+# from api.routes.auth import router as auth_router
+# app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
+
+@app.get(
+    "/api/health",
+    response_model=HealthResponse,
+    tags=["system"],
+    summary="Engine status and catalog info",
+)
+def health() -> HealthResponse:
+    ollama_live = _ping_ollama()
+    app.state.ollama_available = ollama_live
+    caps = app.state.repo.get_capabilities()
+    n_products = sum(
+        len(app.state.repo.get_products(c.capability_id)) for c in caps
+    )
+
+    return HealthResponse(
+        status="ok",
+        ollama_available=ollama_live,
+        catalog_capabilities_count=len(caps),
+        catalog_products_count=n_products,
+        active_llm_model=CFG.LLM_MODEL,
+        active_sbert_model=CFG.BI_ENCODER_MODEL,
+        version=API_VERSION,
+    )
+
+@app.get(
+    "/api/questions",
+    tags=["questionnaire"],
+    summary="Question schema for dynamic form rendering",
+)
+
+def get_questions() -> dict:
+    return QUESTION_SCHEMA
+
+def _ping_ollama() -> bool:
+    try:
+        resp = requests.get(OLLAMA_HEALTH_URL, timeout=OLLAMA_PING_TIMEOUT_S)
+        return resp.status_code == 200
+    except Exception:
+        return False
