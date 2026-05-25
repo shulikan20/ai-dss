@@ -4,10 +4,9 @@ DISCLOSURE_TEXT: str = (
 )
 
 PRIVACY_NOTICE: str = (
-    "This tool processes company operational data to generate AI-powered "
-    "recommendations. No personal data is collected. Session data is not "
-    "persisted — your answers are cleared as soon as the recommendation "
-    "is returned."
+    "Operational data you provide is processed to generate recommendations "
+    "and stored securely to improve the service. No personal identification "
+    "data is required or collected."
 )
 
 API_VERSION: str = "0.1.0"
