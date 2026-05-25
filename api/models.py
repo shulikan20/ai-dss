@@ -85,6 +85,7 @@ class RecommendationResponse(BaseModel):
     processing_time_ms: int
     ai_disclosure: str
     recommendations: list[RecommendationItem]
+    recommendation_id: Optional[str] = None
 
 class CatalogCapabilityModel(BaseModel):
     """GET /api/catalog response."""
@@ -99,6 +100,25 @@ class CatalogResponse(BaseModel):
     model_config = ConfigDict(frozen=True)
     capabilities: list[CatalogCapabilityModel]
     total: int
+
+class FeedbackRequest(BaseModel):
+    """POST /api/feedback request body."""
+    model_config = ConfigDict(str_strip_whitespace=True)
+    recommendation_id: str
+    capability_id: str
+    rating: Optional[int] = Field(None, ge=1, le=5)
+    was_implemented: Optional[bool] = None
+    comment: Optional[str] = Field(None, max_length=1000)
+
+class FeedbackResponse(BaseModel):
+    """POST /api/feedback response."""
+    model_config = ConfigDict(frozen=True)
+    feedback_id: str
+    recommendation_id: str
+    capability_id: str
+    rating: Optional[int] = None
+    was_implemented: Optional[bool] = None
+    saved: bool = True
 
 class UserCreate(BaseModel):
     """POST /api/auth/register request."""
