@@ -15,5 +15,4 @@ scripts/
 src/tools/tool_embeddings.npy
 src/tools/tool_embeddings_index.json
 results/
-Makefile
 sc4_test.json
