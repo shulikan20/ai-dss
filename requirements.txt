@@ -8,4 +8,10 @@ pymcdm>=1.1.0
 requests
 fastapi
 uvicorn[standard]
-pydantic>=2 
+pydantic>=2
+sqlalchemy>=2.0
+psycopg2-binary
+alembic
+python-jose[cryptography]>=3.3.0
+bcrypt>=4.0.0
+email-validator>=2.0.0
