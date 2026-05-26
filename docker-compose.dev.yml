@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: aidss-postgres-dev
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER:     aidss
+      POSTGRES_PASSWORD: aidss
+      POSTGRES_DB:       aidss
+    ports:
+      - "5432:5432"
+    volumes:
+      - aidss-postgres-dev-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aidss -d aidss"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  # test database
+  postgres-test:
+    image: postgres:16-alpine
+    container_name: aidss-postgres-test
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER:     aidss
+      POSTGRES_PASSWORD: aidss
+      POSTGRES_DB:       aidss_test
+    ports:
+      - "5433:5432"
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aidss -d aidss_test"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  aidss-postgres-dev-data:
+    driver: local
