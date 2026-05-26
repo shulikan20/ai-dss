@@ -3,8 +3,15 @@ import os
 import sys
 import time
 import requests as http_requests
+import dataclasses, json
 from fastapi import APIRouter, HTTPException, Request
+from sqlalchemy.orm import Session
+from fastapi import Depends
 
+from api.auth.dependencies import get_current_user_optional
+from api.database.connection import get_db
+from api.database.models import User
+from api.database.repository import SessionRepository, UserRepository
 from api.constants import DISCLOSURE_TEXT
 from api.models import (
     DimensionBreakdownModel,
@@ -41,6 +48,8 @@ def _ping_ollama() -> bool:
 def recommend(
     request: Request,
     body: QuestionnaireRequest,
+    db: Session = Depends(get_db),
+    current_user: User | None = Depends(get_current_user_optional),
 ) -> RecommendationResponse:
     t0 = time.perf_counter()
     repo = request.app.state.repo
@@ -63,6 +72,37 @@ def recommend(
         pipeline_used = "classical_fallback"
 
     results = engine.match(profile)
+
+    recommendation_id = None
+    try:
+        session_repo = SessionRepository(db)
+        company_id = None
+        if current_user is not None:
+            user_repo = UserRepository(db)
+            company = user_repo.create_company(
+                company_name=body.company_name,
+                country=body.country,
+                user_id=current_user.id,
+            )
+            company_id = company.id
+        
+        saved = session_repo.save(
+            tier=body.tier,
+            domains=body.domains,
+            bottleneck_text=body.bottleneck_text,
+            answers=body.answers if hasattr(body, "answers") else {},
+            profile_snapshot=dataclasses.asdict(profile),
+            pipeline_used=pipeline_used,
+            llm_available=ollama_live,
+            processing_time_ms=int((time.perf_counter() - t0) * 1000),
+            ranked_results=[dataclasses.asdict(r) for r in results],
+            company_id=company_id,
+        )
+        recommendation_id = str(saved.recommendation_id)
+    except Exception:
+        import logging
+        logging.getLogger(__name__).exception("Failed to persist session")
+
     recommendation_items: list[RecommendationItem] = []
     for result in results[:_MAX_RESULTS]:
         products = repo.get_products(result.capability_id)
@@ -97,6 +137,7 @@ def recommend(
         llm_available=ollama_live,
         processing_time_ms=elapsed_ms,
         ai_disclosure=DISCLOSURE_TEXT,
+        recommendation_id=recommendation_id,
         recommendations=recommendation_items,
     )
 
