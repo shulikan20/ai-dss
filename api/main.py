@@ -13,11 +13,13 @@ sys.path.insert(0, str(ROOT))
 
 from config import CFG
 from src.catalog.repository import CatalogRepository
+from src.catalog.pg_repository import PostgreSQLCatalogRepository
 from src.matching.classical.classical_engine import ClassicalEngine
 from src.matching.hybrid.hybrid_engine import HybridEngine
 
 from api.models import HealthResponse
 from api.translator.question_schema import QUESTION_SCHEMA
+from api.database.connection import init_db, get_session_factory
 from api.constants import DISCLOSURE_TEXT, PRIVACY_NOTICE, API_VERSION
 
 _ollama_base = os.environ.get("OLLAMA_URL", "http://localhost:11434")
@@ -26,11 +28,20 @@ OLLAMA_PING_TIMEOUT_S = 2.0
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    repo: CatalogRepository | None = None
+    repo = None
 
     try:
-        repo = CatalogRepository()
-        repo.__enter__()
+        init_db()
+        print("[AI-DSS] Database connected")
+
+        repo = _try_pg_catalog()
+        if repo is not None:
+            print("[AI-DSS] Catalog: PostgreSQL backend")
+        else:
+            repo = CatalogRepository()
+            repo.__enter__()
+            print("[AI-DSS] Catalog: SQLite backend (catalog.db)")
+
         classical_engine = ClassicalEngine.build(repo=repo)
         hybrid_engine = HybridEngine.build(repo=repo)
 
@@ -60,6 +71,17 @@ async def lifespan(app: FastAPI):
         repo.__exit__(None, None, None)
         print("[AI-DSS] CatalogRepository closed")
 
+def _try_pg_catalog() -> PostgreSQLCatalogRepository | None:
+    try:
+        sf = get_session_factory()
+        pg_repo = PostgreSQLCatalogRepository(sf)
+        count = pg_repo.capability_count()
+        if count > 0:
+            return pg_repo
+        return None
+    except Exception:
+        return None
+
 _dev_origins = ["http://localhost:3000", "http://localhost:5173"]
 ALLOWED_ORIGINS: list[str] = os.environ.get(
     "ALLOWED_ORIGINS", ",".join(_dev_origins)
@@ -81,7 +103,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
     allow_credentials=False,
-    allow_methods=["GET", "POST"],
+    allow_methods=["GET", "POST", "DELETE"],
     allow_headers=["Content-Type", "Authorization"],
 )
 
@@ -91,9 +113,18 @@ app.include_router(recommend_router, prefix="/api", tags=["recommendations"])
 from api.routes.catalog import router as catalog_router
 app.include_router(catalog_router, prefix="/api", tags=["catalog"])
 
-# Phase 5
-# from api.routes.auth import router as auth_router
-# app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
+from api.routes.feedback import router as feedback_router
+app.include_router(feedback_router, prefix="/api", tags=["feedback"])
+
+from api.auth.router import router as auth_router
+app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
+
+from api.routes.user import router as user_router
+app.include_router(user_router, prefix="/api", tags=["user"])
+
+from api.routes.admin import router as admin_router
+app.include_router(admin_router, prefix="/api/admin", tags=["admin"])
+
 
 @app.get(
     "/api/health",
