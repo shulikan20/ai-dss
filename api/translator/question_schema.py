@@ -1,5 +1,8 @@
 from __future__ import annotations
+
 from typing import TypedDict
+
+from src.catalog.pain_flags import PainFlags
 
 class AnswerOption(TypedDict):
     value: str
@@ -7,6 +10,7 @@ class AnswerOption(TypedDict):
     pain_flags: list[str]
 
 class ProfileFieldOption(TypedDict):
+    """Used for questions that map to a profile field, not pain flags."""
     value: str
     label: str
     profile_value: int | str | list[str]
@@ -26,23 +30,22 @@ class Domain(TypedDict):
     description: str
 
 CATALOG_PATHS_TO_VERIFY = {
-    # VERIFIED
-    "customer_support.volume.pain_high_volume_support",
-    "universal.processes.pain_repetitive_support",
-    "ecommerce_ops.pain_points.pain_manual_returns",
-    "universal.processes.pain_manual_data_entry",
-    "universal.processes.pain_no_data_insights",
-    "universal.processes.pain_manual_content_creation",
-    "supply_chain.inventory.pain_stockouts",
-    "universal.processes.pain_manual_invoicing",
-    "crm_sales.pipeline.pain_slow_followup",
-    "crm_sales.pipeline.pain_unclear_reporting",
-    "marketing.paid.pain_poor_ad_performance",
-    "universal.processes.pain_supplier_tracking",
-    "ecommerce_ops.pain_points.pain_inventory_tracking",
-    "universal.processes.pain_stockouts",
-    "universal.processes.pain_overstock",
-    #"supply_chain.procurement.pain_supplier_delays",
+    PainFlags.HIGH_VOLUME_SUPPORT,
+    PainFlags.REPETITIVE_SUPPORT,
+    PainFlags.MANUAL_RETURNS,
+    PainFlags.MANUAL_DATA_ENTRY,
+    PainFlags.NO_DATA_INSIGHTS,
+    PainFlags.MANUAL_CONTENT,
+    PainFlags.STOCKOUTS_SUPPLY_CHAIN,
+    PainFlags.MANUAL_INVOICING,
+    PainFlags.SLOW_FOLLOWUP,
+    PainFlags.UNCLEAR_REPORTING,
+    PainFlags.POOR_AD_PERFORMANCE,
+    PainFlags.SUPPLIER_TRACKING,
+    PainFlags.INVENTORY_TRACKING,
+    PainFlags.STOCKOUTS_UNIVERSAL,
+    PainFlags.OVERSTOCK,
+    # supply_chain.procurement.pain_supplier_delays ! not in catalog !
 }
 
 _DOMAINS: list[Domain] = [
@@ -77,7 +80,6 @@ _DOMAINS: list[Domain] = [
         "description": "Invoicing, document generation, internal reporting",
     },
 ]
-
 _QUESTIONS: dict[str, list[Question]] = {
     "customer_support": [
         {
@@ -96,15 +98,15 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "medium",
                     "label": "50 – 200",
                     "pain_flags": [
-                        "customer_support.volume.pain_high_volume_support",
+                        PainFlags.HIGH_VOLUME_SUPPORT,
                     ],
                 },
                 {
                     "value": "high",
                     "label": "Over 200",
                     "pain_flags": [
-                        "customer_support.volume.pain_high_volume_support",
-                        "universal.processes.pain_repetitive_support",
+                        PainFlags.HIGH_VOLUME_SUPPORT,
+                        PainFlags.REPETITIVE_SUPPORT,
                     ],
                 },
             ],
@@ -125,15 +127,15 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "sometimes",
                     "label": "Sometimes",
                     "pain_flags": [
-                        "universal.processes.pain_repetitive_support",
+                        PainFlags.REPETITIVE_SUPPORT,
                     ],
                 },
                 {
                     "value": "constantly",
                     "label": "Constantly — the same 5-10 questions over and over",
                     "pain_flags": [
-                        "customer_support.volume.pain_high_volume_support",
-                        "universal.processes.pain_repetitive_support",
+                        PainFlags.HIGH_VOLUME_SUPPORT,
+                        PainFlags.REPETITIVE_SUPPORT,
                     ],
                 },
             ],
@@ -153,15 +155,15 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "one_two_days",
                     "label": "1 – 2 days",
                     "pain_flags": [
-                        "customer_support.volume.pain_high_volume_support",
+                        PainFlags.HIGH_VOLUME_SUPPORT,
                     ],
                 },
                 {
                     "value": "longer",
                     "label": "Longer than 2 days",
                     "pain_flags": [
-                        "customer_support.volume.pain_high_volume_support",
-                        "universal.processes.pain_repetitive_support",
+                        PainFlags.HIGH_VOLUME_SUPPORT,
+                        PainFlags.REPETITIVE_SUPPORT,
                     ],
                 },
             ],
@@ -184,15 +186,15 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "semi_manual",
                     "label": "Partly manual — some orders need to be entered or checked by hand",
                     "pain_flags": [
-                        "universal.processes.pain_manual_data_entry",
+                        PainFlags.MANUAL_DATA_ENTRY,
                     ],
                 },
                 {
                     "value": "fully_manual",
                     "label": "Fully manual — all orders are entered by hand each day",
                     "pain_flags": [
-                        "universal.processes.pain_manual_data_entry",
-                        "universal.processes.pain_no_data_insights",
+                        PainFlags.MANUAL_DATA_ENTRY,
+                        PainFlags.NO_DATA_INSIGHTS,
                     ],
                 },
             ],
@@ -213,15 +215,15 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "two_three",
                     "label": "2 – 3 channels",
                     "pain_flags": [
-                        "universal.processes.pain_manual_data_entry",
+                        PainFlags.MANUAL_DATA_ENTRY,
                     ],
                 },
                 {
                     "value": "four_plus",
                     "label": "4 or more channels",
                     "pain_flags": [
-                        "universal.processes.pain_manual_data_entry",
-                        "universal.processes.pain_no_data_insights",
+                        PainFlags.MANUAL_DATA_ENTRY,
+                        PainFlags.NO_DATA_INSIGHTS,
                     ],
                 },
             ],
@@ -241,14 +243,14 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "partially_manual",
                     "label": "Partially manual — some steps handled by the team",
                     "pain_flags": [
-                        "ecommerce_ops.pain_points.pain_manual_returns",
+                        PainFlags.MANUAL_RETURNS,
                     ],
                 },
                 {
                     "value": "fully_manual",
                     "label": "Fully manual — every return handled from start to finish by staff",
                     "pain_flags": [
-                        "ecommerce_ops.pain_points.pain_manual_returns",
+                        PainFlags.MANUAL_RETURNS,
                     ],
                 },
             ],
@@ -271,14 +273,14 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "templates",
                     "label": "We use templates and adapt them manually",
                     "pain_flags": [
-                        "universal.processes.pain_manual_content_creation",
+                        PainFlags.MANUAL_CONTENT,
                     ],
                 },
                 {
                     "value": "fully_manual",
                     "label": "Fully manual — written from scratch each time",
                     "pain_flags": [
-                        "universal.processes.pain_manual_content_creation",
+                        PainFlags.MANUAL_CONTENT,
                     ],
                 },
             ],
@@ -298,15 +300,15 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "manual_weekly",
                     "label": "Manual — I pull numbers from each platform every week",
                     "pain_flags": [
-                        "universal.processes.pain_no_data_insights",
+                        PainFlags.NO_DATA_INSIGHTS,
                     ],
                 },
                 {
                     "value": "no_tracking",
                     "label": "No structured tracking",
                     "pain_flags": [
-                        "universal.processes.pain_no_data_insights",
-                        "marketing.paid.pain_poor_ad_performance",
+                        PainFlags.NO_DATA_INSIGHTS,
+                        PainFlags.POOR_AD_PERFORMANCE,
                     ],
                 },
             ],
@@ -328,18 +330,18 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "shopify_woocommerce",
                     "label": "Shopify / WooCommerce built-in tracking",
                     "pain_flags": [
-                        "supply_chain.inventory.pain_stockouts",
-                        "ecommerce_ops.pain_points.pain_inventory_tracking",
+                        PainFlags.STOCKOUTS_SUPPLY_CHAIN,
+                        PainFlags.INVENTORY_TRACKING,
                     ],
                 },
                 {
                     "value": "excel_manual",
                     "label": "Excel spreadsheet or manual counting",
                     "pain_flags": [
-                        "supply_chain.inventory.pain_stockouts",
-                        "universal.processes.pain_stockouts",
-                        "ecommerce_ops.pain_points.pain_inventory_tracking",
-                        "universal.processes.pain_overstock",
+                        PainFlags.STOCKOUTS_SUPPLY_CHAIN,
+                        PainFlags.STOCKOUTS_UNIVERSAL,
+                        PainFlags.INVENTORY_TRACKING,
+                        PainFlags.OVERSTOCK,
                     ],
                 },
             ],
@@ -359,17 +361,17 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "few_per_year",
                     "label": "A few times per year",
                     "pain_flags": [
-                        "supply_chain.inventory.pain_stockouts",
-                        "universal.processes.pain_stockouts",
+                        PainFlags.STOCKOUTS_SUPPLY_CHAIN,
+                        PainFlags.STOCKOUTS_UNIVERSAL,
                     ],
                 },
                 {
                     "value": "monthly",
                     "label": "Monthly or more often",
                     "pain_flags": [
-                        "supply_chain.inventory.pain_stockouts",
-                        "universal.processes.pain_stockouts",
-                        "universal.processes.pain_overstock",
+                        PainFlags.STOCKOUTS_SUPPLY_CHAIN,
+                        PainFlags.STOCKOUTS_UNIVERSAL,
+                        PainFlags.OVERSTOCK,
                     ],
                 },
             ],
@@ -390,15 +392,15 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "email_phone",
                     "label": "Mostly email and phone — some structure",
                     "pain_flags": [
-                        "universal.processes.pain_supplier_tracking",
+                        PainFlags.SUPPLIER_TRACKING,
                     ],
                 },
                 {
                     "value": "fully_manual",
                     "label": "Fully manual — no standard process",
                     "pain_flags": [
-                        "universal.processes.pain_supplier_tracking",
-                        "universal.processes.pain_manual_data_entry",
+                        PainFlags.SUPPLIER_TRACKING,
+                        PainFlags.MANUAL_DATA_ENTRY,
                     ],
                 },
             ],
@@ -420,15 +422,15 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "templates",
                     "label": "We use templates, adapted manually for each client",
                     "pain_flags": [
-                        "universal.processes.pain_manual_content_creation",
+                        PainFlags.MANUAL_CONTENT,
                     ],
                 },
                 {
                     "value": "from_scratch",
                     "label": "Written from scratch for every client",
                     "pain_flags": [
-                        "universal.processes.pain_manual_content_creation",
-                        "crm_sales.pipeline.pain_slow_followup",
+                        PainFlags.MANUAL_CONTENT,
+                        PainFlags.SLOW_FOLLOWUP,
                     ],
                 },
             ],
@@ -448,14 +450,14 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "semi_manual",
                     "label": "Partly manual — reminders help, but not fully automated",
                     "pain_flags": [
-                        "crm_sales.pipeline.pain_slow_followup",
+                        PainFlags.SLOW_FOLLOWUP,
                     ],
                 },
                 {
                     "value": "fully_manual",
                     "label": "Fully manual — follow-ups depend on memory",
                     "pain_flags": [
-                        "crm_sales.pipeline.pain_slow_followup",
+                        PainFlags.SLOW_FOLLOWUP,
                     ],
                 },
             ],
@@ -475,15 +477,15 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "manual_spreadsheet",
                     "label": "Manual spreadsheet updated periodically",
                     "pain_flags": [
-                        "crm_sales.pipeline.pain_unclear_reporting",
-                        "universal.processes.pain_no_data_insights",
+                        PainFlags.UNCLEAR_REPORTING,
+                        PainFlags.NO_DATA_INSIGHTS,
                     ],
                 },
                 {
                     "value": "no_tracking",
                     "label": "No structured tracking",
                     "pain_flags": [
-                        "crm_sales.pipeline.pain_unclear_reporting",
+                        PainFlags.UNCLEAR_REPORTING,
                     ],
                 },
             ],
@@ -505,15 +507,15 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "partially_manual",
                     "label": "Partially manual — created from templates, sent manually",
                     "pain_flags": [
-                        "universal.processes.pain_manual_invoicing",
+                        PainFlags.MANUAL_INVOICING,
                     ],
                 },
                 {
                     "value": "fully_manual",
                     "label": "Fully manual — written individually for each client",
                     "pain_flags": [
-                        "universal.processes.pain_manual_invoicing",
-                        "universal.processes.pain_manual_content_creation",
+                        PainFlags.MANUAL_INVOICING,
+                        PainFlags.MANUAL_CONTENT,
                     ],
                 },
             ],
@@ -534,15 +536,15 @@ _QUESTIONS: dict[str, list[Question]] = {
                     "value": "templates",
                     "label": "Templates that are filled in manually",
                     "pain_flags": [
-                        "universal.processes.pain_manual_content_creation",
+                        PainFlags.MANUAL_CONTENT,
                     ],
                 },
                 {
                     "value": "from_scratch",
                     "label": "Written from scratch each time",
                     "pain_flags": [
-                        "universal.processes.pain_manual_content_creation",
-                        "universal.processes.pain_manual_invoicing",
+                        PainFlags.MANUAL_CONTENT,
+                        PainFlags.MANUAL_INVOICING,
                     ],
                 },
             ],
@@ -557,7 +559,7 @@ _FULL_TIER_EXTRAS: list[Question] = [
         "text": "Which platforms does your company use?",
         "help_text": "Select all that apply.",
         "type": "multi_select",
-        "maps_to": "integrations",
+        "maps_to": "integrations",              # profile.integrations: list[str]
         "options": [
             {"value": "shopify",      "label": "Shopify",              "profile_value": "shopify"},
             {"value": "woocommerce",  "label": "WooCommerce",          "profile_value": "woocommerce"},
@@ -578,7 +580,7 @@ _FULL_TIER_EXTRAS: list[Question] = [
         "text": "What data do you have available as an export?",
         "help_text": "These help generate more accurate recommendations.",
         "type": "multi_select",
-        "maps_to": "export_types_available",
+        "maps_to": "export_types_available",    # profile.export_types_available: list[str]
         "options": [
             {"value": "orders",          "label": "Order history",          "profile_value": "orders"},
             {"value": "inventory",       "label": "Inventory data",         "profile_value": "inventory"},
@@ -594,7 +596,7 @@ _FULL_TIER_EXTRAS: list[Question] = [
         "text": "How would you rate your team's technical level?",
         "help_text": "This helps us recommend tools that match your setup capacity.",
         "type": "profile_field",
-        "maps_to": "tech_sophistication",
+        "maps_to": "tech_sophistication",       # profile.tech_sophistication: int (1/2/3)
         "options": [
             {"value": "1", "label": "Not technical — we prefer no-code / plug-and-play tools", "profile_value": 1},
             {"value": "2", "label": "Some technical people — can handle guided setup",          "profile_value": 2},
@@ -619,7 +621,6 @@ def get_questions_for_tier(tier: str) -> dict[str, list[Question]]:
         if filtered:
             result[domain] = filtered
     return result
-
 
 def get_all_catalog_pain_flags() -> set[str]:
     flags: set[str] = set()
