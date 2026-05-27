@@ -28,6 +28,15 @@ OLLAMA_PING_TIMEOUT_S = 2.0
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    env = os.environ.get("AIDSS_ENV", "development")
+    secret = os.environ.get("SECRET_KEY", "")
+    if env == "production" and (
+        not secret or secret == "dev-secret-change-in-production"
+    ):
+        raise RuntimeError(
+            "SECRET_KEY must be set to a secure random value in production. "
+            "Generate one with: python -c \"import secrets; print(secrets.token_hex(32))\""
+        )
     repo = None
 
     try:
