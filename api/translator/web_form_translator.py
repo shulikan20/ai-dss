@@ -31,11 +31,13 @@ class WebFormTranslator:
         enrich_with_llm: bool = False,
     ) -> CompanyProfile:
         confirmed_flags = self._map_structured_answers(form_data.answers)
+        for flag_path in getattr(form_data, "confirmed_pain_flags", []):
+            confirmed_flags[flag_path] = True
         profile_extras = self._extract_profile_field_answers(form_data.answers)
         bottleneck_text = form_data.bottleneck_text.strip()
         if export_summary:
             bottleneck_text = f"{bottleneck_text}\n\nData analysis: {export_summary.strip()}"
-
+        catalog_paths = self._get_catalog_paths(repo)
         if enrich_with_llm:
             prelim_profile = self._build_profile(
                 form_data=form_data,
@@ -48,7 +50,6 @@ class WebFormTranslator:
             inferred_flags = {}
 
         merged_flags = {**inferred_flags, **confirmed_flags}
-        catalog_paths = self._get_catalog_paths(repo)
         self._maybe_audit(get_all_catalog_pain_flags(), catalog_paths)
 
         return self._build_profile(
@@ -98,7 +99,13 @@ class WebFormTranslator:
                     extras["technical_level"] = int(raw)
                 except ValueError:
                     pass
-
+            elif maps_to == "has_structured_export":
+                extras["has_structured_export"] = raw in ("yes_clean", "yes_messy")
+            elif maps_to == "history_months":
+                try:
+                    extras["history_months"] = int(raw)
+                except ValueError:
+                    pass
             elif q_type == "multi_select":
                 selected = [v.strip() for v in raw.split(",") if v.strip()]
                 if maps_to in ("integrations", "current_tools"):
