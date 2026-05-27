@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
@@ -164,7 +164,7 @@ def export_user_data(
         companies=companies_data,
         sessions=sessions_data,
         feedback=feedback_data,
-        exported_at=datetime.utcnow().isoformat() + "Z",
+        exported_at=datetime.now(timezone.utc).isoformat(),
     )
 
 

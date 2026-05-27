@@ -47,9 +47,12 @@ class UserResponse(BaseModel):
     is_admin: bool
     created_at: str
 
+class AuthResponse(TokenResponse):
+    user: UserResponse
+
 @router.post(
     "/register",
-    response_model=TokenResponse,
+    response_model=AuthResponse,
     status_code=status.HTTP_201_CREATED,
     summary="Create a new user account",
 )
@@ -57,7 +60,7 @@ def register(
     body: RegisterRequest,
     response: Response,
     db: Session = Depends(get_db),
-) -> TokenResponse:
+) -> AuthResponse:
     user_repo = UserRepository(db)
     existing = user_repo.get_user_by_email(body.email)
     if existing is not None:
@@ -78,19 +81,27 @@ def register(
         )
 
     tokens = _create_token_pair(user, db)
-    return tokens
-
+    return AuthResponse(
+        **tokens.model_dump(),
+        user=UserResponse(
+            id=str(user.id),
+            email=user.email,
+            email_verified=user.email_verified,
+            is_admin=user.is_admin,
+            created_at=user.created_at.isoformat(),
+        ),
+    )
 
 @router.post(
     "/login",
-    response_model=TokenResponse,
+    response_model=AuthResponse,
     summary="Authenticate and get tokens",
 )
 def login(
     body: LoginRequest,
     response: Response,
     db: Session = Depends(get_db),
-) -> TokenResponse:
+) -> AuthResponse:
     user_repo = UserRepository(db)
     user = user_repo.get_user_by_email(body.email)
     _credentials_error = HTTPException(
@@ -107,7 +118,16 @@ def login(
         raise _credentials_error
 
     tokens = _create_token_pair(user, db)
-    return tokens
+    return AuthResponse(
+        **tokens.model_dump(),
+        user=UserResponse(
+            id=str(user.id),
+            email=user.email,
+            email_verified=user.email_verified,
+            is_admin=user.is_admin,
+            created_at=user.created_at.isoformat(),
+        ),
+    )
 
 @router.post(
     "/refresh",
