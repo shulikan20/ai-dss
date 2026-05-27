@@ -25,7 +25,7 @@ from api.translator.web_form_translator import WebFormTranslator
 router = APIRouter()
 _translator = WebFormTranslator()
 
-_MAX_RESULTS = 3 # Max recommendations
+_MAX_RESULTS = 5 # Max recommendations
 _MAX_PRODUCTS = 2
 _OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434") + "/api/tags"
 
