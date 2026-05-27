@@ -21,8 +21,9 @@ class QuestionnaireRequest(BaseModel):
     country: Annotated[str, Field(min_length=2, max_length=2)]
     team_size: Optional[str] = None
     domains: Annotated[list[str], Field(min_length=1)]
-    bottleneck_text: Annotated[str, Field(min_length=20, max_length=2000)]
+    bottleneck_text: Annotated[str, Field(min_length=0, max_length=2000)]
     answers: dict[str, str] = Field(default_factory=dict)
+    confirmed_pain_flags: list[str] = Field(default_factory=list)
 
     @field_validator("country")
     @classmethod
