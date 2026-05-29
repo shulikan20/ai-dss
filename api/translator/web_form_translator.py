@@ -12,7 +12,7 @@ from src.models.company_profile import CompanyProfile
 
 from api.models import QuestionnaireRequest
 from api.translator.bottleneck_analyser import BottleneckAnalyser
-from api.translator.question_schema import (
+from api.translator.questions import (
     QUESTION_SCHEMA,
     get_all_catalog_pain_flags,
 )

@@ -18,7 +18,7 @@ from src.matching.classical.classical_engine import ClassicalEngine
 from src.matching.hybrid.hybrid_engine import HybridEngine
 
 from api.models import HealthResponse
-from api.translator.question_schema import QUESTION_SCHEMA
+from api.translator.questions import QUESTION_SCHEMA
 from api.database.connection import init_db, get_session_factory
 from api.constants import DISCLOSURE_TEXT, PRIVACY_NOTICE, API_VERSION
 
