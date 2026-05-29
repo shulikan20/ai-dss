@@ -9,6 +9,7 @@ from api.database.models import (
     Company,
     ExportFile,
     Feedback,
+    OAuthAccount,
     QuestionnaireSession,
     Recommendation,
     RefreshToken,
@@ -345,3 +346,84 @@ class ExportRepository:
         self._db.add(ef)
         self._db.flush()
         return ef
+    
+class OAuthAccountRepository:
+    def __init__(self, db: Session) -> None:
+        self._db = db
+
+    def get_by_provider(
+        self, *, provider: str, provider_user_id: str
+    ) -> OAuthAccount | None:
+        return (
+            self._db.query(OAuthAccount)
+            .filter(
+                OAuthAccount.provider == provider,
+                OAuthAccount.provider_user_id == provider_user_id,
+            )
+            .first()
+        )
+
+    def create(
+        self,
+        *,
+        user_id: uuid.UUID,
+        provider: str,
+        provider_user_id: str,
+        email: str | None = None,
+    ) -> OAuthAccount:
+        oa = OAuthAccount(
+            user_id=user_id,
+            provider=provider,
+            provider_user_id=provider_user_id,
+            email=email,
+        )
+        self._db.add(oa)
+        self._db.flush()
+        return oa
+
+    def find_or_create_user(
+        self,
+        *,
+        provider: str,
+        provider_user_id: str,
+        email: str | None,
+    ) -> User:
+        existing = self.get_by_provider(
+            provider=provider, provider_user_id=provider_user_id
+        )
+        if existing:
+            user = (
+                self._db.query(User)
+                .filter(User.id == existing.user_id, User.deleted_at.is_(None))
+                .first()
+            )
+            if user:
+                return user
+
+        if email:
+            user_repo = UserRepository(self._db)
+            user = user_repo.get_user_by_email(email)
+            if user:
+                self.create(
+                    user_id=user.id,
+                    provider=provider,
+                    provider_user_id=provider_user_id,
+                    email=email,
+                )
+                return user
+
+        user = User(
+            email=(email or f"{provider}_{provider_user_id}@oauth.local").lower(),
+            password_hash="",
+            email_verified=True if email else False,
+        )
+        self._db.add(user)
+        self._db.flush()
+
+        self.create(
+            user_id=user.id,
+            provider=provider,
+            provider_user_id=provider_user_id,
+            email=email,
+        )
+        return user

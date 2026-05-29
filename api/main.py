@@ -128,6 +128,9 @@ app.include_router(feedback_router, prefix="/api", tags=["feedback"])
 from api.auth.router import router as auth_router
 app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
 
+from api.auth.oauth import router as oauth_router
+app.include_router(oauth_router, prefix="/api/auth", tags=["auth-oauth"])
+
 from api.routes.user import router as user_router
 app.include_router(user_router, prefix="/api", tags=["user"])
 
