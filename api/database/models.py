@@ -28,7 +28,7 @@ class User(Base):
         UUID(as_uuid=True), primary_key=True, default=uuid.uuid4
     )
     email: Mapped[str] = mapped_column(
-        String(255), unique=True, nullable=False
+        String(255), nullable=False
     )
     password_hash: Mapped[str] = mapped_column(String(255), nullable=False)
     email_verified: Mapped[bool] = mapped_column(
@@ -54,7 +54,12 @@ class User(Base):
     )
 
     __table_args__ = (
-        Index("ix_users_email", "email"),
+        Index(
+            "ix_users_email_active",
+            "email",
+            unique=True,
+            postgresql_where=(deleted_at.is_(None)),
+        ),
         Index("ix_users_deleted_at", "deleted_at"),
     )
 
