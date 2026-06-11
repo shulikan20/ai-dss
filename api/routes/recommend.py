@@ -1,6 +1,5 @@
 from __future__ import annotations
 import os
-import sys
 import time
 import requests as http_requests
 import dataclasses, json
@@ -21,17 +20,26 @@ from api.models import (
     RecommendationResponse,
 )
 from api.translator.web_form_translator import WebFormTranslator
+from config import CFG
 
 router = APIRouter()
 _translator = WebFormTranslator()
 
 _MAX_RESULTS = 5 # Max recommendations
 _MAX_PRODUCTS = 2
-_OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434") + "/api/tags"
+_EXPLAIN_TOP_N = 3
+_OLLAMA_BASE = os.environ.get("OLLAMA_URL", "http://localhost:11434")
+_OLLAMA_URL = _OLLAMA_BASE + "/api/tags"
 
 _EU_COUNTRIES = frozenset({
     "AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "GR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "PL", "PT", "RO", "SE", "SI", "SK", "NO", "IS", "LI",
 })
+
+_EXPLAIN_SYSTEM = """\
+You write short, specific explanations of why an AI tool helps a particular company.
+Each explanation must be exactly 2 sentences. Be concrete — mention the company's \
+actual problem. Do not start with "This tool" or "I recommend". \
+Return ONLY a JSON object mapping capability_id to your 2-sentence explanation."""
 
 def _ping_ollama() -> bool:
     try:
@@ -64,12 +72,8 @@ def recommend(
             detail=f"Could not build a company profile from the submitted form: {exc}",
         ) from exc
 
-    if ollama_live:
-        engine = request.app.state.hybrid_engine
-        pipeline_used = "hybrid_i2"
-    else:
-        engine = request.app.state.classical_engine
-        pipeline_used = "classical_fallback"
+    engine = request.app.state.engine
+    pipeline_used = "i3_llm_semantic" if ollama_live else "classical_fallback"
 
     results = engine.match(profile)
 
@@ -79,7 +83,7 @@ def recommend(
         company_id = None
         if current_user is not None:
             user_repo = UserRepository(db)
-            company = user_repo.create_company(
+            company = user_repo.get_or_create_company(
                 company_name=body.company_name,
                 country=body.country,
                 user_id=current_user.id,
@@ -103,10 +107,15 @@ def recommend(
         import logging
         logging.getLogger(__name__).exception("Failed to persist session")
 
+    llm_explanations: dict[str, str] = {}
+    if ollama_live:
+        llm_explanations = _generate_explanations(profile, results[:_EXPLAIN_TOP_N], repo)
+
     recommendation_items: list[RecommendationItem] = []
     for result in results[:_MAX_RESULTS]:
         products = repo.get_products(result.capability_id)
         dims = result.dimensions
+        explanation = llm_explanations.get(result.capability_id) or result.explanation or ""
         recommendation_items.append(
             RecommendationItem(
                 rank=result.rank,
@@ -114,7 +123,7 @@ def recommend(
                 capability_name=result.capability_name,
                 domain=result.domain,
                 topsis_score=round(result.topsis_score, 4),
-                explanation=result.explanation or "",
+                explanation=explanation,
                 dimensions=DimensionBreakdownModel(
                     semantic_fit=round(getattr(dims, "semantic_fit", 0.0), 4),
                     integration_compat=round(getattr(dims, "integration_compat", 0.0), 4),
@@ -140,6 +149,91 @@ def recommend(
         recommendation_id=recommendation_id,
         recommendations=recommendation_items,
     )
+
+def _generate_explanations(
+    profile,
+    top_results: list,
+    repo,
+) -> dict[str, str]:
+    if not top_results:
+        return {}
+
+    cap_map = {c.capability_id: c for c in repo.get_capabilities()}
+
+    team_size = getattr(profile, "team_size", None)
+    company_bits = [profile.company_name or "Company"]
+    if team_size:
+        company_bits.append(f"{team_size} people")
+    if profile.country:
+        company_bits.append(profile.country)
+
+    confirmed_pain_labels = [
+        k.split(".")[-1].replace("pain_", "").replace("_", " ")
+        for k, v in profile.pain_point_flags.items() if v
+    ]
+    pains = ", ".join(confirmed_pain_labels) if confirmed_pain_labels else "none stated"
+
+    bottleneck = profile.bottleneck_description or "(no bottleneck text provided)"
+
+    tool_lines = []
+    for r in top_results:
+        cap = cap_map.get(r.capability_id)
+        desc = cap.description if cap else ""
+        name = cap.name if cap else r.capability_name
+        tool_lines.append(f"- {r.capability_id}: {name} — {desc}")
+
+    user_prompt = (
+        f"Company: {', '.join(company_bits)}\n"
+        f"Key pain points: {pains}\n"
+        f'Problem described: "{bottleneck}"\n\n'
+        f"Write a 2-sentence explanation for each tool:\n"
+        + "\n".join(tool_lines)
+        + '\n\nReturn JSON only: {"capability_id": "2-sentence explanation", ...}'
+    )
+
+    try:
+        resp = http_requests.post(
+            _OLLAMA_BASE.rstrip("/") + "/api/generate",
+            json={
+                "model": CFG.LLM_MODEL,
+                "prompt": f"{_EXPLAIN_SYSTEM}\n\n{user_prompt}",
+                "stream": False,
+                "options": {"temperature": 0.3},
+            },
+            timeout=getattr(CFG, "LLM_TIMEOUT_SEC", 120),
+        )
+        resp.raise_for_status()
+        raw = resp.json()["response"].strip()
+    except Exception:
+        return {}
+
+    return _parse_explanations(raw, {r.capability_id for r in top_results})
+
+
+def _parse_explanations(raw: str, valid_ids: set[str]) -> dict[str, str]:
+    clean = raw.strip()
+    if "```" in clean:
+        clean = "\n".join(
+            ln for ln in clean.split("\n") if not ln.strip().startswith("```")
+        ).strip()
+
+    start = clean.find("{")
+    end = clean.rfind("}")
+    if start == -1 or end == -1 or end <= start:
+        return {}
+
+    try:
+        parsed = json.loads(clean[start : end + 1])
+    except json.JSONDecodeError:
+        return {}
+    if not isinstance(parsed, dict):
+        return {}
+
+    out: dict[str, str] = {}
+    for cap_id, text in parsed.items():
+        if cap_id in valid_ids and isinstance(text, str) and text.strip():
+            out[cap_id] = text.strip()
+    return out
 
 def _build_product_list(products, country: str = "") -> list[ProductDetail]:
     is_eu = country.upper() in _EU_COUNTRIES
