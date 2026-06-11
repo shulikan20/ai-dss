@@ -1,7 +1,7 @@
 from __future__ import annotations
 import dataclasses
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any
 from sqlalchemy.orm import Session
 
@@ -13,6 +13,7 @@ from api.database.models import (
     QuestionnaireSession,
     Recommendation,
     RefreshToken,
+    SavedTool,
     User,
 )
 
@@ -41,6 +42,12 @@ class FeedbackRecord:
     rating: int | None
     was_implemented: bool | None
     created_at: datetime
+
+@dataclasses.dataclass(frozen=True)
+class SavedToolRecord:
+    capability_id: str
+    capability_name: str | None
+    saved_at: datetime
 
 class SessionRepository:
     def __init__(self, db: Session) -> None:
@@ -215,6 +222,28 @@ class UserRepository:
             .filter(Company.id == company_id)
             .first()
         )
+    
+    def get_or_create_company(
+        self,
+        *,
+        company_name: str,
+        country: str,
+        user_id: uuid.UUID,
+    ) -> Company:
+        existing = (
+            self._db.query(Company)
+            .filter(
+                Company.user_id == user_id,
+                Company.company_name == company_name,
+                Company.country == country.upper(),
+            )
+            .first()
+        )
+        if existing is not None:
+            return existing
+        return self.create_company(
+            company_name=company_name, country=country, user_id=user_id
+        )
 
     def create_user(self, *, email: str, password_hash: str) -> User:
         user = User(
@@ -246,7 +275,7 @@ class UserRepository:
         user = self._db.query(User).filter(User.id == user_id).first()
         if user is None:
             return
-        user.deleted_at = datetime.now()
+        user.deleted_at = datetime.now(timezone.utc)
         self._db.flush()
 
     def get_recommendation_ids_for_user(self, user_id: uuid.UUID) -> list[uuid.UUID]:
@@ -280,7 +309,7 @@ class RefreshTokenRepository:
         return rt
 
     def get_by_hash(self, token_hash: str) -> RefreshToken | None:
-        now = datetime.now()
+        now = datetime.now(timezone.utc)
         return (
             self._db.query(RefreshToken)
             .filter(
@@ -315,7 +344,7 @@ class RefreshTokenRepository:
         return count
 
     def cleanup_expired(self) -> int:
-        now = datetime.now()
+        now = datetime.now(timezone.utc)
         count = (
             self._db.query(RefreshToken)
             .filter(RefreshToken.expires_at <= now)
@@ -427,3 +456,61 @@ class OAuthAccountRepository:
             email=email,
         )
         return user
+    
+class SavedToolRepository:
+    def __init__(self, db: Session) -> None:
+        self._db = db
+
+    def save(
+        self,
+        *,
+        user_id: uuid.UUID,
+        capability_id: str,
+        capability_name: str | None = None,
+    ) -> SavedTool:
+        existing = (
+            self._db.query(SavedTool)
+            .filter(
+                SavedTool.user_id == user_id,
+                SavedTool.capability_id == capability_id,
+            )
+            .first()
+        )
+        if existing is not None:
+            return existing
+        saved = SavedTool(
+            user_id=user_id,
+            capability_id=capability_id,
+            capability_name=capability_name,
+        )
+        self._db.add(saved)
+        self._db.flush()
+        return saved
+
+    def list_for_user(self, user_id: uuid.UUID) -> list[SavedToolRecord]:
+        rows = (
+            self._db.query(SavedTool)
+            .filter(SavedTool.user_id == user_id)
+            .order_by(SavedTool.saved_at.desc())
+            .all()
+        )
+        return [
+            SavedToolRecord(
+                capability_id=r.capability_id,
+                capability_name=r.capability_name,
+                saved_at=r.saved_at,
+            )
+            for r in rows
+        ]
+
+    def delete(self, *, user_id: uuid.UUID, capability_id: str) -> bool:
+        deleted = (
+            self._db.query(SavedTool)
+            .filter(
+                SavedTool.user_id == user_id,
+                SavedTool.capability_id == capability_id,
+            )
+            .delete(synchronize_session=False)
+        )
+        self._db.flush()
+        return bool(deleted)

@@ -52,6 +52,9 @@ class User(Base):
     oauth_accounts: Mapped[list[OAuthAccount]] = relationship(
         "OAuthAccount", back_populates="user", cascade="all, delete-orphan"
     )
+    saved_tools: Mapped[list[SavedTool]] = relationship(
+        "SavedTool", back_populates="user", cascade="all, delete-orphan"
+    )
 
     __table_args__ = (
         Index(
@@ -257,6 +260,38 @@ class Feedback(Base):
 
     def __repr__(self) -> str:
         return f"<Feedback id={self.id} cap={self.capability_id!r} rating={self.rating}>"
+
+class SavedTool(Base):
+    __tablename__ = "saved_tools"
+
+    id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True), primary_key=True, default=uuid.uuid4
+    )
+    user_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("users.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    capability_id: Mapped[str] = mapped_column(String(100), nullable=False)
+    capability_name: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    saved_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), nullable=False
+    )
+
+    user: Mapped[User] = relationship("User", back_populates="saved_tools")
+
+    __table_args__ = (
+        Index(
+            "ix_saved_tools_user_capability",
+            "user_id",
+            "capability_id",
+            unique=True,
+        ),
+    )
+
+    def __repr__(self) -> str:
+        return f"<SavedTool id={self.id} user={self.user_id} cap={self.capability_id!r}>"
+
 
 class ExportFile(Base):
     __tablename__ = "export_files"
