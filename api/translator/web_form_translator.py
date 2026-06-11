@@ -135,7 +135,9 @@ class WebFormTranslator:
             "technical_level": profile_extras.get("technical_level", 2),
             "current_tools": profile_extras.get("current_tools", []),
             "export_types_available": export_types,
-            "has_structured_export": len(export_types) > 0,
+            "has_structured_export": profile_extras.get(
+                "has_structured_export", len(export_types) > 0
+            ),
             "has_communication_logs": "support_tickets" in export_types,
         }
 
