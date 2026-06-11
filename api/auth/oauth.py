@@ -1,5 +1,6 @@
 from __future__ import annotations
-
+import hashlib
+import hmac
 import os
 import secrets
 from datetime import datetime, timedelta, timezone
@@ -10,6 +11,7 @@ from sqlalchemy.orm import Session
 
 from api.auth.security import (
     REFRESH_TOKEN_EXPIRE_DAYS,
+    SECRET_KEY,
     create_access_token,
     generate_refresh_token,
     hash_refresh_token,
@@ -54,14 +56,30 @@ _load_provider(
     userinfo_url="https://api.github.com/user",
 )
 
-_pending_states: dict[str, float] = {}
 _STATE_TTL = 600
 
-def _cleanup_states() -> None:
-    now = datetime.now(timezone.utc).timestamp()
-    expired = [k for k, v in _pending_states.items() if now - v > _STATE_TTL]
-    for k in expired:
-        _pending_states.pop(k, None)
+def _sign_state(nonce: str, ts: str) -> str:
+    return hmac.new(
+        SECRET_KEY.encode(), f"{nonce}.{ts}".encode(), hashlib.sha256
+    ).hexdigest()
+
+def _make_state() -> str:
+    nonce = secrets.token_urlsafe(24)
+    ts = str(int(datetime.now(timezone.utc).timestamp()))
+    return f"{nonce}.{ts}.{_sign_state(nonce, ts)}"
+
+def _verify_state(state: str) -> bool:
+    parts = state.split(".")
+    if len(parts) != 3:
+        return False
+    nonce, ts, sig = parts
+    if not hmac.compare_digest(sig, _sign_state(nonce, ts)):
+        return False
+    try:
+        age = datetime.now(timezone.utc).timestamp() - int(ts)
+    except ValueError:
+        return False
+    return 0 <= age <= _STATE_TTL
 
 _SCOPES = {
     "google": "openid email profile",
@@ -81,9 +99,7 @@ def oauth_authorize(provider: str):
         )
 
     config = _PROVIDERS[provider]
-    state = secrets.token_urlsafe(32)
-    _cleanup_states()
-    _pending_states[state] = datetime.now(timezone.utc).timestamp()
+    state = _make_state()
 
     callback_url = f"{OAUTH_REDIRECT_BASE}/api/auth/{provider}/callback"
 
@@ -133,12 +149,11 @@ def oauth_callback(
             detail=f"OAuth provider '{provider}' is not configured.",
         )
 
-    if state not in _pending_states:
+    if not _verify_state(state):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Invalid or expired OAuth state.",
         )
-    _pending_states.pop(state, None)
 
     config = _PROVIDERS[provider]
     callback_url = f"{OAUTH_REDIRECT_BASE}/api/auth/{provider}/callback"
