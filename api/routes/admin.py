@@ -5,7 +5,8 @@ import logging
 from typing import Any
 from fastapi import APIRouter, Depends, HTTPException, Request, status
 from pydantic import BaseModel, ConfigDict, Field
-from sqlalchemy import text
+from sqlalchemy import bindparam, text
+from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Session
 
 from api.auth.dependencies import require_admin
@@ -156,8 +157,6 @@ def upsert_capability(
 ) -> dict:
     _validate_pain_flags(body.mapped_pain_points)
 
-    from psycopg2.extras import Json
-
     db.execute(
         text("""
             INSERT INTO capabilities (
@@ -191,7 +190,12 @@ def upsert_capability(
                 secondary_outcomes = EXCLUDED.secondary_outcomes,
                 time_to_value_weeks_min = EXCLUDED.time_to_value_weeks_min,
                 time_to_value_weeks_max = EXCLUDED.time_to_value_weeks_max
-        """),
+        """).bindparams(
+            bindparam("bottleneck_keywords", type_=JSONB),
+            bindparam("required_data_types", type_=JSONB),
+            bindparam("mapped_pain_points", type_=JSONB),
+            bindparam("secondary_outcomes", type_=JSONB),
+        ),
         {
             "capability_id": body.capability_id,
             "name": body.name,
@@ -199,14 +203,14 @@ def upsert_capability(
             "use_case_category": body.use_case_category,
             "task_type_target": body.task_type_target,
             "description": body.description,
-            "bottleneck_keywords": Json(body.bottleneck_keywords),
+            "bottleneck_keywords": body.bottleneck_keywords,
             "works_without_data": body.works_without_data,
-            "required_data_types": Json(body.required_data_types),
+            "required_data_types": body.required_data_types,
             "min_history_months_gate": body.min_history_months_gate,
             "min_technical_capability": body.min_technical_capability,
-            "mapped_pain_points": Json(body.mapped_pain_points),
+            "mapped_pain_points": body.mapped_pain_points,
             "primary_outcome": body.primary_outcome,
-            "secondary_outcomes": Json(body.secondary_outcomes),
+            "secondary_outcomes": body.secondary_outcomes,
             "time_to_value_weeks_min": body.time_to_value_weeks_min,
             "time_to_value_weeks_max": body.time_to_value_weeks_max,
         },
@@ -223,7 +227,6 @@ def upsert_product(
     db: Session = Depends(get_db),
     admin: User = Depends(require_admin),
 ) -> dict:
-    from psycopg2.extras import Json
 
     cap = db.execute(
         text("SELECT 1 FROM capabilities WHERE capability_id = :cid"),
@@ -272,14 +275,14 @@ def upsert_product(
                 works_with_limited_data = EXCLUDED.works_with_limited_data,
                 data_requirement_notes = EXCLUDED.data_requirement_notes,
                 notes = EXCLUDED.notes
-        """),
+        """).bindparams(bindparam("integrations", type_=JSONB)),
         {
             "product_id": body.product_id,
             "capability_id": body.capability_id,
             "name": body.name,
             "vendor": body.vendor,
             "url": body.url,
-            "integrations": Json(body.integrations),
+            "integrations": body.integrations,
             "gdpr_compliant": body.gdpr_compliant,
             "deployment_model": body.deployment_model,
             "pricing_model": body.pricing_model,
