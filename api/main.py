@@ -15,7 +15,7 @@ from config import CFG
 from src.catalog.repository import CatalogRepository
 from src.catalog.pg_repository import PostgreSQLCatalogRepository
 from src.matching.classical.classical_engine import ClassicalEngine
-from src.matching.hybrid.hybrid_engine import HybridEngine
+from src.matching.hybrid.hybrid_engine_v2 import HybridEngineV2  
 
 from api.models import HealthResponse
 from api.translator.questions import QUESTION_SCHEMA
@@ -52,11 +52,11 @@ async def lifespan(app: FastAPI):
             print("[AI-DSS] Catalog: SQLite backend (catalog.db)")
 
         classical_engine = ClassicalEngine.build(repo=repo)
-        hybrid_engine = HybridEngine.build(repo=repo)
+        hybrid_v2_engine = HybridEngineV2.build(repo=repo, classical_engine=classical_engine)
 
         app.state.repo = repo
+        app.state.engine = hybrid_v2_engine
         app.state.classical_engine = classical_engine
-        app.state.hybrid_engine = hybrid_engine
         app.state.ollama_available = _ping_ollama()
 
         n = len(repo.get_capabilities())
@@ -137,7 +137,6 @@ app.include_router(user_router, prefix="/api", tags=["user"])
 from api.routes.admin import router as admin_router
 app.include_router(admin_router, prefix="/api/admin", tags=["admin"])
 
-
 @app.get(
     "/api/health",
     response_model=HealthResponse,
@@ -147,15 +146,13 @@ app.include_router(admin_router, prefix="/api/admin", tags=["admin"])
 def health() -> HealthResponse:
     ollama_live = _ping_ollama()
     app.state.ollama_available = ollama_live
-    caps = app.state.repo.get_capabilities()
-    n_products = sum(
-        len(app.state.repo.get_products(c.capability_id)) for c in caps
-    )
+    n_caps = app.state.repo.capability_count()
+    n_products = app.state.repo.product_count()
 
     return HealthResponse(
         status="ok",
         ollama_available=ollama_live,
-        catalog_capabilities_count=len(caps),
+        catalog_capabilities_count=n_caps,
         catalog_products_count=n_products,
         active_llm_model=CFG.LLM_MODEL,
         active_sbert_model=CFG.BI_ENCODER_MODEL,

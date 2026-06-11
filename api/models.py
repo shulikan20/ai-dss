@@ -81,7 +81,7 @@ class RecommendationResponse(BaseModel):
     """POST /api/recommend response."""
     model_config = ConfigDict(frozen=True)
     company_name: str
-    pipeline_used: Literal["hybrid_i2", "classical_fallback"]
+    pipeline_used: Literal["hybrid_i2", "classical_fallback", "i3_llm_semantic"]
     llm_available: bool
     processing_time_ms: int
     ai_disclosure: str
@@ -120,46 +120,6 @@ class FeedbackResponse(BaseModel):
     rating: Optional[int] = None
     was_implemented: Optional[bool] = None
     saved: bool = True
-
-class UserCreate(BaseModel):
-    """POST /api/auth/register request."""
-    email: Annotated[str, Field(min_length=5, max_length=255)]
-    password: Annotated[str, Field(min_length=8, max_length=128)]
-    company_name: Annotated[str, Field(min_length=1, max_length=200)]
-    country: Annotated[str, Field(min_length=2, max_length=2)]
-
-    @field_validator("email")
-    @classmethod
-    def email_lowercase(cls, v: str) -> str:
-        return v.lower().strip()
-
-    @field_validator("country")
-    @classmethod
-    def country_uppercase(cls, v: str) -> str:
-        return v.upper()
-
-
-class UserLogin(BaseModel):
-    """POST /api/auth/login request."""
-    email: str
-    password: str
-
-
-class TokenResponse(BaseModel):
-    """POST /api/auth/login response."""
-    access_token: str
-    token_type: Literal["bearer"] = "bearer"
-    expires_in: int
-
-
-class UserProfile(BaseModel):
-    """GET /api/me response."""
-    model_config = ConfigDict(frozen=True)
-    user_id: str
-    email: str
-    company_name: str
-    country: str
-    recommendations_count: int = 0
 
 class ExportMetrics(BaseModel):
     export_type: str
