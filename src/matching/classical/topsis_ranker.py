@@ -14,6 +14,17 @@ _DIMENSIONS = [
     "pain_point_match",
 ]
 
+# CFG.TOPSIS_FIXED_REFERENCE 
+_DIM_BOUNDS: dict[str, tuple[float, float]] = {}
+
+def _apply_fixed_bounds(matrix: np.ndarray) -> np.ndarray:
+    out = matrix.copy()
+    for j, dim in enumerate(_DIMENSIONS):
+        lo, hi = _DIM_BOUNDS.get(dim, (0.0, 1.0))
+        if hi > lo:
+            out[:, j] = np.clip((out[:, j] - lo) / (hi - lo), 0.0, 1.0)
+    return out
+
 def _base_name(slug: str) -> str:
     return slug.lower().split("_")[0]
 
@@ -77,7 +88,16 @@ def _compute_pain_point_match(cap: Capability, profile: CompanyProfile) -> float
     overlap = cap_points & company_points
     return len(overlap) / len(cap_points)
 
-def _topsis(matrix: np.ndarray, weights: np.ndarray) -> np.ndarray:
+def _topsis_fixed_reference(matrix: np.ndarray, weights: np.ndarray) -> np.ndarray:
+    scaled = _apply_fixed_bounds(matrix)
+    weighted = scaled * weights
+    ideal = weights
+    dist_ideal = np.sqrt(((weighted - ideal) ** 2).sum(axis=1))
+    dist_anti = np.sqrt((weighted ** 2).sum(axis=1))
+    denom = dist_ideal + dist_anti
+    return np.where(denom == 0.0, 0.0, dist_anti / np.where(denom == 0.0, 1.0, denom))
+
+def _topsis_relative(matrix: np.ndarray, weights: np.ndarray) -> np.ndarray:
     if matrix.shape[0] == 1:
         return np.array([1.0])
 
@@ -92,6 +112,13 @@ def _topsis(matrix: np.ndarray, weights: np.ndarray) -> np.ndarray:
     denom = dist_ideal + dist_anti
     denom[denom == 0] = 1e-10
     return dist_anti / denom
+
+def _topsis(matrix: np.ndarray, weights: np.ndarray) -> np.ndarray:
+    if matrix.shape[0] == 0:
+        return np.array([])
+    if CFG.TOPSIS_FIXED_REFERENCE:
+        return _topsis_fixed_reference(matrix, weights)
+    return _topsis_relative(matrix, weights)
 
 class TOPSISRanker:
     def rank(

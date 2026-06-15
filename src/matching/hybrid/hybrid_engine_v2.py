@@ -39,6 +39,17 @@ Return ONLY a JSON object mapping capability_id to integer score. No explanation
 """
 
 def _recompute_topsis(matrix: np.ndarray, weights: np.ndarray) -> np.ndarray:
+    if matrix.shape[0] == 0:
+        return np.array([])
+
+    if CFG.TOPSIS_FIXED_REFERENCE:
+        weighted = matrix * weights
+        ideal = weights
+        d_pos = np.sqrt(((weighted - ideal) ** 2).sum(axis=1))
+        d_neg = np.sqrt((weighted ** 2).sum(axis=1))
+        denom = d_pos + d_neg
+        return np.where(denom == 0.0, 0.0, d_neg / np.where(denom == 0.0, 1.0, denom))
+
     norms = np.sqrt((matrix ** 2).sum(axis=0))
     safe_norms = np.where(norms == 0.0, 1.0, norms)
     normed = matrix / safe_norms

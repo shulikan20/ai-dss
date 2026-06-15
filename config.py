@@ -32,6 +32,7 @@ class Config:
         "tech_fit": 0.10,
         "pain_point_match": 0.30,
     })
+    TOPSIS_FIXED_REFERENCE: bool = True
     CLASSICAL_WEIGHT: float = 0.5
     LLM_WEIGHT: float = 0.5
     CATALOG_SERVER_PORT: int = 5050
