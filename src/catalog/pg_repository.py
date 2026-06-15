@@ -70,6 +70,13 @@ class PostgreSQLCatalogRepository:
                 {"cid": capability_id},
             ).mappings().all()
             return [self._row_to_product(dict(r)) for r in rows]
+        
+    def get_all_products(self) -> list[Product]:
+        with self._session_factory() as db:
+            rows = db.execute(
+                text("SELECT * FROM products ORDER BY capability_id, product_id")
+            ).mappings().all()
+            return [self._row_to_product(dict(r)) for r in rows]
 
     def get_mapped_pain_points(self, capability_id: str) -> list[str]:
         with self._session_factory() as db:
@@ -164,6 +171,9 @@ class PostgreSQLCatalogRepository:
                 int(row["time_to_value_weeks_max"])
                 if row.get("time_to_value_weeks_max") is not None else None
             ),
+            browse_category=(
+                str(row["browse_category"]) if row.get("browse_category") else None
+            ),
         )
 
     @staticmethod
@@ -206,4 +216,15 @@ class PostgreSQLCatalogRepository:
             data_requirement_notes=str(row.get("data_requirement_notes") or ""),
             setup_notes=str(row.get("setup_notes") or ""),
             notes=str(row.get("notes") or ""),
+            price_tier=str(row["price_tier"]) if row.get("price_tier") else None,
+            platform_integrations=(
+                _ensure_list(row["platform_integrations"])
+                if row.get("platform_integrations") else None
+            ),
+            company_size_fit=(
+                str(row["company_size_fit"]) if row.get("company_size_fit") else None
+            ),
+            setup_complexity=(
+                str(row["setup_complexity"]) if row.get("setup_complexity") else None
+            ),
         )

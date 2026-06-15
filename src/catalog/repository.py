@@ -81,6 +81,12 @@ class CatalogRepository:
             (capability_id,),
         ).fetchall()
         return [Product.from_db_row(dict(r)) for r in rows]
+    
+    def get_all_products(self) -> list[Product]:
+        rows = self._conn_get().execute(
+            "SELECT * FROM products ORDER BY capability_id, product_id"
+        ).fetchall()
+        return [Product.from_db_row(dict(r)) for r in rows]
 
     def get_mapped_pain_points(self, capability_id: str) -> list[str]:
         row = self._conn_get().execute(

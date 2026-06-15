@@ -29,6 +29,7 @@ class Capability:
     secondary_outcomes: list[str] = field(default_factory=list)
     time_to_value_weeks_min: int | None = None
     time_to_value_weeks_max: int | None = None
+    browse_category: str | None = None
 
     @classmethod
     def from_db_row(cls, row: dict[str, Any]) -> Capability:
@@ -67,6 +68,10 @@ class Capability:
                 int(row["time_to_value_weeks_max"])
                 if row.get("time_to_value_weeks_max") is not None else None
             ),
+            browse_category=(
+                str(row["browse_category"])
+                if row.get("browse_category") else None
+            ),
         )
 
     def __repr__(self) -> str:
@@ -94,6 +99,10 @@ class Product:
     data_requirement_notes: str = ""
     setup_notes: str = ""
     notes: str = ""
+    price_tier: str | None = None
+    platform_integrations: list[str] | None = None
+    company_size_fit: str | None = None
+    setup_complexity: str | None = None
 
     @classmethod
     def from_db_row(cls, row: dict[str, Any]) -> Product:
@@ -135,6 +144,17 @@ class Product:
             data_requirement_notes=str(row.get("data_requirement_notes") or ""),
             setup_notes=str(row.get("setup_notes") or ""),
             notes=str(row.get("notes") or ""),
+            price_tier=str(row["price_tier"]) if row.get("price_tier") else None,
+            platform_integrations=(
+                _parse_json_list(row["platform_integrations"])
+                if row.get("platform_integrations") else None
+            ),
+            company_size_fit=(
+                str(row["company_size_fit"]) if row.get("company_size_fit") else None
+            ),
+            setup_complexity=(
+                str(row["setup_complexity"]) if row.get("setup_complexity") else None
+            ),
         )
 
     def __repr__(self) -> str:
