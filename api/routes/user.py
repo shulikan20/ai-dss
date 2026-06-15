@@ -1,19 +1,24 @@
 from __future__ import annotations
-
+import uuid
 from datetime import datetime, timezone
-from fastapi import APIRouter, Depends, HTTPException, Path, status
+
+from fastapi import APIRouter, Depends, HTTPException, Path, Request, status
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
 from api.auth.dependencies import get_current_user
+from api.constants import DISCLOSURE_TEXT
 from api.database.connection import get_db
 from api.database.models import Company, Feedback, QuestionnaireSession, Recommendation, User
 from api.database.repository import (
     FeedbackRepository,
     RefreshTokenRepository,
     SavedToolRepository,
+    SessionRepository,
     UserRepository,
 )
+from api.models import DimensionBreakdownModel, RecommendationItem
+from api.routes.recommend import _MAX_RESULTS, _build_product_list
 
 router = APIRouter()
 
@@ -34,6 +39,19 @@ class RecommendationHistoryItem(BaseModel):
 class RecommendationHistoryResponse(BaseModel):
     total: int
     items: list[RecommendationHistoryItem]
+
+class AssessmentDetailResponse(BaseModel):
+    session_id: str
+    recommendation_id: str
+    company_name: str | None = None
+    country: str | None = None
+    tier: str
+    pipeline_used: str
+    llm_available: bool
+    processing_time_ms: int | None = None
+    created_at: str
+    ai_disclosure: str
+    recommendations: list[RecommendationItem]
 
 class DataExportResponse(BaseModel):
     user: dict
@@ -118,6 +136,91 @@ def get_recommendation_history(
         )
 
     return RecommendationHistoryResponse(total=len(items), items=items)
+
+@router.get(
+    "/me/recommendations/{session_id}",
+    response_model=AssessmentDetailResponse,
+    summary="Full snapshot of one past assessment (for re-viewing results)",
+)
+def get_assessment_detail(
+    request: Request,
+    session_id: uuid.UUID,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> AssessmentDetailResponse:
+    found = SessionRepository(db).get_session_with_recommendation_for_user(
+        session_id, user.id
+    )
+    if found is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Assessment not found.",
+        )
+    session, rec = found
+
+    snapshot = session.profile_snapshot or {}
+    country = snapshot.get("country") or ""
+    catalog_repo = request.app.state.repo
+
+    ranked = sorted(
+        (r for r in (rec.ranked_results or []) if isinstance(r, dict)),
+        key=lambda r: r.get("rank", 999),
+    )[:_MAX_RESULTS]
+
+    items: list[RecommendationItem] = []
+    for r in ranked:
+        dims = r.get("dimensions") or {}
+        products = catalog_repo.get_products(r.get("capability_id", ""))
+        items.append(
+            RecommendationItem(
+                rank=r.get("rank", 0),
+                capability_id=r.get("capability_id", ""),
+                capability_name=r.get("capability_name", ""),
+                domain=r.get("domain", ""),
+                topsis_score=round(float(r.get("topsis_score", 0.0)), 4),
+                explanation=r.get("explanation") or "",
+                dimensions=DimensionBreakdownModel(
+                    semantic_fit=round(float(dims.get("semantic_fit", 0.0)), 4),
+                    integration_compat=round(float(dims.get("integration_compat", 0.0)), 4),
+                    data_readiness=round(float(dims.get("data_readiness", 0.0)), 4),
+                    tech_fit=round(float(dims.get("tech_fit", 0.0)), 4),
+                    pain_point_match=round(float(dims.get("pain_point_match", 0.0)), 4),
+                ),
+                products=_build_product_list(products, country=country),
+            )
+        )
+
+    return AssessmentDetailResponse(
+        session_id=str(session.id),
+        recommendation_id=str(rec.id),
+        company_name=snapshot.get("company_name"),
+        country=snapshot.get("country"),
+        tier=session.tier,
+        pipeline_used=rec.pipeline_used,
+        llm_available=rec.llm_available,
+        processing_time_ms=rec.processing_time_ms,
+        created_at=session.created_at.isoformat(),
+        ai_disclosure=DISCLOSURE_TEXT,
+        recommendations=items,
+    )
+
+@router.delete(
+    "/me/recommendations/{session_id}",
+    response_model=DeleteResponse,
+    summary="Delete one assessment (session + recommendation + feedback)",
+)
+def delete_assessment(
+    session_id: uuid.UUID,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> DeleteResponse:
+    removed = SessionRepository(db).delete_session_for_user(session_id, user.id)
+    if not removed:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Assessment not found.",
+        )
+    return DeleteResponse(detail="Assessment deleted.")
 
 @router.post(
     "/me/saved-tools",
