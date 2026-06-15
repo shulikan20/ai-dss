@@ -65,6 +65,12 @@ class ProductDetail(BaseModel):
     gdpr_compliant: bool
     implementation_effort: str
     cost_notes: str = ""
+    price_tier: str | None = None
+    platform_integrations: list[str] | None = None
+    company_size_fit: str | None = None
+    setup_complexity: str | None = None
+    fit_score: float | None = None
+    best_fit: bool = False
 
 class RecommendationItem(BaseModel):
     model_config = ConfigDict(frozen=True)
@@ -96,6 +102,8 @@ class CatalogCapabilityModel(BaseModel):
     domain: str
     description: str
     primary_outcome: str
+    browse_category: str | None = None
+    products: list[ProductDetail] = []
 
 class CatalogResponse(BaseModel):
     model_config = ConfigDict(frozen=True)

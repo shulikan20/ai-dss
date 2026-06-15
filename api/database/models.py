@@ -13,6 +13,7 @@ from sqlalchemy import (
     SmallInteger,
     String,
     Text,
+    UniqueConstraint,
     func,
 )
 from sqlalchemy.dialects.postgresql import ARRAY, JSONB, UUID
@@ -36,6 +37,12 @@ class User(Base):
     )
     is_admin: Mapped[bool] = mapped_column(
         Boolean, default=False, nullable=False, server_default="false"
+    )
+    marketing_opt_in: Mapped[bool] = mapped_column(
+        Boolean, default=False, nullable=False, server_default="false"
+    )
+    language_preference: Mapped[str] = mapped_column(
+        String(5), default="en", nullable=False, server_default="en"
     )
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), nullable=False
@@ -319,3 +326,55 @@ class ExportFile(Base):
 
     def __repr__(self) -> str:
         return f"<ExportFile id={self.id} type={self.export_type!r}>"
+    
+class Translation(Base):
+    __tablename__ = "translations"
+
+    id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True), primary_key=True, default=uuid.uuid4
+    )
+    entity_type: Mapped[str] = mapped_column(String(50), nullable=False)
+    entity_id: Mapped[str] = mapped_column(String(100), nullable=False)
+    locale: Mapped[str] = mapped_column(String(10), nullable=False)
+    field: Mapped[str] = mapped_column(String(50), nullable=False)
+    value: Mapped[str] = mapped_column(Text, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), nullable=False
+    )
+
+    __table_args__ = (
+        UniqueConstraint(
+            "entity_type", "entity_id", "locale", "field",
+            name="uq_translations_entity_locale_field",
+        ),
+        Index("ix_translations_locale_type", "locale", "entity_type"),
+    )
+
+    def __repr__(self) -> str:
+        return (
+            f"<Translation {self.entity_type}/{self.entity_id} "
+            f"{self.locale}.{self.field}>"
+        )
+
+
+class ContactRequest(Base):
+    __tablename__ = "contact_requests"
+
+    id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True), primary_key=True, default=uuid.uuid4
+    )
+    name: Mapped[str] = mapped_column(String(255), nullable=False)
+    company: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    email: Mapped[str] = mapped_column(String(255), nullable=False)
+    domain: Mapped[str | None] = mapped_column(String(100), nullable=True)
+    message: Mapped[str] = mapped_column(Text, nullable=False)
+    budget_range: Mapped[str | None] = mapped_column(String(50), nullable=True)
+    client_ip: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), nullable=False
+    )
+
+    __table_args__ = (Index("ix_contact_requests_created_at", "created_at"),)
+
+    def __repr__(self) -> str:
+        return f"<ContactRequest {self.email} at {self.created_at}>"

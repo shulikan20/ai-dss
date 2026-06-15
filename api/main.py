@@ -112,7 +112,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
     allow_credentials=False,
-    allow_methods=["GET", "POST", "DELETE"],
+    allow_methods=["GET", "POST", "PATCH", "DELETE"],
     allow_headers=["Content-Type", "Authorization"],
 )
 
@@ -136,6 +136,12 @@ app.include_router(user_router, prefix="/api", tags=["user"])
 
 from api.routes.admin import router as admin_router
 app.include_router(admin_router, prefix="/api/admin", tags=["admin"])
+
+from api.routes.translations import router as translations_router
+app.include_router(translations_router, prefix="/api", tags=["translations"])
+
+from api.routes.contact import router as contact_router
+app.include_router(contact_router, prefix="/api", tags=["contact"])
 
 @app.get(
     "/api/health",

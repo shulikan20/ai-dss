@@ -10,3 +10,5 @@ PRIVACY_NOTICE: str = (
 )
 
 API_VERSION: str = "0.1.0"
+
+SUPPORTED_LOCALES: tuple[str, ...] = ("en", "de")

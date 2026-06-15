@@ -41,12 +41,12 @@ Each explanation must be exactly 2 sentences. Be concrete — mention the compan
 actual problem. Do not start with "This tool" or "I recommend". \
 Return ONLY a JSON object mapping capability_id to your 2-sentence explanation."""
 
-def _ping_ollama() -> bool:
-    try:
-        resp = http_requests.get(_OLLAMA_URL, timeout=2.0)
-        return resp.status_code == 200
-    except Exception:
-        return False
+_LANGUAGE_INSTRUCTIONS = {
+    "de": (
+        "Write all explanations in German (natural Austrian/German business "
+        "language, formal 'Sie'). Keep the JSON keys (capability_id) in English."
+    ),
+}
 
 @router.post(
     "/recommend",
@@ -107,9 +107,16 @@ def recommend(
         import logging
         logging.getLogger(__name__).exception("Failed to persist session")
 
+    language = (
+        getattr(current_user, "language_preference", None)
+        or _accept_language_primary(request.headers.get("accept-language"))
+        or "en"
+    )
     llm_explanations: dict[str, str] = {}
     if ollama_live:
-        llm_explanations = _generate_explanations(profile, results[:_EXPLAIN_TOP_N], repo)
+        llm_explanations = _generate_explanations(
+            profile, results[:_EXPLAIN_TOP_N], repo, language=language
+        )
 
     recommendation_items: list[RecommendationItem] = []
     for result in results[:_MAX_RESULTS]:
@@ -134,6 +141,8 @@ def recommend(
                 products=_build_product_list(
                     products,
                     country=getattr(profile, "country", ""),
+                    profile=profile,
+                    team_size=getattr(body, "team_size", None),
                 ),
             )
         )
@@ -150,10 +159,32 @@ def recommend(
         recommendations=recommendation_items,
     )
 
+def _language_instruction(language: str | None) -> str:
+    if not language or language == "en":
+        return ""
+    return _LANGUAGE_INSTRUCTIONS.get(language, "")
+
+
+def _accept_language_primary(header: str | None) -> str | None:
+    if not header:
+        return None
+    first = header.split(",")[0].strip()
+    if not first or first == "*":
+        return None
+    return first.split("-")[0].split(";")[0].strip().lower() or None
+
+def _ping_ollama() -> bool:
+    try:
+        resp = http_requests.get(_OLLAMA_URL, timeout=2.0)
+        return resp.status_code == 200
+    except Exception:
+        return False
+
 def _generate_explanations(
     profile,
     top_results: list,
     repo,
+    language: str = "en",
 ) -> dict[str, str]:
     if not top_results:
         return {}
@@ -191,12 +222,17 @@ def _generate_explanations(
         + '\n\nReturn JSON only: {"capability_id": "2-sentence explanation", ...}'
     )
 
+    system_prompt = _EXPLAIN_SYSTEM
+    lang_line = _language_instruction(language)
+    if lang_line:
+        system_prompt = f"{system_prompt}\n{lang_line}"
+
     try:
         resp = http_requests.post(
             _OLLAMA_BASE.rstrip("/") + "/api/generate",
             json={
                 "model": CFG.LLM_MODEL,
-                "prompt": f"{_EXPLAIN_SYSTEM}\n\n{user_prompt}",
+                "prompt": f"{system_prompt}\n\n{user_prompt}",
                 "stream": False,
                 "options": {"temperature": 0.3},
             },
@@ -235,13 +271,30 @@ def _parse_explanations(raw: str, valid_ids: set[str]) -> dict[str, str]:
             out[cap_id] = text.strip()
     return out
 
-def _build_product_list(products, country: str = "") -> list[ProductDetail]:
+
+def _build_product_list(
+    products,
+    country: str = "",
+    profile=None,
+    team_size: str | None = None,
+) -> list[ProductDetail]:
     is_eu = country.upper() in _EU_COUNTRIES
+    eligible = [
+        p for p in products
+        if not (is_eu and not getattr(p, "gdpr_compliant", True))
+    ]
+
+    fit_by_id: dict[int, tuple[float, bool]] = {}
+    if profile is not None and eligible:
+        from api.tools.product_scorer import score_products_for_profile
+
+        scored = score_products_for_profile(eligible, profile, team_size=team_size)
+        eligible = [s.product for s in scored]
+        fit_by_id = {id(s.product): (s.fit_score, s.best_fit) for s in scored}
+
     result = []
-    for p in products:
-        gdpr_ok = getattr(p, "gdpr_compliant", True)
-        if is_eu and not gdpr_ok:
-            continue
+    for p in eligible[:_MAX_PRODUCTS]:
+        fit_score, best_fit = fit_by_id.get(id(p), (None, False))
         result.append(
             ProductDetail(
                 product_id=getattr(p, "product_id", ""),
@@ -250,11 +303,15 @@ def _build_product_list(products, country: str = "") -> list[ProductDetail]:
                 url=getattr(p, "url", ""),
                 cost_tier=getattr(p, "cost_tier", "unknown"),
                 has_free_tier=getattr(p, "has_free_tier", False),
-                gdpr_compliant=gdpr_ok,
+                gdpr_compliant=getattr(p, "gdpr_compliant", True),
                 implementation_effort=getattr(p, "implementation_effort", "medium"),
                 cost_notes=getattr(p, "cost_notes", ""),
+                price_tier=getattr(p, "price_tier", None),
+                platform_integrations=getattr(p, "platform_integrations", None),
+                company_size_fit=getattr(p, "company_size_fit", None),
+                setup_complexity=getattr(p, "setup_complexity", None),
+                fit_score=fit_score,
+                best_fit=best_fit,
             )
         )
-        if len(result) >= _MAX_PRODUCTS:
-            break
     return result

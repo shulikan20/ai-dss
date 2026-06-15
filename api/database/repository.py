@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 
 from api.database.models import (
     Company,
+    ContactRequest,
     ExportFile,
     Feedback,
     OAuthAccount,
@@ -14,6 +15,7 @@ from api.database.models import (
     Recommendation,
     RefreshToken,
     SavedTool,
+    Translation,
     User,
 )
 
@@ -131,6 +133,39 @@ class SessionRepository:
             .filter(QuestionnaireSession.id == session_id)
             .first()
         )
+    
+    def get_session_with_recommendation_for_user(
+        self, session_id: uuid.UUID, user_id: uuid.UUID
+    ) -> tuple[QuestionnaireSession, Recommendation] | None:
+        row = (
+            self._db.query(QuestionnaireSession, Recommendation)
+            .join(Company, QuestionnaireSession.company_id == Company.id)
+            .join(Recommendation, Recommendation.session_id == QuestionnaireSession.id)
+            .filter(
+                QuestionnaireSession.id == session_id,
+                Company.user_id == user_id,
+            )
+            .first()
+        )
+        return (row[0], row[1]) if row else None
+
+    def delete_session_for_user(
+        self, session_id: uuid.UUID, user_id: uuid.UUID
+    ) -> bool:
+        session = (
+            self._db.query(QuestionnaireSession)
+            .join(Company, QuestionnaireSession.company_id == Company.id)
+            .filter(
+                QuestionnaireSession.id == session_id,
+                Company.user_id == user_id,
+            )
+            .first()
+        )
+        if session is None:
+            return False
+        self._db.delete(session)
+        self._db.flush()
+        return True
 
 class FeedbackRepository:
     def __init__(self, db: Session) -> None:
@@ -245,10 +280,13 @@ class UserRepository:
             company_name=company_name, country=country, user_id=user_id
         )
 
-    def create_user(self, *, email: str, password_hash: str) -> User:
+    def create_user(
+        self, *, email: str, password_hash: str, marketing_opt_in: bool = False
+    ) -> User:
         user = User(
             email=email.lower().strip(),
             password_hash=password_hash,
+            marketing_opt_in=marketing_opt_in,
         )
         self._db.add(user)
         self._db.flush()
@@ -429,17 +467,25 @@ class OAuthAccountRepository:
             if user:
                 return user
 
-        if email:
-            user_repo = UserRepository(self._db)
-            user = user_repo.get_user_by_email(email)
-            if user:
+        def _attach(user: User) -> User:
+            if existing is not None:
+                existing.user_id = user.id
+                existing.email = email
+                self._db.flush()
+            else:
                 self.create(
                     user_id=user.id,
                     provider=provider,
                     provider_user_id=provider_user_id,
                     email=email,
                 )
-                return user
+            return user
+
+        if email:
+            user_repo = UserRepository(self._db)
+            user = user_repo.get_user_by_email(email)
+            if user:
+                return _attach(user)
 
         user = User(
             email=(email or f"{provider}_{provider_user_id}@oauth.local").lower(),
@@ -448,14 +494,7 @@ class OAuthAccountRepository:
         )
         self._db.add(user)
         self._db.flush()
-
-        self.create(
-            user_id=user.id,
-            provider=provider,
-            provider_user_id=provider_user_id,
-            email=email,
-        )
-        return user
+        return _attach(user)
     
 class SavedToolRepository:
     def __init__(self, db: Session) -> None:
@@ -514,3 +553,110 @@ class SavedToolRepository:
         )
         self._db.flush()
         return bool(deleted)
+    
+
+@dataclasses.dataclass(frozen=True)
+class TranslationRecord:
+    entity_type: str
+    entity_id: str
+    locale: str
+    field: str
+    value: str
+
+
+class TranslationRepository:
+    def __init__(self, db: Session) -> None:
+        self._db = db
+
+    def upsert(
+        self, *, entity_type: str, entity_id: str, locale: str, field: str, value: str
+    ) -> None:
+        existing = (
+            self._db.query(Translation)
+            .filter(
+                Translation.entity_type == entity_type,
+                Translation.entity_id == entity_id,
+                Translation.locale == locale,
+                Translation.field == field,
+            )
+            .first()
+        )
+        if existing is not None:
+            existing.value = value
+            existing.updated_at = datetime.now(timezone.utc)
+        else:
+            self._db.add(Translation(
+                entity_type=entity_type,
+                entity_id=entity_id,
+                locale=locale,
+                field=field,
+                value=value,
+            ))
+        self._db.flush()
+
+    def list_for_locale(
+        self, *, locale: str, entity_type: str | None = None
+    ) -> list[TranslationRecord]:
+        q = self._db.query(Translation).filter(Translation.locale == locale)
+        if entity_type is not None:
+            q = q.filter(Translation.entity_type == entity_type)
+        rows = q.order_by(Translation.entity_id, Translation.field).all()
+        return [
+            TranslationRecord(
+                entity_type=r.entity_type,
+                entity_id=r.entity_id,
+                locale=r.locale,
+                field=r.field,
+                value=r.value,
+            )
+            for r in rows
+        ]
+
+    def get_value(
+        self, *, entity_type: str, entity_id: str, locale: str, field: str
+    ) -> str | None:
+        for loc in (locale, "en"):
+            row = (
+                self._db.query(Translation.value)
+                .filter(
+                    Translation.entity_type == entity_type,
+                    Translation.entity_id == entity_id,
+                    Translation.locale == loc,
+                    Translation.field == field,
+                )
+                .first()
+            )
+            if row is not None:
+                return row[0]
+            if loc == "en":
+                break
+        return None
+
+
+class ContactRequestRepository:
+    def __init__(self, db: Session) -> None:
+        self._db = db
+
+    def save(
+        self,
+        *,
+        name: str,
+        email: str,
+        message: str,
+        company: str | None = None,
+        domain: str | None = None,
+        budget_range: str | None = None,
+        client_ip: str | None = None,
+    ) -> ContactRequest:
+        req = ContactRequest(
+            name=name,
+            company=company,
+            email=email,
+            domain=domain,
+            message=message,
+            budget_range=budget_range,
+            client_ip=client_ip,
+        )
+        self._db.add(req)
+        self._db.flush()
+        return req
