@@ -20,6 +20,14 @@ TAGS: dict[str, list[dict]] = {
             "label": "Supplier communication and order tracking is unstructured",
             "flags": [PainFlags.SUPPLIER_TRACKING],
         },
+                {
+            "label": "Raising and approving purchase orders is manual",
+            "flags": [PainFlags.MANUAL_PURCHASE_ORDERS],
+        },
+        {
+            "label": "We overspend on shipping with a single carrier",
+            "flags": [PainFlags.HIGH_SHIPPING_COSTS],
+        },
     ],
     "ecommerce_ops": [
         {
@@ -38,6 +46,18 @@ TAGS: dict[str, list[dict]] = {
             "label": "Order processing takes too long",
             "flags": [PainFlags.SLOW_ORDER_PROC],
         },
+        {
+            "label": "Shoppers can't find products through our search",
+            "flags": [PainFlags.POOR_PRODUCT_DISCOVERY],
+        },
+        {
+            "label": "Our average order value is low — customers buy just one item",
+            "flags": [PainFlags.LOW_AOV],
+        },
+        {
+            "label": "Managing recurring orders and subscriptions is manual",
+            "flags": [PainFlags.MANUAL_SUBSCRIPTIONS],
+        },
     ],
     "customer_support": [
         {
@@ -55,6 +75,10 @@ TAGS: dict[str, list[dict]] = {
         {
             "label": "Negative reviews are affecting our reputation",
             "flags": [PainFlags.NEGATIVE_REVIEWS],
+        },
+        {
+            "label": "Customers write in several languages but our team speaks one",
+            "flags": [PainFlags.MULTILINGUAL_SUPPORT],
         },
     ],
     "marketing": [
@@ -78,8 +102,24 @@ TAGS: dict[str, list[dict]] = {
             "label": "We're losing customers and don't understand why",
             "flags": [PainFlags.CUSTOMER_CHURN, PainFlags.LOW_REPEAT_PURCHASES],
         },
+        {
+            "label": "We struggle to produce short video content",
+            "flags": [PainFlags.NO_VIDEO_CONTENT],
+        },
+        {
+            "label": "We rely only on email and can't reach customers by SMS",
+            "flags": [PainFlags.NO_SMS_CHANNEL],
+        },
     ],
     "crm_sales": [
+        {
+            "label": "We have no steady flow of new outbound B2B leads",
+            "flags": [PainFlags.NO_OUTBOUND_LEADGEN],
+        },
+        {
+            "label": "We don't know which customers are worth the most over time",
+            "flags": [PainFlags.NO_CLV_INSIGHT],
+        },
         {
             "label": "We struggle to follow up with leads on time",
             "flags": [PainFlags.SLOW_FOLLOWUP],
@@ -101,6 +141,30 @@ TAGS: dict[str, list[dict]] = {
         {
             "label": "We spend too much time on data entry",
             "flags": [PainFlags.MANUAL_DATA_ENTRY],
+        },
+        {
+            "label": "We re-type receipts and expenses into the books by hand",
+            "flags": [PainFlags.MANUAL_EXPENSES],
+        },
+        {
+            "label": "We can't see our cash position ahead of time",
+            "flags": [PainFlags.CASHFLOW_VISIBILITY],
+        },
+        {
+            "label": "Onboarding new hires is manual and chaotic",
+            "flags": [PainFlags.MANUAL_ONBOARDING],
+        },
+        {
+            "label": "Staff can't find internal information when they need it",
+            "flags": [PainFlags.SCATTERED_KNOWLEDGE],
+        },
+        {
+            "label": "Reviewing supplier and client contracts is slow or costly",
+            "flags": [PainFlags.MANUAL_CONTRACT_REVIEW],
+        },
+        {
+            "label": "Scheduling meetings means endless back-and-forth emails",
+            "flags": [PainFlags.SCHEDULING_OVERHEAD],
         },
     ],
 }
