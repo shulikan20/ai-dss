@@ -4,6 +4,7 @@ from dataclasses import dataclass
 
 from src.catalog.pain_flags import PainFlags
 
+from ..enrichment import flag_grounded
 from ..models import DataType, MetricSet
 from .client import LLMUnavailable, call_json
 
@@ -77,7 +78,7 @@ def extract_signals(data_type: DataType, m: MetricSet, *, model: str | None = No
                 score = float(v)
             except (TypeError, ValueError):
                 continue
-            if 0.0 <= score <= 1.0:
+            if 0.0 <= score <= 1.0 and flag_grounded(k, data_type, m):
                 flags[k] = round(score, 2)
     if not enrichment and not flags:
         return None

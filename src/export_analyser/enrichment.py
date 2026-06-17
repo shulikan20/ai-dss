@@ -45,6 +45,20 @@ def build_enrichment(data_type: DataType, m: MetricSet) -> str:
     return " ".join(bits)
 
 
+_SUPPORT_FLAGS = frozenset({
+    PainFlags.SLOW_RESPONSE,
+    PainFlags.HIGH_VOLUME_SUPPORT,
+    PainFlags.REPETITIVE_SUPPORT,
+    PainFlags.TICKET_OVERLOAD,
+})
+
+def flag_grounded(flag: str, data_type: DataType, m: MetricSet) -> bool:
+    if flag == PainFlags.SLOW_RESPONSE:
+        return m.avg_response_time_hours is not None
+    if flag in _SUPPORT_FLAGS:
+        return data_type is DataType.support_tickets
+    return True
+
 def suggest_pain_flags(data_type: DataType, m: MetricSet) -> dict[str, float]:
     out: dict[str, float] = {}
 
@@ -66,4 +80,4 @@ def suggest_pain_flags(data_type: DataType, m: MetricSet) -> dict[str, float]:
     if m.seasonality_cv is not None and m.seasonality_cv >= 0.45:
         out[PainFlags.STOCKOUTS_UNIVERSAL] = 0.6
 
-    return out
+    return {f: c for f, c in out.items() if flag_grounded(f, data_type, m)}
