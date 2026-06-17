@@ -143,6 +143,9 @@ app.include_router(translations_router, prefix="/api", tags=["translations"])
 from api.routes.contact import router as contact_router
 app.include_router(contact_router, prefix="/api", tags=["contact"])
 
+from api.routes.export import router as export_router
+app.include_router(export_router, prefix="/api", tags=["export-analyser"])
+
 @app.get(
     "/api/health",
     response_model=HealthResponse,

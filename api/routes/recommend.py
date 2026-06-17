@@ -25,6 +25,15 @@ from config import CFG
 router = APIRouter()
 _translator = WebFormTranslator()
 
+def _valid_pain_flags() -> frozenset[str]:
+    global _VALID_PAIN_FLAGS
+    try:
+        return _VALID_PAIN_FLAGS
+    except NameError:
+        from src.catalog.pain_flags import PainFlags
+        _VALID_PAIN_FLAGS = frozenset(PainFlags.all_paths())
+        return _VALID_PAIN_FLAGS
+
 _MAX_RESULTS = 5 # Max recommendations
 _MAX_PRODUCTS = 2
 _EXPLAIN_TOP_N = 3
@@ -71,6 +80,15 @@ def recommend(
             status_code=422,
             detail=f"Could not build a company profile from the submitted form: {exc}",
         ) from exc
+    
+    if body.export_enrichment:
+        base = (profile.bottleneck_description or "").rstrip()
+        profile.bottleneck_description = (base + "\n\n" + body.export_enrichment.strip()).strip()
+    if body.export_pain_flags:
+        _valid = _valid_pain_flags()
+        for flag, conf in body.export_pain_flags.items():
+            if flag in _valid and isinstance(conf, (int, float)) and conf >= 0.7:
+                profile.pain_point_flags[flag] = True
 
     engine = request.app.state.engine
     pipeline_used = "i3_llm_semantic" if ollama_live else "classical_fallback"

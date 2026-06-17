@@ -24,6 +24,8 @@ class QuestionnaireRequest(BaseModel):
     bottleneck_text: Annotated[str, Field(min_length=0, max_length=2000)]
     answers: dict[str, str] = Field(default_factory=dict)
     confirmed_pain_flags: list[str] = Field(default_factory=list)
+    export_enrichment: str | None = Field(default=None, max_length=2000)
+    export_pain_flags: dict[str, float] = Field(default_factory=dict)
 
     @field_validator("country")
     @classmethod
