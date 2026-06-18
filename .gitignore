@@ -16,3 +16,9 @@ src/tools/tool_embeddings.npy
 src/tools/tool_embeddings_index.json
 results/
 sc4_test.json
+frontend
+frontend/
+api/routes/debug.py
+docs_dev
+docs_dev/
+src/catalog/CAPABILITY_WRITING_GUIDE.md
