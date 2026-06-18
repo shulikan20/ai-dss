@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "AI-DSS: AI-Powered Decision Support System for SMEs"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - given-names: Nazar
+    family-names: Shulika
+repository-code: https://github.com/shulikan20/ai-dss
+license: MIT
+keywords:
+  - decision-support-system
+  - ai-tools
+  - sme
+  - e-commerce
+  - topsis
+  - sbert
+  - recommendation-system
