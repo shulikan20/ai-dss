@@ -7,6 +7,8 @@ from pathlib import Path
 import requests
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -15,7 +17,8 @@ from config import CFG
 from src.catalog.repository import CatalogRepository
 from src.catalog.pg_repository import PostgreSQLCatalogRepository
 from src.matching.classical.classical_engine import ClassicalEngine
-from src.matching.hybrid.hybrid_engine_v2 import HybridEngineV2  
+from src.matching.hybrid.hybrid_engine_v2 import HybridEngineV2
+from src.matching.llm.llm_engine import LLMEngine
 
 from api.models import HealthResponse
 from api.translator.questions import QUESTION_SCHEMA
@@ -52,12 +55,29 @@ async def lifespan(app: FastAPI):
             print("[AI-DSS] Catalog: SQLite backend (catalog.db)")
 
         classical_engine = ClassicalEngine.build(repo=repo)
+        llm_engine = LLMEngine.build(repo=repo)
         hybrid_v2_engine = HybridEngineV2.build(repo=repo, classical_engine=classical_engine)
 
-        app.state.repo = repo
-        app.state.engine = hybrid_v2_engine
+        pipeline_mode = os.environ.get("PIPELINE_MODE", "hybrid").lower()
+        if pipeline_mode not in ("hybrid", "llm", "classical"):
+            pipeline_mode = "hybrid"
+
+        app.state.engines = {
+            "classical": classical_engine,
+            "llm": llm_engine,
+            "hybrid": hybrid_v2_engine,
+        }
+        app.state.engine = app.state.engines[pipeline_mode]
+        app.state.pipeline_mode = pipeline_mode
         app.state.classical_engine = classical_engine
         app.state.ollama_available = _ping_ollama()
+
+        _mode_labels = {
+            "hybrid": "hybrid (SBERT → phi4 scoring → TOPSIS)",
+            "llm": "LLM (phi4 reads bottleneck + reasons over candidates)",
+            "classical": "classical (SBERT + TOPSIS, no LLM)",
+        }
+        print(f"[AI-DSS] Default pipeline: {_mode_labels[pipeline_mode]}")
 
         n = len(repo.get_capabilities())
         ollama_msg = "available" if app.state.ollama_available else "offline — classical fallback active"
@@ -145,6 +165,14 @@ app.include_router(contact_router, prefix="/api", tags=["contact"])
 
 from api.routes.export import router as export_router
 app.include_router(export_router, prefix="/api", tags=["export-analyser"])
+
+_demo_dir = ROOT / "demo"
+if _demo_dir.is_dir():
+    app.mount("/demo", StaticFiles(directory=str(_demo_dir)), name="demo")
+
+    @app.get("/", include_in_schema=False)
+    def demo_index():
+        return FileResponse(str(_demo_dir / "index.html"))
 
 @app.get(
     "/api/health",

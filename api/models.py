@@ -89,7 +89,7 @@ class RecommendationResponse(BaseModel):
     """POST /api/recommend response."""
     model_config = ConfigDict(frozen=True)
     company_name: str
-    pipeline_used: Literal["hybrid_i2", "classical_fallback", "i3_llm_semantic"]
+    pipeline_used: Literal["llm", "hybrid_i2", "classical_fallback", "i3_llm_semantic"]
     llm_available: bool
     processing_time_ms: int
     ai_disclosure: str

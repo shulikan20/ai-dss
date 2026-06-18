@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import os
 import warnings
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -13,7 +14,9 @@ from src.models.company_profile import CompanyProfile
 from src.models.recommendation import LLMRankedItem, LLMResult
 
 SYSTEM_PROMPT_PATH = Path(__file__).parent / "prompts" / "system_prompt.txt"
-OLLAMA_CHAT_URL = "http://127.0.0.1:11434/api/chat"
+def _ollama_chat_url() -> str:
+    base = os.environ.get("OLLAMA_URL") or CFG.LLM_BASE_URL
+    return base.rstrip("/") + "/api/chat"
 USER_TEMPLATE = """Here is the company profile:
 
 {profile}
@@ -88,7 +91,7 @@ class OllamaExtractor:
     def _call_ollama(self, profile_text: str, tools_text: str) -> str:
         user_msg = USER_TEMPLATE.format(profile=profile_text, tools=tools_text)
         response = requests.post(
-            OLLAMA_CHAT_URL,
+            _ollama_chat_url(),
             json={
                 "model":   self._model,
                 "messages": [

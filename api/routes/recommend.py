@@ -65,6 +65,7 @@ _LANGUAGE_INSTRUCTIONS = {
 def recommend(
     request: Request,
     body: QuestionnaireRequest,
+    pipeline: str | None = None,
     db: Session = Depends(get_db),
     current_user: User | None = Depends(get_current_user_optional),
 ) -> RecommendationResponse:
@@ -90,8 +91,19 @@ def recommend(
             if flag in _valid and isinstance(conf, (int, float)) and conf >= 0.7:
                 profile.pain_point_flags[flag] = True
 
-    engine = request.app.state.engine
-    pipeline_used = "i3_llm_semantic" if ollama_live else "classical_fallback"
+    engines = getattr(request.app.state, "engines", {})
+    default_mode = getattr(request.app.state, "pipeline_mode", "hybrid")
+    mode = pipeline if pipeline in ("hybrid", "llm", "classical") else default_mode
+
+    if not ollama_live and mode in ("llm", "hybrid"):
+        engine = engines.get("classical", request.app.state.engine)
+        pipeline_used = "classical_fallback"
+    elif mode == "classical":
+        engine = engines.get("classical", request.app.state.engine)
+        pipeline_used = "classical_fallback"
+    else:
+        engine = engines.get(mode, request.app.state.engine)
+        pipeline_used = {"llm": "llm", "hybrid": "i3_llm_semantic"}[mode]
 
     results = engine.match(profile)
 
