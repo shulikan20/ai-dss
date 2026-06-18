@@ -1,0 +1,3307 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AI-DSS API",
+    "description": "AI-powered decision support system — recommends AI tools to SME e-commerce operators based on their operational profile.",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/recommend": {
+      "post": {
+        "tags": [
+          "recommendations"
+        ],
+        "summary": "Generate AI tool recommendations for a company",
+        "operationId": "recommend_api_recommend_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionnaireRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecommendationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/catalog": {
+      "get": {
+        "tags": [
+          "catalog"
+        ],
+        "summary": "List all AI tool capabilities in the catalog",
+        "operationId": "get_catalog_api_catalog_get",
+        "parameters": [
+          {
+            "name": "browse_category",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 50
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by library browse category (e.g. sales_crm)",
+              "title": "Browse Category"
+            },
+            "description": "Filter by library browse category (e.g. sales_crm)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/feedback": {
+      "post": {
+        "tags": [
+          "feedback"
+        ],
+        "summary": "Submit feedback for a recommendation",
+        "operationId": "submit_feedback_api_feedback_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FeedbackRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/register": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Create a new user account",
+        "operationId": "register_api_auth_register_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Authenticate and get tokens",
+        "operationId": "login_api_auth_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/refresh": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Get new access token using refresh token",
+        "operationId": "refresh_api_auth_refresh_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/logout": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Revoke refresh token (logout)",
+        "operationId": "logout_api_auth_logout_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/me": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Get current user profile",
+        "operationId": "get_me_api_auth_me_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Update profile preferences (language, marketing opt-in)",
+        "operationId": "update_me_api_auth_me_patch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/auth/{provider}/authorize": {
+      "get": {
+        "tags": [
+          "auth-oauth"
+        ],
+        "summary": "Redirect to OAuth provider",
+        "operationId": "oauth_authorize_api_auth__provider__authorize_get",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Provider"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/{provider}/callback": {
+      "get": {
+        "tags": [
+          "auth-oauth"
+        ],
+        "summary": "OAuth callback — exchange code for tokens",
+        "operationId": "oauth_callback_api_auth__provider__callback_get",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Provider"
+            }
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Code"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "State"
+            }
+          },
+          {
+            "name": "error",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Error"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/providers": {
+      "get": {
+        "tags": [
+          "auth-oauth"
+        ],
+        "summary": "List enabled OAuth providers",
+        "operationId": "list_providers_api_auth_providers_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/me/recommendations": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Recommendation history for the authenticated user",
+        "operationId": "get_recommendation_history_api_me_recommendations_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecommendationHistoryResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/me/recommendations/{session_id}": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Full snapshot of one past assessment (for re-viewing results)",
+        "operationId": "get_assessment_detail_api_me_recommendations__session_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssessmentDetailResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Delete one assessment (session + recommendation + feedback)",
+        "operationId": "delete_assessment_api_me_recommendations__session_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/me/saved-tools": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "List the authenticated user's saved tools",
+        "operationId": "list_saved_tools_api_me_saved_tools_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavedToolListResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Bookmark a capability for the authenticated user",
+        "operationId": "save_tool_api_me_saved_tools_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SavedToolRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavedToolItem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/me/saved-tools/{capability_id}": {
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Remove a saved tool for the authenticated user",
+        "operationId": "delete_saved_tool_api_me_saved_tools__capability_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "capability_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 100,
+              "pattern": "^[a-z0-9_]+$",
+              "title": "Capability Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/me/export": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Export all user data",
+        "operationId": "export_user_data_api_me_export_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataExportResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/me": {
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Delete account",
+        "operationId": "delete_account_api_me_delete",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/stats": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Admin dashboard stats",
+        "operationId": "get_stats_api_admin_stats_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminStatsResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/capabilities": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "List all capabilities with product counts",
+        "operationId": "list_capabilities_api_admin_capabilities_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/CapabilityResponse"
+                  },
+                  "type": "array",
+                  "title": "Response List Capabilities Api Admin Capabilities Get"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Create or update a capability",
+        "operationId": "upsert_capability_api_admin_capabilities_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CapabilityCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Upsert Capability Api Admin Capabilities Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/products": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Create or update a product",
+        "operationId": "upsert_product_api_admin_products_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Upsert Product Api Admin Products Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/capabilities/{capability_id}": {
+      "delete": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Delete a capability and its products",
+        "operationId": "delete_capability_api_admin_capabilities__capability_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "capability_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Capability Id"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/translations": {
+      "get": {
+        "tags": [
+          "translations"
+        ],
+        "summary": "List stored translations for a locale",
+        "operationId": "list_translations_api_translations_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 2,
+                  "maxLength": 10
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "e.g. 'de'",
+              "title": "Locale"
+            },
+            "description": "e.g. 'de'"
+          },
+          {
+            "name": "entity_type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 50
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "e.g. 'capability', 'ui'",
+              "title": "Entity Type"
+            },
+            "description": "e.g. 'capability', 'ui'"
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Accept-Language"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TranslationListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/contact": {
+      "post": {
+        "tags": [
+          "contact"
+        ],
+        "summary": "Submit a consulting inquiry (Work With Us)",
+        "operationId": "submit_contact_api_contact_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactSubmission"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/export/validate": {
+      "post": {
+        "tags": [
+          "export-analyser"
+        ],
+        "summary": "Export Validate",
+        "operationId": "export_validate_api_export_validate_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_export_validate_api_export_validate_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/export/analyse": {
+      "post": {
+        "tags": [
+          "export-analyser"
+        ],
+        "summary": "Export Analyse",
+        "operationId": "export_analyse_api_export_analyse_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_export_analyse_api_export_analyse_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataInsight"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/export/apply": {
+      "post": {
+        "tags": [
+          "export-analyser"
+        ],
+        "summary": "Export Apply",
+        "operationId": "export_apply_api_export_apply_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplyResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/health": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Engine status and catalog info",
+        "operationId": "health_api_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/questions": {
+      "get": {
+        "tags": [
+          "questionnaire"
+        ],
+        "summary": "Question schema for dynamic form rendering",
+        "operationId": "get_questions_api_questions_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Get Questions Api Questions Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AdminStatsResponse": {
+        "properties": {
+          "capabilities_count": {
+            "type": "integer",
+            "title": "Capabilities Count"
+          },
+          "products_count": {
+            "type": "integer",
+            "title": "Products Count"
+          },
+          "domains": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Domains"
+          },
+          "users_count": {
+            "type": "integer",
+            "title": "Users Count"
+          },
+          "sessions_count": {
+            "type": "integer",
+            "title": "Sessions Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "capabilities_count",
+          "products_count",
+          "domains",
+          "users_count",
+          "sessions_count"
+        ],
+        "title": "AdminStatsResponse"
+      },
+      "ApplyRequest": {
+        "properties": {
+          "insight": {
+            "$ref": "#/components/schemas/DataInsight"
+          },
+          "override_questionnaire": {
+            "type": "boolean",
+            "title": "Override Questionnaire",
+            "description": "If true, high-confidence suggested pain flags are returned for application to the assessment (user-confirmed).",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "insight"
+        ],
+        "title": "ApplyRequest"
+      },
+      "ApplyResponse": {
+        "properties": {
+          "bottleneck_enrichment": {
+            "type": "string",
+            "title": "Bottleneck Enrichment"
+          },
+          "data_readiness_contribution": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data Readiness Contribution"
+          },
+          "pain_flags_to_apply": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Pain Flags To Apply"
+          },
+          "note": {
+            "type": "string",
+            "title": "Note"
+          }
+        },
+        "type": "object",
+        "required": [
+          "bottleneck_enrichment",
+          "pain_flags_to_apply",
+          "note"
+        ],
+        "title": "ApplyResponse"
+      },
+      "AssessmentDetailResponse": {
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "title": "Session Id"
+          },
+          "recommendation_id": {
+            "type": "string",
+            "title": "Recommendation Id"
+          },
+          "company_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Company Name"
+          },
+          "country": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Country"
+          },
+          "tier": {
+            "type": "string",
+            "title": "Tier"
+          },
+          "pipeline_used": {
+            "type": "string",
+            "title": "Pipeline Used"
+          },
+          "llm_available": {
+            "type": "boolean",
+            "title": "Llm Available"
+          },
+          "processing_time_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Processing Time Ms"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "ai_disclosure": {
+            "type": "string",
+            "title": "Ai Disclosure"
+          },
+          "recommendations": {
+            "items": {
+              "$ref": "#/components/schemas/RecommendationItem"
+            },
+            "type": "array",
+            "title": "Recommendations"
+          }
+        },
+        "type": "object",
+        "required": [
+          "session_id",
+          "recommendation_id",
+          "tier",
+          "pipeline_used",
+          "llm_available",
+          "created_at",
+          "ai_disclosure",
+          "recommendations"
+        ],
+        "title": "AssessmentDetailResponse"
+      },
+      "AuthResponse": {
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "title": "Access Token"
+          },
+          "refresh_token": {
+            "type": "string",
+            "title": "Refresh Token"
+          },
+          "token_type": {
+            "type": "string",
+            "title": "Token Type",
+            "default": "bearer"
+          },
+          "expires_in": {
+            "type": "integer",
+            "title": "Expires In",
+            "default": 1800
+          },
+          "user": {
+            "$ref": "#/components/schemas/UserResponse"
+          }
+        },
+        "type": "object",
+        "required": [
+          "access_token",
+          "refresh_token",
+          "user"
+        ],
+        "title": "AuthResponse"
+      },
+      "Body_export_analyse_api_export_analyse_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "File"
+          },
+          "language_hint": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language Hint"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_export_analyse_api_export_analyse_post"
+      },
+      "Body_export_validate_api_export_validate_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_export_validate_api_export_validate_post"
+      },
+      "CapabilityCreate": {
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[a-z_]+$",
+            "title": "Capability Id"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Name"
+          },
+          "domain": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Domain"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "default": ""
+          },
+          "use_case_category": {
+            "type": "string",
+            "title": "Use Case Category",
+            "default": ""
+          },
+          "task_type_target": {
+            "type": "string",
+            "title": "Task Type Target",
+            "default": ""
+          },
+          "bottleneck_keywords": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Bottleneck Keywords",
+            "default": []
+          },
+          "works_without_data": {
+            "type": "boolean",
+            "title": "Works Without Data",
+            "default": true
+          },
+          "required_data_types": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Required Data Types",
+            "default": []
+          },
+          "min_history_months_gate": {
+            "type": "integer",
+            "title": "Min History Months Gate",
+            "default": 0
+          },
+          "min_technical_capability": {
+            "type": "integer",
+            "title": "Min Technical Capability",
+            "default": 1
+          },
+          "mapped_pain_points": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Mapped Pain Points",
+            "default": []
+          },
+          "primary_outcome": {
+            "type": "string",
+            "title": "Primary Outcome",
+            "default": ""
+          },
+          "secondary_outcomes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Secondary Outcomes",
+            "default": []
+          },
+          "time_to_value_weeks_min": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time To Value Weeks Min"
+          },
+          "time_to_value_weeks_max": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time To Value Weeks Max"
+          }
+        },
+        "type": "object",
+        "required": [
+          "capability_id",
+          "name",
+          "domain"
+        ],
+        "title": "CapabilityCreate"
+      },
+      "CapabilityResponse": {
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "title": "Capability Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "domain": {
+            "type": "string",
+            "title": "Domain"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "mapped_pain_points": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Mapped Pain Points"
+          },
+          "products_count": {
+            "type": "integer",
+            "title": "Products Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "capability_id",
+          "name",
+          "domain",
+          "description",
+          "mapped_pain_points",
+          "products_count"
+        ],
+        "title": "CapabilityResponse"
+      },
+      "CatalogCapabilityModel": {
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "title": "Capability Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "domain": {
+            "type": "string",
+            "title": "Domain"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "primary_outcome": {
+            "type": "string",
+            "title": "Primary Outcome"
+          },
+          "browse_category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Browse Category"
+          },
+          "products": {
+            "items": {
+              "$ref": "#/components/schemas/ProductDetail"
+            },
+            "type": "array",
+            "title": "Products",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "capability_id",
+          "name",
+          "domain",
+          "description",
+          "primary_outcome"
+        ],
+        "title": "CatalogCapabilityModel",
+        "description": "GET /api/catalog response."
+      },
+      "CatalogResponse": {
+        "properties": {
+          "capabilities": {
+            "items": {
+              "$ref": "#/components/schemas/CatalogCapabilityModel"
+            },
+            "type": "array",
+            "title": "Capabilities"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          }
+        },
+        "type": "object",
+        "required": [
+          "capabilities",
+          "total"
+        ],
+        "title": "CatalogResponse"
+      },
+      "ContactResponse": {
+        "properties": {
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "detail"
+        ],
+        "title": "ContactResponse"
+      },
+      "ContactSubmission": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 2,
+            "title": "Name"
+          },
+          "company": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Company"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "domain": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Domain"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 10,
+            "title": "Message"
+          },
+          "budget_range": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "under_5k",
+                  "5k_20k",
+                  "over_20k",
+                  "prefer_not_to_say"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Budget Range"
+          },
+          "consent": {
+            "type": "boolean",
+            "title": "Consent"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "email",
+          "message",
+          "consent"
+        ],
+        "title": "ContactSubmission"
+      },
+      "DataExportResponse": {
+        "properties": {
+          "user": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "User"
+          },
+          "companies": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Companies"
+          },
+          "sessions": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Sessions"
+          },
+          "feedback": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Feedback"
+          },
+          "exported_at": {
+            "type": "string",
+            "title": "Exported At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "user",
+          "companies",
+          "sessions",
+          "feedback",
+          "exported_at"
+        ],
+        "title": "DataExportResponse"
+      },
+      "DataInsight": {
+        "properties": {
+          "analyzable": {
+            "type": "boolean",
+            "title": "Analyzable"
+          },
+          "validation_message": {
+            "type": "string",
+            "title": "Validation Message",
+            "default": ""
+          },
+          "format_detected": {
+            "$ref": "#/components/schemas/FileFormat"
+          },
+          "data_type": {
+            "$ref": "#/components/schemas/DataType",
+            "default": "unknown"
+          },
+          "data_type_confidence": {
+            "type": "number",
+            "title": "Data Type Confidence",
+            "default": 0.0
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/MetricSet"
+          },
+          "bottleneck_enrichment": {
+            "type": "string",
+            "title": "Bottleneck Enrichment",
+            "default": ""
+          },
+          "pain_flags_suggested": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Pain Flags Suggested"
+          },
+          "data_readiness_contribution": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data Readiness Contribution"
+          },
+          "parse_confidence": {
+            "type": "number",
+            "title": "Parse Confidence",
+            "default": 0.0
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "type": "object",
+        "required": [
+          "analyzable",
+          "format_detected"
+        ],
+        "title": "DataInsight"
+      },
+      "DataType": {
+        "type": "string",
+        "enum": [
+          "orders",
+          "crm_leads",
+          "support_tickets",
+          "analytics",
+          "inventory",
+          "unknown"
+        ],
+        "title": "DataType"
+      },
+      "DeleteResponse": {
+        "properties": {
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "detail"
+        ],
+        "title": "DeleteResponse"
+      },
+      "DimensionBreakdownModel": {
+        "properties": {
+          "semantic_fit": {
+            "type": "number",
+            "title": "Semantic Fit"
+          },
+          "integration_compat": {
+            "type": "number",
+            "title": "Integration Compat"
+          },
+          "data_readiness": {
+            "type": "number",
+            "title": "Data Readiness"
+          },
+          "tech_fit": {
+            "type": "number",
+            "title": "Tech Fit"
+          },
+          "pain_point_match": {
+            "type": "number",
+            "title": "Pain Point Match"
+          }
+        },
+        "type": "object",
+        "required": [
+          "semantic_fit",
+          "integration_compat",
+          "data_readiness",
+          "tech_fit",
+          "pain_point_match"
+        ],
+        "title": "DimensionBreakdownModel"
+      },
+      "FeedbackRequest": {
+        "properties": {
+          "recommendation_id": {
+            "type": "string",
+            "title": "Recommendation Id"
+          },
+          "capability_id": {
+            "type": "string",
+            "title": "Capability Id"
+          },
+          "rating": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 5.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rating"
+          },
+          "was_implemented": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Was Implemented"
+          },
+          "comment": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 1000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Comment"
+          }
+        },
+        "type": "object",
+        "required": [
+          "recommendation_id",
+          "capability_id"
+        ],
+        "title": "FeedbackRequest",
+        "description": "POST /api/feedback request body."
+      },
+      "FeedbackResponse": {
+        "properties": {
+          "feedback_id": {
+            "type": "string",
+            "title": "Feedback Id"
+          },
+          "recommendation_id": {
+            "type": "string",
+            "title": "Recommendation Id"
+          },
+          "capability_id": {
+            "type": "string",
+            "title": "Capability Id"
+          },
+          "rating": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rating"
+          },
+          "was_implemented": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Was Implemented"
+          },
+          "saved": {
+            "type": "boolean",
+            "title": "Saved",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "feedback_id",
+          "recommendation_id",
+          "capability_id"
+        ],
+        "title": "FeedbackResponse",
+        "description": "POST /api/feedback response."
+      },
+      "FileFormat": {
+        "type": "string",
+        "enum": [
+          "csv",
+          "tsv",
+          "xlsx",
+          "xls",
+          "json",
+          "jsonl",
+          "pdf_text",
+          "pdf_image",
+          "image",
+          "unknown"
+        ],
+        "title": "FileFormat"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "ollama_available": {
+            "type": "boolean",
+            "title": "Ollama Available"
+          },
+          "catalog_capabilities_count": {
+            "type": "integer",
+            "title": "Catalog Capabilities Count"
+          },
+          "catalog_products_count": {
+            "type": "integer",
+            "title": "Catalog Products Count"
+          },
+          "active_llm_model": {
+            "type": "string",
+            "title": "Active Llm Model"
+          },
+          "active_sbert_model": {
+            "type": "string",
+            "title": "Active Sbert Model"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "ollama_available",
+          "catalog_capabilities_count",
+          "catalog_products_count",
+          "active_llm_model",
+          "active_sbert_model",
+          "version"
+        ],
+        "title": "HealthResponse",
+        "description": "GET /api/health"
+      },
+      "LoginRequest": {
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "password": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Password"
+          }
+        },
+        "type": "object",
+        "required": [
+          "email",
+          "password"
+        ],
+        "title": "LoginRequest"
+      },
+      "MetricSet": {
+        "properties": {
+          "total_records": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Records"
+          },
+          "date_range_months": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Date Range Months"
+          },
+          "channels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Channels"
+          },
+          "avg_response_time_hours": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Avg Response Time Hours"
+          },
+          "open_items": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Open Items"
+          },
+          "closed_items": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Closed Items"
+          },
+          "peak_month": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Peak Month"
+          },
+          "seasonality_cv": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seasonality Cv"
+          },
+          "avg_order_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Avg Order Value"
+          },
+          "fulfillment_null_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fulfillment Null Pct"
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "title": "MetricSet"
+      },
+      "ProductCreate": {
+        "properties": {
+          "product_id": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Product Id"
+          },
+          "capability_id": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Capability Id"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Name"
+          },
+          "vendor": {
+            "type": "string",
+            "title": "Vendor",
+            "default": ""
+          },
+          "url": {
+            "type": "string",
+            "title": "Url",
+            "default": ""
+          },
+          "integrations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Integrations",
+            "default": []
+          },
+          "gdpr_compliant": {
+            "type": "boolean",
+            "title": "Gdpr Compliant",
+            "default": false
+          },
+          "deployment_model": {
+            "type": "string",
+            "title": "Deployment Model",
+            "default": "saas"
+          },
+          "pricing_model": {
+            "type": "string",
+            "title": "Pricing Model",
+            "default": "freemium"
+          },
+          "has_free_tier": {
+            "type": "boolean",
+            "title": "Has Free Tier",
+            "default": false
+          },
+          "cost_tier": {
+            "type": "string",
+            "title": "Cost Tier",
+            "default": "low"
+          },
+          "cost_notes": {
+            "type": "string",
+            "title": "Cost Notes",
+            "default": ""
+          },
+          "implementation_effort": {
+            "type": "string",
+            "title": "Implementation Effort",
+            "default": "low"
+          },
+          "min_technical_capability": {
+            "type": "integer",
+            "title": "Min Technical Capability",
+            "default": 1
+          },
+          "setup_notes": {
+            "type": "string",
+            "title": "Setup Notes",
+            "default": ""
+          },
+          "min_history_months": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min History Months"
+          },
+          "min_record_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min Record Count"
+          },
+          "works_with_limited_data": {
+            "type": "boolean",
+            "title": "Works With Limited Data",
+            "default": true
+          },
+          "data_requirement_notes": {
+            "type": "string",
+            "title": "Data Requirement Notes",
+            "default": ""
+          },
+          "notes": {
+            "type": "string",
+            "title": "Notes",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "product_id",
+          "capability_id",
+          "name"
+        ],
+        "title": "ProductCreate"
+      },
+      "ProductDetail": {
+        "properties": {
+          "product_id": {
+            "type": "string",
+            "title": "Product Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "vendor": {
+            "type": "string",
+            "title": "Vendor"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "cost_tier": {
+            "type": "string",
+            "title": "Cost Tier"
+          },
+          "has_free_tier": {
+            "type": "boolean",
+            "title": "Has Free Tier"
+          },
+          "gdpr_compliant": {
+            "type": "boolean",
+            "title": "Gdpr Compliant"
+          },
+          "implementation_effort": {
+            "type": "string",
+            "title": "Implementation Effort"
+          },
+          "cost_notes": {
+            "type": "string",
+            "title": "Cost Notes",
+            "default": ""
+          },
+          "price_tier": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Price Tier"
+          },
+          "platform_integrations": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Platform Integrations"
+          },
+          "company_size_fit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Company Size Fit"
+          },
+          "setup_complexity": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Setup Complexity"
+          },
+          "fit_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fit Score"
+          },
+          "best_fit": {
+            "type": "boolean",
+            "title": "Best Fit",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "product_id",
+          "name",
+          "vendor",
+          "url",
+          "cost_tier",
+          "has_free_tier",
+          "gdpr_compliant",
+          "implementation_effort"
+        ],
+        "title": "ProductDetail"
+      },
+      "QuestionnaireRequest": {
+        "properties": {
+          "tier": {
+            "type": "string",
+            "enum": [
+              "quick",
+              "standard",
+              "full"
+            ],
+            "title": "Tier"
+          },
+          "company_name": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Company Name"
+          },
+          "country": {
+            "type": "string",
+            "maxLength": 2,
+            "minLength": 2,
+            "title": "Country"
+          },
+          "team_size": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Team Size"
+          },
+          "domains": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Domains"
+          },
+          "bottleneck_text": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 0,
+            "title": "Bottleneck Text"
+          },
+          "answers": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Answers"
+          },
+          "confirmed_pain_flags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Confirmed Pain Flags"
+          },
+          "export_enrichment": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Export Enrichment"
+          },
+          "export_pain_flags": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Export Pain Flags"
+          }
+        },
+        "type": "object",
+        "required": [
+          "tier",
+          "company_name",
+          "country",
+          "domains",
+          "bottleneck_text"
+        ],
+        "title": "QuestionnaireRequest",
+        "description": "POST /api/recommend request body."
+      },
+      "RecommendationHistoryItem": {
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "title": "Session Id"
+          },
+          "recommendation_id": {
+            "type": "string",
+            "title": "Recommendation Id"
+          },
+          "tier": {
+            "type": "string",
+            "title": "Tier"
+          },
+          "pipeline_used": {
+            "type": "string",
+            "title": "Pipeline Used"
+          },
+          "llm_available": {
+            "type": "boolean",
+            "title": "Llm Available"
+          },
+          "processing_time_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Processing Time Ms"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "company_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Company Name"
+          },
+          "country": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Country"
+          },
+          "domains": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Domains",
+            "default": []
+          },
+          "top_recommendation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top Recommendation"
+          },
+          "feedback_rating": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Feedback Rating"
+          }
+        },
+        "type": "object",
+        "required": [
+          "session_id",
+          "recommendation_id",
+          "tier",
+          "pipeline_used",
+          "llm_available",
+          "processing_time_ms",
+          "created_at"
+        ],
+        "title": "RecommendationHistoryItem"
+      },
+      "RecommendationHistoryResponse": {
+        "properties": {
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/RecommendationHistoryItem"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total",
+          "items"
+        ],
+        "title": "RecommendationHistoryResponse"
+      },
+      "RecommendationItem": {
+        "properties": {
+          "rank": {
+            "type": "integer",
+            "title": "Rank"
+          },
+          "capability_id": {
+            "type": "string",
+            "title": "Capability Id"
+          },
+          "capability_name": {
+            "type": "string",
+            "title": "Capability Name"
+          },
+          "domain": {
+            "type": "string",
+            "title": "Domain"
+          },
+          "topsis_score": {
+            "type": "number",
+            "title": "Topsis Score"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          },
+          "dimensions": {
+            "$ref": "#/components/schemas/DimensionBreakdownModel"
+          },
+          "products": {
+            "items": {
+              "$ref": "#/components/schemas/ProductDetail"
+            },
+            "type": "array",
+            "title": "Products"
+          }
+        },
+        "type": "object",
+        "required": [
+          "rank",
+          "capability_id",
+          "capability_name",
+          "domain",
+          "topsis_score",
+          "explanation",
+          "dimensions",
+          "products"
+        ],
+        "title": "RecommendationItem"
+      },
+      "RecommendationResponse": {
+        "properties": {
+          "company_name": {
+            "type": "string",
+            "title": "Company Name"
+          },
+          "pipeline_used": {
+            "type": "string",
+            "enum": [
+              "hybrid_i2",
+              "classical_fallback",
+              "i3_llm_semantic"
+            ],
+            "title": "Pipeline Used"
+          },
+          "llm_available": {
+            "type": "boolean",
+            "title": "Llm Available"
+          },
+          "processing_time_ms": {
+            "type": "integer",
+            "title": "Processing Time Ms"
+          },
+          "ai_disclosure": {
+            "type": "string",
+            "title": "Ai Disclosure"
+          },
+          "recommendations": {
+            "items": {
+              "$ref": "#/components/schemas/RecommendationItem"
+            },
+            "type": "array",
+            "title": "Recommendations"
+          },
+          "recommendation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recommendation Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "company_name",
+          "pipeline_used",
+          "llm_available",
+          "processing_time_ms",
+          "ai_disclosure",
+          "recommendations"
+        ],
+        "title": "RecommendationResponse",
+        "description": "POST /api/recommend response."
+      },
+      "RefreshRequest": {
+        "properties": {
+          "refresh_token": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Refresh Token"
+          }
+        },
+        "type": "object",
+        "required": [
+          "refresh_token"
+        ],
+        "title": "RefreshRequest"
+      },
+      "RegisterRequest": {
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "password": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 8,
+            "title": "Password"
+          },
+          "marketing_opt_in": {
+            "type": "boolean",
+            "title": "Marketing Opt In",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "email",
+          "password"
+        ],
+        "title": "RegisterRequest"
+      },
+      "SavedToolItem": {
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "title": "Capability Id"
+          },
+          "capability_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Capability Name"
+          },
+          "saved_at": {
+            "type": "string",
+            "title": "Saved At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "capability_id",
+          "saved_at"
+        ],
+        "title": "SavedToolItem"
+      },
+      "SavedToolListResponse": {
+        "properties": {
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SavedToolItem"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total",
+          "items"
+        ],
+        "title": "SavedToolListResponse"
+      },
+      "SavedToolRequest": {
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "maxLength": 100,
+            "pattern": "^[a-z0-9_]+$",
+            "title": "Capability Id"
+          },
+          "capability_name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Capability Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "capability_id"
+        ],
+        "title": "SavedToolRequest"
+      },
+      "TokenResponse": {
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "title": "Access Token"
+          },
+          "refresh_token": {
+            "type": "string",
+            "title": "Refresh Token"
+          },
+          "token_type": {
+            "type": "string",
+            "title": "Token Type",
+            "default": "bearer"
+          },
+          "expires_in": {
+            "type": "integer",
+            "title": "Expires In",
+            "default": 1800
+          }
+        },
+        "type": "object",
+        "required": [
+          "access_token",
+          "refresh_token"
+        ],
+        "title": "TokenResponse"
+      },
+      "TranslationItem": {
+        "properties": {
+          "entity_type": {
+            "type": "string",
+            "title": "Entity Type"
+          },
+          "entity_id": {
+            "type": "string",
+            "title": "Entity Id"
+          },
+          "field": {
+            "type": "string",
+            "title": "Field"
+          },
+          "value": {
+            "type": "string",
+            "title": "Value"
+          }
+        },
+        "type": "object",
+        "required": [
+          "entity_type",
+          "entity_id",
+          "field",
+          "value"
+        ],
+        "title": "TranslationItem"
+      },
+      "TranslationListResponse": {
+        "properties": {
+          "locale": {
+            "type": "string",
+            "title": "Locale"
+          },
+          "entity_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Entity Type"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/TranslationItem"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "locale",
+          "total",
+          "items"
+        ],
+        "title": "TranslationListResponse"
+      },
+      "UpdateMeRequest": {
+        "properties": {
+          "language_preference": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 5
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language Preference"
+          },
+          "marketing_opt_in": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Marketing Opt In"
+          }
+        },
+        "type": "object",
+        "title": "UpdateMeRequest"
+      },
+      "UserResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "email": {
+            "type": "string",
+            "title": "Email"
+          },
+          "email_verified": {
+            "type": "boolean",
+            "title": "Email Verified"
+          },
+          "is_admin": {
+            "type": "boolean",
+            "title": "Is Admin"
+          },
+          "marketing_opt_in": {
+            "type": "boolean",
+            "title": "Marketing Opt In",
+            "default": false
+          },
+          "language_preference": {
+            "type": "string",
+            "title": "Language Preference",
+            "default": "en"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "email",
+          "email_verified",
+          "is_admin",
+          "created_at"
+        ],
+        "title": "UserResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "ValidationResult": {
+        "properties": {
+          "can_analyze": {
+            "type": "boolean",
+            "title": "Can Analyze"
+          },
+          "format_detected": {
+            "$ref": "#/components/schemas/FileFormat"
+          },
+          "data_type_hint": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DataType"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          },
+          "suggested_action": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Suggested Action"
+          }
+        },
+        "type": "object",
+        "required": [
+          "can_analyze",
+          "format_detected",
+          "reason"
+        ],
+        "title": "ValidationResult"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
