@@ -1,0 +1,12 @@
+__pycache__
+*.pyc
+.git
+.env
+.DS_Store
+node_modules
+frontend/node_modules
+frontend/dist
+results/
+tools/architecture/
+*.db-journal
+.github
