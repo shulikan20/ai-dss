@@ -1,0 +1,82 @@
+version: "3.9"
+
+# Hybrid (default):
+#   docker compose up
+#
+# LLM:
+#   PIPELINE_MODE=llm docker compose up
+#
+# Classical:
+#   PIPELINE_MODE=classical docker compose up postgres api
+
+
+services:
+
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER:     aidss
+      POSTGRES_PASSWORD: aidss
+      POSTGRES_DB:       aidss
+    volumes:
+      - aidss-pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aidss -d aidss"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+      start_period: 10s
+
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    volumes:
+      - aidss-ollama-models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+  ollama-pull:
+    image: curlimages/curl:latest
+    depends_on:
+      ollama:
+        condition: service_healthy
+    entrypoint: >
+      sh -c '
+        echo "[ollama-pull] Pulling phi4 model (first run only, ~5 GB)..."
+        curl -sf http://ollama:11434/api/pull -d "{\"name\": \"phi4\"}" | tail -1
+        echo "[ollama-pull] Model ready."
+      '
+    restart: "no"
+
+  api:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://aidss:aidss@postgres:5432/aidss
+      SECRET_KEY: demo-secret-not-for-production
+      AIDSS_ENV: development
+      OLLAMA_URL: http://ollama:11434
+      ALLOWED_ORIGINS: "*"
+      PIPELINE_MODE: ${PIPELINE_MODE:-hybrid}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+volumes:
+  aidss-pg-data:
+    driver: local
+  aidss-ollama-models:
+    driver: local
