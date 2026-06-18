@@ -1,0 +1,101 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: aidss
+          POSTGRES_PASSWORD: aidss
+          POSTGRES_DB: aidss_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U aidss -d aidss_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      DATABASE_URL: postgresql://aidss:aidss@localhost:5432/aidss_test
+      TEST_DATABASE_URL: postgresql://aidss:aidss@localhost:5432/aidss_test
+      SECRET_KEY: ci-test-secret
+      AIDSS_ENV: development
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Run Alembic migrations
+        run: alembic upgrade head
+
+      - name: Seed catalog
+        run: python scripts/migrate_catalog_to_pg.py
+
+      - name: Run unit tests
+        run: pytest tests/phase2/ tests/phase5/ -v --tb=short
+
+      - name: Verify OpenAPI schema is up to date
+        run: |
+          pip install pyyaml
+          python scripts/export_openapi.py
+          git diff --exit-code docs/openapi.json docs/openapi.yaml
+
+  smoke:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and start stack (classical mode)
+        run: PIPELINE_MODE=classical docker compose up postgres api -d --build --wait
+        timeout-minutes: 5
+
+      - name: Wait for API health
+        run: |
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:8000/api/health > /dev/null 2>&1; then
+              echo "API healthy after ${i}s"
+              break
+            fi
+            sleep 2
+          done
+          curl -sf http://localhost:8000/api/health | python3 -m json.tool
+
+      - name: Smoke test — recommend endpoint
+        run: |
+          curl -sf -X POST http://localhost:8000/api/recommend \
+            -H "Content-Type: application/json" \
+            -d @demo_data/sample_tinywonders.json \
+            | python3 -m json.tool
+          echo "Smoke test passed"
+
+      - name: Smoke test — export validate
+        run: |
+          curl -sf -X POST http://localhost:8000/api/export/validate \
+            -F "file=@demo_data/shopify_orders.csv" \
+            | python3 -m json.tool
+
+      - name: Smoke test — demo UI reachable
+        run: curl -sf http://localhost:8000/ | grep -q "AI-DSS Demo"
+
+      - name: Tear down
+        if: always()
+        run: docker compose down -v
