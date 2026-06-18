@@ -1,0 +1,18 @@
+{
+  "tier": "standard",
+  "company_name": "TinyWonders GmbH",
+  "country": "AT",
+  "team_size": "6-20",
+  "domains": ["customer_support", "marketing"],
+  "bottleneck_text": "We answer the same WhatsApp and Instagram questions about sizing, availability, and shipping every day. Two hours per day just on repetitive DMs. We also need to post social content 3 times a week but the team has no writing skills and it takes the whole afternoon.",
+  "answers": {
+    "cs_volume": "50_100",
+    "cs_repetition_rate": "most",
+    "mkt_content": "fully_manual"
+  },
+  "confirmed_pain_flags": [
+    "customer_support.volume.pain_high_volume_support",
+    "universal.processes.pain_repetitive_support",
+    "universal.processes.pain_manual_content_creation"
+  ]
+}

@@ -1,0 +1,1202 @@
+[
+ {
+  "order_id": "ORD-00001",
+  "product_name": "Jump Rope",
+  "quantity": 3,
+  "amount": 171.19,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2025-12-05 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00002",
+  "product_name": "Gym Towel",
+  "quantity": 4,
+  "amount": 168.36,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2025-05-15 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00003",
+  "product_name": "Resistance Band",
+  "quantity": 4,
+  "amount": 157.57,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2023-12-21 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00004",
+  "product_name": "Gym Towel",
+  "quantity": 1,
+  "amount": 172.68,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2024-05-27 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00005",
+  "product_name": "Water Bottle",
+  "quantity": 3,
+  "amount": 32.11,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2023-07-05 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00006",
+  "product_name": "Foam Roller",
+  "quantity": 3,
+  "amount": 56.13,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2024-03-28 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00007",
+  "product_name": "Foam Roller",
+  "quantity": 3,
+  "amount": 61.53,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2023-11-27 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00008",
+  "product_name": "Kettlebell 12kg",
+  "quantity": 1,
+  "amount": 41.97,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2024-03-30 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00009",
+  "product_name": "Yoga Mat",
+  "quantity": 4,
+  "amount": 98.52,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2023-04-07 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00010",
+  "product_name": "Jump Rope",
+  "quantity": 4,
+  "amount": 56.15,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2025-09-06 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00011",
+  "product_name": "Kettlebell 12kg",
+  "quantity": 1,
+  "amount": 133.29,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2025-05-08 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00012",
+  "product_name": "Gym Towel",
+  "quantity": 4,
+  "amount": 208.59,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2023-05-04 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00013",
+  "product_name": "Knee Sleeves",
+  "quantity": 3,
+  "amount": 170.07,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-03-16 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00014",
+  "product_name": "Resistance Band",
+  "quantity": 3,
+  "amount": 96.36,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2024-11-15 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00015",
+  "product_name": "Foam Roller",
+  "quantity": 3,
+  "amount": 121.05,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2023-12-26 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00016",
+  "product_name": "Water Bottle",
+  "quantity": 2,
+  "amount": 109.3,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2024-08-23 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00017",
+  "product_name": "Knee Sleeves",
+  "quantity": 2,
+  "amount": 143.57,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-01-12 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00018",
+  "product_name": "Foam Roller",
+  "quantity": 4,
+  "amount": 207.67,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-07-02 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00019",
+  "product_name": "Yoga Mat",
+  "quantity": 2,
+  "amount": 109.84,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2024-07-28 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00020",
+  "product_name": "Jump Rope",
+  "quantity": 1,
+  "amount": 104.64,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-02-02 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00021",
+  "product_name": "Jump Rope",
+  "quantity": 4,
+  "amount": 203.77,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2025-07-12 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00022",
+  "product_name": "Gym Towel",
+  "quantity": 3,
+  "amount": 141.08,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2023-12-23 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00023",
+  "product_name": "Resistance Band",
+  "quantity": 3,
+  "amount": 210.16,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-05-26 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00024",
+  "product_name": "Gym Towel",
+  "quantity": 4,
+  "amount": 189.32,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2024-03-29 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00025",
+  "product_name": "Jump Rope",
+  "quantity": 4,
+  "amount": 157.14,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-12-19 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00026",
+  "product_name": "Water Bottle",
+  "quantity": 1,
+  "amount": 32.8,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2024-06-05 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00027",
+  "product_name": "Jump Rope",
+  "quantity": 3,
+  "amount": 151.21,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2024-02-19 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00028",
+  "product_name": "Gym Towel",
+  "quantity": 4,
+  "amount": 108.15,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-06-08 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00029",
+  "product_name": "Foam Roller",
+  "quantity": 3,
+  "amount": 226.6,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-04-15 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00030",
+  "product_name": "Resistance Band",
+  "quantity": 1,
+  "amount": 29.35,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2024-05-11 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00031",
+  "product_name": "Water Bottle",
+  "quantity": 1,
+  "amount": 38.38,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-05-29 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00032",
+  "product_name": "Foam Roller",
+  "quantity": 2,
+  "amount": 180.96,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2024-02-11 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00033",
+  "product_name": "Kettlebell 12kg",
+  "quantity": 1,
+  "amount": 22.91,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2024-09-21 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00034",
+  "product_name": "Jump Rope",
+  "quantity": 4,
+  "amount": 45.4,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2024-07-22 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00035",
+  "product_name": "Jump Rope",
+  "quantity": 3,
+  "amount": 123.37,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-06-19 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00036",
+  "product_name": "Gym Towel",
+  "quantity": 4,
+  "amount": 73.46,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2024-02-10 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00037",
+  "product_name": "Kettlebell 12kg",
+  "quantity": 3,
+  "amount": 79.52,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2024-09-17 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00038",
+  "product_name": "Yoga Mat",
+  "quantity": 4,
+  "amount": 194.54,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-02-01 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00039",
+  "product_name": "Foam Roller",
+  "quantity": 4,
+  "amount": 213.49,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2024-04-17 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00040",
+  "product_name": "Water Bottle",
+  "quantity": 4,
+  "amount": 64.63,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2023-09-15 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00041",
+  "product_name": "Jump Rope",
+  "quantity": 3,
+  "amount": 160.9,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2024-09-11 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00042",
+  "product_name": "Resistance Band",
+  "quantity": 2,
+  "amount": 45.74,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2025-08-21 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00043",
+  "product_name": "Jump Rope",
+  "quantity": 4,
+  "amount": 57.25,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-07-07 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00044",
+  "product_name": "Yoga Mat",
+  "quantity": 2,
+  "amount": 233.77,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2025-12-18 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00045",
+  "product_name": "Knee Sleeves",
+  "quantity": 1,
+  "amount": 67.38,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-04-02 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00046",
+  "product_name": "Gym Towel",
+  "quantity": 4,
+  "amount": 85.1,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2023-11-09 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00047",
+  "product_name": "Yoga Mat",
+  "quantity": 3,
+  "amount": 33.05,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-03-14 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00048",
+  "product_name": "Water Bottle",
+  "quantity": 1,
+  "amount": 137.22,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-06-03 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00049",
+  "product_name": "Water Bottle",
+  "quantity": 1,
+  "amount": 42.44,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2025-07-15 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00050",
+  "product_name": "Yoga Mat",
+  "quantity": 2,
+  "amount": 118.69,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2023-12-10 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00051",
+  "product_name": "Jump Rope",
+  "quantity": 3,
+  "amount": 50.69,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-05-03 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00052",
+  "product_name": "Jump Rope",
+  "quantity": 2,
+  "amount": 96.1,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-08-05 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00053",
+  "product_name": "Water Bottle",
+  "quantity": 3,
+  "amount": 18.39,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2023-11-28 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00054",
+  "product_name": "Foam Roller",
+  "quantity": 1,
+  "amount": 232.99,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2025-06-17 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00055",
+  "product_name": "Resistance Band",
+  "quantity": 2,
+  "amount": 50.48,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2025-05-29 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00056",
+  "product_name": "Gym Towel",
+  "quantity": 2,
+  "amount": 172.8,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2023-06-01 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00057",
+  "product_name": "Gym Towel",
+  "quantity": 3,
+  "amount": 196.24,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2023-11-25 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00058",
+  "product_name": "Water Bottle",
+  "quantity": 3,
+  "amount": 177.99,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2025-03-06 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00059",
+  "product_name": "Knee Sleeves",
+  "quantity": 3,
+  "amount": 137.12,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2025-03-24 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00060",
+  "product_name": "Gym Towel",
+  "quantity": 3,
+  "amount": 179.79,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2023-10-09 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00061",
+  "product_name": "Kettlebell 12kg",
+  "quantity": 4,
+  "amount": 81.53,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2024-09-25 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00062",
+  "product_name": "Water Bottle",
+  "quantity": 2,
+  "amount": 213.66,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2023-04-01 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00063",
+  "product_name": "Resistance Band",
+  "quantity": 4,
+  "amount": 57.72,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2025-04-08 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00064",
+  "product_name": "Gym Towel",
+  "quantity": 4,
+  "amount": 159.2,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-01-15 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00065",
+  "product_name": "Resistance Band",
+  "quantity": 1,
+  "amount": 202.92,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-02-03 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00066",
+  "product_name": "Resistance Band",
+  "quantity": 4,
+  "amount": 58.11,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2023-10-24 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00067",
+  "product_name": "Jump Rope",
+  "quantity": 1,
+  "amount": 97.43,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-09-20 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00068",
+  "product_name": "Knee Sleeves",
+  "quantity": 1,
+  "amount": 120.31,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2025-01-31 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00069",
+  "product_name": "Water Bottle",
+  "quantity": 3,
+  "amount": 193.71,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2025-05-01 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00070",
+  "product_name": "Resistance Band",
+  "quantity": 3,
+  "amount": 32.54,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2023-05-12 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00071",
+  "product_name": "Foam Roller",
+  "quantity": 4,
+  "amount": 57.63,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-04-12 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00072",
+  "product_name": "Water Bottle",
+  "quantity": 1,
+  "amount": 187.41,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2025-05-07 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00073",
+  "product_name": "Resistance Band",
+  "quantity": 2,
+  "amount": 193.3,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2025-09-21 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00074",
+  "product_name": "Knee Sleeves",
+  "quantity": 3,
+  "amount": 218.06,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2024-09-28 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00075",
+  "product_name": "Water Bottle",
+  "quantity": 3,
+  "amount": 151.89,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2025-05-22 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00076",
+  "product_name": "Jump Rope",
+  "quantity": 3,
+  "amount": 231.37,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2025-11-04 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00077",
+  "product_name": "Yoga Mat",
+  "quantity": 3,
+  "amount": 149.05,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2025-04-13 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00078",
+  "product_name": "Foam Roller",
+  "quantity": 2,
+  "amount": 207.54,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2024-02-02 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00079",
+  "product_name": "Kettlebell 12kg",
+  "quantity": 1,
+  "amount": 23.49,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2024-09-05 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00080",
+  "product_name": "Gym Towel",
+  "quantity": 2,
+  "amount": 67.42,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2023-12-28 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00081",
+  "product_name": "Foam Roller",
+  "quantity": 1,
+  "amount": 177.81,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2024-05-14 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00082",
+  "product_name": "Resistance Band",
+  "quantity": 3,
+  "amount": 23.41,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2025-07-24 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00083",
+  "product_name": "Gym Towel",
+  "quantity": 3,
+  "amount": 212.95,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2025-10-30 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00084",
+  "product_name": "Foam Roller",
+  "quantity": 1,
+  "amount": 157.62,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2025-09-07 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00085",
+  "product_name": "Yoga Mat",
+  "quantity": 3,
+  "amount": 136.48,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2024-09-18 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00086",
+  "product_name": "Foam Roller",
+  "quantity": 2,
+  "amount": 26.37,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2025-03-15 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00087",
+  "product_name": "Resistance Band",
+  "quantity": 2,
+  "amount": 112.19,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2024-11-10 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00088",
+  "product_name": "Resistance Band",
+  "quantity": 4,
+  "amount": 143.57,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2024-03-10 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00089",
+  "product_name": "Water Bottle",
+  "quantity": 4,
+  "amount": 189.11,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2023-06-27 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00090",
+  "product_name": "Foam Roller",
+  "quantity": 4,
+  "amount": 103.95,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-10-24 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00091",
+  "product_name": "Jump Rope",
+  "quantity": 4,
+  "amount": 87.77,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2023-06-13 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00092",
+  "product_name": "Gym Towel",
+  "quantity": 3,
+  "amount": 57.86,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2024-06-07 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00093",
+  "product_name": "Gym Towel",
+  "quantity": 4,
+  "amount": 155.22,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2023-09-21 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00094",
+  "product_name": "Gym Towel",
+  "quantity": 2,
+  "amount": 185.49,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2023-10-22 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00095",
+  "product_name": "Kettlebell 12kg",
+  "quantity": 3,
+  "amount": 18.09,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2023-12-05 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00096",
+  "product_name": "Yoga Mat",
+  "quantity": 3,
+  "amount": 62.03,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-07-26 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00097",
+  "product_name": "Jump Rope",
+  "quantity": 4,
+  "amount": 155.18,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-09-17 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00098",
+  "product_name": "Yoga Mat",
+  "quantity": 3,
+  "amount": 53.32,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2024-11-17 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00099",
+  "product_name": "Yoga Mat",
+  "quantity": 4,
+  "amount": 162.32,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-01-03 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00100",
+  "product_name": "Jump Rope",
+  "quantity": 3,
+  "amount": 209.46,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2025-02-05 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00101",
+  "product_name": "Water Bottle",
+  "quantity": 1,
+  "amount": 218.37,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2023-11-23 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00102",
+  "product_name": "Knee Sleeves",
+  "quantity": 1,
+  "amount": 23.94,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2023-10-21 00:00:00",
+  "city": "Salzburg"
+ },
+ {
+  "order_id": "ORD-00103",
+  "product_name": "Kettlebell 12kg",
+  "quantity": 1,
+  "amount": 93.03,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2024-05-07 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00104",
+  "product_name": "Jump Rope",
+  "quantity": 1,
+  "amount": 155.8,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2023-11-28 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00105",
+  "product_name": "Jump Rope",
+  "quantity": 2,
+  "amount": 49.13,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2025-11-27 00:00:00",
+  "city": "Vienna"
+ },
+ {
+  "order_id": "ORD-00106",
+  "product_name": "Water Bottle",
+  "quantity": 2,
+  "amount": 108.9,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2025-04-17 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00107",
+  "product_name": "Gym Towel",
+  "quantity": 4,
+  "amount": 137.0,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-10-18 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00108",
+  "product_name": "Foam Roller",
+  "quantity": 2,
+  "amount": 84.52,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2024-10-06 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00109",
+  "product_name": "Kettlebell 12kg",
+  "quantity": 3,
+  "amount": 30.26,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-01-31 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00110",
+  "product_name": "Kettlebell 12kg",
+  "quantity": 1,
+  "amount": 187.22,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2025-08-07 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00111",
+  "product_name": "Jump Rope",
+  "quantity": 2,
+  "amount": 190.3,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-06-27 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00112",
+  "product_name": "Jump Rope",
+  "quantity": 2,
+  "amount": 149.18,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2023-04-27 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00113",
+  "product_name": "Knee Sleeves",
+  "quantity": 2,
+  "amount": 128.02,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2023-06-21 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00114",
+  "product_name": "Water Bottle",
+  "quantity": 4,
+  "amount": 121.62,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2025-08-20 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00115",
+  "product_name": "Water Bottle",
+  "quantity": 1,
+  "amount": 223.22,
+  "channel": "instagram",
+  "status": "new",
+  "order_date": "2023-05-04 00:00:00",
+  "city": "Graz"
+ },
+ {
+  "order_id": "ORD-00116",
+  "product_name": "Foam Roller",
+  "quantity": 1,
+  "amount": 54.84,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2025-05-15 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00117",
+  "product_name": "Knee Sleeves",
+  "quantity": 2,
+  "amount": 111.2,
+  "channel": "web",
+  "status": "done",
+  "order_date": "2025-09-04 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00118",
+  "product_name": "Yoga Mat",
+  "quantity": 1,
+  "amount": 116.61,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-05-08 00:00:00",
+  "city": "Innsbruck"
+ },
+ {
+  "order_id": "ORD-00119",
+  "product_name": "Water Bottle",
+  "quantity": 1,
+  "amount": 140.48,
+  "channel": "web",
+  "status": "new",
+  "order_date": "2024-10-02 00:00:00",
+  "city": "Linz"
+ },
+ {
+  "order_id": "ORD-00120",
+  "product_name": "Water Bottle",
+  "quantity": 3,
+  "amount": 189.08,
+  "channel": "instagram",
+  "status": "done",
+  "order_date": "2024-06-24 00:00:00",
+  "city": "Graz"
+ }
+]

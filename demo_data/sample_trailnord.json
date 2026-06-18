@@ -1,0 +1,19 @@
+{
+  "tier": "standard",
+  "company_name": "TrailNord AB",
+  "country": "SE",
+  "team_size": "21-50",
+  "domains": ["supply_chain", "ecommerce_ops"],
+  "bottleneck_text": "We check stock manually in Excel weekly. We have 4-5 stockouts per year on best-sellers. Supplier lead times from Taiwan are unpredictable. All supplier communication is by email with no tracking.",
+  "answers": {
+    "sc_inventory_method": "spreadsheet",
+    "sc_stockout_freq": "frequently",
+    "sc_demand_forecasting_method": "manual"
+  },
+  "confirmed_pain_flags": [
+    "universal.processes.pain_stockouts",
+    "universal.processes.pain_overstock",
+    "universal.processes.pain_supplier_tracking",
+    "universal.processes.pain_manual_inventory"
+  ]
+}

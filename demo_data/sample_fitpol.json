@@ -1,0 +1,16 @@
+{
+  "tier": "standard",
+  "company_name": "FitPol Sp. z o.o.",
+  "country": "PL",
+  "team_size": "6-20",
+  "domains": ["ecommerce_ops", "marketing"],
+  "bottleneck_text": "We enter orders manually from Shopify, WooCommerce, and Allegro. We have no unified view for campaign performance data across Meta Ads, WooCommerce, and Mailchimp. We cannot tell which channels are actually driving sales.",
+  "answers": {
+    "ec_channels": "3_plus",
+    "mkt_reporting": "none"
+  },
+  "confirmed_pain_flags": [
+    "ecommerce_ops.pain_points.pain_multichannel",
+    "universal.processes.pain_no_data_insights"
+  ]
+}
