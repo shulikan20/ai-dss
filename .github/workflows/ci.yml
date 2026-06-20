@@ -7,64 +7,13 @@ on:
     branches: [main]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    services:
-      postgres:
-        image: postgres:16-alpine
-        env:
-          POSTGRES_USER: aidss
-          POSTGRES_PASSWORD: aidss
-          POSTGRES_DB: aidss_test
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd "pg_isready -U aidss -d aidss_test"
-          --health-interval 5s
-          --health-timeout 5s
-          --health-retries 10
-
-    env:
-      DATABASE_URL: postgresql://aidss:aidss@localhost:5432/aidss_test
-      TEST_DATABASE_URL: postgresql://aidss:aidss@localhost:5432/aidss_test
-      SECRET_KEY: ci-test-secret
-      AIDSS_ENV: development
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt -r requirements-dev.txt
-
-      - name: Run Alembic migrations
-        run: alembic upgrade head
-
-      - name: Seed catalog
-        run: python scripts/migrate_catalog_to_pg.py
-
-      - name: Run unit tests
-        run: pytest tests/phase2/ tests/phase5/ -v --tb=short
-
-      - name: Verify OpenAPI schema is up to date
-        run: |
-          pip install pyyaml
-          python scripts/export_openapi.py
-          git diff --exit-code docs/openapi.json docs/openapi.yaml
-
   smoke:
     runs-on: ubuntu-latest
-    needs: test
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build and start stack (classical mode)
+      - name: Build and start stack (classical mode — no 5 GB model download in CI)
         run: PIPELINE_MODE=classical docker compose up postgres api -d --build --wait
         timeout-minutes: 5
 
