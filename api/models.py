@@ -22,10 +22,10 @@ class QuestionnaireRequest(BaseModel):
     team_size: Optional[str] = None
     domains: Annotated[list[str], Field(min_length=1)]
     bottleneck_text: Annotated[str, Field(min_length=0, max_length=2000)]
-    answers: dict[str, str] = Field(default_factory=dict)
-    confirmed_pain_flags: list[str] = Field(default_factory=list)
+    answers: dict[str, str] = Field(default_factory=dict, max_length=100)
+    confirmed_pain_flags: list[str] = Field(default_factory=list, max_length=200)
     export_enrichment: str | None = Field(default=None, max_length=2000)
-    export_pain_flags: dict[str, float] = Field(default_factory=dict)
+    export_pain_flags: dict[str, float] = Field(default_factory=dict, max_length=200)
 
     @field_validator("country")
     @classmethod
