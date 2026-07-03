@@ -16,7 +16,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.11-blue?logo=python&logoColor=white" alt="Python 3.11" />
   <img src="https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black" alt="React 18" />
   <img src="https://img.shields.io/badge/PostgreSQL-16-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL 16" />
   <img src="https://img.shields.io/badge/Ollama-phi4-black?logo=ollama" alt="Ollama phi4" />
   <img src="https://img.shields.io/badge/license-MIT-green" alt="License MIT" />
@@ -97,6 +96,24 @@ Once healthy (~60-90s on first run):
 | http://localhost:8000/docs | Swagger / OpenAPI |
 | http://localhost:8000/redoc | ReDoc |
 
+### Local (without Docker)
+
+Requires Python 3.11+, PostgreSQL 16, and optionally [Ollama](https://ollama.com) with the `phi4` model for the hybrid/LLM pipelines.
+
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements-dev.txt
+
+docker compose up postgres -d
+alembic upgrade head
+python scripts/migrate_catalog_to_pg.py
+python -m src.catalog.embedder
+
+uvicorn api.main:app --reload  # http://localhost:8000/
+```
+
+Without Ollama running, all requests fall back to the classical pipeline automatically.
+
 ---
 
 ## Pipeline Modes
@@ -140,10 +157,11 @@ Valid values: `hybrid`, `llm`, `classical`.
 
 Open http://localhost:8000/ after starting the stack. The demo page lets you:
 
-- Fill out a company profile or load a sample (TinyWonders, FitPol, TrailNord)
+- Fill out a full assessment or load a sample (TinyWonders, FitPol, TrailNord, Ola Creativa)
 - Select a pipeline mode (Hybrid / LLM / Classical / Compare All)
-- Compare All fires all 3 pipelines in parallel and shows results side by side
+- Inspect the translated company profile the engine actually matches against
 - Upload business data files to the Export Analyser (CSV, XLSX, JSON, PDF)
+- Browse the full capability catalog and API reference in dedicated tabs
 
 ### curl
 
@@ -202,6 +220,24 @@ Sample payloads and export files are in [`demo_data/`](demo_data/).
 | `GET` | `/api/me/export` | yes | Export personal data |
 
 
+## Testing
+
+```bash
+pytest tests/ -v
+```
+
+Three suites, all in-process (no database server or Ollama needed):
+
+| File | Guards |
+|:---|:---|
+| `test_catalog_integrity.py` | Every pain flag the question schema can emit resolves to a catalog mapping — an unmapped flag would silently score 0% |
+| `test_profile_translation.py` | Form answers translate into the correct CompanyProfile signals (pain flags, tech level, data history, integrations) |
+| `test_matching_baselines.py` | The classical engine reproduces ground-truth rankings on three evaluation profiles, including the demand-forecasting vs. reactive-alerts discrimination |
+
+CI runs these plus a Docker smoke test of the full stack on every push.
+
+---
+
 ## Project Structure
 
 ```
@@ -218,10 +254,12 @@ ai-dss/
 │   │   ├── llm/            LLMEngine (phi4 reasoning)
 │   │   └── hybrid/         HybridEngineV2
 │   └── export_analyser/    DataInsight
-├── demo/                   Static demo page (Alpine.js, no build step)
+├── tests/
+├── migrations/
+├── demo/                   Demo page
 ├── demo_data/              Sample payloads and export files
 ├── docs/                   OpenAPI schema
-├── docker-compose.yml      Production-ready single-command stack
+├── docker-compose.yml
 └── Dockerfile
 ```
 
