@@ -9,393 +9,959 @@
   :root {
     --bg: #f8fafc; --fg: #0f172a; --card: #ffffff; --border: #e2e8f0;
     --primary: #2563eb; --primary-hover: #1d4ed8; --green: #16a34a;
-    --muted: #64748b; --accent-bg: #eff6ff; --bar: #3b82f6;
-    --font: system-ui, -apple-system, sans-serif;
-    --hybrid-bg: #dbeafe; --hybrid-fg: #1e40af;
-    --llm-bg: #ede9fe; --llm-fg: #5b21b6;
-    --classical-bg: #fef3c7; --classical-fg: #92400e;
+    --muted: #64748b; --accent-bg: #eff6ff; --amber-bg: #fef3c7; --amber-fg: #92400e;
+    --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    --hybrid-bg: #dbeafe; --hybrid-fg: #1e40af; --hybrid-bar: #3b82f6;
+    --llm-bg: #ede9fe;    --llm-fg: #5b21b6;    --llm-bar: #8b5cf6;
+    --classical-bg: #fef3c7; --classical-fg: #92400e; --classical-bar: #f59e0b;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: var(--font); background: var(--bg); color: var(--fg); line-height: 1.6; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
-  h1 { font-size: 1.75rem; margin-bottom: .25rem; }
-  .subtitle { color: var(--muted); margin-bottom: 2rem; font-size: .95rem; }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: .75rem; padding: 1.5rem; margin-bottom: 1.5rem; }
-  .card h2 { font-size: 1.15rem; margin-bottom: 1rem; }
-  label { display: block; font-size: .875rem; font-weight: 500; margin-bottom: .25rem; margin-top: .75rem; }
-  input, select, textarea { width: 100%; padding: .5rem .75rem; border: 1px solid var(--border); border-radius: .5rem; font-size: .9rem; font-family: var(--font); }
-  textarea { resize: vertical; min-height: 80px; }
-  .checkbox-group { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .25rem; }
-  .checkbox-group label { display: flex; align-items: center; gap: .35rem; font-weight: 400; cursor: pointer; padding: .35rem .65rem; border: 1px solid var(--border); border-radius: .375rem; font-size: .85rem; }
-  .checkbox-group label:has(input:checked) { background: var(--accent-bg); border-color: var(--primary); }
-  .checkbox-group input { width: auto; }
-  .btn { display: inline-block; padding: .6rem 1.4rem; border: none; border-radius: .5rem; font-size: .9rem; font-weight: 600; cursor: pointer; transition: background .15s; }
+  body { font-family: var(--font); background: var(--bg); color: var(--fg); line-height: 1.55; }
+  .container { max-width: 1240px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.1rem; margin-bottom: .75rem; }
+  h3 { font-size: .95rem; margin-bottom: .5rem; }
+  .subtitle { color: var(--muted); font-size: .9rem; margin-bottom: 1rem; }
+  a { color: var(--primary); }
+
+  /* Health strip */
+  .health { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; align-items: center; font-size: .8rem; color: var(--muted); border: 1px solid var(--border); background: var(--card); border-radius: .5rem; padding: .5rem .9rem; margin-bottom: 1.25rem; }
+  .dot { display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; margin-right: .35rem; vertical-align: baseline; }
+  .dot.ok { background: var(--green); } .dot.off { background: #dc2626; } .dot.unknown { background: #94a3b8; }
+
+  /* Tabs */
+  .tabs { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .tab-btn { padding: .55rem 1.1rem; border: none; background: none; font: inherit; font-size: .9rem; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; }
+  .tab-btn:hover { color: var(--fg); }
+  .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 700; }
+
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: .75rem; padding: 1.25rem 1.4rem; margin-bottom: 1.1rem; }
+  .card > h2 { margin-bottom: .35rem; }
+  .card .hint { font-size: .8rem; color: var(--muted); margin-bottom: .9rem; }
+  label { display: block; font-size: .85rem; font-weight: 600; margin: .8rem 0 .25rem; }
+  label .sub { font-weight: 400; color: var(--muted); }
+  input[type=text], select, textarea { width: 100%; padding: .5rem .7rem; border: 1px solid var(--border); border-radius: .5rem; font: inherit; font-size: .88rem; background: #fff; }
+  textarea { resize: vertical; min-height: 84px; }
+
+  .row { display: grid; gap: .8rem; }
+  .row.c3 { grid-template-columns: 2fr 110px 160px; }
+  @media (max-width: 720px) { .row.c3 { grid-template-columns: 1fr; } }
+
+  .chips { display: flex; flex-wrap: wrap; gap: .45rem; }
+  .chips label, .chip-btn { display: inline-flex; align-items: center; gap: .4rem; margin: 0; font-weight: 400; font-size: .83rem; padding: .35rem .7rem; border: 1px solid var(--border); border-radius: .45rem; cursor: pointer; background: #fff; }
+  .chips label:has(input:checked) { background: var(--accent-bg); border-color: var(--primary); }
+  .chips input { width: auto; }
+
+  /* Question blocks */
+  .qblock { border: 1px solid var(--border); border-radius: .6rem; padding: .8rem 1rem; margin: .6rem 0; background: #fcfdff; }
+  .qblock .qtext { font-size: .87rem; font-weight: 600; }
+  .qblock .qhelp { font-size: .76rem; color: var(--muted); margin-bottom: .45rem; }
+  .qopts { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .qopts label { margin: 0; font-weight: 400; font-size: .82rem; padding: .3rem .65rem; border: 1px solid var(--border); border-radius: .45rem; cursor: pointer; display: inline-flex; gap: .35rem; align-items: center; background: #fff; }
+  .qopts label:has(input:checked) { background: var(--accent-bg); border-color: var(--primary); font-weight: 600; }
+  .qopts input { width: auto; }
+  .fired { margin-top: .45rem; display: flex; flex-wrap: wrap; gap: .3rem; }
+  .flag-chip { font-size: .68rem; font-family: var(--mono); padding: .12rem .45rem; background: var(--amber-bg); color: var(--amber-fg); border-radius: .3rem; }
+  .flag-chip.confirmed { background: #dcfce7; color: #166534; }
+
+  .domain-questions { margin-top: .9rem; }
+  .domain-questions > h3 { font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: .3rem; }
+
+  /* Two-column layout: form + live panel */
+  .assess-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 1.1rem; align-items: start; }
+  @media (max-width: 1000px) { .assess-grid { grid-template-columns: 1fr; } }
+  .live-panel { position: sticky; top: 1rem; }
+  .live-panel .card { padding: 1rem 1.1rem; }
+  .live-panel h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+  .count-badge { display: inline-block; min-width: 1.3rem; text-align: center; font-size: .72rem; font-weight: 700; background: var(--accent-bg); color: var(--primary); border-radius: .6rem; padding: .05rem .35rem; margin-left: .3rem; }
+
+  .btn { display: inline-flex; align-items: center; gap: .45rem; padding: .55rem 1.2rem; border: none; border-radius: .5rem; font: inherit; font-size: .88rem; font-weight: 600; cursor: pointer; }
   .btn-primary { background: var(--primary); color: #fff; }
   .btn-primary:hover { background: var(--primary-hover); }
-  .btn-primary:disabled { opacity: .5; cursor: not-allowed; }
-  .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--fg); }
+  .btn:disabled { opacity: .5; cursor: not-allowed; }
+  .btn-outline { background: #fff; border: 1px solid var(--border); color: var(--fg); }
   .btn-outline:hover { background: var(--accent-bg); }
-  .btn-row { display: flex; gap: .75rem; margin-top: 1rem; flex-wrap: wrap; align-items: center; }
-  .sample-btns { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
-  .sample-btns button { font-size: .8rem; padding: .35rem .75rem; }
+  .btn-sm { font-size: .78rem; padding: .35rem .75rem; }
+  .btn-row { display: flex; gap: .7rem; flex-wrap: wrap; align-items: center; margin-top: 1rem; }
 
-  /* Pipeline mode selector */
-  .mode-selector { display: flex; gap: 0; border: 1px solid var(--border); border-radius: .5rem; overflow: hidden; margin-top: .25rem; }
-  .mode-btn { flex: 1; padding: .5rem .75rem; border: none; background: var(--card); font-size: .8rem; font-weight: 500; cursor: pointer; text-align: center; font-family: var(--font); border-right: 1px solid var(--border); transition: all .15s; }
+  /* Pipeline mode */
+  .mode-selector { display: flex; border: 1px solid var(--border); border-radius: .5rem; overflow: hidden; }
+  .mode-btn { flex: 1; padding: .5rem .6rem; border: none; border-right: 1px solid var(--border); background: var(--card); font: inherit; font-size: .8rem; font-weight: 500; cursor: pointer; }
   .mode-btn:last-child { border-right: none; }
-  .mode-btn:hover { background: #f1f5f9; }
-  .mode-btn.active-hybrid { background: var(--hybrid-bg); color: var(--hybrid-fg); font-weight: 700; }
-  .mode-btn.active-llm { background: var(--llm-bg); color: var(--llm-fg); font-weight: 700; }
-  .mode-btn.active-classical { background: var(--classical-bg); color: var(--classical-fg); font-weight: 700; }
-  .mode-btn.active-compare { background: #f0fdf4; color: #166534; font-weight: 700; }
-  .mode-desc { font-size: .8rem; color: var(--muted); margin-top: .5rem; }
+  .mode-btn.on-hybrid { background: var(--hybrid-bg); color: var(--hybrid-fg); font-weight: 700; }
+  .mode-btn.on-llm { background: var(--llm-bg); color: var(--llm-fg); font-weight: 700; }
+  .mode-btn.on-classical { background: var(--classical-bg); color: var(--classical-fg); font-weight: 700; }
+  .mode-btn.on-compare { background: #f0fdf4; color: #166534; font-weight: 700; }
+  .mode-desc { font-size: .78rem; color: var(--muted); margin-top: .45rem; }
 
-  /* Results column layout for comparison */
+  /* Results */
   .results-columns { display: grid; gap: 1rem; }
   .results-columns.cols-3 { grid-template-columns: repeat(3, 1fr); }
-  .results-columns.cols-1 { grid-template-columns: 1fr; max-width: 700px; }
-  @media (max-width: 900px) { .results-columns.cols-3 { grid-template-columns: 1fr; } }
-  .result-column { min-width: 0; }
-  .column-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: .75rem; padding-bottom: .5rem; border-bottom: 2px solid var(--border); }
-  .column-header h3 { font-size: .95rem; }
-  .column-header .time { font-size: .75rem; color: var(--muted); }
+  .results-columns.cols-1 { grid-template-columns: 1fr; max-width: 720px; }
+  @media (max-width: 960px) { .results-columns.cols-3 { grid-template-columns: 1fr; } }
+  .column-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: .7rem; padding-bottom: .45rem; border-bottom: 2px solid var(--border); }
+  .pipeline-badge { display: inline-block; font-size: .72rem; padding: .18rem .55rem; border-radius: .375rem; font-weight: 700; }
+  .time { font-size: .74rem; color: var(--muted); }
 
-  .result-card { background: var(--card); border: 1px solid var(--border); border-radius: .75rem; padding: 1rem; margin-bottom: .75rem; }
-  .result-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .35rem; }
-  .rank { font-size: .8rem; font-weight: 700; color: var(--primary); }
-  .score { font-size: .75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
-  .result-card h4 { font-size: .9rem; margin-bottom: .2rem; }
-  .result-card .domain-tag { display: inline-block; font-size: .65rem; padding: .1rem .4rem; background: var(--accent-bg); border-radius: .25rem; color: var(--primary); margin-bottom: .4rem; }
-  .explanation { font-size: .8rem; color: var(--muted); margin-bottom: .5rem; line-height: 1.4; }
-  .dim-bar-group { margin-bottom: .25rem; }
-  .dim-label { font-size: .7rem; color: var(--muted); display: flex; justify-content: space-between; }
+  .result-card { background: var(--card); border: 1px solid var(--border); border-radius: .7rem; padding: 1rem; margin-bottom: .7rem; }
+  .result-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .3rem; }
+  .rank { font-size: .8rem; font-weight: 800; color: var(--primary); }
+  .score { font-size: .74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .result-card h4 { font-size: .9rem; margin-bottom: .15rem; }
+  .domain-tag { display: inline-block; font-size: .64rem; padding: .1rem .4rem; background: var(--accent-bg); border-radius: .25rem; color: var(--primary); margin-bottom: .4rem; }
+  .explanation { font-size: .79rem; color: var(--muted); margin-bottom: .55rem; line-height: 1.45; }
+  .dim-bar-group { margin-bottom: .22rem; }
+  .dim-label { font-size: .68rem; color: var(--muted); display: flex; justify-content: space-between; }
   .dim-track { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
-  .dim-fill { height: 100%; border-radius: 3px; transition: width .4s ease; }
-  .products { margin-top: .5rem; padding-top: .5rem; border-top: 1px solid var(--border); }
-  .products h5 { font-size: .75rem; color: var(--muted); margin-bottom: .25rem; }
-  .product-chip { display: inline-flex; align-items: center; gap: .25rem; font-size: .75rem; padding: .2rem .5rem; background: var(--accent-bg); border-radius: .375rem; margin-right: .35rem; margin-bottom: .25rem; }
-  .product-chip a { color: var(--primary); text-decoration: none; }
+  .dim-fill { height: 100%; border-radius: 3px; }
+  .products { margin-top: .55rem; padding-top: .5rem; border-top: 1px solid var(--border); }
+  .products h5 { font-size: .72rem; color: var(--muted); margin-bottom: .3rem; }
+  .product-chip { display: inline-flex; align-items: center; gap: .3rem; font-size: .74rem; padding: .18rem .5rem; background: var(--accent-bg); border-radius: .375rem; margin: 0 .3rem .25rem 0; }
+  .product-chip a { text-decoration: none; }
   .product-chip a:hover { text-decoration: underline; }
-  .badge { font-size: .6rem; padding: .1rem .3rem; border-radius: .25rem; font-weight: 600; }
+  .badge { font-size: .6rem; padding: .08rem .3rem; border-radius: .25rem; font-weight: 700; }
   .badge-green { background: #dcfce7; color: #166534; }
 
-  .pipeline-badge { display: inline-block; font-size: .7rem; padding: .15rem .5rem; border-radius: .375rem; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; font-size: .82rem; margin: .5rem 0 1rem; }
+  th, td { border: 1px solid var(--border); padding: .45rem .6rem; text-align: left; vertical-align: top; }
+  th { background: #f1f5f9; font-weight: 600; font-size: .76rem; }
+  td.num { text-align: center; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .mv-up { color: var(--green); font-weight: 700; }
+  .mv-down { color: #dc2626; font-weight: 700; }
+  .mv-same { color: var(--muted); }
 
-  .insight-section { margin-top: .75rem; }
-  .insight-section h4 { font-size: .85rem; margin-bottom: .25rem; }
-  .insight-metric { font-size: .85rem; color: var(--fg); }
-  .insight-flags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .35rem; }
-  .flag-chip { font-size: .75rem; padding: .2rem .5rem; background: #fef3c7; border-radius: .25rem; color: #92400e; }
+  code, .code { font-family: var(--mono); font-size: .78rem; background: #f1f5f9; padding: .08rem .35rem; border-radius: .3rem; }
+  pre { font-family: var(--mono); font-size: .74rem; background: #0f172a; color: #e2e8f0; border-radius: .5rem; padding: .9rem 1rem; overflow-x: auto; line-height: 1.5; margin: .5rem 0 .9rem; }
+  details { border: 1px solid var(--border); border-radius: .5rem; padding: .5rem .8rem; margin: .5rem 0; background: #fff; }
+  details summary { cursor: pointer; font-size: .82rem; font-weight: 600; }
+  details[open] summary { margin-bottom: .5rem; }
 
-  .error-box { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: .75rem 1rem; border-radius: .5rem; font-size: .875rem; margin-bottom: 1rem; }
-  .spinner { display: inline-block; width: 1rem; height: 1rem; border: 2px solid #e2e8f0; border-top-color: var(--primary); border-radius: 50%; animation: spin .6s linear infinite; vertical-align: middle; margin-right: .5rem; }
+  .error-box { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: .7rem 1rem; border-radius: .5rem; font-size: .85rem; margin-bottom: 1rem; }
+  .notice-box { background: var(--accent-bg); border: 1px solid #bfdbfe; color: #1e40af; padding: .7rem 1rem; border-radius: .5rem; font-size: .83rem; margin-bottom: 1rem; }
+  .spinner { display: inline-block; width: 1rem; height: 1rem; border: 2px solid #e2e8f0; border-top-color: currentColor; border-radius: 50%; animation: spin .6s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
-  .meta-note { font-size: .8rem; color: var(--muted); margin-top: .75rem; }
-  footer { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
-  footer a { color: var(--primary); text-decoration: none; }
+  .meta-note { font-size: .78rem; color: var(--muted); margin-top: .7rem; }
+
+  /* Pipeline explainer */
+  .stage { display: flex; gap: .8rem; align-items: flex-start; border: 1px solid var(--border); border-left: 4px solid var(--classical-bar); border-radius: .5rem; padding: .7rem .9rem; margin: .5rem 0; background: #fff; font-size: .84rem; }
+  .stage.hybrid { border-left-color: var(--hybrid-bar); }
+  .stage .n { flex-shrink: 0; width: 1.5rem; height: 1.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #f1f5f9; font-size: .74rem; font-weight: 700; color: var(--primary); }
+  .kv { display: grid; grid-template-columns: 170px 1fr; gap: .25rem .8rem; font-size: .82rem; margin: .4rem 0; }
+  .kv dt { color: var(--muted); }
+  .kv dd { font-variant-numeric: tabular-nums; }
+
+  /* Catalog */
+  .cat-controls { display: flex; gap: .7rem; flex-wrap: wrap; align-items: center; margin-bottom: .8rem; }
+  .cat-controls input[type=text] { max-width: 320px; }
+  .cap-row { border: 1px solid var(--border); border-radius: .6rem; padding: .8rem 1rem; margin-bottom: .55rem; background: #fff; }
+  .cap-head { display: flex; justify-content: space-between; gap: .8rem; align-items: baseline; cursor: pointer; }
+  .cap-head h4 { font-size: .89rem; }
+  .cap-desc { font-size: .8rem; color: var(--muted); margin-top: .35rem; }
+  .prod-table { margin-top: .6rem; }
+
+  footer { text-align: center; color: var(--muted); font-size: .78rem; margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
 </style>
 </head>
 <body>
 
-<div class="container" x-data="app()">
+<div class="container" x-data="app()" x-init="init()">
 
   <h1>AI-DSS Demo</h1>
-  <p class="subtitle">AI-powered tool recommendations for SME e-commerce operators. Fill in a company profile or load a sample, pick a pipeline mode, and see ranked results.</p>
 
-  <!-- ── Form ──────────────────────────────────────────────── -->
-  <div class="card">
-    <h2>Company Profile</h2>
-
-    <div class="sample-btns">
-      <span style="font-size:.8rem;color:var(--muted);padding:.35rem 0">Load sample:</span>
-      <button class="btn btn-outline" @click="loadSample('tinywonders')">TinyWonders (AT)</button>
-      <button class="btn btn-outline" @click="loadSample('fitpol')">FitPol (PL)</button>
-      <button class="btn btn-outline" @click="loadSample('trailnord')">TrailNord (SE)</button>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 80px 140px;gap:.75rem;align-items:end">
-      <div>
-        <label>Company Name</label>
-        <input type="text" x-model="form.company_name" placeholder="Acme GmbH">
-      </div>
-      <div>
-        <label>Country</label>
-        <input type="text" x-model="form.country" maxlength="2" placeholder="AT">
-      </div>
-      <div>
-        <label>Team Size</label>
-        <select x-model="form.team_size">
-          <option value="1-5">1 - 5</option>
-          <option value="6-20">6 - 20</option>
-          <option value="21-50">21 - 50</option>
-          <option value="51+">51+</option>
-        </select>
-      </div>
-    </div>
-
-    <label>Business Domains</label>
-    <div class="checkbox-group">
-      <template x-for="d in allDomains" :key="d.value">
-        <label>
-          <input type="checkbox" :value="d.value" x-model="form.domains">
-          <span x-text="d.label"></span>
-        </label>
-      </template>
-    </div>
-
-    <label>Bottleneck Description</label>
-    <textarea x-model="form.bottleneck_text" placeholder="Describe what slows your team down..."></textarea>
-
-    <!-- Pipeline mode selector -->
-    <label>Pipeline Mode</label>
-    <div class="mode-selector">
-      <button class="mode-btn" :class="mode==='hybrid' && 'active-hybrid'" @click="mode='hybrid'">Hybrid</button>
-      <button class="mode-btn" :class="mode==='llm' && 'active-llm'" @click="mode='llm'">LLM</button>
-      <button class="mode-btn" :class="mode==='classical' && 'active-classical'" @click="mode='classical'">Classical</button>
-      <button class="mode-btn" :class="mode==='compare' && 'active-compare'" @click="mode='compare'">Compare All</button>
-    </div>
-    <p class="mode-desc" x-text="modeDescriptions[mode]"></p>
-
-    <div class="btn-row">
-      <button class="btn btn-primary" @click="submit" :disabled="loading">
-        <template x-if="loading"><span class="spinner"></span></template>
-        <span x-text="mode === 'compare' ? 'Run All 3 Pipelines' : 'Get Recommendations'"></span>
-      </button>
-    </div>
+  <!-- ── Health strip ────────────────────────────────────────── -->
+  <div class="health">
+    <span><span class="dot" :class="health ? (health.ollama_available ? 'ok' : 'off') : 'unknown'"></span>
+      Ollama (phi4): <b x-text="health === null ? 'checking' : (health ? (health.ollama_available ? 'online' : 'offline (classical fallback)') : 'status unavailable')"></b></span>
+    <span x-show="health">Catalog: <b x-text="(health?.catalog_capabilities_count ?? '?') + ' capabilities'"></b> · <b x-text="(health?.catalog_products_count ?? '?') + ' products'"></b></span>
+    <span x-show="health">Models: <b x-text="health?.active_sbert_model || '?'"></b> + <b x-text="health?.active_llm_model || '?'"></b></span>
+    <span x-show="!apiUp" style="color:#991b1b">API unreachable.</span>
   </div>
 
-  <!-- ── Error ─────────────────────────────────────────────── -->
-  <template x-if="error">
-    <div class="error-box" x-text="error"></div>
-  </template>
+  <!-- ── Tabs ────────────────────────────────────────────────── -->
+  <div class="tabs">
+    <button class="tab-btn" :class="tab==='assess' && 'active'" @click="tab='assess'">1 · Assessment</button>
+    <button class="tab-btn" :class="tab==='results' && 'active'" @click="tab='results'">2 · Results
+      <span class="count-badge" x-show="singleResult || compareResults" x-text="resultCount"></span></button>
+    <button class="tab-btn" :class="tab==='pipeline' && 'active'" @click="tab='pipeline'">How it works</button>
+    <button class="tab-btn" :class="tab==='catalog' && 'active'" @click="openCatalog()">Catalog
+      <span class="count-badge" x-show="catalog" x-text="catalog?.total"></span></button>
+    <button class="tab-btn" :class="tab==='api' && 'active'" @click="tab='api'">API reference</button>
+  </div>
 
-  <!-- ── Single pipeline results ───────────────────────────── -->
-  <template x-if="singleResult">
-    <div class="results-columns cols-1">
-      <div class="result-column" x-data="{ res: singleResult }">
-        <div class="column-header">
-          <h3>
-            <span class="pipeline-badge" :style="badgeStyle(res.pipeline_used)" x-text="pipelineLabel(res.pipeline_used)"></span>
-          </h3>
-          <span class="time" x-text="res.processing_time_ms + ' ms'"></span>
-        </div>
-        <template x-for="rec in res.recommendations" :key="rec.capability_id">
-          <div x-html="renderCard(rec, res.pipeline_used)"></div>
-        </template>
-        <p class="meta-note" x-text="res.ai_disclosure"></p>
-      </div>
-    </div>
-  </template>
+  <!-- ═══════════════ TAB: ASSESSMENT ═══════════════ -->
+  <div x-show="tab==='assess'">
+    <div class="assess-grid">
+      <div><!-- left column: the form -->
 
-  <!-- ── Comparison results ────────────────────────────────── -->
-  <template x-if="compareResults">
-    <div class="results-columns cols-3">
-      <template x-for="res in compareResults" :key="res.pipeline_used">
-        <div class="result-column">
-          <div class="column-header">
-            <h3>
-              <span class="pipeline-badge" :style="badgeStyle(res.pipeline_used)" x-text="pipelineLabel(res.pipeline_used)"></span>
-            </h3>
-            <span class="time" x-text="res.processing_time_ms + ' ms'"></span>
+        <div class="card">
+          <h2>Company profile</h2>
+
+          <div class="chips" style="margin-bottom:.4rem">
+            <span style="font-size:.8rem;color:var(--muted);padding:.35rem 0">Load sample:</span>
+            <button class="chip-btn" @click="loadSample('tinywonders')">TinyWonders</button>
+            <button class="chip-btn" @click="loadSample('fitpol')">FitPol</button>
+            <button class="chip-btn" @click="loadSample('trailnord')">TrailNord</button>
+            <button class="chip-btn" @click="loadSample('olacreativa')">Ola Creativa</button>
+            <button class="chip-btn" @click="clearForm()">Clear</button>
           </div>
-          <template x-for="rec in res.recommendations" :key="rec.capability_id">
-            <div x-html="renderCard(rec, res.pipeline_used)"></div>
+
+          <label>Assessment tier</label>
+          <div class="mode-selector" style="max-width:420px">
+            <button class="mode-btn" :class="form.tier==='quick' && 'on-classical'" @click="form.tier='quick'">Quick</button>
+            <button class="mode-btn" :class="form.tier==='standard' && 'on-hybrid'" @click="form.tier='standard'">Standard</button>
+            <button class="mode-btn" :class="form.tier==='full' && 'on-compare'" @click="form.tier='full'">Full</button>
+          </div>
+
+          <div class="row c3">
+            <div><label>Company name</label><input type="text" x-model="form.company_name" placeholder="Acme GmbH"></div>
+            <div><label>Country</label><input type="text" x-model="form.country" maxlength="2" placeholder="AT"></div>
+            <div><label>Team size</label>
+              <select x-model="form.team_size">
+                <option value="1-5">1 – 5</option><option value="6-20">6 – 20</option>
+                <option value="21-50">21 – 50</option><option value="51+">51+</option>
+              </select></div>
+          </div>
+
+          <label>Business domains</label>
+          <div class="chips">
+            <template x-for="d in (schema?.domains || [])" :key="d.id">
+              <label :title="d.description">
+                <input type="checkbox" :value="d.id" x-model="form.domains">
+                <span x-text="d.label"></span>
+              </label>
+            </template>
+            <span x-show="apiUp && !schema" style="font-size:.8rem;color:var(--muted)">Loading…</span>
+          </div>
+
+          <label>Bottleneck description</label>
+          <textarea x-model="form.bottleneck_text" placeholder="What slows your team down?"></textarea>
+        </div>
+
+        <!-- Bottleneck tags per selected domain -->
+        <div class="card">
+          <h2>Pain points</h2>
+          <p class="hint" x-show="!form.domains.length">Select at least one business domain above.</p>
+          <template x-for="dom in form.domains" :key="'bt-'+dom">
+            <div class="domain-questions" x-show="(schema?.bottleneck_tags?.[dom] || []).length">
+              <h3 x-text="domainLabel(dom)"></h3>
+              <div class="chips" style="margin-top:.5rem">
+                <template x-for="(tag, i) in (schema?.bottleneck_tags?.[dom] || [])" :key="dom+'-'+i">
+                  <label :title="tag.flags.join('\n')">
+                    <input type="checkbox" :checked="tagChecked(tag)" @change="toggleTag(tag)">
+                    <span x-text="tag.label"></span>
+                  </label>
+                </template>
+              </div>
+            </div>
           </template>
         </div>
-      </template>
-      <div style="grid-column:1/-1">
-        <p class="meta-note" x-text="compareResults[0]?.ai_disclosure"></p>
+
+        <!-- Dynamic per-domain questions -->
+        <div class="card">
+          <h2>Operational questions</h2>
+          <p class="hint" x-show="!form.domains.length">Select at least one business domain above.</p>
+          <template x-for="dom in form.domains" :key="'q-'+dom">
+            <div class="domain-questions">
+              <h3 x-text="domainLabel(dom)"></h3>
+              <template x-for="q in questionsFor(dom)" :key="q.id">
+                <div class="qblock">
+                  <div class="qtext" x-text="q.text"></div>
+                  <div class="qhelp" x-text="q.help_text"></div>
+                  <div class="qopts">
+                    <template x-for="opt in q.options" :key="opt.value">
+                      <label>
+                        <input type="radio" :name="q.id" :value="opt.value"
+                               :checked="form.answers[q.id]===opt.value"
+                               @change="form.answers[q.id]=opt.value">
+                        <span x-text="opt.label"></span>
+                      </label>
+                    </template>
+                  </div>
+                  <div class="fired" x-show="firedFlags(q).length">
+                    <span style="font-size:.68rem;color:var(--muted)">derives:</span>
+                    <template x-for="f in firedFlags(q)" :key="f">
+                      <span class="flag-chip" x-text="f"></span>
+                    </template>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </template>
+        </div>
+
+        <!-- Data readiness & tech (tier extras) -->
+        <div class="card" x-show="extrasForTier().length">
+          <h2>Data readiness &amp; tech stack</h2>
+          <template x-for="q in extrasForTier()" :key="q.id">
+            <div class="qblock">
+              <div class="qtext" x-text="q.text"></div>
+              <div class="qhelp" x-text="q.help_text"></div>
+              <template x-if="q.type !== 'multi_select'">
+                <div class="qopts">
+                  <template x-for="opt in q.options" :key="opt.value">
+                    <label>
+                      <input type="radio" :name="q.id" :value="opt.value"
+                             :checked="form.answers[q.id]===opt.value"
+                             @change="form.answers[q.id]=opt.value">
+                      <span x-text="opt.label"></span>
+                    </label>
+                  </template>
+                </div>
+              </template>
+              <template x-if="q.type === 'multi_select'">
+                <div class="qopts">
+                  <template x-for="opt in q.options" :key="opt.value">
+                    <label>
+                      <input type="checkbox" :value="opt.value"
+                             :checked="multiHas(q.id, opt.value)"
+                             @change="multiToggle(q.id, opt.value)">
+                      <span x-text="opt.label"></span>
+                    </label>
+                  </template>
+                </div>
+              </template>
+            </div>
+          </template>
+        </div>
+
+        <!-- Export analyser (Phase 6) -->
+        <div class="card">
+          <h2>Export analyser <span class="sub" style="font-size:.78rem;font-weight:400;color:var(--muted)">(CSV/XLSX/JSON/JSONL/PDF)</span></h2>
+          <input type="file" @change="handleFile" accept=".csv,.tsv,.xlsx,.xls,.json,.jsonl,.pdf">
+          <div class="btn-row">
+            <button class="btn btn-outline btn-sm" @click="submitExport" :disabled="expLoading || !expFile">
+              <span class="spinner" x-show="expLoading"></span> Analyse file
+            </button>
+            <label style="margin:0;display:inline-flex;align-items:center;gap:.4rem;font-weight:400;font-size:.83rem" x-show="expResult">
+              <input type="checkbox" x-model="attachExport" style="width:auto"> Attach to assessment
+            </label>
+          </div>
+          <template x-if="expError"><div class="error-box" style="margin-top:.8rem" x-text="expError"></div></template>
+          <template x-if="expResult">
+            <div style="margin-top:.9rem;font-size:.83rem">
+              <div class="kv">
+                <dt>Detected type</dt><dd x-text="expResult.data_type || '(unknown)'"></dd>
+                <dt>Format</dt><dd x-text="expResult.file_format || '(unknown)'"></dd>
+                <dt>Enrichment</dt><dd x-text="expResult.bottleneck_enrichment || '—'"></dd>
+              </div>
+              <div class="fired" x-show="Object.keys(expResult.pain_flags_suggested || {}).length">
+                <span style="font-size:.68rem;color:var(--muted)">suggested flags:</span>
+                <template x-for="[flag, conf] in Object.entries(expResult.pain_flags_suggested || {})" :key="flag">
+                  <span class="flag-chip" x-text="flag + ' (' + Math.round(conf*100) + '%)'"></span>
+                </template>
+              </div>
+              <details><summary>Raw DataInsight JSON</summary><pre x-text="JSON.stringify(expResult, null, 2)"></pre></details>
+            </div>
+          </template>
+        </div>
+
+        <!-- Pipeline + submit -->
+        <div class="card">
+          <h2>Run</h2>
+          <label>Pipeline</label>
+          <div class="mode-selector">
+            <button class="mode-btn" :class="mode==='hybrid' && 'on-hybrid'" @click="mode='hybrid'">Hybrid (production)</button>
+            <button class="mode-btn" :class="mode==='llm' && 'on-llm'" @click="mode='llm'">Pure LLM</button>
+            <button class="mode-btn" :class="mode==='classical' && 'on-classical'" @click="mode='classical'">Classical</button>
+            <button class="mode-btn" :class="mode==='compare' && 'on-compare'" @click="mode='compare'">Compare all 3</button>
+          </div>
+          <template x-if="error"><div class="error-box" style="margin-top:.8rem" x-text="error"></div></template>
+          <div class="btn-row">
+            <button class="btn btn-primary" @click="submit" :disabled="loading || !canSubmit">
+              <span class="spinner" x-show="loading"></span>
+              <span x-text="mode==='compare' ? 'Run all 3 pipelines' : 'Run assessment'"></span>
+            </button>
+            <button class="btn btn-outline" @click="inspectProfile" :disabled="loading || !canSubmit">
+              Inspect translated profile
+            </button>
+            <span class="meta-note" x-show="!canSubmit" style="margin:0">Needs a company name and at least one domain.</span>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </template>
 
-  <!-- ── Export Analyser ───────────────────────────────────── -->
-  <div class="card" style="margin-top:2rem">
-    <h2>Export Analyser</h2>
-    <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem">
-      Upload a business data file (CSV, XLSX, JSON) to detect data type, compute metrics, and get suggested pain flags.
-    </p>
+      <!-- right column: live derivation panel -->
+      <div class="live-panel">
+        <div class="card">
+          <h3>Live request preview</h3>
+          <p class="hint" style="margin:.3rem 0 .6rem">The request body sent to <code>POST /api/recommend</code>.</p>
 
-    <label>File (max 10 MB)</label>
-    <input type="file" @change="handleFile" accept=".csv,.xlsx,.xls,.json,.jsonl,.pdf">
+          <div style="font-size:.8rem;margin-bottom:.6rem">
+            <b x-text="form.domains.length"></b> domain(s) ·
+            <b x-text="answeredCount()"></b> question(s) answered ·
+            tier <b x-text="form.tier"></b>
+          </div>
 
-    <div class="btn-row">
-      <button class="btn btn-primary" @click="submitExport" :disabled="expLoading || !expFile">
-        <template x-if="expLoading"><span class="spinner"></span></template>
-        Analyse
-      </button>
+          <div style="font-size:.76rem;color:var(--muted);font-weight:600;margin-bottom:.25rem">Confirmed pain flags <span class="count-badge" x-text="form.confirmed_pain_flags.length"></span></div>
+          <div class="fired" style="margin-bottom:.7rem">
+            <template x-for="f in form.confirmed_pain_flags" :key="'c-'+f">
+              <span class="flag-chip confirmed" x-text="f"></span>
+            </template>
+            <span x-show="!form.confirmed_pain_flags.length" style="font-size:.74rem;color:var(--muted)">none yet</span>
+          </div>
+
+          <div style="font-size:.76rem;color:var(--muted);font-weight:600;margin-bottom:.25rem">Derived from answers <span class="count-badge" x-text="allDerivedFlags().length"></span></div>
+          <div class="fired" style="margin-bottom:.7rem">
+            <template x-for="f in allDerivedFlags()" :key="'d-'+f">
+              <span class="flag-chip" x-text="f"></span>
+            </template>
+            <span x-show="!allDerivedFlags().length" style="font-size:.74rem;color:var(--muted)">none yet</span>
+          </div>
+
+          <details>
+            <summary>Payload JSON</summary>
+            <pre x-text="JSON.stringify(buildPayload(), null, 2)"></pre>
+          </details>
+        </div>
+      </div>
     </div>
   </div>
 
-  <template x-if="expError">
-    <div class="error-box" x-text="expError"></div>
-  </template>
+  <!-- ═══════════════ TAB: RESULTS ═══════════════ -->
+  <div x-show="tab==='results'">
+    <template x-if="!singleResult && !compareResults">
+      <div class="notice-box">No results yet. Run an assessment first.</div>
+    </template>
 
-  <template x-if="expResult">
-    <div class="card">
-      <h2>Analysis Result</h2>
-      <div class="insight-section">
-        <h4>Detected Type</h4>
-        <p class="insight-metric" x-text="expResult.data_type || '(unknown)'"></p>
-      </div>
-      <div class="insight-section">
-        <h4>File Format</h4>
-        <p class="insight-metric" x-text="expResult.file_format || '(unknown)'"></p>
-      </div>
-      <template x-if="expResult.metrics && Object.keys(expResult.metrics).length">
-        <div class="insight-section">
-          <h4>Metrics</h4>
-          <template x-for="[k,v] in Object.entries(expResult.metrics)" :key="k">
-            <p class="insight-metric"><strong x-text="k.replace(/_/g,' ')"></strong>: <span x-text="typeof v === 'number' ? v.toFixed(2) : v"></span></p>
+    <!-- Under the hood: translated CompanyProfile -->
+    <template x-if="profileInspect">
+      <div class="card">
+        <h2>Translated company profile</h2>
+        <p class="hint">The profile the engine matches against, produced from the form input.</p>
+        <div class="kv">
+          <dt>Active domains</dt><dd x-text="(profileInspect.summary?.domains || []).join(', ') || '—'"></dd>
+          <dt>Technical level</dt><dd x-text="profileInspect.summary?.tech_level ?? '—'"></dd>
+          <dt>History months</dt><dd x-text="profileInspect.summary?.history_months ?? '—'"></dd>
+          <dt>Export types</dt><dd x-text="(profileInspect.summary?.export_types_available || []).join(', ') || '—'"></dd>
+          <dt>Bottleneck text</dt><dd style="font-size:.78rem" x-text="(profileInspect.summary?.bottleneck_text || '').slice(0, 400)"></dd>
+        </div>
+        <div style="font-size:.76rem;color:var(--muted);font-weight:600;margin:.5rem 0 .25rem">Confirmed pain flags in profile <span class="count-badge" x-text="(profileInspect.summary?.confirmed_pain_flags || []).length"></span></div>
+        <div class="fired">
+          <template x-for="f in (profileInspect.summary?.confirmed_pain_flags || [])" :key="'p-'+f">
+            <span class="flag-chip confirmed" x-text="f"></span>
           </template>
         </div>
-      </template>
-      <template x-if="expResult.bottleneck_enrichment">
-        <div class="insight-section">
-          <h4>Bottleneck Enrichment</h4>
-          <p class="insight-metric" x-text="expResult.bottleneck_enrichment"></p>
-        </div>
-      </template>
-      <template x-if="expResult.pain_flags_suggested && Object.keys(expResult.pain_flags_suggested).length">
-        <div class="insight-section">
-          <h4>Suggested Pain Flags</h4>
-          <div class="insight-flags">
-            <template x-for="[flag, conf] in Object.entries(expResult.pain_flags_suggested)" :key="flag">
-              <span class="flag-chip" x-text="flag.split('.').pop().replace(/^pain_/,'').replace(/_/g,' ') + ' (' + (conf*100).toFixed(0) + '%)'"></span>
+        <details style="margin-top:.7rem"><summary>Full CompanyProfile JSON</summary><pre x-text="JSON.stringify(profileInspect.profile, null, 2)"></pre></details>
+      </div>
+    </template>
+    <template x-if="profileInspectError">
+      <div class="notice-box" x-text="profileInspectError"></div>
+    </template>
+
+    <!-- Single pipeline -->
+    <template x-if="singleResult">
+      <div>
+        <div class="results-columns cols-1">
+          <div>
+            <div class="column-header">
+              <h3><span class="pipeline-badge" :style="badgeStyle(singleResult.pipeline_used)" x-text="pipelineLabel(singleResult.pipeline_used)"></span></h3>
+              <span class="time" x-text="singleResult.processing_time_ms + ' ms'"></span>
+            </div>
+            <template x-for="rec in singleResult.recommendations" :key="rec.capability_id">
+              <div x-html="renderCard(rec, singleResult.pipeline_used)"></div>
             </template>
           </div>
         </div>
+      </div>
+    </template>
+
+    <!-- Compare mode -->
+    <template x-if="compareResults">
+      <div>
+        <!-- Agreement matrix -->
+        <div class="card">
+          <h2>Rank agreement across pipelines</h2>
+          <table>
+            <thead><tr>
+              <th>Capability</th>
+              <th class="num">Classical</th>
+              <th class="num">Hybrid</th>
+              <th class="num">Pure LLM</th>
+              <th class="num">Hybrid vs classical</th>
+            </tr></thead>
+            <tbody>
+              <template x-for="row in agreementMatrix()" :key="row.id">
+                <tr>
+                  <td><span x-text="row.name"></span><br><code x-text="row.id" style="font-size:.68rem"></code></td>
+                  <td class="num" x-text="row.classical ?? '—'"></td>
+                  <td class="num" x-text="row.hybrid ?? '—'"></td>
+                  <td class="num" x-text="row.llm ?? '—'"></td>
+                  <td class="num" x-html="movement(row)"></td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="results-columns cols-3">
+          <template x-for="res in compareResults" :key="res.pipeline_used">
+            <div>
+              <div class="column-header">
+                <h3><span class="pipeline-badge" :style="badgeStyle(res.pipeline_used)" x-text="pipelineLabel(res.pipeline_used)"></span></h3>
+                <span class="time" x-text="res.processing_time_ms + ' ms'"></span>
+              </div>
+              <template x-for="rec in res.recommendations" :key="res.pipeline_used + rec.capability_id">
+                <div x-html="renderCard(rec, res.pipeline_used)"></div>
+              </template>
+            </div>
+          </template>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <!-- ═══════════════ TAB: HOW IT WORKS ═══════════════ -->
+  <div x-show="tab==='pipeline'">
+    <div class="card">
+      <h2>The matching pipeline</h2>
+      <div class="stage"><div class="n">1</div><div><b>Domain filter.</b> Capabilities outside the selected business domains are removed before any scoring.</div></div>
+      <div class="stage"><div class="n">2</div><div><b>SBERT retrieval.</b> The bottleneck text is embedded and compared against pre-computed capability embeddings.</div></div>
+      <div class="stage"><div class="n">3</div><div><b>Dimension scoring.</b> Five dimensions per candidate: semantic fit, pain-point match, data readiness, tech fit, integration compatibility.</div></div>
+      <div class="stage hybrid"><div class="n">★</div><div><b>Hybrid interception.</b> SBERT's top-15 go to phi4, which reads the actual bottleneck text and scores each candidate's relevance 0–10.</div></div>
+      <div class="stage"><div class="n">4</div><div><b>TOPSIS ranking.</b> Multi-criteria decision analysis over the five weighted dimensions produces the final order.</div></div>
+      <div class="stage"><div class="n">5</div><div><b>Explanations.</b> The top 3 get contextual 2-sentence explanations.</div></div>
+
+      <h3 style="margin-top:1.2rem">TOPSIS weights</h3>
+      <table style="max-width:520px">
+        <thead><tr><th>Dimension</th><th class="num">Weight</th><th>Primary input</th></tr></thead>
+        <tbody>
+          <tr><td>Semantic fit</td><td class="num">0.35</td><td>Bottleneck text similarity (phi4 score in hybrid)</td></tr>
+          <tr><td>Pain-point match</td><td class="num">0.30</td><td>Confirmed + answer-derived pain flags</td></tr>
+          <tr><td>Data readiness</td><td class="num">0.20</td><td>Structured exports, history months</td></tr>
+          <tr><td>Tech fit</td><td class="num">0.10</td><td>Team technical level (1–3)</td></tr>
+          <tr><td>Integration compat</td><td class="num">0.05</td><td>Existing platform stack</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Evaluation results</h2>
+      <table style="max-width:640px">
+        <thead><tr><th>Pipeline</th><th class="num">Composite</th><th class="num">P@1</th><th class="num">R@5</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Classical (SBERT + TOPSIS)</td><td class="num">0.828</td><td class="num">0.674</td><td class="num">—</td><td>Fallback when Ollama offline</td></tr>
+          <tr><td>Hybrid I2 (LLM shortlist reranker)</td><td class="num">0.887</td><td class="num">0.783</td><td class="num">—</td><td>Prior production, frozen for eval</td></tr>
+          <tr><td><b>Hybrid V2 (LLM semantic scoring)</b></td><td class="num"><b>0.905</b></td><td class="num"><b>0.814</b></td><td class="num"><b>0.950</b></td><td><b>Production</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Export analyser</h2>
+      <div class="stage"><div class="n">C</div><div><b>Classical:</b> format detection, value inference, column-type classification.</div></div>
+      <div class="stage hybrid"><div class="n">L</div><div><b>LLM:</b> column mapping to canonical fields and signal extraction.</div></div>
+      <div class="stage"><div class="n">H</div><div><b>Hybrid:</b> classical structure plus LLM enrichment produces metrics, an enrichment summary, and suggested pain flags. Applied insights update the profile before matching.</div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ TAB: CATALOG ═══════════════ -->
+  <div x-show="tab==='catalog'">
+    <div class="card">
+      <h2>Capability catalog</h2>
+      <div class="cat-controls">
+        <input type="text" x-model="catQuery" placeholder="Search name, id, description…">
+        <select x-model="catDomain" style="max-width:230px">
+          <option value="">All domains</option>
+          <template x-for="d in (schema?.domains || [])" :key="'cd-'+d.id">
+            <option :value="d.id" x-text="d.label"></option>
+          </template>
+        </select>
+        <span style="font-size:.8rem;color:var(--muted)"><b x-text="filteredCaps().length"></b> of <span x-text="catalog?.total ?? '…'"></span> capabilities</span>
+      </div>
+
+      <template x-if="!catalog && apiUp"><p class="hint">Loading catalog…</p></template>
+      <template x-for="cap in filteredCaps()" :key="cap.capability_id">
+        <div class="cap-row">
+          <div class="cap-head" @click="capOpen = capOpen === cap.capability_id ? null : cap.capability_id">
+            <h4><span x-text="cap.name"></span>
+              <span class="domain-tag" style="margin-left:.4rem" x-text="cap.domain.replace(/_/g,' ')"></span></h4>
+            <code x-text="cap.capability_id" style="font-size:.7rem;white-space:nowrap"></code>
+          </div>
+          <div class="cap-desc" x-text="capOpen === cap.capability_id ? cap.description : (cap.description || '').slice(0, 180) + ((cap.description || '').length > 180 ? '…' : '')"></div>
+          <template x-if="capOpen === cap.capability_id && cap.products?.length">
+            <table class="prod-table">
+              <thead><tr><th>Product</th><th>Vendor</th><th>Cost</th><th class="num">Free tier</th><th class="num">GDPR</th><th>Effort</th></tr></thead>
+              <tbody>
+                <template x-for="p in cap.products" :key="p.product_id">
+                  <tr>
+                    <td><a :href="p.url" target="_blank" rel="noopener" x-text="p.name"></a></td>
+                    <td x-text="p.vendor"></td>
+                    <td x-text="p.price_tier || p.cost_tier"></td>
+                    <td class="num" x-text="p.has_free_tier ? '✓' : '—'"></td>
+                    <td class="num" x-text="p.gdpr_compliant ? '✓' : '✗'"></td>
+                    <td x-text="p.setup_complexity || p.implementation_effort"></td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </template>
+        </div>
       </template>
     </div>
-  </template>
+  </div>
+
+  <!-- ═══════════════ TAB: API ═══════════════ -->
+  <div x-show="tab==='api'">
+    <div class="card">
+      <h2>API reference</h2>
+      <p class="hint">Interactive docs: <a href="/docs" target="_blank">Swagger UI</a> · <a href="/redoc" target="_blank">ReDoc</a>.</p>
+
+      <h3>Research core</h3>
+      <table>
+        <thead><tr><th style="width:70px">Method</th><th style="width:300px">Path</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>POST</code></td><td><code>/api/recommend?pipeline=hybrid|llm|classical</code></td><td>Runs an assessment and returns the top 5 ranked capabilities.</td></tr>
+          <tr><td><code>GET</code></td><td><a href="/api/questions" target="_blank"><code>/api/questions</code></a></td><td>Returns the full question schema.</td></tr>
+          <tr><td><code>GET</code></td><td><a href="/api/catalog" target="_blank"><code>/api/catalog</code></a></td><td>Returns all capabilities and their products.</td></tr>
+          <tr><td><code>POST</code></td><td><code>/api/debug/translate-profile</code></td><td>Returns the translated company profile without running the engine.</td></tr>
+          <tr><td><code>POST</code></td><td><code>/api/export/validate</code> · <code>/analyse</code></td><td>Checks and analyses an uploaded data file.</td></tr>
+          <tr><td><code>POST</code></td><td><code>/api/feedback</code></td><td>Stores a rating for a recommendation.</td></tr>
+          <tr><td><code>GET</code></td><td><a href="/api/health" target="_blank"><code>/api/health</code></a></td><td>Returns system status and catalog counts.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Product layer</h3>
+      <table>
+        <thead><tr><th style="width:70px">Method</th><th style="width:300px">Path</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>POST</code></td><td><code>/api/auth/register · /login · /refresh · /logout</code></td><td>User authentication.</td></tr>
+          <tr><td><code>GET</code></td><td><code>/api/me/recommendations</code></td><td>Returns the user's assessment history.</td></tr>
+          <tr><td><code>*</code></td><td><code>/api/me/saved-tools</code></td><td>Saves tools and tracks their adoption status.</td></tr>
+          <tr><td><code>GET</code></td><td><code>/api/me/export</code> · <code>DELETE /api/me</code></td><td>Exports or deletes the user's data.</td></tr>
+          <tr><td><code>POST</code></td><td><code>/api/chat</code></td><td>Answers questions grounded in the catalog.</td></tr>
+          <tr><td><code>GET</code></td><td><code>/api/r/{recommendation_id}</code></td><td>Returns a shareable read-only recommendation.</td></tr>
+          <tr><td><code>GET</code></td><td><code>/api/benchmarks</code></td><td>Returns anonymous adoption statistics per capability.</td></tr>
+          <tr><td><code>*</code></td><td><code>/api/workspaces</code></td><td>Manages team workspaces and shared assessments.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Example request</h3>
+      <pre x-text="JSON.stringify(examplePayload(), null, 2)"></pre>
+
+      <h3>Response shape</h3>
+      <pre>{
+  "recommendation_id": "uuid",
+  "pipeline_used": "i3_llm_semantic",
+  "llm_available": true,
+  "processing_time_ms": 8412,
+  "recommendations": [{
+    "rank": 1,
+    "capability_id": "faq_dm_automation",
+    "capability_name": "FAQ Automation for Repetitive DM Inquiries",
+    "domain": "customer_support",
+    "topsis_score": 0.8347,
+    "explanation": "...",
+    "dimensions": {
+      "semantic_fit": 0.90,
+      "pain_point_match": 1.0,
+      "data_readiness": 0.75,
+      "tech_fit": 0.66,
+      "integration_compat": 0.5
+    },
+    "products": [{ "name": "...", "url": "...", "has_free_tier": true, "gdpr_compliant": true }]
+  }],
+  "ai_disclosure": "..."
+}</pre>
+    </div>
+  </div>
 
   <footer>
-    AI-DSS &mdash; Bachelor thesis project &middot;
-    <a href="/docs">API Docs (Swagger)</a> &middot;
-    <a href="/redoc">ReDoc</a>
+    <a href="/docs" target="_blank">Swagger</a> · <a href="/redoc" target="_blank">ReDoc</a>
   </footer>
 
 </div>
 
 <script>
 function app() {
+  /* ── Samples: aligned with the eval continuity baselines ──────────── */
   const SAMPLES = {
     tinywonders: {
+      tier: 'standard',
       company_name: 'TinyWonders GmbH', country: 'AT', team_size: '6-20',
       domains: ['customer_support', 'marketing'],
       bottleneck_text: 'We answer the same WhatsApp and Instagram questions about sizing, availability, and shipping every day. Two hours per day just on repetitive DMs. We also need to post social content 3 times a week but the team has no writing skills and it takes the whole afternoon.',
-      answers: { cs_volume: '50_100', cs_repetition_rate: 'most', mkt_content: 'fully_manual' },
+      answers: {
+        cs_message_volume: 'medium', cs_repetitive: 'constantly', cs_response_time: 'one_two_days',
+        cs_channels: 'two_three', cs_repetition_rate: 'over_50',
+        mkt_content: 'fully_manual', mkt_reporting: 'manual_weekly', mkt_paid_ads: 'no',
+        data_structured: 'yes_messy', data_history_months: '12', full_tech_level: '1',
+      },
       confirmed_pain_flags: [
         'customer_support.volume.pain_high_volume_support',
         'universal.processes.pain_repetitive_support',
-        'universal.processes.pain_manual_content_creation'
-      ]
+        'universal.processes.pain_manual_content_creation',
+      ],
     },
     fitpol: {
+      tier: 'full',
       company_name: 'FitPol Sp. z o.o.', country: 'PL', team_size: '6-20',
       domains: ['ecommerce_ops', 'marketing'],
       bottleneck_text: 'We enter orders manually from Shopify, WooCommerce, and Allegro. We have no unified view for campaign performance data across Meta Ads, WooCommerce, and Mailchimp. We cannot tell which channels are actually driving sales.',
-      answers: { ec_channels: '3_plus', mkt_reporting: 'none' },
+      answers: {
+        ec_order_entry: 'fully_manual', ec_channels: 'four_plus', ec_returns: 'partially_manual', ec_order_volume: '100_500',
+        mkt_content: 'templates', mkt_reporting: 'no_tracking', mkt_paid_ads: 'yes_manual',
+        data_structured: 'yes_clean', data_history_months: '24', full_tech_level: '2',
+        full_integrations: 'shopify,woocommerce,meta_ads,mailchimp',
+        full_data_exports: 'orders,marketing',
+      },
       confirmed_pain_flags: [
         'ecommerce_ops.pain_points.pain_multichannel',
-        'universal.processes.pain_no_data_insights'
-      ]
+        'universal.processes.pain_no_data_insights',
+      ],
     },
     trailnord: {
+      tier: 'standard',
       company_name: 'TrailNord AB', country: 'SE', team_size: '21-50',
       domains: ['supply_chain', 'ecommerce_ops'],
-      bottleneck_text: 'We check stock manually in Excel weekly. We have 4-5 stockouts per year on best-sellers. Supplier lead times from Taiwan are unpredictable. All supplier communication is by email with no tracking.',
-      answers: { sc_inventory_method: 'spreadsheet', sc_stockout_freq: 'frequently', sc_demand_forecasting_method: 'manual' },
+      bottleneck_text: 'We check stock manually in Excel weekly. We have 4-5 stockouts per year on best-sellers and too much capital tied up in slow movers. Supplier lead times from Taiwan are unpredictable. All supplier communication is by email with no tracking.',
+      answers: {
+        sc_inventory: 'excel_manual', sc_stockouts: 'few_per_year', sc_suppliers: 'email_phone', sc_demand_forecasting: 'manual_review',
+        ec_order_entry: 'semi_manual', ec_channels: 'two_three', ec_returns: 'partially_manual', ec_order_volume: '500_2000',
+        data_structured: 'yes_clean', data_history_months: '24', full_tech_level: '2',
+      },
       confirmed_pain_flags: [
         'universal.processes.pain_stockouts',
         'universal.processes.pain_overstock',
         'universal.processes.pain_supplier_tracking',
-        'universal.processes.pain_manual_inventory'
-      ]
-    }
+      ],
+    },
+    olacreativa: {
+      tier: 'quick',
+      company_name: 'Ola Creativa S.L.', country: 'ES', team_size: '1-5',
+      domains: ['crm_sales', 'operations_backoffice'],
+      bottleneck_text: 'Every client proposal is written from scratch in Word, 3 to 4 hours each, and we send about five a week. Contracts too. Invoices are half manual in a spreadsheet. Follow-ups slip through because nothing reminds us.',
+      answers: {
+        crm_proposals: 'from_scratch', crm_followup: 'semi_manual',
+        bo_invoicing: 'partially_manual', bo_documents: 'from_scratch',
+      },
+      confirmed_pain_flags: [],
+    },
   };
 
   const COLORS = {
-    i3_llm_semantic:   { bg: '#dbeafe', fg: '#1e40af', bar: '#3b82f6' },
-    llm:               { bg: '#ede9fe', fg: '#5b21b6', bar: '#8b5cf6' },
-    classical_fallback:{ bg: '#fef3c7', fg: '#92400e', bar: '#f59e0b' },
+    i3_llm_semantic:    { bg: '#dbeafe', fg: '#1e40af', bar: '#3b82f6' },
+    llm:                { bg: '#ede9fe', fg: '#5b21b6', bar: '#8b5cf6' },
+    classical_fallback: { bg: '#fef3c7', fg: '#92400e', bar: '#f59e0b' },
   };
-
   const LABELS = {
-    i3_llm_semantic:   'Hybrid (SBERT → phi4 → TOPSIS)',
-    llm:               'LLM (phi4 reasoning)',
-    classical_fallback:'Classical (SBERT + TOPSIS)',
+    i3_llm_semantic:    'Hybrid',
+    llm:                'Pure LLM',
+    classical_fallback: 'Classical',
   };
 
-  function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function esc(s) { const d = document.createElement('div'); d.textContent = s ?? ''; return d.innerHTML; }
+  const EMPTY_FORM = () => ({
+    tier: 'standard', company_name: '', country: 'AT', team_size: '6-20',
+    domains: [], bottleneck_text: '', answers: {}, confirmed_pain_flags: [],
+  });
 
   return {
-    allDomains: [
-      { value: 'customer_support', label: 'Customer Support' },
-      { value: 'ecommerce_ops', label: 'E-commerce Ops' },
-      { value: 'marketing', label: 'Marketing' },
-      { value: 'supply_chain', label: 'Supply Chain' },
-      { value: 'crm_sales', label: 'CRM & Sales' },
-      { value: 'operations_backoffice', label: 'Operations' },
-    ],
-    modeDescriptions: {
-      hybrid: "Production pipeline. SBERT prefilters to top-15, phi4 scores each candidate’s relevance, TOPSIS re-ranks. Composite: 0.905.",
-      llm: "Pure LLM. phi4 reads the bottleneck text and reasons over all candidates directly — no SBERT, no TOPSIS.",
-      classical: "No LLM. SBERT cosine similarity + TOPSIS multi-criteria ranking. Composite: 0.828.",
-      compare: 'Run all 3 pipelines on the same profile and compare results side by side.',
-    },
-    form: { company_name: '', country: 'AT', team_size: '6-20', domains: [], bottleneck_text: '', answers: {}, confirmed_pain_flags: [] },
-    mode: 'hybrid',
-    loading: false,
-    singleResult: null,
-    compareResults: null,
-    error: null,
-    expFile: null, expLoading: false, expResult: null, expError: null,
+    /* state */
+    tab: 'assess',
+    schema: null, health: null, apiUp: true,
+    form: EMPTY_FORM(),
+    mode: 'hybrid', loading: false, error: null,
+    singleResult: null, compareResults: null,
+    profileInspect: null, profileInspectError: null,
+    expFile: null, expLoading: false, expResult: null, expError: null, attachExport: true,
+    catalog: null, catQuery: '', catDomain: '', capOpen: null,
 
+    get canSubmit() { return this.form.company_name.trim().length > 0 && this.form.domains.length > 0 && this.form.country.trim().length === 2; },
+    get resultCount() {
+      if (this.compareResults) return this.compareResults.reduce((s, r) => s + (r.recommendations?.length || 0), 0);
+      return this.singleResult?.recommendations?.length || 0;
+    },
+
+    /* ── init ── */
+    async init() {
+      // Reachability is judged by /api/questions (the form needs it anyway).
+      // /api/health is decoration only; older server builds may error on it.
+      try {
+        const r = await fetch('/api/questions');
+        if (!r.ok) throw new Error();
+        this.schema = await r.json();
+      } catch { this.apiUp = false; return; }
+      try {
+        const r = await fetch('/api/health');
+        this.health = r.ok ? await r.json() : false;
+      } catch { this.health = false; }
+    },
+
+    /* ── schema helpers ── */
+    domainLabel(id) { return (this.schema?.domains || []).find(d => d.id === id)?.label || id; },
+    questionsFor(dom) {
+      return (this.schema?.questions?.[dom] || []).filter(q => (q.tier || []).includes(this.form.tier));
+    },
+    extrasForTier() {
+      return (this.schema?.full_tier_extras || []).filter(q => (q.tier || []).includes(this.form.tier));
+    },
+    firedFlags(q) {
+      const v = this.form.answers[q.id];
+      if (!v) return [];
+      return (q.options.find(o => o.value === v)?.pain_flags) || [];
+    },
+    allDerivedFlags() {
+      const out = new Set();
+      for (const dom of this.form.domains) {
+        for (const q of this.questionsFor(dom)) {
+          for (const f of this.firedFlags(q)) out.add(f);
+        }
+      }
+      return [...out].sort();
+    },
+    answeredCount() {
+      let n = 0;
+      for (const dom of this.form.domains) for (const q of this.questionsFor(dom)) if (this.form.answers[q.id]) n++;
+      for (const q of this.extrasForTier()) if (this.form.answers[q.id]) n++;
+      return n;
+    },
+
+    /* bottleneck tags ↔ confirmed_pain_flags */
+    tagChecked(tag) { return tag.flags.every(f => this.form.confirmed_pain_flags.includes(f)); },
+    toggleTag(tag) {
+      const set = new Set(this.form.confirmed_pain_flags);
+      if (this.tagChecked(tag)) tag.flags.forEach(f => set.delete(f));
+      else tag.flags.forEach(f => set.add(f));
+      this.form.confirmed_pain_flags = [...set];
+    },
+
+    /* multi-select answers → comma-joined string (the translator's contract) */
+    multiHas(qid, val) { return (this.form.answers[qid] || '').split(',').map(s => s.trim()).includes(val); },
+    multiToggle(qid, val) {
+      const cur = new Set((this.form.answers[qid] || '').split(',').map(s => s.trim()).filter(Boolean));
+      cur.has(val) ? cur.delete(val) : cur.add(val);
+      const joined = [...cur].join(',');
+      if (joined) this.form.answers[qid] = joined; else delete this.form.answers[qid];
+    },
+
+    /* ── samples ── */
     loadSample(key) {
       const s = SAMPLES[key];
-      this.form = { ...s, tier: 'standard' };
-      this.singleResult = null;
-      this.compareResults = null;
-      this.error = null;
+      this.form = JSON.parse(JSON.stringify({ ...EMPTY_FORM(), ...s }));
+      this.singleResult = null; this.compareResults = null; this.error = null;
+      this.profileInspect = null; this.profileInspectError = null;
+    },
+    clearForm() {
+      this.form = EMPTY_FORM();
+      this.singleResult = null; this.compareResults = null; this.error = null;
+      this.profileInspect = null; this.profileInspectError = null;
     },
 
-    pipelineLabel(p) { return LABELS[p] || p; },
-    badgeStyle(p) {
-      const c = COLORS[p] || COLORS.classical_fallback;
-      return `background:${c.bg};color:${c.fg}`;
+    /* ── payload ── */
+    buildPayload() {
+      // Only send answers for questions currently visible (selected domains + tier),
+      // exactly like the product form.
+      const visible = new Set();
+      for (const dom of this.form.domains) for (const q of this.questionsFor(dom)) visible.add(q.id);
+      for (const q of this.extrasForTier()) visible.add(q.id);
+      const answers = {};
+      for (const [k, v] of Object.entries(this.form.answers)) if (visible.has(k) && v) answers[k] = String(v);
+
+      const payload = {
+        tier: this.form.tier,
+        company_name: this.form.company_name,
+        country: this.form.country.toUpperCase(),
+        team_size: this.form.team_size,
+        domains: this.form.domains,
+        bottleneck_text: this.form.bottleneck_text,
+        answers,
+        confirmed_pain_flags: this.form.confirmed_pain_flags,
+      };
+      if (this.attachExport && this.expResult) {
+        if (this.expResult.bottleneck_enrichment) payload.export_enrichment = this.expResult.bottleneck_enrichment;
+        if (this.expResult.pain_flags_suggested && Object.keys(this.expResult.pain_flags_suggested).length)
+          payload.export_pain_flags = this.expResult.pain_flags_suggested;
+      }
+      return payload;
     },
-    barColor(p) { return (COLORS[p] || COLORS.classical_fallback).bar; },
+    examplePayload() {
+      return this.canSubmit ? this.buildPayload() : { ...SAMPLES.tinywonders };
+    },
+
+    /* ── run ── */
+    async fetchRecommend(pipeline) {
+      const res = await fetch('/api/recommend?pipeline=' + pipeline, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.buildPayload()),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(typeof err.detail === 'string' ? err.detail : JSON.stringify(err.detail) || `HTTP ${res.status}`);
+      }
+      return res.json();
+    },
+
+    async submit() {
+      this.loading = true; this.error = null;
+      this.singleResult = null; this.compareResults = null;
+      // Fetch the translated profile in parallel — the "under the hood" panel.
+      this.fetchProfileInspect();
+      try {
+        if (this.mode === 'compare') {
+          const [hybrid, llm, classical] = await Promise.all([
+            this.fetchRecommend('hybrid'), this.fetchRecommend('llm'), this.fetchRecommend('classical'),
+          ]);
+          this.compareResults = [hybrid, llm, classical];
+        } else {
+          this.singleResult = await this.fetchRecommend(this.mode);
+        }
+        this.tab = 'results';
+        window.scrollTo({ top: 0 });
+      } catch (e) { this.error = e.message; }
+      this.loading = false;
+    },
+
+    async fetchProfileInspect() {
+      this.profileInspect = null; this.profileInspectError = null;
+      try {
+        const res = await fetch('/api/debug/translate-profile', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(this.buildPayload()),
+        });
+        if (res.status === 404) { this.profileInspectError = 'Profile inspection is not available on this server.'; return; }
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        this.profileInspect = await res.json();
+      } catch { this.profileInspectError = 'Could not fetch the translated profile.'; }
+    },
+
+    async inspectProfile() {
+      await this.fetchProfileInspect();
+      this.tab = 'results';
+      window.scrollTo({ top: 0 });
+    },
+
+    /* ── rendering ── */
+    pipelineLabel(p) { return LABELS[p] || p; },
+    badgeStyle(p) { const c = COLORS[p] || COLORS.classical_fallback; return `background:${c.bg};color:${c.fg}`; },
 
     renderCard(rec, pipeline) {
       const c = COLORS[pipeline] || COLORS.classical_fallback;
       const dims = [
-        ['Semantic Fit', rec.dimensions.semantic_fit],
-        ['Pain Match', rec.dimensions.pain_point_match],
-        ['Data Readiness', rec.dimensions.data_readiness],
-        ['Tech Fit', rec.dimensions.tech_fit],
+        ['Semantic fit', rec.dimensions.semantic_fit],
+        ['Pain match', rec.dimensions.pain_point_match],
+        ['Data readiness', rec.dimensions.data_readiness],
+        ['Tech fit', rec.dimensions.tech_fit],
         ['Integration', rec.dimensions.integration_compat],
       ];
-      let bars = dims.map(([name, val]) =>
+      const bars = dims.map(([name, val]) =>
         `<div class="dim-bar-group">
-          <div class="dim-label"><span>${name}</span><span>${(val*100).toFixed(0)}%</span></div>
-          <div class="dim-track"><div class="dim-fill" style="width:${val*100}%;background:${c.bar}"></div></div>
-        </div>`
-      ).join('');
-
+          <div class="dim-label"><span>${name}</span><span>${(val * 100).toFixed(0)}%</span></div>
+          <div class="dim-track"><div class="dim-fill" style="width:${val * 100}%;background:${c.bar}"></div></div>
+        </div>`).join('');
       let prods = '';
-      if (rec.products && rec.products.length) {
+      if (rec.products?.length) {
         const chips = rec.products.map(p => {
           const free = p.has_free_tier ? ' <span class="badge badge-green">Free tier</span>' : '';
           return `<span class="product-chip"><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a>${free}</span>`;
         }).join('');
         prods = `<div class="products"><h5>Products</h5>${chips}</div>`;
       }
-
+      const pct = Math.round(rec.topsis_score * 100);
       return `<div class="result-card">
         <div class="result-header">
           <span class="rank">#${rec.rank}</span>
-          <span class="score">TOPSIS ${rec.topsis_score.toFixed(4)}</span>
+          <span class="score"><b style="font-size:.95rem;color:${c.fg}">${pct}/100</b> · TOPSIS ${rec.topsis_score.toFixed(4)}</span>
         </div>
         <h4>${esc(rec.capability_name)}</h4>
         <span class="domain-tag">${esc(rec.domain.replace(/_/g, ' '))}</span>
@@ -404,57 +970,63 @@ function app() {
       </div>`;
     },
 
-    async fetchRecommend(pipeline) {
-      const payload = { tier: this.form.tier || 'standard', ...this.form };
-      const url = '/api/recommend?pipeline=' + pipeline;
-      const res = await fetch(url, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err.detail || `HTTP ${res.status}`);
+    /* compare-mode agreement matrix */
+    agreementMatrix() {
+      if (!this.compareResults) return [];
+      const byPipe = {};
+      for (const res of this.compareResults) {
+        const key = res.pipeline_used === 'i3_llm_semantic' ? 'hybrid'
+          : res.pipeline_used === 'llm' ? 'llm' : 'classical';
+        byPipe[key] = res;
       }
-      return res.json();
-    },
-
-    async submit() {
-      this.loading = true;
-      this.error = null;
-      this.singleResult = null;
-      this.compareResults = null;
-
-      try {
-        if (this.mode === 'compare') {
-          const [hybrid, llm, classical] = await Promise.all([
-            this.fetchRecommend('hybrid'),
-            this.fetchRecommend('llm'),
-            this.fetchRecommend('classical'),
-          ]);
-          this.compareResults = [hybrid, llm, classical];
-        } else {
-          this.singleResult = await this.fetchRecommend(this.mode);
+      const rows = {};
+      for (const [key, res] of Object.entries(byPipe)) {
+        for (const rec of (res.recommendations || [])) {
+          rows[rec.capability_id] ||= { id: rec.capability_id, name: rec.capability_name };
+          rows[rec.capability_id][key] = rec.rank;
         }
-      } catch (e) { this.error = e.message; }
-      this.loading = false;
+      }
+      return Object.values(rows).sort((a, b) => (a.hybrid ?? a.classical ?? 99) - (b.hybrid ?? b.classical ?? 99));
+    },
+    movement(row) {
+      if (row.hybrid == null && row.classical == null) return '<span class="mv-same">—</span>';
+      if (row.classical == null) return '<span class="mv-up">new ↑</span>';
+      if (row.hybrid == null) return '<span class="mv-down">dropped ↓</span>';
+      const d = row.classical - row.hybrid;
+      if (d > 0) return `<span class="mv-up">↑ ${d}</span>`;
+      if (d < 0) return `<span class="mv-down">↓ ${-d}</span>`;
+      return '<span class="mv-same">=</span>';
     },
 
+    /* ── export analyser ── */
     handleFile(ev) { this.expFile = ev.target.files[0] || null; this.expResult = null; this.expError = null; },
-
     async submitExport() {
       this.expLoading = true; this.expError = null; this.expResult = null;
-      const fd = new FormData();
-      fd.append('file', this.expFile);
+      const fd = new FormData(); fd.append('file', this.expFile);
       try {
         const res = await fetch('/api/export/analyse', { method: 'POST', body: fd });
-        if (!res.ok) {
-          const err = await res.json().catch(() => ({}));
-          throw new Error(err.detail || `HTTP ${res.status}`);
-        }
+        if (!res.ok) { const err = await res.json().catch(() => ({})); throw new Error(err.detail || `HTTP ${res.status}`); }
         this.expResult = await res.json();
       } catch (e) { this.expError = e.message; }
       this.expLoading = false;
-    }
+    },
+
+    /* ── catalog tab ── */
+    async openCatalog() {
+      this.tab = 'catalog';
+      if (this.catalog || !this.apiUp) return;
+      try { this.catalog = await fetch('/api/catalog').then(r => r.json()); } catch { /* strip shows API down */ }
+    },
+    filteredCaps() {
+      let caps = this.catalog?.capabilities || [];
+      if (this.catDomain) caps = caps.filter(c => c.domain === this.catDomain);
+      const q = this.catQuery.trim().toLowerCase();
+      if (q) caps = caps.filter(c =>
+        c.name.toLowerCase().includes(q) || c.capability_id.includes(q) ||
+        (c.description || '').toLowerCase().includes(q) ||
+        (c.products || []).some(p => p.name.toLowerCase().includes(q)));
+      return caps;
+    },
   };
 }
 </script>
