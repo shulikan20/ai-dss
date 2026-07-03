@@ -20,6 +20,17 @@ if config.config_file_name is not None:
 
 target_metadata = Base.metadata
 
+_NON_ORM_TABLES = frozenset({"capabilities", "products"})
+
+def include_object(obj, name, type_, reflected, compare_to) -> bool:
+    if type_ == "table" and name in _NON_ORM_TABLES:
+        return False
+    if type_ in ("index", "foreign_key_constraint", "unique_constraint"):
+        parent = getattr(obj, "table", None)
+        if parent is not None and parent.name in _NON_ORM_TABLES:
+            return False
+    return True
+
 def run_migrations_offline() -> None:
     url = config.get_main_option("sqlalchemy.url")
     context.configure(
@@ -28,6 +39,7 @@ def run_migrations_offline() -> None:
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
         compare_type=True,
+        include_object=include_object,
     )
     with context.begin_transaction():
         context.run_migrations()
@@ -44,6 +56,7 @@ def run_migrations_online() -> None:
             target_metadata=target_metadata,
             compare_type=True,
             compare_server_default=True,
+            include_object=include_object,
         )
         with context.begin_transaction():
             context.run_migrations()
