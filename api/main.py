@@ -5,10 +5,10 @@ import sys
 from contextlib import asynccontextmanager
 from pathlib import Path
 import requests
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -62,6 +62,7 @@ async def lifespan(app: FastAPI):
         if pipeline_mode not in ("hybrid", "llm", "classical"):
             pipeline_mode = "hybrid"
 
+        app.state.repo = repo
         app.state.engines = {
             "classical": classical_engine,
             "llm": llm_engine,
@@ -128,6 +129,24 @@ app = FastAPI(
     redoc_url=None if os.environ.get("DISABLE_DOCS") == "1" else "/redoc",
 )
 
+_MAX_JSON_BODY_BYTES = int(os.environ.get("MAX_JSON_BODY_BYTES", str(512 * 1024)))
+
+@app.middleware("http")
+async def limit_json_body_size(request: Request, call_next):
+    if "application/json" in request.headers.get("content-type", ""):
+        content_length = request.headers.get("content-length")
+        if content_length is not None:
+            try:
+                too_large = int(content_length) > _MAX_JSON_BODY_BYTES
+            except ValueError:
+                too_large = False
+            if too_large:
+                return JSONResponse(
+                    status_code=413,
+                    content={"detail": "Request body too large."},
+                )
+    return await call_next(request)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
@@ -166,9 +185,29 @@ app.include_router(contact_router, prefix="/api", tags=["contact"])
 from api.routes.export import router as export_router
 app.include_router(export_router, prefix="/api", tags=["export-analyser"])
 
+for _mod, _tag in [
+    ("chat", "chat"),
+    ("share", "share"),
+    ("benchmarks", "benchmarks"),
+    ("workspaces", "workspaces"),
+]:
+    try:
+        _router = __import__(f"api.routes.{_mod}", fromlist=["router"]).router
+    except ImportError:
+        print(f"[AI-DSS] Optional router api/routes/{_mod}.py not present — skipped")
+        continue
+    app.include_router(_router, prefix="/api", tags=[_tag])
+
+if os.environ.get("AIDSS_ENV", "development") != "production":
+    try:
+        from api.routes.debug import router as debug_router
+        app.include_router(debug_router, prefix="/api", tags=["debug"])
+    except ImportError:
+        print("[AI-DSS] Optional router api/routes/debug.py not present — skipped")
+
 _demo_dir = ROOT / "demo"
 if _demo_dir.is_dir():
-    app.mount("/demo", StaticFiles(directory=str(_demo_dir)), name="demo")
+    app.mount("/demo", StaticFiles(directory=str(_demo_dir), html=True), name="demo")
 
     @app.get("/", include_in_schema=False)
     def demo_index():

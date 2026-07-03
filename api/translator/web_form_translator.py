@@ -17,6 +17,15 @@ from api.translator.questions import (
     get_all_catalog_pain_flags,
 )
 
+_VALID_PAIN_FLAG_PATHS: frozenset[str] | None = None
+
+def _valid_pain_flag_paths() -> frozenset[str]:
+    global _VALID_PAIN_FLAG_PATHS
+    if _VALID_PAIN_FLAG_PATHS is None:
+        from src.catalog.pain_flags import PainFlags
+        _VALID_PAIN_FLAG_PATHS = frozenset(PainFlags.all_paths())
+    return _VALID_PAIN_FLAG_PATHS
+
 class WebFormTranslator:
     _catalog_audit_done: bool = False
 
@@ -31,8 +40,10 @@ class WebFormTranslator:
         enrich_with_llm: bool = False,
     ) -> CompanyProfile:
         confirmed_flags = self._map_structured_answers(form_data.answers)
+        valid_paths = _valid_pain_flag_paths()
         for flag_path in getattr(form_data, "confirmed_pain_flags", []):
-            confirmed_flags[flag_path] = True
+            if flag_path in valid_paths:
+                confirmed_flags[flag_path] = True
         profile_extras = self._extract_profile_field_answers(form_data.answers)
         bottleneck_text = form_data.bottleneck_text.strip()
         if export_summary:
@@ -134,6 +145,7 @@ class WebFormTranslator:
             "bottleneck_description": bottleneck_text,
             "technical_level": profile_extras.get("technical_level", 2),
             "current_tools": profile_extras.get("current_tools", []),
+            "history_months": profile_extras.get("history_months", 0),
             "export_types_available": export_types,
             "has_structured_export": profile_extras.get(
                 "has_structured_export", len(export_types) > 0
