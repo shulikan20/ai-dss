@@ -19,6 +19,8 @@ from api.database.models import (
     User,
 )
 
+SAVED_TOOL_STATUSES = ("considering", "trialing", "adopted")
+
 @dataclasses.dataclass(frozen=True)
 class SavedSession:
     session_id: uuid.UUID
@@ -50,6 +52,8 @@ class SavedToolRecord:
     capability_id: str
     capability_name: str | None
     saved_at: datetime
+    status: str = "considering"
+    notes: str | None = None
 
 class SessionRepository:
     def __init__(self, db: Session) -> None:

@@ -1,6 +1,7 @@
 from __future__ import annotations
 import uuid
 from datetime import datetime, timezone
+from typing import Literal
 
 from fastapi import APIRouter, Depends, HTTPException, Path, Request, status
 from pydantic import BaseModel, Field
@@ -71,10 +72,16 @@ class SavedToolItem(BaseModel):
     capability_id: str
     capability_name: str | None = None
     saved_at: str
+    status: Literal["considering", "trialing", "adopted"] = "considering"
+    notes: str | None = None
 
 class SavedToolListResponse(BaseModel):
     total: int
     items: list[SavedToolItem]
+
+class SavedToolUpdate(BaseModel):
+    status: Literal["considering", "trialing", "adopted"] | None = None
+    notes: str | None = Field(default=None, max_length=2000)
 
 @router.get(
     "/me/recommendations",
@@ -242,6 +249,8 @@ def save_tool(
         capability_id=saved.capability_id,
         capability_name=saved.capability_name,
         saved_at=saved.saved_at.isoformat(),
+        status=saved.status or "considering",
+        notes=saved.notes,
     )
 
 
@@ -261,10 +270,43 @@ def list_saved_tools(
             capability_id=r.capability_id,
             capability_name=r.capability_name,
             saved_at=r.saved_at.isoformat(),
+            status=r.status,
+            notes=r.notes,
         )
         for r in records
     ]
     return SavedToolListResponse(total=len(items), items=items)
+
+@router.patch(
+    "/me/saved-tools/{capability_id}",
+    response_model=SavedToolItem,
+    summary="Update a saved tool's adoption status / notes",
+)
+def update_saved_tool(
+    body: SavedToolUpdate,
+    capability_id: str = Path(max_length=100, pattern=r"^[a-z0-9_]+$"),
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> SavedToolItem:
+    repo = SavedToolRepository(db)
+    updated = repo.set_status(
+        user_id=user.id,
+        capability_id=capability_id,
+        status=body.status,
+        notes=body.notes,
+    )
+    if updated is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"No saved tool '{capability_id}' for this user.",
+        )
+    return SavedToolItem(
+        capability_id=updated.capability_id,
+        capability_name=updated.capability_name,
+        saved_at=updated.saved_at.isoformat(),
+        status=updated.status,
+        notes=updated.notes,
+    )
 
 @router.delete(
     "/me/saved-tools/{capability_id}",

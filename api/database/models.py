@@ -284,6 +284,10 @@ class SavedTool(Base):
     saved_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), nullable=False
     )
+    status: Mapped[str] = mapped_column(
+        String(20), server_default="considering", nullable=False
+    )
+    notes: Mapped[str | None] = mapped_column(String(2000), nullable=True)
 
     user: Mapped[User] = relationship("User", back_populates="saved_tools")
 
