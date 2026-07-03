@@ -1,7 +1,8 @@
 __pycache__/
 *.pyc
 .env
-.DS_STORE
+.DS_Store
+**/.DS_Store
 tools/architecture/frontend/node_modules/
 tools/architecture/frontend/dist/
 process_flow.html
@@ -10,8 +11,8 @@ tools/architecture/
 tools/catalog
 tests
 tests/
-scripts
-scripts/
+scripts_dev
+scripts_dev/
 src/tools/tool_embeddings.npy
 src/tools/tool_embeddings_index.json
 results/
