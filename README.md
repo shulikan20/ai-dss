@@ -220,21 +220,19 @@ Sample payloads and export files are in [`demo_data/`](demo_data/).
 | `GET` | `/api/me/export` | yes | Export personal data |
 
 
-## Testing
+### Reproducing the evaluation
+
+The 45-profile ground-truth test set lives in [`tests/eval_data/test_cases.json`](tests/eval_data/test_cases.json).
 
 ```bash
-pytest tests/ -v
+# Classical pipeline
+python scripts/eval.py --variant classical --runs 1 --output results/
+
+# Production hybrid
+python scripts/eval.py --variant v_i3_llm_semantic --runs 3 --output results/
 ```
 
-Three suites, all in-process (no database server or Ollama needed):
-
-| File | Guards |
-|:---|:---|
-| `test_catalog_integrity.py` | Every pain flag the question schema can emit resolves to a catalog mapping — an unmapped flag would silently score 0% |
-| `test_profile_translation.py` | Form answers translate into the correct CompanyProfile signals (pain flags, tech level, data history, integrations) |
-| `test_matching_baselines.py` | The classical engine reproduces ground-truth rankings on three evaluation profiles, including the demand-forecasting vs. reactive-alerts discrimination |
-
-CI runs these plus a Docker smoke test of the full stack on every push.
+The rejected weight variants (`v_pain_heavy`, `v_semantic_only`, `v_balanced`) are included in [`scripts/eval/variants/`](scripts/eval/variants/).
 
 ---
 
@@ -255,6 +253,7 @@ ai-dss/
 │   │   └── hybrid/         HybridEngineV2
 │   └── export_analyser/    DataInsight
 ├── tests/
+├── scripts/
 ├── migrations/
 ├── demo/                   Demo page
 ├── demo_data/              Sample payloads and export files
