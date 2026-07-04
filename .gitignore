@@ -9,8 +9,8 @@ process_flow.html
 architecture.html
 tools/architecture/
 tools/catalog
-tests
-tests/
+tests/*
+!tests/eval_data/
 scripts_dev
 scripts_dev/
 src/tools/tool_embeddings.npy
