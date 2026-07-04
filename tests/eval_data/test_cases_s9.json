@@ -1,0 +1,1870 @@
+{
+ "_meta": {
+  "note": "Session 9: original 45 + wave-1 (8) + wave-2 (12). Slice by category."
+ },
+ "test_cases": [
+  {
+   "test_id": "CS-001",
+   "category": "single_domain",
+   "profile_name": "HighVolume DM Support – strong",
+   "description": "Fashion brand overwhelmed by repetitive Instagram DMs. Clear, specific bottleneck. Strong signal for faq automation.",
+   "ground_truth": {
+    "must_haves": [
+     "faq_dm_automation",
+     "ai_support_agent"
+    ],
+    "top1_expected": "faq_dm_automation",
+    "notes": "faq_dm_automation should be #1. ai_support_agent should appear in top-3."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "CS-001 Test Co",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "customer_support"
+    ],
+    "bottleneck_text": "We get 80-100 DMs per day on Instagram asking the same questions about sizing, shipping, and returns. Our one customer service person spends 4 hours a day just answering these identical questions. It is completely unsustainable.",
+    "answers": {
+     "cs_volume": "over_100",
+     "cs_repetition_rate": "most",
+     "cs_channels": "instagram_whatsapp"
+    },
+    "confirmed_pain_flags": [
+     "customer_support.volume.pain_high_volume_support",
+     "universal.processes.pain_repetitive_support",
+     "universal.processes.pain_slow_response",
+     "universal.processes.pain_ticket_overload"
+    ]
+   }
+  },
+  {
+   "test_id": "CS-002",
+   "category": "single_domain",
+   "profile_name": "Reputation Management – medium",
+   "description": "Restaurant supplier getting negative reviews. Moderate signal — reviews + brand reputation but no volume problem.",
+   "ground_truth": {
+    "must_haves": [
+     "review_response_automation"
+    ],
+    "top1_expected": "review_response_automation",
+    "notes": "review_response_automation should be #1. Negative reviews + brand reputation flags are specific to this capability."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "CS-002 Test Co",
+    "country": "PL",
+    "team_size": "6-20",
+    "domains": [
+     "customer_support"
+    ],
+    "bottleneck_text": "We are starting to get negative reviews on Google and Trustpilot and we do not have a system to monitor or respond to them. Our team does not have time to track this manually.",
+    "answers": {
+     "cs_volume": "under_50",
+     "cs_repetition_rate": "low"
+    },
+    "confirmed_pain_flags": [
+     "customer_support.reputation.pain_negative_reviews",
+     "customer_support.reputation.pain_brand_reputation"
+    ]
+   }
+  },
+  {
+   "test_id": "CS-003",
+   "category": "single_domain",
+   "profile_name": "Ticket Overload – weak",
+   "description": "Online bookshop with vague support complaint. Weak signal — no specific text, one pain tag.",
+   "ground_truth": {
+    "must_haves": [
+     "faq_dm_automation"
+    ],
+    "top1_expected": "faq_dm_automation",
+    "notes": "Weak signal test. faq_dm_automation should still appear in top-3 but score may be lower."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "CS-003 Test Co",
+    "country": "SK",
+    "team_size": "1-5",
+    "domains": [
+     "customer_support"
+    ],
+    "bottleneck_text": "Customer service is getting harder to manage.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "universal.processes.pain_ticket_overload"
+    ]
+   }
+  },
+  {
+   "test_id": "EC-001",
+   "category": "single_domain",
+   "profile_name": "Multichannel Order Chaos – strong",
+   "description": "Multi-platform seller manually copying orders. Strong signal with specific pain description.",
+   "ground_truth": {
+    "must_haves": [
+     "multichannel_order_sync",
+     "order_status_automation"
+    ],
+    "top1_expected": "multichannel_order_sync",
+    "notes": "multichannel_order_sync should be #1. order_status_automation should appear in top-3."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "EC-001 Test Co",
+    "country": "DE",
+    "team_size": "21-50",
+    "domains": [
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "We sell on Shopify, Amazon, and a local marketplace. Orders come in from all three channels separately. We manually copy order data into our spreadsheet for fulfillment every morning. It takes 2 hours and we make mistakes that cause wrong shipments.",
+    "answers": {
+     "ec_channels": "3_plus",
+     "ec_order_volume": "medium"
+    },
+    "confirmed_pain_flags": [
+     "ecommerce_ops.pain_points.pain_multichannel",
+     "ecommerce_ops.pain_points.pain_slow_order_processing",
+     "universal.processes.pain_manual_data_entry"
+    ]
+   }
+  },
+  {
+   "test_id": "EC-002",
+   "category": "single_domain",
+   "profile_name": "Returns Automation – medium",
+   "description": "Clothing brand with chaotic manual returns process.",
+   "ground_truth": {
+    "must_haves": [
+     "return_management_automation"
+    ],
+    "top1_expected": "return_management_automation",
+    "notes": "Clear single-capability match on manual_returns flag."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "EC-002 Test Co",
+    "country": "HR",
+    "team_size": "6-20",
+    "domains": [
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "Returns take too long and customers complain. Every return is handled manually through email and it is completely chaotic. We have no standard process.",
+    "answers": {
+     "ec_returns": "fully_manual"
+    },
+    "confirmed_pain_flags": [
+     "ecommerce_ops.pain_points.pain_manual_returns"
+    ]
+   }
+  },
+  {
+   "test_id": "EC-003",
+   "category": "single_domain",
+   "profile_name": "Product Descriptions – weak",
+   "description": "Small handmade goods seller struggling with product catalog. Vague signal.",
+   "ground_truth": {
+    "must_haves": [
+     "product_description_generation"
+    ],
+    "top1_expected": "product_description_generation",
+    "notes": "Weak signal via semantic match on description writing bottleneck."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "EC-003 Test Co",
+    "country": "CZ",
+    "team_size": "1-5",
+    "domains": [
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "We have 300 products and writing descriptions for each one takes forever. We don't have a writer.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "ecommerce_ops.catalogue.pain_manual_descriptions"
+    ]
+   }
+  },
+  {
+   "test_id": "MKT-001",
+   "category": "single_domain",
+   "profile_name": "Paid Ads Performance – strong",
+   "description": "Skincare brand with poor ad ROAS and no creative testing process.",
+   "ground_truth": {
+    "must_haves": [
+     "ad_creative_generation",
+     "campaign_performance_reporting"
+    ],
+    "top1_expected": "ad_creative_generation",
+    "notes": "Both ad-focused capabilities should appear in top-3."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "MKT-001 Test Co",
+    "country": "FR",
+    "team_size": "6-20",
+    "domains": [
+     "marketing"
+    ],
+    "bottleneck_text": "We spend 4000 euros per month on Meta ads but our ROAS is 1.2. We do not have time to test creatives or analyse which ads are working. We just boost posts and hope for the best.",
+    "answers": {
+     "mkt_paid_ads": "yes_manual",
+     "mkt_reporting": "manual_weekly"
+    },
+    "confirmed_pain_flags": [
+     "marketing.paid.pain_poor_ad_performance",
+     "marketing.paid.pain_manual_ad_creative",
+     "universal.processes.pain_no_data_insights"
+    ]
+   }
+  },
+  {
+   "test_id": "MKT-002",
+   "category": "single_domain",
+   "profile_name": "Email Engagement – medium",
+   "description": "Coffee subscription with large list but poor open rates and generic campaigns.",
+   "ground_truth": {
+    "must_haves": [
+     "email_marketing_personalization"
+    ],
+    "top1_expected": "email_marketing_personalization",
+    "notes": "Clear match on email engagement + generic campaigns flags."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "MKT-002 Test Co",
+    "country": "BE",
+    "team_size": "6-20",
+    "domains": [
+     "marketing"
+    ],
+    "bottleneck_text": "Our email list has 5000 people but our open rate is only 8 percent. We send the same newsletter to everyone with no segmentation or personalisation.",
+    "answers": {
+     "mkt_content": "fully_manual"
+    },
+    "confirmed_pain_flags": [
+     "marketing.email.pain_low_email_engagement",
+     "marketing.email.pain_generic_campaigns"
+    ]
+   }
+  },
+  {
+   "test_id": "MKT-003",
+   "category": "single_domain",
+   "profile_name": "Organic Traffic – weak",
+   "description": "Specialty food shop with no SEO strategy. Vague signal.",
+   "ground_truth": {
+    "must_haves": [
+     "seo_content_automation",
+     "content_generation_social"
+    ],
+    "top1_expected": "seo_content_automation",
+    "notes": "Semantic match on low traffic + no content strategy."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "MKT-003 Test Co",
+    "country": "IT",
+    "team_size": "6-20",
+    "domains": [
+     "marketing"
+    ],
+    "bottleneck_text": "Our website gets very little traffic from Google and we do not know how to fix it.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "marketing.organic.pain_low_organic_traffic",
+     "marketing.organic.pain_no_content_strategy"
+    ]
+   }
+  },
+  {
+   "test_id": "SCA-001",
+   "category": "single_domain",
+   "profile_name": "Inventory Forecasting – strong [CRITICAL NEAR-MISS TEST]",
+   "description": "Harder version of SC4. Electronics retailer with stockouts AND overstock. Tests demand_forecasting vs inventory_replenishment_alerts discrimination. demand_forecasting MUST rank above inventory_replenishment_alerts.",
+   "ground_truth": {
+    "must_haves": [
+     "demand_forecasting",
+     "inventory_replenishment_alerts"
+    ],
+    "top1_expected": "demand_forecasting",
+    "notes": "CRITICAL: demand_forecasting must be #1, NOT inventory_replenishment_alerts. Both are supply chain tools but demand_forecasting addresses root cause (planning) while alerts only address symptom (notification). The distinction is semantic and structural."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "SCA-001 Test Co",
+    "country": "SE",
+    "team_size": "21-50",
+    "domains": [
+     "supply_chain"
+    ],
+    "bottleneck_text": "We track inventory in two Excel files and our team manually counts stock every week. We run out of our best-selling cables 4-5 times a year and lose significant revenue. We also order too much of slow-moving accessories that sit in the warehouse. We have no way to predict demand or optimise orders.",
+    "answers": {
+     "sc_inventory_method": "spreadsheet",
+     "sc_stockout_freq": "frequently",
+     "sc_demand_forecasting_method": "gut_feeling"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_stockouts",
+     "universal.processes.pain_overstock",
+     "universal.processes.pain_manual_inventory",
+     "ecommerce_ops.pain_points.pain_inventory_tracking"
+    ]
+   }
+  },
+  {
+   "test_id": "SCA-002",
+   "category": "single_domain",
+   "profile_name": "Supplier Communication – medium",
+   "description": "Textile importer with chaotic supplier communication and no tracking.",
+   "ground_truth": {
+    "must_haves": [
+     "supplier_communication_assistant"
+    ],
+    "top1_expected": "supplier_communication_assistant",
+    "notes": "Clear match on supplier tracking flag."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "SCA-002 Test Co",
+    "country": "PL",
+    "team_size": "6-20",
+    "domains": [
+     "supply_chain"
+    ],
+    "bottleneck_text": "We work with 8 suppliers in China, Turkey and Portugal. Communication is all by email and we have no tracking system. Lead times are unpredictable and we often don't know the status of our orders.",
+    "answers": {
+     "sc_inventory_method": "erp"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_supplier_tracking"
+    ]
+   }
+  },
+  {
+   "test_id": "SCA-003",
+   "category": "single_domain",
+   "profile_name": "Low-Stock Alerts Only – weak [STOCKOUT PATH TEST]",
+   "description": "Small pet food shop with basic stockout problem. Tests STOCKOUTS_SUPPLY_CHAIN path (inventory_replenishment_alerts) vs STOCKOUTS_UNIVERSAL path (demand_forecasting).",
+   "ground_truth": {
+    "must_haves": [
+     "inventory_replenishment_alerts"
+    ],
+    "top1_expected": "inventory_replenishment_alerts",
+    "notes": "Uses supply_chain.inventory.pain_stockouts (STOCKOUTS_SUPPLY_CHAIN) which maps to inventory_replenishment_alerts, NOT demand_forecasting. Small company, no forecasting capability needed."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "SCA-003 Test Co",
+    "country": "AT",
+    "team_size": "1-5",
+    "domains": [
+     "supply_chain"
+    ],
+    "bottleneck_text": "We sometimes run out of stock without realising it until customers start complaining.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "supply_chain.inventory.pain_stockouts"
+    ]
+   }
+  },
+  {
+   "test_id": "CRM-001",
+   "category": "single_domain",
+   "profile_name": "Pipeline Management – strong",
+   "description": "B2B reseller managing 150 leads in spreadsheet with inconsistent follow-up.",
+   "ground_truth": {
+    "must_haves": [
+     "crm_lead_scoring",
+     "meeting_transcription_crm"
+    ],
+    "top1_expected": "crm_lead_scoring",
+    "notes": "Both CRM tools should appear in top-3."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "CRM-001 Test Co",
+    "country": "NL",
+    "team_size": "6-20",
+    "domains": [
+     "crm_sales"
+    ],
+    "bottleneck_text": "Our sales team of 3 manages 150 leads in a spreadsheet. Follow-up emails are sent manually and inconsistently. We do not know which deals are close to closing and we miss follow-ups every week. We have no visibility into our pipeline.",
+    "answers": {
+     "crm_pipeline": "spreadsheet",
+     "crm_followup": "manual_ad_hoc"
+    },
+    "confirmed_pain_flags": [
+     "crm_sales.pipeline.pain_slow_followup",
+     "crm_sales.pipeline.pain_unclear_reporting"
+    ]
+   }
+  },
+  {
+   "test_id": "CRM-002",
+   "category": "single_domain",
+   "profile_name": "Revenue Predictability – medium",
+   "description": "Consulting firm with unpredictable revenue and unstructured pipeline.",
+   "ground_truth": {
+    "must_haves": [
+     "sales_pipeline_forecasting",
+     "crm_lead_scoring"
+    ],
+    "top1_expected": "sales_pipeline_forecasting",
+    "notes": "Revenue/pipeline forecasting flag should drive the top result."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "CRM-002 Test Co",
+    "country": "DE",
+    "team_size": "6-20",
+    "domains": [
+     "crm_sales"
+    ],
+    "bottleneck_text": "We never know how much revenue we will have next month. Our pipeline is entirely in email threads and memory. We lose track of deals constantly.",
+    "answers": {
+     "crm_pipeline": "email_only"
+    },
+    "confirmed_pain_flags": [
+     "crm_sales.pipeline.pain_unpredictable_revenue",
+     "crm_sales.pipeline.pain_unclear_reporting"
+    ]
+   }
+  },
+  {
+   "test_id": "CRM-003",
+   "category": "single_domain",
+   "profile_name": "Meeting Notes – weak",
+   "description": "Digital agency losing track of meeting decisions. Weak single signal.",
+   "ground_truth": {
+    "must_haves": [
+     "meeting_transcription_crm"
+    ],
+    "top1_expected": "meeting_transcription_crm",
+    "notes": "Weak signal but specific to meeting transcription capability."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "CRM-003 Test Co",
+    "country": "SI",
+    "team_size": "1-5",
+    "domains": [
+     "crm_sales"
+    ],
+    "bottleneck_text": "Meetings take too long and we always lose track of what was decided and who should do what.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "crm_sales.pipeline.pain_slow_followup"
+    ]
+   }
+  },
+  {
+   "test_id": "OPS-001",
+   "category": "single_domain",
+   "profile_name": "Document and Proposal Automation – strong [SC5 VARIANT]",
+   "description": "Events agency writing all proposals from scratch plus manual invoicing. Replaces SC5 with more explicit signals.",
+   "ground_truth": {
+    "must_haves": [
+     "proposal_contract_automation",
+     "document_generation",
+     "ai_bookkeeping_invoicing"
+    ],
+    "top1_expected": "proposal_contract_automation",
+    "notes": "All three operations tools should appear in top-5. proposal_contract_automation should be #1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "OPS-001 Test Co",
+    "country": "ES",
+    "team_size": "6-20",
+    "domains": [
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "We write every client proposal from scratch. It takes 3-4 hours per proposal and we do 10 per month. We also manually create and send invoices from an Excel template which takes a full day each month. We have no document templates.",
+    "answers": {
+     "ops_invoicing": "spreadsheet",
+     "ops_proposals": "from_scratch"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_manual_invoicing",
+     "universal.processes.pain_manual_data_entry"
+    ]
+   }
+  },
+  {
+   "test_id": "OPS-002",
+   "category": "single_domain",
+   "profile_name": "Invoicing Only – medium",
+   "description": "Freelance collective with manual invoicing burden but no other operational issues.",
+   "ground_truth": {
+    "must_haves": [
+     "ai_bookkeeping_invoicing"
+    ],
+    "top1_expected": "ai_bookkeeping_invoicing",
+    "notes": "Single clear match on manual invoicing flag."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "OPS-002 Test Co",
+    "country": "RO",
+    "team_size": "1-5",
+    "domains": [
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "Invoicing takes a whole day each month. We track payments in a spreadsheet and often forget to chase late payments.",
+    "answers": {
+     "ops_invoicing": "spreadsheet"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_manual_invoicing"
+    ]
+   }
+  },
+  {
+   "test_id": "OPS-003",
+   "category": "single_domain",
+   "profile_name": "Data Entry Reduction – weak",
+   "description": "Import/export firm with vague manual work complaint.",
+   "ground_truth": {
+    "must_haves": [
+     "ai_data_entry_automation"
+    ],
+    "top1_expected": "ai_data_entry_automation",
+    "notes": "Weak signal via manual_data_entry flag and semantic match."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "OPS-003 Test Co",
+    "country": "HU",
+    "team_size": "6-20",
+    "domains": [
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "We have too much manual administrative work in the office. Everything is done by hand.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "universal.processes.pain_manual_data_entry"
+    ]
+   }
+  },
+  {
+   "test_id": "MULTI-CS-MKT-001",
+   "category": "multi_domain",
+   "profile_name": "DM Support + Content Creation – strong [SC1 REPLACEMENT]",
+   "description": "Fashion brand with both DM automation and social content needs. Closest to original SC1.",
+   "ground_truth": {
+    "must_haves": [
+     "faq_dm_automation",
+     "content_generation_social"
+    ],
+    "top1_expected": "faq_dm_automation",
+    "notes": "Both must appear in top-3. Direct replication of SC1 with new questionnaire format."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "TinyWonders GmbH",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "customer_support",
+     "marketing"
+    ],
+    "bottleneck_text": "We answer the same Instagram DMs about sizing and shipping 50 times a day. We also need to create social content 3 times per week but our team is not creative and writing posts takes forever.",
+    "answers": {
+     "cs_volume": "50_100",
+     "cs_repetition_rate": "most",
+     "mkt_content": "fully_manual"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_repetitive_support",
+     "customer_support.volume.pain_high_volume_support",
+     "universal.processes.pain_manual_content_creation"
+    ]
+   }
+  },
+  {
+   "test_id": "MULTI-CS-MKT-002",
+   "category": "multi_domain",
+   "profile_name": "Ads + Slow Support – medium",
+   "description": "Beauty brand with ad performance and support speed issues.",
+   "ground_truth": {
+    "must_haves": [
+     "ad_creative_generation",
+     "faq_dm_automation"
+    ],
+    "top1_expected": "ad_creative_generation",
+    "notes": "Marketing pain (ads) slightly stronger signal than support in this profile."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "MULTI-CS-MKT-002 Test Co",
+    "country": "CZ",
+    "team_size": "6-20",
+    "domains": [
+     "customer_support",
+     "marketing"
+    ],
+    "bottleneck_text": "Our ads are not working well and customers complain that our support is slow to respond.",
+    "answers": {
+     "mkt_paid_ads": "yes_manual",
+     "cs_volume": "50_100"
+    },
+    "confirmed_pain_flags": [
+     "marketing.paid.pain_poor_ad_performance",
+     "universal.processes.pain_slow_response"
+    ]
+   }
+  },
+  {
+   "test_id": "MULTI-CS-MKT-003",
+   "category": "multi_domain",
+   "profile_name": "General Marketing + Comms – weak",
+   "description": "Small gift shop with vague multi-domain complaint. No specific signals.",
+   "ground_truth": {
+    "must_haves": [
+     "faq_dm_automation",
+     "content_generation_social"
+    ],
+    "top1_expected": "faq_dm_automation",
+    "notes": "Weak signal. Expect lower quality. Tests whether system returns relevant results without strong flags."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "MULTI-CS-MKT-003 Test Co",
+    "country": "SK",
+    "team_size": "1-5",
+    "domains": [
+     "customer_support",
+     "marketing"
+    ],
+    "bottleneck_text": "We need to be better at online marketing and talking to customers.",
+    "answers": {},
+    "confirmed_pain_flags": []
+   }
+  },
+  {
+   "test_id": "MULTI-EC-MKT-001",
+   "category": "multi_domain",
+   "profile_name": "Multichannel Orders + Campaign Reporting – strong [SC2 REPLACEMENT]",
+   "description": "Multi-platform seller with no unified campaign view. Replicates SC2 — campaign_performance_reporting is the critical test (classical pipeline misses it).",
+   "ground_truth": {
+    "must_haves": [
+     "multichannel_order_sync",
+     "campaign_performance_reporting"
+    ],
+    "top1_expected": "multichannel_order_sync",
+    "notes": "CRITICAL: campaign_performance_reporting MUST appear in top-3. Classical pipeline historically ranked it #4 for this profile type. The hybrid must fix this."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "FitPol Sp. z o.o.",
+    "country": "PL",
+    "team_size": "6-20",
+    "domains": [
+     "ecommerce_ops",
+     "marketing"
+    ],
+    "bottleneck_text": "We enter orders manually from Shopify, WooCommerce, and Allegro into our ERP every day. We also cannot see which of our Meta ads and email campaigns is actually driving sales. We have no unified view for campaign performance data across all channels.",
+    "answers": {
+     "ec_channels": "3_plus",
+     "mkt_reporting": "none"
+    },
+    "confirmed_pain_flags": [
+     "ecommerce_ops.pain_points.pain_multichannel",
+     "ecommerce_ops.pain_points.pain_slow_order_processing",
+     "universal.processes.pain_no_data_insights"
+    ]
+   }
+  },
+  {
+   "test_id": "MULTI-EC-MKT-002",
+   "category": "multi_domain",
+   "profile_name": "Multichannel + Email – medium",
+   "description": "Shoe retailer with channel management and email marketing problems.",
+   "ground_truth": {
+    "must_haves": [
+     "multichannel_order_sync",
+     "email_marketing_personalization"
+    ],
+    "top1_expected": "multichannel_order_sync",
+    "notes": "Both capabilities should be in top-3."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "MULTI-EC-MKT-002 Test Co",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "ecommerce_ops",
+     "marketing"
+    ],
+    "bottleneck_text": "We sell on two platforms and manage stock across both manually. Our email marketing does not convert well and everyone gets the same message.",
+    "answers": {
+     "ec_channels": "2"
+    },
+    "confirmed_pain_flags": [
+     "ecommerce_ops.pain_points.pain_multichannel",
+     "marketing.email.pain_low_email_engagement",
+     "marketing.email.pain_generic_campaigns"
+    ]
+   }
+  },
+  {
+   "test_id": "MULTI-EC-MKT-003",
+   "category": "multi_domain",
+   "profile_name": "Growing Online Sales – weak",
+   "description": "Toy shop struggling with growth. No specific pain flags.",
+   "ground_truth": {
+    "must_haves": [
+     "multichannel_order_sync"
+    ],
+    "top1_expected": "multichannel_order_sync",
+    "notes": "Weak signal test. Semantic match on growth/online sales should surface multichannel."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "MULTI-EC-MKT-003 Test Co",
+    "country": "HR",
+    "team_size": "1-5",
+    "domains": [
+     "ecommerce_ops",
+     "marketing"
+    ],
+    "bottleneck_text": "Online sales are growing and we are struggling to keep up with everything.",
+    "answers": {},
+    "confirmed_pain_flags": []
+   }
+  },
+  {
+   "test_id": "MULTI-SC-EC-001",
+   "category": "multi_domain",
+   "profile_name": "Inventory Forecasting + Supplier Comms – strong [SC4 REPLACEMENT]",
+   "description": "Outdoor retailer with Excel stock tracking and unpredictable supplier lead times. HARDEST test — demand_forecasting must beat inventory_replenishment_alerts.",
+   "ground_truth": {
+    "must_haves": [
+     "demand_forecasting",
+     "supplier_communication_assistant"
+    ],
+    "top1_expected": "demand_forecasting",
+    "notes": "CRITICAL: demand_forecasting must be #1. supplier_communication_assistant must be in top-3. inventory_replenishment_alerts is the near-miss that the LLM historically promotes incorrectly."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "TrailNord AB",
+    "country": "SE",
+    "team_size": "21-50",
+    "domains": [
+     "supply_chain",
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "We track inventory manually in Excel and update it once a week. We run out of stock on our best-selling products 4-5 times per year which costs us significant revenue. We also have overstock on slow-moving items tying up capital. Our suppliers in Taiwan have unpredictable lead times and all communication is by email with no tracking.",
+    "answers": {
+     "sc_inventory_method": "spreadsheet",
+     "sc_stockout_freq": "frequently",
+     "sc_demand_forecasting_method": "gut_feeling"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_stockouts",
+     "universal.processes.pain_overstock",
+     "universal.processes.pain_supplier_tracking",
+     "universal.processes.pain_manual_inventory",
+     "ecommerce_ops.pain_points.pain_inventory_tracking"
+    ]
+   }
+  },
+  {
+   "test_id": "MULTI-SC-EC-002",
+   "category": "multi_domain",
+   "profile_name": "Seasonal Stockouts + Returns – medium",
+   "description": "Garden tools supplier with seasonal stockouts and manual returns.",
+   "ground_truth": {
+    "must_haves": [
+     "inventory_replenishment_alerts",
+     "return_management_automation"
+    ],
+    "top1_expected": "inventory_replenishment_alerts",
+    "notes": "Uses STOCKOUTS_SUPPLY_CHAIN path (alerts, not forecasting). Returns automation should also appear in top-3."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "MULTI-SC-EC-002 Test Co",
+    "country": "DE",
+    "team_size": "6-20",
+    "domains": [
+     "supply_chain",
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "We run out of seasonal items every spring without enough warning. Returns from our online orders are also a mess and take too much manual handling.",
+    "answers": {
+     "sc_stockout_freq": "occasionally",
+     "ec_returns": "fully_manual"
+    },
+    "confirmed_pain_flags": [
+     "supply_chain.inventory.pain_stockouts",
+     "ecommerce_ops.pain_points.pain_manual_returns"
+    ]
+   }
+  },
+  {
+   "test_id": "MULTI-SC-EC-003",
+   "category": "multi_domain",
+   "profile_name": "Vague Supply Chain – weak",
+   "description": "Small wholesaler with vague supply chain complaint.",
+   "ground_truth": {
+    "must_haves": [
+     "demand_forecasting",
+     "inventory_replenishment_alerts"
+    ],
+    "top1_expected": "demand_forecasting",
+    "notes": "Weak signal. Both supply chain capabilities should still appear but with lower scores."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "MULTI-SC-EC-003 Test Co",
+    "country": "PL",
+    "team_size": "6-20",
+    "domains": [
+     "supply_chain",
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "Supply chain management is very complicated for us.",
+    "answers": {},
+    "confirmed_pain_flags": []
+   }
+  },
+  {
+   "test_id": "MULTI-CRM-OPS-001",
+   "category": "multi_domain",
+   "profile_name": "Proposals + Invoicing + Pipeline – strong [SC5 REPLACEMENT]",
+   "description": "Events agency with document automation, invoicing, and lead management needs.",
+   "ground_truth": {
+    "must_haves": [
+     "proposal_contract_automation",
+     "document_generation",
+     "ai_bookkeeping_invoicing"
+    ],
+    "top1_expected": "proposal_contract_automation",
+    "notes": "All three operations capabilities must appear in top-5. proposal_contract_automation should be #1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "Ola Creativa S.L.",
+    "country": "ES",
+    "team_size": "6-20",
+    "domains": [
+     "crm_sales",
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "We write every client proposal from scratch which takes hours. Invoicing takes 2 days per month. We also have no idea which leads are worth pursuing and lose deals because we do not follow up on time.",
+    "answers": {
+     "ops_proposals": "from_scratch",
+     "ops_invoicing": "spreadsheet",
+     "crm_followup": "manual_ad_hoc"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_manual_invoicing",
+     "universal.processes.pain_manual_data_entry",
+     "crm_sales.pipeline.pain_slow_followup"
+    ]
+   }
+  },
+  {
+   "test_id": "MULTI-CRM-OPS-002",
+   "category": "multi_domain",
+   "profile_name": "Client Tracking + Billing – medium",
+   "description": "Accounting firm losing track of client meetings and billing.",
+   "ground_truth": {
+    "must_haves": [
+     "meeting_transcription_crm",
+     "ai_bookkeeping_invoicing"
+    ],
+    "top1_expected": "meeting_transcription_crm",
+    "notes": "Both should appear in top-3."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "MULTI-CRM-OPS-002 Test Co",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "crm_sales",
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "Client meetings are hard to track and action items get lost. Billing is still done manually and takes too long.",
+    "answers": {
+     "ops_invoicing": "spreadsheet",
+     "crm_pipeline": "spreadsheet"
+    },
+    "confirmed_pain_flags": [
+     "crm_sales.pipeline.pain_unclear_reporting",
+     "universal.processes.pain_manual_invoicing"
+    ]
+   }
+  },
+  {
+   "test_id": "MULTI-CRM-OPS-003",
+   "category": "multi_domain",
+   "profile_name": "Client + Document Organisation – weak",
+   "description": "Small legal firm needing better client and document management.",
+   "ground_truth": {
+    "must_haves": [
+     "proposal_contract_automation",
+     "crm_lead_scoring"
+    ],
+    "top1_expected": "proposal_contract_automation",
+    "notes": "Weak signal. Semantic match on client/document organisation."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "MULTI-CRM-OPS-003 Test Co",
+    "country": "HU",
+    "team_size": "1-5",
+    "domains": [
+     "crm_sales",
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "We need to be more organised with our clients and documents.",
+    "answers": {},
+    "confirmed_pain_flags": []
+   }
+  },
+  {
+   "test_id": "EDGE-001",
+   "category": "edge",
+   "profile_name": "Null Profile – No Problems",
+   "description": "Company that reports no problems. Tests whether the system returns near-zero confidence or inappropriately confident recommendations.",
+   "ground_truth": {
+    "must_haves": [],
+    "top1_expected": null,
+    "notes": "No must-haves. The system should ideally flag low confidence. Any capability appearing in top-5 is technically a false positive. Metrics will compute as 0 for all must-have metrics — the interesting measurement is whether scores are notably lower than other test cases."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "EDGE-001 Test Co",
+    "country": "DE",
+    "team_size": "21-50",
+    "domains": [
+     "ecommerce_ops",
+     "marketing"
+    ],
+    "bottleneck_text": "Everything works perfectly. All our processes are automated and our team is happy.",
+    "answers": {},
+    "confirmed_pain_flags": []
+   }
+  },
+  {
+   "test_id": "EDGE-002",
+   "category": "edge",
+   "profile_name": "Maximum Pain – All Domains",
+   "description": "Company with problems in every domain. Tests whether system can discriminate when everything scores high.",
+   "ground_truth": {
+    "must_haves": [
+     "faq_dm_automation",
+     "multichannel_order_sync",
+     "demand_forecasting"
+    ],
+    "top1_expected": "faq_dm_automation",
+    "notes": "With all domains active and all flags, the system must still discriminate. Top results should reflect the most prominent pain signals in the bottleneck text."
+   },
+   "payload": {
+    "tier": "full",
+    "company_name": "EDGE-002 Test Co",
+    "country": "PL",
+    "team_size": "21-50",
+    "domains": [
+     "customer_support",
+     "ecommerce_ops",
+     "marketing",
+     "supply_chain",
+     "crm_sales",
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "We have serious problems with customer support volume, inventory management, ad performance, supplier communication, invoicing, and our sales pipeline. Everything needs automation.",
+    "answers": {
+     "cs_volume": "over_100",
+     "sc_inventory_method": "spreadsheet",
+     "sc_stockout_freq": "frequently",
+     "mkt_paid_ads": "yes_manual",
+     "ops_invoicing": "spreadsheet",
+     "crm_followup": "manual_ad_hoc"
+    },
+    "confirmed_pain_flags": [
+     "customer_support.volume.pain_high_volume_support",
+     "universal.processes.pain_repetitive_support",
+     "ecommerce_ops.pain_points.pain_multichannel",
+     "universal.processes.pain_stockouts",
+     "universal.processes.pain_overstock",
+     "marketing.paid.pain_poor_ad_performance",
+     "universal.processes.pain_manual_invoicing",
+     "crm_sales.pipeline.pain_slow_followup"
+    ]
+   }
+  },
+  {
+   "test_id": "EDGE-003",
+   "category": "edge",
+   "profile_name": "Flags Only – No Text",
+   "description": "Tests the system when bottleneck_text is empty but confirmed_pain_flags are set. semantic_fit should be near-zero; pain_point_match should drive the ranking.",
+   "ground_truth": {
+    "must_haves": [
+     "multichannel_order_sync",
+     "campaign_performance_reporting"
+    ],
+    "top1_expected": "multichannel_order_sync",
+    "notes": "Tests flag-only path. semantic_fit will be near-zero. pain_point_match and domain filter must carry the ranking."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "EDGE-003 Test Co",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "ecommerce_ops",
+     "marketing"
+    ],
+    "bottleneck_text": "",
+    "answers": {
+     "ec_channels": "3_plus"
+    },
+    "confirmed_pain_flags": [
+     "ecommerce_ops.pain_points.pain_multichannel",
+     "ecommerce_ops.pain_points.pain_slow_order_processing",
+     "universal.processes.pain_no_data_insights"
+    ]
+   }
+  },
+  {
+   "test_id": "EDGE-004",
+   "category": "edge",
+   "profile_name": "Rich Text – No Flags",
+   "description": "Tests semantic_fit-only path. Specific text but no confirmed flags (Quick tier, no tag selection). Semantic match should surface the right capability.",
+   "ground_truth": {
+    "must_haves": [
+     "multichannel_order_sync",
+     "order_status_automation"
+    ],
+    "top1_expected": "multichannel_order_sync",
+    "notes": "Pure semantic_fit test. pain_point_match will be 0 for all capabilities. The bottleneck text alone must produce the correct ranking."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "EDGE-004 Test Co",
+    "country": "SE",
+    "team_size": "6-20",
+    "domains": [
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "Every Monday morning we manually copy orders from our Amazon store, WooCommerce, and a local marketplace into our spreadsheet for fulfillment. It takes three hours and we regularly make data entry errors that cause wrong shipments to customers.",
+    "answers": {},
+    "confirmed_pain_flags": []
+   }
+  },
+  {
+   "test_id": "EDGE-005",
+   "category": "edge",
+   "profile_name": "Wrong Domain Selected",
+   "description": "Company describes an operations problem but selects customer_support domain. Domain filter should prevent operations tools from appearing.",
+   "ground_truth": {
+    "must_haves": [],
+    "top1_expected": null,
+    "notes": "The actual problem (proposals, invoicing) is in operations_backoffice domain which was NOT selected. The domain filter should prevent proposal_contract_automation and ai_bookkeeping_invoicing from appearing. Any operations tool in top-5 is a domain filter failure."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "EDGE-005 Test Co",
+    "country": "NL",
+    "team_size": "6-20",
+    "domains": [
+     "customer_support",
+     "marketing"
+    ],
+    "bottleneck_text": "Writing proposals takes 5 hours each and invoicing is completely manual every month.",
+    "answers": {},
+    "confirmed_pain_flags": []
+   }
+  },
+  {
+   "test_id": "EDGE-006",
+   "category": "edge",
+   "profile_name": "Micro Company – 1-5 people",
+   "description": "Tiny Etsy + Shopify seller overwhelmed by customer messages. Low complexity, low cost tools should rank higher.",
+   "ground_truth": {
+    "must_haves": [
+     "faq_dm_automation"
+    ],
+    "top1_expected": "faq_dm_automation",
+    "notes": "Must be faq_dm_automation (simple, low-cost). Complex tools requiring technical implementation should be penalized."
+   },
+   "payload": {
+    "tier": "quick",
+    "company_name": "EDGE-006 Test Co",
+    "country": "CZ",
+    "team_size": "1-5",
+    "domains": [
+     "customer_support"
+    ],
+    "bottleneck_text": "I run this shop alone and I spend all my time answering the same customer messages. I have no time left to make my products.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "universal.processes.pain_repetitive_support",
+     "customer_support.volume.pain_high_volume_support"
+    ]
+   }
+  },
+  {
+   "test_id": "EDGE-007",
+   "category": "edge",
+   "profile_name": "Large Company – High Tech – Clean Data",
+   "description": "85-person e-commerce group with clean historical data, high technical sophistication, wanting ML-based forecasting.",
+   "ground_truth": {
+    "must_haves": [
+     "demand_forecasting"
+    ],
+    "top1_expected": "demand_forecasting",
+    "notes": "High data_readiness AND high tech_fit should strongly promote demand_forecasting. Tests whether Full tier data collection properly elevates data-hungry tools."
+   },
+   "payload": {
+    "tier": "full",
+    "company_name": "EDGE-007 Test Co",
+    "country": "DE",
+    "team_size": "51-200",
+    "domains": [
+     "supply_chain",
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "Our data team wants to implement demand forecasting. We have 3 years of clean sales data across 5 brands. We keep running out of stock on seasonal products despite having good data we are not using.",
+    "answers": {
+     "sc_inventory_method": "erp",
+     "sc_stockout_freq": "occasionally",
+     "q_structured_data": "yes_clean",
+     "q_history_months": "24_plus",
+     "q_tech_sophistication": "advanced"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_stockouts",
+     "universal.processes.pain_overstock"
+    ]
+   }
+  },
+  {
+   "test_id": "EDGE-008",
+   "category": "edge",
+   "profile_name": "Non-technical – Data Rich – Stockouts",
+   "description": "Traditional retailer with 8 years of ERP data but no technical capacity. Tests whether tech_fit penalises complex ML tools even when data is abundant.",
+   "ground_truth": {
+    "must_haves": [
+     "inventory_replenishment_alerts",
+     "demand_forecasting"
+    ],
+    "top1_expected": "inventory_replenishment_alerts",
+    "notes": "Low tech_fit should penalise demand_forecasting (complex ML) and promote inventory_replenishment_alerts (simpler, rule-based). But both should appear in top-5."
+   },
+   "payload": {
+    "tier": "full",
+    "company_name": "EDGE-008 Test Co",
+    "country": "PL",
+    "team_size": "21-50",
+    "domains": [
+     "supply_chain"
+    ],
+    "bottleneck_text": "We have sales data going back 8 years in our ERP but no one on our team knows how to use it for forecasting. We keep running out of stock on seasonal products every year.",
+    "answers": {
+     "sc_inventory_method": "erp",
+     "sc_stockout_freq": "frequently",
+     "q_structured_data": "yes_messy",
+     "q_history_months": "12_plus",
+     "q_tech_sophistication": "non_technical"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_stockouts",
+     "universal.processes.pain_overstock",
+     "ecommerce_ops.pain_points.pain_inventory_tracking"
+    ]
+   }
+  },
+  {
+   "test_id": "EDGE-009",
+   "category": "edge",
+   "profile_name": "High Tech – No Data – New Business",
+   "description": "Technical startup that just launched with no historical data. Tests data_readiness penalising data-hungry tools even for technical teams.",
+   "ground_truth": {
+    "must_haves": [
+     "multichannel_order_sync",
+     "inventory_replenishment_alerts"
+    ],
+    "top1_expected": "multichannel_order_sync",
+    "notes": "No historical data should penalise demand_forecasting (needs 6+ months history). Simpler ecommerce tools should rank higher."
+   },
+   "payload": {
+    "tier": "full",
+    "company_name": "EDGE-009 Test Co",
+    "country": "FI",
+    "team_size": "1-5",
+    "domains": [
+     "ecommerce_ops",
+     "supply_chain"
+    ],
+    "bottleneck_text": "We launched 2 months ago. We are very technical but we need to set up proper order management and stock tracking from scratch.",
+    "answers": {
+     "ec_channels": "2",
+     "sc_inventory_method": "manual",
+     "q_structured_data": "no_nothing",
+     "q_history_months": "0",
+     "q_tech_sophistication": "advanced"
+    },
+    "confirmed_pain_flags": [
+     "ecommerce_ops.pain_points.pain_multichannel",
+     "supply_chain.inventory.pain_stockouts"
+    ]
+   }
+  },
+  {
+   "test_id": "EDGE-010",
+   "category": "edge",
+   "profile_name": "SC3 Replication – DM + Returns",
+   "description": "Pet supplies shop with DM support and manual returns. Direct replication of original SC3 profile.",
+   "ground_truth": {
+    "must_haves": [
+     "faq_dm_automation",
+     "return_management_automation"
+    ],
+    "top1_expected": "return_management_automation",
+    "notes": "Both must appear in top-3. Original SC3 had both in top-2 for all pipelines."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "PawNL B.V.",
+    "country": "NL",
+    "team_size": "6-20",
+    "domains": [
+     "customer_support",
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "We get 60 DMs a day asking the same questions about products and shipping. We also process all returns manually through email. It takes 2 hours per day just for returns.",
+    "answers": {
+     "cs_volume": "50_100",
+     "cs_repetition_rate": "most",
+     "ec_returns": "fully_manual"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_repetitive_support",
+     "customer_support.volume.pain_high_volume_support",
+     "ecommerce_ops.pain_points.pain_manual_returns"
+    ]
+   }
+  },
+  {
+   "test_id": "SC1-RE",
+   "category": "original_sc_rerun",
+   "profile_name": "SC1 – TinyWonders GmbH AT [RERUN]",
+   "description": "Original SC1 profile re-submitted through new questionnaire format. Establishes continuity with existing evaluation baseline.",
+   "ground_truth": {
+    "must_haves": [
+     "faq_dm_automation",
+     "content_generation_social"
+    ],
+    "top1_expected": "faq_dm_automation",
+    "notes": "Baseline continuity check. Must match or exceed original SC1 results: both must-haves in top-3."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "TinyWonders GmbH",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "customer_support",
+     "marketing"
+    ],
+    "bottleneck_text": "We answer the same WhatsApp and Instagram questions about sizing, availability, and shipping every day. Two hours per day just on repetitive DMs. We also need to post social content 3 times a week but the team has no writing skills and it takes the whole afternoon.",
+    "answers": {
+     "cs_volume": "50_100",
+     "cs_repetition_rate": "most",
+     "mkt_content": "fully_manual"
+    },
+    "confirmed_pain_flags": [
+     "customer_support.volume.pain_high_volume_support",
+     "universal.processes.pain_repetitive_support",
+     "universal.processes.pain_manual_content_creation"
+    ]
+   }
+  },
+  {
+   "test_id": "SC2-RE",
+   "category": "original_sc_rerun",
+   "profile_name": "SC2 – FitPol Sp. z o.o. PL [RERUN]",
+   "description": "Original SC2 profile. Critical test: campaign_performance_reporting must appear in top-3 (classical historically fails this).",
+   "ground_truth": {
+    "must_haves": [
+     "multichannel_order_sync",
+     "campaign_performance_reporting"
+    ],
+    "top1_expected": "multichannel_order_sync",
+    "notes": "CRITICAL: campaign_performance_reporting MUST be in top-3. Classical pipeline fails this. Hybrid must succeed."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "FitPol Sp. z o.o.",
+    "country": "PL",
+    "team_size": "6-20",
+    "domains": [
+     "ecommerce_ops",
+     "marketing"
+    ],
+    "bottleneck_text": "We enter orders manually from Shopify, WooCommerce, and Allegro. We have no unified view for campaign performance data across Meta Ads, WooCommerce, and Mailchimp. We cannot tell which channels are actually driving sales.",
+    "answers": {
+     "ec_channels": "3_plus",
+     "mkt_reporting": "none"
+    },
+    "confirmed_pain_flags": [
+     "ecommerce_ops.pain_points.pain_multichannel",
+     "universal.processes.pain_no_data_insights"
+    ]
+   }
+  },
+  {
+   "test_id": "SC3-RE",
+   "category": "original_sc_rerun",
+   "profile_name": "SC3 – PawNL B.V. NL [RERUN]",
+   "description": "Original SC3 profile.",
+   "ground_truth": {
+    "must_haves": [
+     "faq_dm_automation",
+     "return_management_automation"
+    ],
+    "top1_expected": "faq_dm_automation",
+    "notes": "Both must-haves must be in top-2. Original SC3 had perfect agreement across all pipelines."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "PawNL B.V.",
+    "country": "NL",
+    "team_size": "6-20",
+    "domains": [
+     "customer_support",
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "We get many DM messages per day asking the same questions about our products. The whole returns process is fully manual via email and takes hours each day.",
+    "answers": {
+     "cs_volume": "50_100",
+     "cs_repetition_rate": "most",
+     "ec_returns": "fully_manual"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_repetitive_support",
+     "customer_support.volume.pain_high_volume_support",
+     "ecommerce_ops.pain_points.pain_manual_returns"
+    ]
+   }
+  },
+  {
+   "test_id": "SC4-RE",
+   "category": "original_sc_rerun",
+   "profile_name": "SC4 – TrailNord AB SE [RERUN]",
+   "description": "Original SC4 profile. Hardest test — demand_forecasting must beat inventory_replenishment_alerts.",
+   "ground_truth": {
+    "must_haves": [
+     "demand_forecasting",
+     "supplier_communication_assistant"
+    ],
+    "top1_expected": "demand_forecasting",
+    "notes": "CRITICAL: demand_forecasting must be #1 in ≥2/3 LLM runs. supplier_communication_assistant must be in top-3."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "TrailNord AB",
+    "country": "SE",
+    "team_size": "21-50",
+    "domains": [
+     "supply_chain",
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "We check stock manually in Excel weekly. We have 4-5 stockouts per year on best-sellers. Supplier lead times from Taiwan are unpredictable. All supplier communication is by email with no tracking.",
+    "answers": {
+     "sc_inventory_method": "spreadsheet",
+     "sc_stockout_freq": "frequently",
+     "sc_demand_forecasting_method": "manual"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_stockouts",
+     "universal.processes.pain_overstock",
+     "universal.processes.pain_supplier_tracking",
+     "universal.processes.pain_manual_inventory"
+    ]
+   }
+  },
+  {
+   "test_id": "SC5-RE",
+   "category": "original_sc_rerun",
+   "profile_name": "SC5 – Ola Creativa S.L. ES [RERUN]",
+   "description": "Original SC5 profile.",
+   "ground_truth": {
+    "must_haves": [
+     "proposal_contract_automation",
+     "document_generation"
+    ],
+    "top1_expected": "proposal_contract_automation",
+    "notes": "Both must-haves must be in top-2. Original SC5 had perfect agreement across all pipelines."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "Ola Creativa S.L.",
+    "country": "ES",
+    "team_size": "6-20",
+    "domains": [
+     "crm_sales",
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "We write every proposal from scratch which takes 3-4 hours each. Manual invoicing takes 2 days per month. No document templates exist in our company.",
+    "answers": {
+     "ops_proposals": "from_scratch",
+     "ops_invoicing": "spreadsheet"
+    },
+    "confirmed_pain_flags": [
+     "universal.processes.pain_manual_invoicing",
+     "universal.processes.pain_manual_data_entry"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE1-expense_receipt_automation",
+   "category": "expansion_wave1",
+   "profile_name": "Beleg Handels GmbH",
+   "description": "Coverage profile targeting expense_receipt_automation (Session 9 wave 1).",
+   "ground_truth": {
+    "must_haves": [
+     "expense_receipt_automation"
+    ],
+    "top1_expected": "expense_receipt_automation",
+    "notes": "New capability must appear rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "Beleg Handels GmbH",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "My team photographs every supplier receipt and re-types the amounts and VAT into our accounting system by hand. Month-end reconciliation takes a whole day.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "operations_backoffice.finance.pain_manual_expenses",
+     "universal.processes.pain_manual_data_entry"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE1-cashflow_forecasting",
+   "category": "expansion_wave1",
+   "profile_name": "LiquidPlan SME",
+   "description": "Coverage profile targeting cashflow_forecasting (Session 9 wave 1).",
+   "ground_truth": {
+    "must_haves": [
+     "cashflow_forecasting"
+    ],
+    "top1_expected": "cashflow_forecasting",
+    "notes": "New capability must appear rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "LiquidPlan SME",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "We keep getting surprised by cash crunches and only notice the bank balance is low when a payment is due. We need to see our cash position weeks ahead before payroll.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "operations_backoffice.finance.pain_cashflow_visibility"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE1-hr_onboarding_automation",
+   "category": "expansion_wave1",
+   "profile_name": "GrowTeam OG",
+   "description": "Coverage profile targeting hr_onboarding_automation (Session 9 wave 1).",
+   "ground_truth": {
+    "must_haves": [
+     "hr_onboarding_automation"
+    ],
+    "top1_expected": "hr_onboarding_automation",
+    "notes": "New capability must appear rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "GrowTeam OG",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "Every new hire means chasing signed contracts, setting up email and tool access, and a training checklist across scattered emails. Onboarding is chaotic and slow.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "operations_backoffice.hr.pain_manual_onboarding"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE1-internal_knowledge_assistant",
+   "category": "expansion_wave1",
+   "profile_name": "WikiWho GmbH",
+   "description": "Coverage profile targeting internal_knowledge_assistant (Session 9 wave 1).",
+   "ground_truth": {
+    "must_haves": [
+     "internal_knowledge_assistant"
+    ],
+    "top1_expected": "internal_knowledge_assistant",
+    "notes": "New capability must appear rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "WikiWho GmbH",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "Our team keeps asking each other the same questions because answers are buried across Google Docs, Slack, and people's heads. Nobody can find internal information.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "operations_backoffice.knowledge.pain_scattered_knowledge"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE1-video_content_generation",
+   "category": "expansion_wave1",
+   "profile_name": "ReelFast Studio",
+   "description": "Coverage profile targeting video_content_generation (Session 9 wave 1).",
+   "ground_truth": {
+    "must_haves": [
+     "video_content_generation"
+    ],
+    "top1_expected": "video_content_generation",
+    "notes": "New capability must appear rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "ReelFast Studio",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "marketing"
+    ],
+    "bottleneck_text": "We know short video gets reach but filming and editing reels takes half a day each and we have no video editor. We need branded product videos quickly.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "marketing.content.pain_no_video_content",
+     "universal.processes.pain_manual_content_creation"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE1-sms_marketing_automation",
+   "category": "expansion_wave1",
+   "profile_name": "TextReach Shop",
+   "description": "Coverage profile targeting sms_marketing_automation (Session 9 wave 1).",
+   "ground_truth": {
+    "must_haves": [
+     "sms_marketing_automation"
+    ],
+    "top1_expected": "sms_marketing_automation",
+    "notes": "New capability must appear rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "TextReach Shop",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "marketing"
+    ],
+    "bottleneck_text": "Our email open rates keep dropping and we have no way to reach customers on their phones. We want to send SMS campaigns like back-in-stock and win-back texts.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "marketing.messaging.pain_no_sms",
+     "marketing.retention.pain_low_repeat_purchases"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE1-visual_product_search",
+   "category": "expansion_wave1",
+   "profile_name": "SnapFind Fashion",
+   "description": "Coverage profile targeting visual_product_search (Session 9 wave 1).",
+   "ground_truth": {
+    "must_haves": [
+     "visual_product_search"
+    ],
+    "top1_expected": "visual_product_search",
+    "notes": "New capability must appear rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "SnapFind Fashion",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "Shoppers can't describe what they want in words and bounce off our search bar. We have a large fashion catalogue and want customers to search by photo or screenshot.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "ecommerce_ops.discovery.pain_poor_product_discovery"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE1-post_purchase_upsell",
+   "category": "expansion_wave1",
+   "profile_name": "AOVup Store",
+   "description": "Coverage profile targeting post_purchase_upsell (Session 9 wave 1).",
+   "ground_truth": {
+    "must_haves": [
+     "post_purchase_upsell"
+    ],
+    "top1_expected": "post_purchase_upsell",
+    "notes": "New capability must appear rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "AOVup Store",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "Customers buy once and we never lift the order value. We want one-click upsell offers on the checkout and thank-you page to raise average order value.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "ecommerce_ops.revenue.pain_low_aov",
+     "marketing.retention.pain_low_repeat_purchases"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE2-multilingual_support_automation",
+   "category": "expansion_wave2",
+   "profile_name": "Polyglot Support GmbH",
+   "description": "Coverage profile targeting multilingual_support_automation (Session 9 wave 2).",
+   "ground_truth": {
+    "must_haves": [
+     "multilingual_support_automation"
+    ],
+    "top1_expected": "multilingual_support_automation",
+    "notes": "New capability must rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "Polyglot Support GmbH",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "customer_support"
+    ],
+    "bottleneck_text": "Our customers write in German, Polish and French but our team only speaks German. We can't answer support tickets in each customer's own language and replies are slow.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "customer_support.language.pain_multilingual_support",
+     "universal.processes.pain_slow_response"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE2-cold_email_automation",
+   "category": "expansion_wave2",
+   "profile_name": "OutboundFirst",
+   "description": "Coverage profile targeting cold_email_automation (Session 9 wave 2).",
+   "ground_truth": {
+    "must_haves": [
+     "cold_email_automation"
+    ],
+    "top1_expected": "cold_email_automation",
+    "notes": "New capability must rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "OutboundFirst",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "crm_sales"
+    ],
+    "bottleneck_text": "We have no steady flow of new B2B leads and nobody has time to prospect. We want personalised cold-email sequences with follow-ups to book meetings.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "crm_sales.outbound.pain_no_outbound_leadgen",
+     "crm_sales.pipeline.pain_slow_followup"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE2-customer_lifetime_value_prediction",
+   "category": "expansion_wave2",
+   "profile_name": "ValueRank Shop",
+   "description": "Coverage profile targeting customer_lifetime_value_prediction (Session 9 wave 2).",
+   "ground_truth": {
+    "must_haves": [
+     "customer_lifetime_value_prediction"
+    ],
+    "top1_expected": "customer_lifetime_value_prediction",
+    "notes": "New capability must rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "ValueRank Shop",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "crm_sales"
+    ],
+    "bottleneck_text": "We treat every customer the same because we don't know who is worth most. We want to predict customer lifetime value from order history to focus retention and ad spend.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "crm_sales.analytics.pain_no_clv_insight",
+     "universal.processes.pain_no_data_insights"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE2-purchase_order_automation",
+   "category": "expansion_wave2",
+   "profile_name": "RestockOps GmbH",
+   "description": "Coverage profile targeting purchase_order_automation (Session 9 wave 2).",
+   "ground_truth": {
+    "must_haves": [
+     "purchase_order_automation"
+    ],
+    "top1_expected": "purchase_order_automation",
+    "notes": "New capability must rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "RestockOps GmbH",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "supply_chain"
+    ],
+    "bottleneck_text": "Restocking means manually raising purchase orders, emailing them and chasing approvals in spreadsheets. We want POs created, approved and tracked against deliveries automatically.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "supply_chain.procurement.pain_manual_purchase_orders",
+     "universal.processes.pain_manual_data_entry"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE2-freight_rate_optimization",
+   "category": "expansion_wave2",
+   "profile_name": "ShipSmart Store",
+   "description": "Coverage profile targeting freight_rate_optimization (Session 9 wave 2).",
+   "ground_truth": {
+    "must_haves": [
+     "freight_rate_optimization"
+    ],
+    "top1_expected": "freight_rate_optimization",
+    "notes": "New capability must rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "ShipSmart Store",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "supply_chain"
+    ],
+    "bottleneck_text": "We pay whatever our one carrier charges and overspend on shipping. We want to compare live courier rates per parcel and pick the cheapest service that still meets delivery time.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "supply_chain.logistics.pain_high_shipping_costs"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE2-subscription_management_automation",
+   "category": "expansion_wave2",
+   "profile_name": "Reorder Club",
+   "description": "Coverage profile targeting subscription_management_automation (Session 9 wave 2).",
+   "ground_truth": {
+    "must_haves": [
+     "subscription_management_automation"
+    ],
+    "top1_expected": "subscription_management_automation",
+    "notes": "New capability must rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "Reorder Club",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "ecommerce_ops"
+    ],
+    "bottleneck_text": "Our recurring orders mean manual renewals, chasing failed payments and cancellation emails. We want to manage the subscription lifecycle: billing, dunning, pauses and swaps.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "ecommerce_ops.subscriptions.pain_manual_subscriptions",
+     "marketing.retention.pain_low_repeat_purchases"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE2-contract_review_ai",
+   "category": "expansion_wave2",
+   "profile_name": "SignSafe OG",
+   "description": "Coverage profile targeting contract_review_ai (Session 9 wave 2).",
+   "ground_truth": {
+    "must_haves": [
+     "contract_review_ai"
+    ],
+    "top1_expected": "contract_review_ai",
+    "notes": "New capability must rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "SignSafe OG",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "Supplier and client contracts sit unread because legal review is slow and costly. We want to extract key terms and obligations and flag risky or non-standard clauses.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "operations_backoffice.legal.pain_manual_contract_review"
+    ]
+   }
+  },
+  {
+   "test_id": "WAVE2-ai_scheduling_assistant",
+   "category": "expansion_wave2",
+   "profile_name": "BookFast Team",
+   "description": "Coverage profile targeting ai_scheduling_assistant (Session 9 wave 2).",
+   "ground_truth": {
+    "must_haves": [
+     "ai_scheduling_assistant"
+    ],
+    "top1_expected": "ai_scheduling_assistant",
+    "notes": "New capability must rank 1."
+   },
+   "payload": {
+    "tier": "standard",
+    "company_name": "BookFast Team",
+    "country": "AT",
+    "team_size": "6-20",
+    "domains": [
+     "operations_backoffice"
+    ],
+    "bottleneck_text": "Booking meetings means endless back-and-forth emails and double bookings. We want to find open times, send booking links and protect focus blocks across the team's calendars.",
+    "answers": {},
+    "confirmed_pain_flags": [
+     "operations_backoffice.scheduling.pain_scheduling_overhead"
+    ]
+   }
+  }
+ ]
+}
