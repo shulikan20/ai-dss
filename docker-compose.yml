@@ -34,11 +34,11 @@ services:
     volumes:
       - aidss-ollama-models:/root/.ollama
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      test: ["CMD", "ollama", "list"]
       interval: 10s
       timeout: 5s
       retries: 10
-      start_period: 15s
+      start_period: 30s
 
   ollama-pull:
     image: curlimages/curl:latest
@@ -47,9 +47,20 @@ services:
         condition: service_healthy
     entrypoint: >
       sh -c '
-        echo "[ollama-pull] Pulling phi4 model (first run only, ~5 GB)..."
-        curl -sf http://ollama:11434/api/pull -d "{\"name\": \"phi4\"}" | tail -1
-        echo "[ollama-pull] Model ready."
+        echo "[ollama-pull] Pulling phi4 model (first run only, ~5 GB)...";
+        i=1;
+        while [ "$$i" -le 20 ]; do
+          curl -sf http://ollama:11434/api/pull -d "{\"name\": \"phi4\"}" | tail -1;
+          if curl -sf http://ollama:11434/api/tags | grep -q "phi4"; then
+            echo "[ollama-pull] Model ready.";
+            exit 0;
+          fi;
+          echo "[ollama-pull] Attempt $$i failed, retrying in 10s...";
+          i=$$((i+1));
+          sleep 10;
+        done;
+        echo "[ollama-pull] ERROR: phi4 not available after retries." >&2;
+        exit 1
       '
     restart: "no"
 
