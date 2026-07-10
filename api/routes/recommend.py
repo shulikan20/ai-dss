@@ -1,4 +1,5 @@
 from __future__ import annotations
+import logging
 import os
 import time
 import requests as http_requests
@@ -24,6 +25,26 @@ from config import CFG
 
 router = APIRouter()
 _translator = WebFormTranslator()
+logger = logging.getLogger("aidss.recommend")
+
+def _llm_failure_hint(exc: Exception) -> str:
+    resp = getattr(exc, "response", None)
+    status = getattr(resp, "status_code", None)
+    if isinstance(exc, http_requests.exceptions.Timeout):
+        return (
+            "The model timeout (not enough GPU). Use Classical."
+        )
+    if status == 500:
+        return (
+            f"Ollama HTTP 500 - ran out of memory."
+        )
+    if status == 404:
+        return (
+            f"Ollama does not have the model '{CFG.LLM_MODEL}'. Donwloading may not be finished. "
+        )
+    if isinstance(exc, http_requests.exceptions.ConnectionError):
+        return "Ollama is not reachable."
+    return "See the API server logs."
 
 def _valid_pain_flags() -> frozenset[str]:
     global _VALID_PAIN_FLAGS
@@ -105,7 +126,24 @@ def recommend(
         engine = engines.get(mode, request.app.state.engine)
         pipeline_used = {"llm": "llm", "hybrid": "i3_llm_semantic"}[mode]
 
-    results = engine.match(profile)
+    try:
+        results = engine.match(profile)
+    except Exception as exc:
+        logger.exception(
+            "Pipeline %r failed for company=%r (ollama_live=%s)",
+            mode, body.company_name, ollama_live,
+        )
+        if mode in ("llm", "hybrid"):
+            raise HTTPException(
+                status_code=502,
+                detail=(
+                    f"The {mode.upper()} pipeline could not run. "
+                    f"(Ollama/{CFG.LLM_MODEL}) failed - "
+                    f"{type(exc).__name__}: {exc}. {_llm_failure_hint(exc)} "
+                    f"Only the Classical is available right now."
+                ),
+            ) from exc
+        raise
 
     recommendation_id = None
     try:

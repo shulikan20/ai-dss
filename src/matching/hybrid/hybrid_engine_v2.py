@@ -99,13 +99,13 @@ class HybridEngineV2(BaseMatchEngine):
         try:
             raw = self._call_llm(prompt)
             scores = self._parse_scores(raw, {r.capability_id for r in shortlist})
-        except requests.RequestException:
-            return classical_results[:_TOP_N]
-        except Exception:  # noqa
+        except requests.exceptions.ConnectionError:
             return classical_results[:_TOP_N]
 
         if not scores:
-            return classical_results[:_TOP_N]
+            raise RuntimeError(
+                f"Ollama/{CFG.LLM_MODEL} returned no usable relevance scores for the capabilities."
+            )
 
         return self._rerank_with_llm_semantic(shortlist, scores)
 

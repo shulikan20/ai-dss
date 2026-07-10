@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import os
 import sys
 from contextlib import asynccontextmanager
@@ -12,6 +13,13 @@ from fastapi.responses import FileResponse, JSONResponse
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+
+if not logging.getLogger().handlers:
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s | %(message)s",
+    )
+logger = logging.getLogger("aidss")
 
 from config import CFG
 from src.catalog.repository import CatalogRepository
@@ -128,6 +136,20 @@ app = FastAPI(
     docs_url=None if os.environ.get("DISABLE_DOCS") == "1" else "/docs",
     redoc_url=None if os.environ.get("DISABLE_DOCS") == "1" else "/redoc",
 )
+
+_DEV_MODE = os.environ.get("AIDSS_ENV", "development") != "production"
+
+@app.exception_handler(Exception)
+async def unhandled_exception_handler(request: Request, exc: Exception):
+    logger.exception(
+        "Unhandled error on %s %s", request.method, request.url.path
+    )
+    detail = (
+        f"{type(exc).__name__}: {exc}"
+        if _DEV_MODE
+        else "Internal server error; check the API server logs."
+    )
+    return JSONResponse(status_code=500, content={"detail": detail})
 
 _MAX_JSON_BODY_BYTES = int(os.environ.get("MAX_JSON_BODY_BYTES", str(512 * 1024)))
 
