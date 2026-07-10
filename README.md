@@ -79,16 +79,31 @@ Five scoring dimensions (weighted for TOPSIS):
 
 ### Docker (recommended)
 
+Install [Ollama](https://ollama.com) or
+
+macOS/Linux: 
 ```bash
+curl -fsSL https://ollama.com/install.sh | sh 
+```
+Windows:
+```bash
+irm https://ollama.com/install.ps1 | iex
+```
+then:
+
+```bash
+# 1. Start Ollama and fetch the model
+ollama serve &
+ollama pull phi4
+
+# 2. Postgres + the API
 git clone https://github.com/shulikan20/ai-dss.git
 cd ai-dss
 cp .env.example .env
 docker compose up -d --build --wait
 ```
 
-First run downloads the phi4 model (~5 GB) into a persistent Docker volume. Subsequent starts take seconds. The entrypoint automatically runs database migrations and seeds the catalog.
-
-Once healthy (~60-90s on first run):
+Once healthy:
 
 | URL | What |
 |:---|:---|
