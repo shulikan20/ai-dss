@@ -29,9 +29,9 @@ Think through which tools best fit this company's situation, then provide your r
 
 
 class OllamaExtractor:
-    def __init__(self, model: str | None = None, timeout: int = 180):
+    def __init__(self, model: str | None = None, timeout: int | None = None):
         self._model = model or CFG.LLM_MODEL
-        self._timeout = timeout
+        self._timeout = timeout if timeout is not None else CFG.LLM_TIMEOUT_SEC
         self._system_prompt: str | None = None
 
     def format_profile(self, profile: CompanyProfile) -> str:

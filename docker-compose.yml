@@ -31,6 +31,7 @@ services:
       OLLAMA_URL: ${OLLAMA_URL:-http://host.docker.internal:11434}
       ALLOWED_ORIGINS: "*"
       PIPELINE_MODE: ${PIPELINE_MODE:-hybrid}
+      LLM_TIMEOUT_SEC: ${LLM_TIMEOUT_SEC:-300}
     extra_hosts:
       - "host.docker.internal:host-gateway"
     depends_on:

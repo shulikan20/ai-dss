@@ -1,4 +1,5 @@
 from __future__ import annotations
+import os
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -21,9 +22,11 @@ class Config:
     BI_ENCODER_MODEL: str = "multi-qa-MiniLM-L6-cos-v1"
     CROSS_ENCODER_MODEL: str = "cross-encoder/ms-marco-MiniLM-L6-v2"
     BI_ENCODER_TOP_K: int = 40
-    LLM_MODEL: str = "phi4"
+    LLM_MODEL: str = field(default_factory=lambda: os.environ.get("LLM_MODEL", "phi4"))
     LLM_BASE_URL: str = "http://localhost:11434"
-    LLM_TIMEOUT_SEC: int = 120
+    LLM_TIMEOUT_SEC: int = field(
+        default_factory=lambda: int(os.environ.get("LLM_TIMEOUT_SEC", "300"))
+    )
     USE_LLM_ENRICHMENT: bool = True
     TOPSIS_WEIGHTS: dict = field(default_factory=lambda: {
         "semantic_fit": 0.35,
