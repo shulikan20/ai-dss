@@ -69,7 +69,7 @@ CAPABILITIES = [
         "description": "AI-powered CRM that automatically scores leads, enriches contact records from web data, predicts deal close probability, surfaces at-risk deals, and deduplicates contacts. Replaces manual CRM hygiene and gut-feel prioritisation with data-driven signals, so sales reps know exactly where to focus.",
         "bottleneck_keywords": "[\"lead prioritisation\", \"which leads to call\", \"pipeline visibility\", \"deal at risk\", \"CRM data quality\", \"missing contact info\", \"lead scoring\", \"sales forecasting\", \"duplicate contacts\", \"manual CRM updates\", \"deal health\"]",
         "requires_historical_data": 1,
-        "required_data_types": "[\"contact_records\", \"crm_orders\"]",
+        "required_data_types": "[\"crm\", \"orders\"]",
         "works_without_data": 0,
         "min_history_months_gate": 3,
         "min_technical_capability": 1,
@@ -88,7 +88,7 @@ CAPABILITIES = [
         "description": "Automatically extracts structured information from emails, call notes, and messages and populates CRM fields. Keeps CRM data complete and up to date without manual entry by sales reps.",
         "bottleneck_keywords": "[\"manual CRM entry\", \"CRM data quality\", \"missing fields\", \"CRM hygiene\", \"data entry\", \"updating CRM\", \"CRM not up to date\", \"incomplete records\"]",
         "requires_historical_data": 0,
-        "required_data_types": "[\"communication_logs\"]",
+        "required_data_types": "[\"crm\"]",
         "works_without_data": 0,
         "min_history_months_gate": None,
         "min_technical_capability": 2,
@@ -183,7 +183,7 @@ CAPABILITIES = [
         "description": "Detects when a visitor adds items to cart or browses products without purchasing and automatically sends a timed follow-up email or message to recover the potential sale. Requires website event tracking to function.",
         "bottleneck_keywords": "[\"low website conversion\", \"visitors not buying\", \"cart abandonment\", \"no follow-up\", \"browse without purchase\", \"website traffic not converting\"]",
         "requires_historical_data": 0,
-        "required_data_types": "[\"website_events\"]",
+        "required_data_types": "[\"orders\"]",
         "works_without_data": 0,
         "min_history_months_gate": None,
         "min_technical_capability": 1,
@@ -221,7 +221,7 @@ CAPABILITIES = [
         "description": "Automatically sends customers proactive order confirmation, shipping notification, and delivery status messages. Eliminates inbound 'where is my order' contacts by pushing updates before customers need to ask.",
         "bottleneck_keywords": "[\"where is my order\", \"shipping update\", \"delivery status\", \"order tracking\", \"post-purchase questions\", \"customer contacts after order\"]",
         "requires_historical_data": 0,
-        "required_data_types": "[\"order_data\"]",
+        "required_data_types": "[\"orders\"]",
         "works_without_data": 0,
         "min_history_months_gate": None,
         "min_technical_capability": 1,
@@ -240,7 +240,7 @@ CAPABILITIES = [
         "description": "Provides customers with a self-service return request form, automatically generates return labels, and sends status updates throughout the return process. Reduces manual handling time per return case.",
         "bottleneck_keywords": "[\"returns\", \"refunds\", \"return handling\", \"return processing\", \"manual returns\", \"return rate\", \"complaints\", \"exchanges\"]",
         "requires_historical_data": 0,
-        "required_data_types": "[\"order_data\"]",
+        "required_data_types": "[\"orders\"]",
         "works_without_data": 0,
         "min_history_months_gate": None,
         "min_technical_capability": 1,
@@ -259,7 +259,7 @@ CAPABILITIES = [
         "description": "Aggregates performance data from multiple marketing platforms (Meta Ads, email, website analytics) into a single view. Automates weekly reporting and surfaces anomalies without manual data pulling.",
         "bottleneck_keywords": "[\"performance reporting\", \"marketing dashboard\", \"manual reporting\", \"pulling data\", \"multiple platforms\", \"CPA\", \"ROAS\", \"weekly report\", \"campaign analysis\", \"scattered data\"]",
         "requires_historical_data": 1,
-        "required_data_types": "[\"ad_platform\", \"email_marketing\", \"website_analytics\"]",
+        "required_data_types": "[\"marketing\"]",
         "works_without_data": 0,
         "min_history_months_gate": 1,
         "min_technical_capability": 1,
@@ -297,7 +297,7 @@ CAPABILITIES = [
         "description": "Sends personalised email sequences triggered by customer behaviour — first purchase, repeat purchase, inactivity, product browse. Increases customer retention and repeat purchase rate without manual campaign management.",
         "bottleneck_keywords": "[\"email marketing\", \"customer retention\", \"repeat purchase\", \"lifecycle emails\", \"follow-up emails\", \"win-back\", \"personalised emails\", \"customer segments\"]",
         "requires_historical_data": 1,
-        "required_data_types": "[\"order_history\", \"contact_records\"]",
+        "required_data_types": "[\"orders\", \"crm\"]",
         "works_without_data": 0,
         "min_history_months_gate": 3,
         "min_technical_capability": 1,
@@ -373,8 +373,8 @@ CAPABILITIES = [
         "description": "Predicts future product demand based on historical sales data, seasonality patterns, and trends. Helps determine optimal reorder quantities and timing to reduce stockouts and overstock situations.",
         "bottleneck_keywords": "[\"stockout\", \"out of stock\", \"inventory planning\", \"demand forecasting\", \"reorder timing\", \"seasonal demand\", \"gut feeling ordering\", \"over-ordering\", \"stock levels\", \"running low\"]",
         "requires_historical_data": 1,
-        "required_data_types": "[\"order_history\", \"inventory_data\"]",
-        "works_without_data": 0,
+        "required_data_types": "[]",
+        "works_without_data": 1,
         "min_history_months_gate": 6,
         "min_technical_capability": 1,
         "primary_outcome": "cost",
@@ -401,7 +401,8 @@ CAPABILITIES = [
         "time_to_value_weeks_min": 1,
         "time_to_value_weeks_max": 1,
         "mapped_pain_points": "[\"universal.processes.pain_supplier_tracking\"]",
-    }]
+    }
+]
 
 PRODUCTS = [
     {
@@ -1225,7 +1226,7 @@ PRODUCTS = [
         "vendor": "OpenAI / Anthropic",
         "url": "https://chat.openai.com",
         "integrations": "[\"browser\"]",
-        "gdpr_compliant": 0,
+        "gdpr_compliant": 1,
         "deployment_model": "saas",
         "pricing_model": "freemium",
         "has_free_tier": 1,
@@ -1239,7 +1240,8 @@ PRODUCTS = [
         "works_with_limited_data": 1,
         "data_requirement_notes": "No data needed.",
         "notes": "Does not automate — user must trigger each draft manually.",
-    }]
+    }
+]
 
 CAP_KEYS = [
     "capability_id","name","domain","use_case_category","task_type_target",
