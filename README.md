@@ -89,8 +89,27 @@ Windows:
 ```bash
 irm https://ollama.com/install.ps1 | iex
 ```
+
+For **Linux** required, one time:
+
+The installer already runs Ollama as a systemd service bound to `127.0.0.1`, which
+the API container cannot reach (it talks to the host over the Docker bridge).
+Rebind the service:
+
+```bash
+sudo mkdir -p /etc/systemd/system/ollama.service.d
+printf '[Service]\nEnvironment="OLLAMA_HOST=0.0.0.0"\n' \
+  | sudo tee /etc/systemd/system/ollama.service.d/override.conf
+sudo systemctl daemon-reload
+sudo systemctl restart ollama
+
+ollama pull phi4
+# verify it now listens on 0.0.0.0:
+ss -ltnp | grep 11434
+```
 then:
 
+**Start:**
 ```bash
 # 1. Start Ollama and fetch the model
 ollama serve &
