@@ -7,6 +7,7 @@ import requests
 
 from config import CFG
 from src.matching.base import BaseMatchEngine
+from src.matching.ollama_stats import log_ollama_stats
 from src.models.company_profile import CompanyProfile
 from src.models.recommendation import ClassicalResult, DimensionBreakdown
 
@@ -215,7 +216,9 @@ class HybridEngineV2(BaseMatchEngine):
             timeout=self._timeout,
         )
         resp.raise_for_status()
-        return resp.json()["response"].strip()
+        data = resp.json()
+        log_ollama_stats("hybrid", data)
+        return data["response"].strip()
 
     @staticmethod
     def _parse_scores(response: str, valid_ids: set[str]) -> dict[str, float] | None:

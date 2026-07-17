@@ -27,24 +27,41 @@ router = APIRouter()
 _translator = WebFormTranslator()
 logger = logging.getLogger("aidss.recommend")
 
+def _ollama_said(exc: Exception) -> str:
+    resp = getattr(exc, "response", None)
+    if resp is None:
+        return ""
+    try:
+        body = resp.json()
+        msg = body.get("error") if isinstance(body, dict) else None
+        msg = msg or str(body)
+    except Exception:
+        msg = (getattr(resp, "text", "") or "").strip()
+    return msg[:400]
+
+
 def _llm_failure_hint(exc: Exception) -> str:
     resp = getattr(exc, "response", None)
     status = getattr(resp, "status_code", None)
+    said = _ollama_said(exc)
     if isinstance(exc, http_requests.exceptions.Timeout):
         return (
-            "The model timeout (not enough GPU). Use Classical."
-        )
-    if status == 500:
-        return (
-            f"Ollama HTTP 500 - ran out of memory."
+            f"The model did not answer within {CFG.LLM_TIMEOUT_SEC}s. The first request "
+            "loads the model, and 'Compare all 3' runs several at once. "
         )
     if status == 404:
         return (
-            f"Ollama does not have the model '{CFG.LLM_MODEL}'. Donwloading may not be finished. "
+            f"Ollama does not have the model '{CFG.LLM_MODEL}'. Ollama said: "
+            f"{said or '(no detail)'}. Run: ollama pull {CFG.LLM_MODEL}"
+        )
+    if status is not None:
+        return (
+            f"Ollama returned HTTP {status}. Ollama said: {said or '(no detail)'}. "
+            "Check the Ollama server log (journalctl -u ollama, or the `ollama serve` output)."
         )
     if isinstance(exc, http_requests.exceptions.ConnectionError):
-        return "Ollama is not reachable."
-    return "See the API server logs."
+        return "Ollama is not reachable. Is `ollama serve` running on the host?"
+    return "See the API server logs (docker compose logs api)."
 
 def _valid_pain_flags() -> frozenset[str]:
     global _VALID_PAIN_FLAGS

@@ -9,6 +9,7 @@ from typing import TYPE_CHECKING
 import requests
 
 from config import CFG
+from src.matching.ollama_stats import log_ollama_stats
 from src.models.catalog_item import Capability
 from src.models.company_profile import CompanyProfile
 from src.models.recommendation import LLMRankedItem, LLMResult
@@ -107,7 +108,9 @@ class OllamaExtractor:
             timeout=self._timeout,
         )
         response.raise_for_status()
-        return response.json().get("message", {}).get("content", "")
+        data = response.json()
+        log_ollama_stats("llm", data)
+        return data.get("message", {}).get("content", "")
 
     @staticmethod
     def _extract_json_block(raw: str) -> dict | None:
