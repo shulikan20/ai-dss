@@ -74,6 +74,73 @@ class AdminStatsResponse(BaseModel):
     users_count: int
     sessions_count: int
 
+
+class SyncResult(BaseModel):
+    detail: str
+    sqlite_capabilities: int | None = None
+    reembedded: bool = False
+    vectors: int | None = None
+    warning: str | None = None
+
+
+def _pg_repo(request: Request):
+    repo = getattr(request.app.state, "repo", None)
+    if repo is not None:
+        return repo
+    from src.catalog.pg_repository import PostgreSQLCatalogRepository
+    from api.database.connection import get_session_factory
+
+    return PostgreSQLCatalogRepository(get_session_factory())
+
+
+def _after_write(request: Request, db: Session, *, reembed: bool) -> dict:
+    from src.catalog.sync import apply_write
+
+    db.commit()
+    try:
+        return apply_write(
+            db,
+            _pg_repo(request),
+            reembed=reembed,
+            app_state=request.app.state,
+        )
+    except Exception as exc:
+        logging.getLogger("aidss").exception("catalogue sync failed after write")
+        return {"error": f"{type(exc).__name__}: {exc}"}
+
+
+def _sync_response(detail: str, summary: dict) -> SyncResult:
+    if "error" in summary:
+        return SyncResult(
+            detail=detail,
+            warning=(
+                f"Saved to PostgreSQL but the catalogue sync failed: "
+                f"{summary['error']}. Run: python scripts/catalog_admin.py doctor"
+            ),
+        )
+    return SyncResult(
+        detail=detail,
+        sqlite_capabilities=summary.get("sqlite_capabilities"),
+        reembedded=summary.get("reembedded", False),
+        vectors=summary.get("vectors"),
+    )
+
+
+def _row_to_capability(row: dict) -> dict:
+    out = dict(row)
+    for field in (
+        "bottleneck_keywords",
+        "required_data_types",
+        "mapped_pain_points",
+        "secondary_outcomes",
+    ):
+        value = out.get(field)
+        if isinstance(value, str):
+            out[field] = json.loads(value) if value else []
+        elif value is None:
+            out[field] = []
+    return out
+
 def _validate_pain_flags(flags: list[str]) -> None:
     for flag in flags:
         parts = flag.split(".")
@@ -152,10 +219,19 @@ def list_capabilities(
 )
 def upsert_capability(
     body: CapabilityCreate,
+    request: Request,
     db: Session = Depends(get_db),
     admin: User = Depends(require_admin),
-) -> dict:
+) -> "SyncResult":
     _validate_pain_flags(body.mapped_pain_points)
+
+    before = db.execute(
+        text(
+            "SELECT description, bottleneck_keywords FROM capabilities "
+            "WHERE capability_id = :cid"
+        ),
+        {"cid": body.capability_id},
+    ).mappings().first()
 
     db.execute(
         text("""
@@ -215,7 +291,17 @@ def upsert_capability(
             "time_to_value_weeks_max": body.time_to_value_weeks_max,
         },
     )
-    return {"detail": f"Capability '{body.capability_id}' saved.", "capability_id": body.capability_id}
+    from src.catalog.sync import embedding_text_changed
+
+    needs_reembed = embedding_text_changed(
+        dict(before) if before is not None else None,
+        {
+            "description": body.description,
+            "bottleneck_keywords": body.bottleneck_keywords,
+        },
+    )
+    summary = _after_write(request, db, reembed=needs_reembed)
+    return _sync_response(f"Capability '{body.capability_id}' saved.", summary)
 
 @router.post(
     "/products",
@@ -224,9 +310,10 @@ def upsert_capability(
 )
 def upsert_product(
     body: ProductCreate,
+    request: Request,
     db: Session = Depends(get_db),
     admin: User = Depends(require_admin),
-) -> dict:
+) -> "SyncResult":
 
     cap = db.execute(
         text("SELECT 1 FROM capabilities WHERE capability_id = :cid"),
@@ -299,18 +386,20 @@ def upsert_product(
             "notes": body.notes,
         },
     )
-    return {"detail": f"Product '{body.product_id}' saved.", "product_id": body.product_id}
+    summary = _after_write(request, db, reembed=False)
+    return _sync_response(f"Product '{body.product_id}' saved.", summary)
 
 @router.delete(
     "/capabilities/{capability_id}",
-    status_code=status.HTTP_204_NO_CONTENT,
+    status_code=status.HTTP_200_OK,
     summary="Delete a capability and its products",
 )
 def delete_capability(
     capability_id: str,
+    request: Request,
     db: Session = Depends(get_db),
     admin: User = Depends(require_admin),
-) -> None:
+) -> "SyncResult":
     existing = db.execute(
         text("SELECT 1 FROM capabilities WHERE capability_id = :cid"),
         {"cid": capability_id},
@@ -327,3 +416,88 @@ def delete_capability(
         {"cid": capability_id},
     )
 
+    from src.catalog.sync import delete_from_sqlite
+
+    summary = _after_write(request, db, reembed=True)
+    delete_from_sqlite(capability_id)
+    return _sync_response(f"Capability '{capability_id}' deleted.", summary)
+
+
+@router.get("/capabilities/{capability_id}", summary="One capability with its products")
+def get_capability(
+    capability_id: str,
+    db: Session = Depends(get_db),
+    admin: User = Depends(require_admin),
+) -> dict:
+    row = db.execute(
+        text("SELECT * FROM capabilities WHERE capability_id = :cid"),
+        {"cid": capability_id},
+    ).mappings().first()
+    if row is None:
+        raise HTTPException(status_code=404, detail=f"Capability '{capability_id}' not found.")
+
+    products = [
+        dict(r)
+        for r in db.execute(
+            text("SELECT * FROM products WHERE capability_id = :cid ORDER BY name"),
+            {"cid": capability_id},
+        ).mappings()
+    ]
+    for p in products:
+        if isinstance(p.get("integrations"), str):
+            p["integrations"] = json.loads(p["integrations"]) if p["integrations"] else []
+        elif p.get("integrations") is None:
+            p["integrations"] = []
+
+    return {"capability": _row_to_capability(dict(row)), "products": products}
+
+@router.get("/products", summary="List all products")
+def list_products(
+    db: Session = Depends(get_db),
+    admin: User = Depends(require_admin),
+) -> list[dict]:
+    rows = db.execute(
+        text("SELECT * FROM products ORDER BY capability_id, name")
+    ).mappings().all()
+    out = []
+    for r in rows:
+        p = dict(r)
+        if isinstance(p.get("integrations"), str):
+            p["integrations"] = json.loads(p["integrations"]) if p["integrations"] else []
+        elif p.get("integrations") is None:
+            p["integrations"] = []
+        out.append(p)
+    return out
+
+@router.delete(
+    "/products/{product_id}",
+    status_code=status.HTTP_200_OK,
+    summary="Delete a product",
+)
+def delete_product(
+    product_id: str,
+    request: Request,
+    db: Session = Depends(get_db),
+    admin: User = Depends(require_admin),
+) -> SyncResult:
+    existing = db.execute(
+        text("SELECT 1 FROM products WHERE product_id = :pid"),
+        {"pid": product_id},
+    ).first()
+    if existing is None:
+        raise HTTPException(status_code=404, detail=f"Product '{product_id}' not found.")
+
+    db.execute(text("DELETE FROM products WHERE product_id = :pid"), {"pid": product_id})
+
+    from src.catalog.sync import delete_product_from_sqlite
+
+    summary = _after_write(request, db, reembed=False)
+    delete_product_from_sqlite(product_id)
+    return _sync_response(f"Product '{product_id}' deleted.", summary)
+
+
+@router.get("/pain-flags", summary="Valid pain flag identifiers")
+def list_pain_flags(admin: User = Depends(require_admin)) -> list[str]:
+    from src.catalog.pain_flags import PainFlags
+
+    return sorted(PainFlags.all_paths())

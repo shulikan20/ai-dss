@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-tools Database</title>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<style>
+  :root {
+    --bg: #f8fafc; --fg: #0f172a; --card: #ffffff; --border: #e2e8f0;
+    --primary: #2563eb; --primary-hover: #1d4ed8; --green: #16a34a;
+    --muted: #64748b; --accent-bg: #eff6ff; --amber-bg: #fef3c7; --amber-fg: #92400e;
+    --red: #dc2626; --red-bg: #fee2e2;
+    --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font); background: var(--bg); color: var(--fg); line-height: 1.55; }
+  .container { max-width: 1240px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.1rem; margin-bottom: .75rem; }
+  a { color: var(--primary); }
+
+  .tabs { display: flex; border-bottom: 2px solid var(--border); margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .tab-btn { padding: .55rem 1.1rem; border: none; background: none; font: inherit; font-size: .9rem; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; }
+  .tab-btn:hover { color: var(--fg); }
+  .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 700; }
+
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: .75rem; padding: 1.25rem 1.4rem; margin-bottom: 1.1rem; }
+  .card .hint { font-size: .8rem; color: var(--muted); margin-bottom: .9rem; }
+
+  label { display: block; font-size: .85rem; font-weight: 600; margin: .8rem 0 .25rem; }
+  label .sub { font-weight: 400; color: var(--muted); }
+  input[type=text], input[type=password], input[type=number], select, textarea {
+    width: 100%; padding: .5rem .7rem; border: 1px solid var(--border);
+    border-radius: .5rem; font: inherit; font-size: .88rem; background: #fff;
+  }
+  textarea { resize: vertical; min-height: 70px; font-family: var(--mono); font-size: .82rem; }
+  input:disabled { background: #f1f5f9; color: var(--muted); }
+
+  .row { display: grid; gap: .8rem; }
+  .row.c2 { grid-template-columns: 1fr 1fr; }
+  .row.c3 { grid-template-columns: 1fr 1fr 1fr; }
+  @media (max-width: 720px) { .row.c2, .row.c3 { grid-template-columns: 1fr; } }
+
+  button.btn { padding: .5rem 1rem; border: 1px solid var(--primary); background: var(--primary); color: #fff; border-radius: .5rem; font: inherit; font-size: .87rem; cursor: pointer; }
+  button.btn:hover { background: var(--primary-hover); }
+  button.btn.secondary { background: #fff; color: var(--primary); }
+  button.btn.danger { background: #fff; color: var(--red); border-color: var(--red); }
+  button.btn:disabled { opacity: .5; cursor: default; }
+  .actions { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; }
+  tbody tr:hover { background: var(--accent-bg); }
+  td.id { font-family: var(--mono); font-size: .8rem; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .msg { padding: .6rem .9rem; border-radius: .5rem; font-size: .85rem; margin-bottom: .9rem; }
+  .msg.ok { background: #dcfce7; color: #166534; }
+  .msg.err { background: var(--red-bg); color: #991b1b; }
+  .msg.warn { background: var(--amber-bg); color: var(--amber-fg); }
+
+  .flaglist { max-height: 220px; overflow-y: auto; border: 1px solid var(--border); border-radius: .5rem; padding: .5rem .7rem; }
+  .flaglist label { display: flex; align-items: center; gap: .45rem; font-weight: 400; font-size: .8rem; margin: .15rem 0; font-family: var(--mono); }
+  .flaglist input { width: auto; }
+  .toolbar { display: flex; gap: .6rem; align-items: center; margin-bottom: .9rem; flex-wrap: wrap; }
+  .toolbar input[type=text] { max-width: 320px; }
+  .spinner { font-size: .82rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="container" x-data="admin()" x-init="init()">
+
+  <h1>AI-tools Database</h1>
+
+  <!-- Login. /api/admin requires an admin JWT (require_admin). -->
+  <div class="card" x-show="!token">
+    <h2>Sign in</h2>
+    <p class="hint">Admin account required. The token is kept in memory only.</p>
+    <div class="msg err" x-show="loginError" x-text="loginError"></div>
+    <div class="row c2">
+      <div><label>Email</label><input type="text" x-model="email" @keydown.enter="login()"></div>
+      <div><label>Password</label><input type="password" x-model="password" @keydown.enter="login()"></div>
+    </div>
+    <div class="actions"><button class="btn" @click="login()" x-text="busy ? 'Signing in...' : 'Sign in'"></button></div>
+  </div>
+
+  <template x-if="token">
+  <div>
+    <div class="tabs">
+      <button class="tab-btn" :class="tab==='capabilities' && 'active'" @click="tab='capabilities'">Capabilities</button>
+      <button class="tab-btn" :class="tab==='products' && 'active'" @click="tab='products'">Products</button>
+    </div>
+
+    <div class="msg ok" x-show="message" x-text="message"></div>
+    <div class="msg warn" x-show="warning" x-text="warning"></div>
+    <div class="msg err" x-show="error" x-text="error"></div>
+
+    <!-- Capabilities -->
+    <div x-show="tab==='capabilities'">
+      <div x-show="!editingCap">
+        <div class="card">
+          <div class="toolbar">
+            <input type="text" placeholder="Filter by id, name or domain" x-model="capFilter">
+            <button class="btn" @click="newCapability()">New capability</button>
+            <span class="spinner" x-show="busy">Working...</span>
+          </div>
+          <table>
+            <thead><tr><th>id</th><th>name</th><th>domain</th><th class="num">pain flags</th><th class="num">products</th><th></th></tr></thead>
+            <tbody>
+              <template x-for="c in filteredCaps()" :key="c.capability_id">
+                <tr>
+                  <td class="id" x-text="c.capability_id"></td>
+                  <td x-text="c.name"></td>
+                  <td x-text="c.domain"></td>
+                  <td class="num" x-text="c.mapped_pain_points.length"></td>
+                  <td class="num" x-text="c.products_count"></td>
+                  <td><button class="btn secondary" @click="editCapability(c.capability_id)">Edit</button></td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" x-show="editingCap">
+        <h2 x-text="capIsNew ? 'New capability' : 'Edit capability'"></h2>
+        <p class="hint">
+          description and bottleneck_keywords together form the embedded text.
+          Changing either triggers a re-embed on save.
+        </p>
+        <div class="row c2">
+          <div>
+            <label>capability_id <span class="sub">lowercase and underscores only</span></label>
+            <input type="text" x-model="cap.capability_id" :disabled="!capIsNew">
+          </div>
+          <div><label>name</label><input type="text" x-model="cap.name"></div>
+        </div>
+        <div class="row c3">
+          <div><label>domain</label><input type="text" x-model="cap.domain"></div>
+          <div><label>use_case_category</label><input type="text" x-model="cap.use_case_category"></div>
+          <div><label>task_type_target</label><input type="text" x-model="cap.task_type_target"></div>
+        </div>
+        <label>description</label>
+        <textarea x-model="cap.description" style="min-height:110px"></textarea>
+        <label>bottleneck_keywords <span class="sub">one per line</span></label>
+        <textarea x-model="capKeywords"></textarea>
+
+        <label>mapped_pain_points <span class="sub">only flags in this list can ever match</span></label>
+        <div class="flaglist">
+          <template x-for="f in painFlags" :key="f">
+            <label><input type="checkbox" :value="f" x-model="cap.mapped_pain_points"><span x-text="f"></span></label>
+          </template>
+        </div>
+
+        <div class="row c3">
+          <div>
+            <label>min_technical_capability <span class="sub">hard gate</span></label>
+            <input type="number" min="1" max="5" x-model.number="cap.min_technical_capability">
+          </div>
+          <div>
+            <label>min_history_months_gate <span class="sub">scored, not gated</span></label>
+            <input type="number" min="0" x-model.number="cap.min_history_months_gate">
+          </div>
+          <div>
+            <label>works_without_data</label>
+            <select x-model="cap.works_without_data">
+              <option :value="true">yes</option><option :value="false">no</option>
+            </select>
+          </div>
+        </div>
+        <div class="row c2">
+          <div><label>required_data_types <span class="sub">one per line</span></label><textarea x-model="capDataTypes"></textarea></div>
+          <div><label>secondary_outcomes <span class="sub">one per line</span></label><textarea x-model="capSecondary"></textarea></div>
+        </div>
+        <div class="row c3">
+          <div><label>primary_outcome</label><input type="text" x-model="cap.primary_outcome"></div>
+          <div><label>time_to_value_weeks_min</label><input type="number" x-model.number="cap.time_to_value_weeks_min"></div>
+          <div><label>time_to_value_weeks_max</label><input type="number" x-model.number="cap.time_to_value_weeks_max"></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" @click="saveCapability()" :disabled="busy" x-text="busy ? 'Saving...' : 'Save'"></button>
+          <button class="btn secondary" @click="editingCap=false; clearMessages()">Cancel</button>
+          <button class="btn danger" x-show="!capIsNew" @click="deleteCapability()" :disabled="busy">Delete</button>
+        </div>
+
+        <div x-show="!capIsNew && capProducts.length">
+          <h2 style="margin-top:1.5rem">Products</h2>
+          <table>
+            <thead><tr><th>id</th><th>name</th><th>vendor</th><th></th></tr></thead>
+            <tbody>
+              <template x-for="p in capProducts" :key="p.product_id">
+                <tr>
+                  <td class="id" x-text="p.product_id"></td>
+                  <td x-text="p.name"></td>
+                  <td x-text="p.vendor"></td>
+                  <td><button class="btn secondary" @click="editProduct(p)">Edit</button></td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+        <div class="actions" x-show="!capIsNew">
+          <button class="btn secondary" @click="newProduct(cap.capability_id)">Add product</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products -->
+    <div x-show="tab==='products'">
+      <div class="card" x-show="!editingProd">
+        <div class="toolbar">
+          <input type="text" placeholder="Filter by id, name, vendor or capability" x-model="prodFilter">
+          <button class="btn" @click="newProduct('')">New product</button>
+          <span class="spinner" x-show="busy">Working...</span>
+        </div>
+        <table>
+          <thead><tr><th>id</th><th>name</th><th>vendor</th><th>capability</th><th></th></tr></thead>
+          <tbody>
+            <template x-for="p in filteredProds()" :key="p.product_id">
+              <tr>
+                <td class="id" x-text="p.product_id"></td>
+                <td x-text="p.name"></td>
+                <td x-text="p.vendor"></td>
+                <td class="id" x-text="p.capability_id"></td>
+                <td><button class="btn secondary" @click="editProduct(p)">Edit</button></td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" x-show="editingProd">
+        <h2 x-text="prodIsNew ? 'New product' : 'Edit product'"></h2>
+        <div class="row c2">
+          <div><label>product_id</label><input type="text" x-model="prod.product_id" :disabled="!prodIsNew"></div>
+          <div>
+            <label>capability_id</label>
+            <select x-model="prod.capability_id">
+              <template x-for="c in capabilities" :key="c.capability_id">
+                <option :value="c.capability_id" x-text="c.capability_id"></option>
+              </template>
+            </select>
+          </div>
+        </div>
+        <div class="row c3">
+          <div><label>name</label><input type="text" x-model="prod.name"></div>
+          <div><label>vendor</label><input type="text" x-model="prod.vendor"></div>
+          <div><label>url</label><input type="text" x-model="prod.url"></div>
+        </div>
+        <div class="row c3">
+          <div><label>cost_tier</label><input type="text" x-model="prod.cost_tier"></div>
+          <div><label>pricing_model</label><input type="text" x-model="prod.pricing_model"></div>
+          <div><label>deployment_model</label><input type="text" x-model="prod.deployment_model"></div>
+        </div>
+        <div class="row c3">
+          <div><label>implementation_effort</label><input type="text" x-model="prod.implementation_effort"></div>
+          <div><label>min_technical_capability</label><input type="number" min="1" max="5" x-model.number="prod.min_technical_capability"></div>
+          <div><label>min_history_months</label><input type="number" x-model.number="prod.min_history_months"></div>
+        </div>
+        <div class="row c3">
+          <div><label>has_free_tier</label><select x-model="prod.has_free_tier"><option :value="true">yes</option><option :value="false">no</option></select></div>
+          <div><label>gdpr_compliant</label><select x-model="prod.gdpr_compliant"><option :value="true">yes</option><option :value="false">no</option></select></div>
+          <div><label>works_with_limited_data</label><select x-model="prod.works_with_limited_data"><option :value="true">yes</option><option :value="false">no</option></select></div>
+        </div>
+        <div class="row c2">
+          <div><label>min_record_count</label><input type="number" x-model.number="prod.min_record_count"></div>
+          <div><label>integrations <span class="sub">one per line</span></label><textarea x-model="prodIntegrations"></textarea></div>
+        </div>
+        <label>cost_notes</label><textarea x-model="prod.cost_notes"></textarea>
+        <label>setup_notes</label><textarea x-model="prod.setup_notes"></textarea>
+        <label>data_requirement_notes</label><textarea x-model="prod.data_requirement_notes"></textarea>
+        <label>notes</label><textarea x-model="prod.notes"></textarea>
+
+        <div class="actions">
+          <button class="btn" @click="saveProduct()" :disabled="busy" x-text="busy ? 'Saving...' : 'Save'"></button>
+          <button class="btn secondary" @click="editingProd=false; clearMessages()">Cancel</button>
+          <button class="btn danger" x-show="!prodIsNew" @click="deleteProduct()" :disabled="busy">Delete</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </template>
+</div>
+
+<script>
+function lines(v) { return (v || "").split("\n").map(s => s.trim()).filter(Boolean); }
+
+function admin() {
+  return {
+    token: "", email: "", password: "", loginError: "",
+    tab: "capabilities", busy: false, message: "", error: "", warning: "",
+    capabilities: [], products: [], painFlags: [],
+    capFilter: "", prodFilter: "",
+    editingCap: false, capIsNew: false, cap: {}, capProducts: [],
+    capKeywords: "", capDataTypes: "", capSecondary: "",
+    editingProd: false, prodIsNew: false, prod: {}, prodIntegrations: "",
+
+    init() {},
+
+    clearMessages() { this.message = ""; this.error = ""; this.warning = ""; },
+
+    async api(path, opts = {}) {
+      const res = await fetch("/api" + path, {
+        ...opts,
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer " + this.token,
+          ...(opts.headers || {}),
+        },
+      });
+      if (res.status === 401 || res.status === 403) {
+        this.token = "";
+        throw new Error("Session expired or account is not an admin. Sign in again.");
+      }
+      if (!res.ok) {
+        let detail = res.statusText;
+        try { detail = (await res.json()).detail || detail; } catch (e) {}
+        throw new Error(typeof detail === "string" ? detail : JSON.stringify(detail));
+      }
+      return res.status === 204 ? null : res.json();
+    },
+
+    async login() {
+      this.busy = true; this.loginError = "";
+      try {
+        const res = await fetch("/api/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: this.email, password: this.password }),
+        });
+        if (!res.ok) {
+          let d = "Login failed.";
+          try { d = (await res.json()).detail || d; } catch (e) {}
+          throw new Error(d);
+        }
+        const data = await res.json();
+        this.token = data.access_token || (data.tokens && data.tokens.access_token);
+        if (!this.token) throw new Error("No access token in the login response.");
+        this.password = "";
+        await this.loadAll();
+      } catch (e) {
+        this.loginError = e.message;
+      } finally { this.busy = false; }
+    },
+
+    async loadAll() {
+      this.busy = true;
+      try {
+        this.capabilities = await this.api("/admin/capabilities");
+        this.products = await this.api("/admin/products");
+        this.painFlags = await this.api("/admin/pain-flags");
+      } catch (e) { this.error = e.message; } finally { this.busy = false; }
+    },
+
+    filteredCaps() {
+      const q = this.capFilter.toLowerCase();
+      if (!q) return this.capabilities;
+      return this.capabilities.filter(c =>
+        c.capability_id.includes(q) || c.name.toLowerCase().includes(q) || c.domain.includes(q));
+    },
+    filteredProds() {
+      const q = this.prodFilter.toLowerCase();
+      if (!q) return this.products;
+      return this.products.filter(p =>
+        p.product_id.includes(q) || (p.name || "").toLowerCase().includes(q) ||
+        (p.vendor || "").toLowerCase().includes(q) || p.capability_id.includes(q));
+    },
+
+    newCapability() {
+      this.clearMessages();
+      this.capIsNew = true; this.editingCap = true; this.capProducts = [];
+      this.cap = {
+        capability_id: "", name: "", domain: "", description: "",
+        use_case_category: "", task_type_target: "", bottleneck_keywords: [],
+        works_without_data: true, required_data_types: [],
+        min_history_months_gate: 0, min_technical_capability: 1,
+        mapped_pain_points: [], primary_outcome: "", secondary_outcomes: [],
+        time_to_value_weeks_min: null, time_to_value_weeks_max: null,
+      };
+      this.capKeywords = ""; this.capDataTypes = ""; this.capSecondary = "";
+    },
+
+    async editCapability(id) {
+      this.clearMessages(); this.busy = true;
+      try {
+        const data = await this.api("/admin/capabilities/" + id);
+        this.cap = data.capability;
+        this.capProducts = data.products;
+        this.capKeywords = (this.cap.bottleneck_keywords || []).join("\n");
+        this.capDataTypes = (this.cap.required_data_types || []).join("\n");
+        this.capSecondary = (this.cap.secondary_outcomes || []).join("\n");
+        this.capIsNew = false; this.editingCap = true;
+      } catch (e) { this.error = e.message; } finally { this.busy = false; }
+    },
+
+    async saveCapability() {
+      this.clearMessages(); this.busy = true;
+      try {
+        const body = {
+          ...this.cap,
+          bottleneck_keywords: lines(this.capKeywords),
+          required_data_types: lines(this.capDataTypes),
+          secondary_outcomes: lines(this.capSecondary),
+          works_without_data: this.cap.works_without_data === true || this.cap.works_without_data === "true",
+        };
+        const r = await this.api("/admin/capabilities", { method: "POST", body: JSON.stringify(body) });
+        this.message = r.detail + (r.reembedded ? " Re-embedded " + r.vectors + " capabilities." : " No re-embed needed.");
+        this.warning = r.warning || "";
+        this.editingCap = false;
+        await this.loadAll();
+      } catch (e) { this.error = e.message; } finally { this.busy = false; }
+    },
+
+    async deleteCapability() {
+      if (!confirm("Delete " + this.cap.capability_id + " and all its products?")) return;
+      this.clearMessages(); this.busy = true;
+      try {
+        const r = await this.api("/admin/capabilities/" + this.cap.capability_id, { method: "DELETE" });
+        this.message = r.detail;
+        this.warning = r.warning || "";
+        this.editingCap = false;
+        await this.loadAll();
+      } catch (e) { this.error = e.message; } finally { this.busy = false; }
+    },
+
+    newProduct(capabilityId) {
+      this.clearMessages();
+      this.prodIsNew = true; this.editingProd = true; this.tab = "products";
+      this.prod = {
+        product_id: "", capability_id: capabilityId || (this.capabilities[0] || {}).capability_id || "",
+        name: "", vendor: "", url: "", integrations: [], gdpr_compliant: false,
+        deployment_model: "saas", pricing_model: "freemium", has_free_tier: false,
+        cost_tier: "low", cost_notes: "", implementation_effort: "low",
+        min_technical_capability: 1, setup_notes: "", min_history_months: null,
+        min_record_count: null, works_with_limited_data: true,
+        data_requirement_notes: "", notes: "",
+      };
+      this.prodIntegrations = "";
+    },
+
+    editProduct(p) {
+      this.clearMessages();
+      this.prod = { ...p };
+      this.prodIntegrations = (p.integrations || []).join("\n");
+      this.prodIsNew = false; this.editingProd = true; this.tab = "products";
+    },
+
+    async saveProduct() {
+      this.clearMessages(); this.busy = true;
+      try {
+        const body = {
+          ...this.prod,
+          integrations: lines(this.prodIntegrations),
+          gdpr_compliant: this.prod.gdpr_compliant === true || this.prod.gdpr_compliant === "true",
+          has_free_tier: this.prod.has_free_tier === true || this.prod.has_free_tier === "true",
+          works_with_limited_data: this.prod.works_with_limited_data === true || this.prod.works_with_limited_data === "true",
+        };
+        const r = await this.api("/admin/products", { method: "POST", body: JSON.stringify(body) });
+        this.message = r.detail;
+        this.warning = r.warning || "";
+        this.editingProd = false;
+        await this.loadAll();
+      } catch (e) { this.error = e.message; } finally { this.busy = false; }
+    },
+
+    async deleteProduct() {
+      if (!confirm("Delete " + this.prod.product_id + "?")) return;
+      this.clearMessages(); this.busy = true;
+      try {
+        const r = await this.api("/admin/products/" + this.prod.product_id, { method: "DELETE" });
+        this.message = r.detail;
+        this.warning = r.warning || "";
+        this.editingProd = false;
+        await this.loadAll();
+      } catch (e) { this.error = e.message; } finally { this.busy = false; }
+    },
+
+  };
+}
+</script>
+</body>
+</html>

@@ -14,7 +14,6 @@ class Config:
     SCHEMA_DIR: Path = ROOT / "data" / "schema"
     RESULTS_DIR: Path = ROOT / "results"
     CATALOG_DB: Path = ROOT / "src" / "tools" / "catalog.db"
-    CATALOG_UI: Path = ROOT / "src" / "tools" / "catalog_ui.html"
     EMBEDDINGS_PATH: Path = ROOT / "src" / "tools" / "tool_embeddings.npy"
     SCHEMA_PATH: Path = ROOT / "data" / "schema" / "company_profile_schema.json"
     QUESTIONNAIRE: Path = ROOT / "data" / "questionnaire.json"
@@ -38,7 +37,6 @@ class Config:
     TOPSIS_FIXED_REFERENCE: bool = True
     CLASSICAL_WEIGHT: float = 0.5
     LLM_WEIGHT: float = 0.5
-    CATALOG_SERVER_PORT: int = 5050
     CF_ACTIVATION_THRESHOLD: int = 50
 
     def __post_init__(self) -> None:

@@ -235,6 +235,10 @@ if _demo_dir.is_dir():
     def demo_index():
         return FileResponse(str(_demo_dir / "index.html"))
 
+    @app.get("/admin", include_in_schema=False)
+    def admin_index():
+        return FileResponse(str(_demo_dir / "admin.html"))
+
 @app.get(
     "/api/health",
     response_model=HealthResponse,
