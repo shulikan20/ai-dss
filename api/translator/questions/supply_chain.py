@@ -130,4 +130,58 @@ QUESTIONS: list[Question] = [
         },
     ],
 },
+{
+    "id": "sc_shipping_costs",
+    "tier": ["full"],
+    "text": "Are shipping and freight costs a problem?",
+    "type": "single_select",
+    "options": [
+        {
+            "value": "controlled",
+            "label": "Rates are negotiated and reviewed",
+            "pain_flags": [],
+        },
+        {
+            "value": "rising",
+            "label": "Rising, and we compare carriers by hand",
+            "pain_flags": [
+                PainFlags.HIGH_SHIPPING_COSTS,
+            ],
+        },
+        {
+            "value": "unmanaged",
+            "label": "A major cost we do not actively manage",
+            "pain_flags": [
+                PainFlags.HIGH_SHIPPING_COSTS,
+            ],
+        },
+    ],
+},
+{
+    "id": "sc_purchase_orders",
+    "tier": ["full"],
+    "text": "How are purchase orders raised and tracked?",
+    "type": "single_select",
+    "options": [
+        {
+            "value": "system",
+            "label": "In a procurement or ERP system",
+            "pain_flags": [],
+        },
+        {
+            "value": "spreadsheet",
+            "label": "Spreadsheets and email",
+            "pain_flags": [
+                PainFlags.MANUAL_PURCHASE_ORDERS,
+            ],
+        },
+        {
+            "value": "ad_hoc",
+            "label": "Ad hoc, no standard process",
+            "pain_flags": [
+                PainFlags.MANUAL_PURCHASE_ORDERS,
+            ],
+        },
+    ],
+},
 ]

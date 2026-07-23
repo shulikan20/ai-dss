@@ -86,4 +86,170 @@ QUESTIONS: list[Question] = [
         },
     ],
 },
+{
+    "id": "mkt_email_quality",
+    "tier": ["full"],
+    "text": "How does your email marketing perform?",
+    "type": "single_select",
+    "options": [
+        {
+            "value": "good",
+            "label": "Segmented, and open rates are healthy",
+            "pain_flags": [],
+        },
+        {
+            "value": "low_engagement",
+            "label": "Segmented, but few people open or click",
+            "pain_flags": [
+                PainFlags.LOW_EMAIL_ENGAGEMENT,
+            ],
+        },
+        {
+            "value": "same_to_everyone",
+            "label": "The same message goes to the whole list",
+            "pain_flags": [
+                PainFlags.LOW_EMAIL_ENGAGEMENT,
+                PainFlags.GENERIC_CAMPAIGNS,
+            ],
+        },
+    ],
+},
+{
+    "id": "mkt_organic",
+    "tier": ["full"],
+    "text": "How much traffic comes from search and content?",
+    "type": "single_select",
+    "options": [
+        {
+            "value": "strong",
+            "label": "A steady share, we publish regularly",
+            "pain_flags": [],
+        },
+        {
+            "value": "some",
+            "label": "Some, but it is not growing",
+            "pain_flags": [
+                PainFlags.LOW_ORGANIC_TRAFFIC,
+            ],
+        },
+        {
+            "value": "none",
+            "label": "Very little, and we have no content plan",
+            "pain_flags": [
+                PainFlags.LOW_ORGANIC_TRAFFIC,
+                PainFlags.NO_CONTENT_STRATEGY,
+            ],
+        },
+    ],
+},
+{
+    "id": "mkt_video",
+    "tier": ["full"],
+    "text": "Do you produce video content?",
+    "help_text": "Short-form video for social, product video, ads.",
+    "type": "single_select",
+    "options": [
+        {
+            "value": "regularly",
+            "label": "Regularly",
+            "pain_flags": [],
+        },
+        {
+            "value": "occasionally",
+            "label": "Occasionally, it takes too long to make",
+            "pain_flags": [
+                PainFlags.NO_VIDEO_CONTENT,
+            ],
+        },
+        {
+            "value": "never",
+            "label": "Never, we do not have the skills or time",
+            "pain_flags": [
+                PainFlags.NO_VIDEO_CONTENT,
+            ],
+        },
+    ],
+},
+{
+    "id": "mkt_sms",
+    "tier": ["full"],
+    "text": "Do you reach customers by SMS or messaging apps?",
+    "type": "single_select",
+    "options": [
+        {
+            "value": "yes",
+            "label": "Yes, as a regular channel",
+            "pain_flags": [],
+        },
+        {
+            "value": "no_but_relevant",
+            "label": "No, but our customers would respond to it",
+            "pain_flags": [
+                PainFlags.NO_SMS_CHANNEL,
+            ],
+        },
+        {
+            "value": "no",
+            "label": "No",
+            "pain_flags": [
+                PainFlags.NO_SMS_CHANNEL,
+            ],
+        },
+    ],
+},
+{
+    "id": "mkt_spend_return",
+    "tier": ["full"],
+    "text": "Do you know which marketing spend pays for itself?",
+    "type": "single_select",
+    "options": [
+        {
+            "value": "measured",
+            "label": "Yes, return is measured per channel",
+            "pain_flags": [],
+        },
+        {
+            "value": "partly",
+            "label": "For some channels only",
+            "pain_flags": [
+                PainFlags.LOW_MARKETING_ROI,
+            ],
+        },
+        {
+            "value": "unknown",
+            "label": "No, we cannot tell what the spend returns",
+            "pain_flags": [
+                PainFlags.LOW_MARKETING_ROI,
+            ],
+        },
+    ],
+},
+{
+    "id": "mkt_retention",
+    "tier": ["full"],
+    "text": "Do customers buy from you again after the first purchase?",
+    "type": "single_select",
+    "options": [
+        {
+            "value": "most_return",
+            "label": "Most come back",
+            "pain_flags": [],
+        },
+        {
+            "value": "some_return",
+            "label": "Some do, but we do nothing to encourage it",
+            "pain_flags": [
+                PainFlags.LOW_REPEAT_PURCHASES,
+            ],
+        },
+        {
+            "value": "rarely_return",
+            "label": "Rarely, most buy once and disappear",
+            "pain_flags": [
+                PainFlags.LOW_REPEAT_PURCHASES,
+                PainFlags.CUSTOMER_CHURN,
+            ],
+        },
+    ],
+},
 ]

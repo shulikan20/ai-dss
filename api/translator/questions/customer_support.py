@@ -78,6 +78,7 @@ QUESTIONS: list[Question] = [
             "label": "1 – 2 days",
             "pain_flags": [
                 PainFlags.HIGH_VOLUME_SUPPORT,
+                PainFlags.SLOW_RESPONSE,
             ],
         },
         {
@@ -86,6 +87,7 @@ QUESTIONS: list[Question] = [
             "pain_flags": [
                 PainFlags.HIGH_VOLUME_SUPPORT,
                 PainFlags.REPETITIVE_SUPPORT,
+                PainFlags.SLOW_RESPONSE,
             ],
         },
     ],
@@ -143,6 +145,63 @@ QUESTIONS: list[Question] = [
             "pain_flags": [
                 PainFlags.REPETITIVE_SUPPORT,
                 PainFlags.HIGH_VOLUME_SUPPORT,
+            ],
+        },
+    ],
+},
+{
+    "id": "cs_languages",
+    "tier": ["full"],
+    "text": "Do customers contact you in more than one language?",
+    "help_text": "Counts any language your team has to reply in.",
+    "type": "single_select",
+    "options": [
+        {
+            "value": "one_language",
+            "label": "One language only",
+            "pain_flags": [],
+        },
+        {
+            "value": "two_three",
+            "label": "Two or three languages",
+            "pain_flags": [
+                PainFlags.MULTILINGUAL_SUPPORT,
+            ],
+        },
+        {
+            "value": "many",
+            "label": "More languages than the team speaks",
+            "pain_flags": [
+                PainFlags.MULTILINGUAL_SUPPORT,
+            ],
+        },
+    ],
+},
+{
+    "id": "cs_reviews",
+    "tier": ["full"],
+    "text": "How do you handle public reviews and ratings?",
+    "help_text": "Google, Trustpilot, marketplace reviews, app store ratings.",
+    "type": "single_select",
+    "options": [
+        {
+            "value": "monitored",
+            "label": "Monitored and answered consistently",
+            "pain_flags": [],
+        },
+        {
+            "value": "occasionally",
+            "label": "Answered occasionally, when someone notices",
+            "pain_flags": [
+                PainFlags.NEGATIVE_REVIEWS,
+            ],
+        },
+        {
+            "value": "not_tracked",
+            "label": "Not tracked at all",
+            "pain_flags": [
+                PainFlags.NEGATIVE_REVIEWS,
+                PainFlags.BRAND_REPUTATION,
             ],
         },
     ],

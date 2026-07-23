@@ -88,4 +88,59 @@ QUESTIONS: list[Question] = [
         },
     ],
 },
+{
+    "id": "crm_customer_value",
+    "tier": ["full"],
+    "text": "Do you know which customers are worth most over time?",
+    "help_text": "Not just the largest single order, but repeat value.",
+    "type": "single_select",
+    "options": [
+        {
+            "value": "tracked",
+            "label": "Yes, we track it",
+            "pain_flags": [],
+        },
+        {
+            "value": "roughly",
+            "label": "Roughly, from memory",
+            "pain_flags": [
+                PainFlags.NO_CLV_INSIGHT,
+            ],
+        },
+        {
+            "value": "no",
+            "label": "No, we treat every customer the same",
+            "pain_flags": [
+                PainFlags.NO_CLV_INSIGHT,
+            ],
+        },
+    ],
+},
+{
+    "id": "crm_lead_source",
+    "tier": ["full"],
+    "text": "Where do new leads come from?",
+    "type": "single_select",
+    "options": [
+        {
+            "value": "outbound_running",
+            "label": "We run outbound prospecting already",
+            "pain_flags": [],
+        },
+        {
+            "value": "inbound_only",
+            "label": "Inbound and referrals only",
+            "pain_flags": [
+                PainFlags.NO_OUTBOUND_LEADGEN,
+            ],
+        },
+        {
+            "value": "no_process",
+            "label": "No steady source of new leads",
+            "pain_flags": [
+                PainFlags.NO_OUTBOUND_LEADGEN,
+            ],
+        },
+    ],
+},
 ]
